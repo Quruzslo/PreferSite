@@ -2,6 +2,9 @@ import refArray from "./refs";
 import Image from "next/image";
 import { useState } from "react";
 
+// ikonok------------
+import { IoArrowBack } from "react-icons/io5";
+
 export default function Referencies() {
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -37,7 +40,7 @@ export default function Referencies() {
               key={ref.id}
               className={`absolute top-0 left-0 w-full h-full flex flex-col transition-all duration-500 ease-in-out ${slideClass}`}
             >
-              <div className="relative w-full h-[250px] rounded-lg overflow-hidden mb-4 bg-neutral-900">
+              <div className="relative w-full h-[250px] rounded-lg overflow-hidden mb-4 ">
                 <Image
                   fill
                   alt={ref.title}
@@ -62,15 +65,15 @@ export default function Referencies() {
         <button
           onClick={handlePrev}
           disabled={activeSlide === 0}
-          className="px-4 py-2 bg-neutral-800 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-4 py-2 bg-green rounded disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Előző
+          <IoArrowBack />
         </button>
 
         <button
           onClick={handleNext}
           disabled={activeSlide === refArray.length - 1}
-          className="px-4 py-2 bg-neutral-800 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-4 py-2 bg-green rounded disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Következő
         </button>
