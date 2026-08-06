@@ -51,7 +51,7 @@ h4 {
   transition: all ease 0.4s;
 }
 
-@media (max-width: 780px) {
+@media (max-width: 1280px) {
   .h1-elem::before {
     height: 5px;
     width: 20px;
@@ -76,7 +76,7 @@ h4 {
   left: calc(100% - 60px);
 }
 
-@media (max-width: 780px) {
+@media (max-width: 1280px) {
   .h1-elem:hover::before {
     left: calc(100% - 20px);
   }

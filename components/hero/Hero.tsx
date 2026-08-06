@@ -36,7 +36,7 @@ export default function Hero() {
   };
 
   return (
-    <Section className="flex-col md:flex-row flex pt-[120px] pb-[35px] h-[100vh] min-h-[450px] items-center justify-center gap-[25px] max-h-[1200px]">
+    <Section className="flex-col md:flex-row flex pt-[120px] pb-[35px] h-[100vh] min-h-[450px] items-center justify-center gap-[25px] md:max-h-[1200px]">
       <div className="hero-bal w-full md:w-[50%] p-[10px] h-full flex-col flex justify-between gap-[20px]">
         <div className="flex flex-row gap-[10px] rounded-md bg-black/50 text-white w-fit p-[5px] items-center ">
           <AtomIcon />

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 // ikonok------------
-import { IoArrowBack } from "react-icons/io5";
+import { IoArrowBack, IoArrowForwardOutline } from "react-icons/io5";
 
 export default function Referencies() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -22,8 +22,8 @@ export default function Referencies() {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto flex flex-col items-center gap-6">
-      <div className="relative w-full h-[400px] overflow-hidden">
+    <div className="w-full mx-auto flex flex-col items-center gap-6">
+      <div className="relative w-full h-[450px] overflow-hidden rounded-lg">
         {refArray.map((ref) => {
           let slideClass = "opacity-0 pointer-events-none translate-x-full";
 
@@ -38,45 +38,50 @@ export default function Referencies() {
           return (
             <div
               key={ref.id}
-              className={`absolute top-0 left-0 w-full h-full flex flex-col transition-all duration-500 ease-in-out ${slideClass}`}
+              className={`absolute top-0 left-0 w-full h-full transition-all duration-500 ease-in-out ${slideClass}`}
             >
-              <div className="relative w-full h-[250px] rounded-lg overflow-hidden mb-4 ">
+              {/*KÉP  */}
+              <div className="absolute inset-0 w-full h-full z-0">
                 <Image
                   fill
                   alt={ref.title}
                   src={ref.desktopPhotoSrc}
-                  className="object-contain"
+                  className="object-contain md:object-cover"
                 />
+
+                <div className="absolute inset-0 bg-black/40"></div>
               </div>
 
-              {/* Szöveges tartalom */}
-              <h2 className="text-xl font-bold">{ref.title}</h2>
-              <div className="flex gap-4 mt-2 text-neutral-400">
-                <span>{ref.date}</span>
-                <span>{ref.stack}</span>
+              {/*  A SZÖVEG  */}
+              <div className="absolute bottom-6 left-6 z-10 text-white">
+                <h2 className="text-2xl font-bold">{ref.title}</h2>
+                <div className="flex gap-4 mt-2 text-neutral-300">
+                  <span>{ref.date}</span>
+                  <span>{ref.stack}</span>
+                </div>
               </div>
             </div>
           );
         })}
-      </div>
 
-      {/* Gombok */}
-      <div className="flex gap-4">
-        <button
-          onClick={handlePrev}
-          disabled={activeSlide === 0}
-          className="px-4 py-2 bg-green rounded disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          <IoArrowBack />
-        </button>
+        {/*  A GOMBOK  */}
+        <div className="absolute bottom-6 right-6 flex gap-4 z-20">
+          <button
+            onClick={handlePrev}
+            disabled={activeSlide === 0}
+            className="px-4 py-2 bg-green rounded disabled:opacity-50 disabled:cursor-not-allowed text-white"
+          >
+            <IoArrowBack />
+          </button>
 
-        <button
-          onClick={handleNext}
-          disabled={activeSlide === refArray.length - 1}
-          className="px-4 py-2 bg-green rounded disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          Következő
-        </button>
+          <button
+            onClick={handleNext}
+            disabled={activeSlide === refArray.length - 1}
+            className="px-4 py-2 bg-green rounded disabled:opacity-50 disabled:cursor-not-allowed text-white"
+          >
+            <IoArrowForwardOutline />
+          </button>
+        </div>
       </div>
     </div>
   );
