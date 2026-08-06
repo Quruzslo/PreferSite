@@ -80,7 +80,7 @@ export default function Header() {
           </div>
 
           {/* Desktop nézet */}
-          <nav className="bg-dark-color py-[5px] px-[20px] text-white rounded-md hidden md:flex">
+          <nav className="desktop-nav relative bg-dark-color py-[5px] px-[20px] text-white rounded-md hidden md:flex">
             <ul className="flex flex-row items-center gap-6 font-bold">
               {navItems.map((item, idx) => (
                 <li

@@ -78,10 +78,18 @@ h4 {
   width: 45px;
   height: 15px;
   border-radius: 50px;
-  background-color: transparent;
   transition: all ease 0.3s;
 
   transform-origin: calc(100% - 7.5px) 50%;
+
+  /* Színátmenet animációhoz */
+  background: linear-gradient(
+    to right,
+    transparent 50%,
+    var(--color-green) 50%
+  );
+  background-size: 200% 100%;
+  background-position: 0 0;
 }
 
 @media (max-width: 1280px) {
@@ -96,10 +104,10 @@ h4 {
 
 .h1-elem:hover .arrow-right {
   transform: translateY(-50%) rotate(-45deg);
-  background-color: var(--color-green);
+  background-position: 100% 0;
 }
 
 .h1-elem:hover .arrow-left {
   transform: translateY(-50%) rotate(45deg);
-  background-color: var(--color-green);
+  background-position: 100% 0;
 }
