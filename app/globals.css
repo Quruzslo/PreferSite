@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
-:root {
+@theme {
   --background: #ffffff;
   --foreground: #171717;
-  --dark-green: #4d8853;
-  --green: #52be80;
-  --light-green: #50ff6d;
-  --dark-color: #1f211f;
+  --color-dark-green: #4d8853;
+  --color-green: #52be80;
+  --color-light-green: #50ff6d;
+  --color-dark-color: #1f211f;
 }
 
 * {
@@ -38,6 +38,64 @@ h4 {
   -webkit-hyphens: auto;
 }
 
-.noisy-bg {
-  background: asd;
+.h1-elem::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 15px;
+  border-radius: 50px;
+  background-color: var(--color-green);
+  transition: all ease 0.4s;
+}
+
+@media (max-width: 780px) {
+  .h1-elem::before {
+    height: 5px;
+    width: 20px;
+  }
+}
+
+.arrow-left,
+.arrow-right {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 15px;
+  border-radius: 50px;
+  background-color: transparent;
+  transition: all ease 0.4s;
+}
+
+.h1-elem:hover::before {
+  left: calc(100% - 60px);
+}
+
+@media (max-width: 780px) {
+  .h1-elem:hover::before {
+    left: calc(100% - 20px);
+  }
+
+  .arrow-right,
+  .arrow-left {
+    height: 5px;
+    width: 15px;
+  }
+}
+
+.h1-elem:hover .arrow-right {
+  transform: translateY(-50%) rotate(-45deg);
+  transform-origin: right center;
+  background-color: var(--color-green);
+}
+
+.h1-elem:hover .arrow-left {
+  transform: translateY(-50%) rotate(45deg);
+  transform-origin: right center;
+  background-color: var(--color-green);
 }
