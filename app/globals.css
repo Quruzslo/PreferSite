@@ -69,11 +69,11 @@ h4 {
   height: 15px;
   border-radius: 50px;
   background-color: transparent;
-  transition: all ease 0.4s;
+  transition: all ease 0.6s;
 }
 
 .h1-elem:hover::before {
-  left: calc(100% - 60px);
+  left: calc(100% - 53px);
 }
 
 @media (max-width: 1280px) {
@@ -90,12 +90,12 @@ h4 {
 
 .h1-elem:hover .arrow-right {
   transform: translateY(-50%) rotate(-45deg);
-  transform-origin: right center;
+  transform-origin: right;
   background-color: var(--color-green);
 }
 
 .h1-elem:hover .arrow-left {
   transform: translateY(-50%) rotate(45deg);
-  transform-origin: right center;
+  transform-origin: right;
   background-color: var(--color-green);
 }

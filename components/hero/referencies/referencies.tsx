@@ -23,7 +23,7 @@ export default function Referencies() {
 
   return (
     <div className="w-full mx-auto flex flex-col items-center gap-6">
-      <div className="relative w-full h-[450px] overflow-hidden rounded-lg">
+      <div className="relative w-full h-[450px] overflow-hidden rounded-lg shadow-md">
         {refArray.map((ref) => {
           let slideClass = "opacity-0 pointer-events-none translate-x-full";
 
@@ -69,7 +69,7 @@ export default function Referencies() {
           <button
             onClick={handlePrev}
             disabled={activeSlide === 0}
-            className="px-4 py-2 bg-green rounded disabled:opacity-50 disabled:cursor-not-allowed text-white"
+            className="px-4 py-2 w-[45px] h-[45px] rounded-full bg-green rounded disabled:opacity-50 disabled:cursor-not-allowed text-white"
           >
             <IoArrowBack />
           </button>
@@ -77,7 +77,7 @@ export default function Referencies() {
           <button
             onClick={handleNext}
             disabled={activeSlide === refArray.length - 1}
-            className="px-4 py-2 bg-green rounded disabled:opacity-50 disabled:cursor-not-allowed text-white"
+            className="px-4 py-2 w-[45px] h-[45px] rounded-full bg-green rounded disabled:opacity-50 disabled:cursor-not-allowed text-white"
           >
             <IoArrowForwardOutline />
           </button>
