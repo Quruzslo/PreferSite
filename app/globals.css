@@ -58,6 +58,16 @@ h4 {
   }
 }
 
+.h1-elem:hover::before {
+  left: calc(100% - 60px);
+}
+
+@media (max-width: 1280px) {
+  .h1-elem:hover::before {
+    left: calc(100% - 20px);
+  }
+}
+
 .arrow-left,
 .arrow-right {
   content: "";
@@ -69,33 +79,27 @@ h4 {
   height: 15px;
   border-radius: 50px;
   background-color: transparent;
-  transition: all ease 0.6s;
-}
+  transition: all ease 0.3s;
 
-.h1-elem:hover::before {
-  left: calc(100% - 53px);
+  transform-origin: calc(100% - 7.5px) 50%;
 }
 
 @media (max-width: 1280px) {
-  .h1-elem:hover::before {
-    left: calc(100% - 20px);
-  }
-
   .arrow-right,
   .arrow-left {
     height: 5px;
     width: 15px;
+
+    transform-origin: calc(100% - 2.5px) 50%;
   }
 }
 
 .h1-elem:hover .arrow-right {
   transform: translateY(-50%) rotate(-45deg);
-  transform-origin: right;
   background-color: var(--color-green);
 }
 
 .h1-elem:hover .arrow-left {
   transform: translateY(-50%) rotate(45deg);
-  transform-origin: right;
   background-color: var(--color-green);
 }
