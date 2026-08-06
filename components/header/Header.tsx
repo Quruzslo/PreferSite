@@ -39,7 +39,7 @@ export default function Header() {
 
   return (
     <>
-      {/* Mobil layer + menü (Új, biztonságos magasság-kezeléssel) */}
+      {/* Mobil layer */}
       <div
         className={`mobil-layer fixed inset-0 w-full h-[100dvh] z-[998] md:hidden bg-dark-color text-white transition-opacity duration-300 
           ${menuOpen ? "pointer-events-auto overflow-y-auto overflow-x-hidden opacity-100 active" : "pointer-events-none overflow-hidden opacity-0"}`}

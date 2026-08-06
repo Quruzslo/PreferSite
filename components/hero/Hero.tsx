@@ -2,9 +2,10 @@
 import AtomIcon from "@/public/icons/HeroAtomIcon";
 import { motion, Variants } from "framer-motion";
 import Section from "@/lib/section";
+import Referencies from "./referencies/referencies";
 
 export default function Hero() {
-  const h1Items = ["Webapplikáció", "Webshop", "Weboldal"];
+  const h1Items = ["Webapplikáció", "Webshop", "CRM", "Weboldal"];
 
   const containerVariants: Variants = {
     hidden: { opacity: 1 },
@@ -67,7 +68,9 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="hero-jobb w-full md:w-[50%] bg-stone-300"></div>
+      <div className="hero-jobb w-full md:w-[50%] ">
+        <Referencies></Referencies>
+      </div>
     </Section>
   );
 }
