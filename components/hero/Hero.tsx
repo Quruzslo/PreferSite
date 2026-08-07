@@ -39,11 +39,11 @@ export default function Hero() {
 
   return (
     <section className="w-full flex-col flex rounded-b-[50px] relative overflow-hidden zoldhatteres bg-dark-color">
-      <div className="w-[90%] max-w-[2560px] mx-auto flex-col flex md:flex-row  pt-[120px] pb-[35px] md:min-h-[100vh] min-h-[450px] items-center justify-center gap-[25px] md:max-h-[1200px] ">
+      <div className="w-[90%] max-w-[2560px] mx-auto flex-col flex md:flex-row  pt-[120px] pb-[35px] md:min-h-[calc(100vh_-_100px)] min-h-[450px] items-center justify-center gap-[25px] md:max-h-[1200px] ">
         <div className="hero-bal w-full md:w-[50%] p-[10px] h-full flex-col flex justify-between gap-[20px]">
           <div className="flex flex-row gap-[10px] rounded-md bg-dark-green text-white w-fit p-[5px] items-center ">
             <AtomIcon />
-            <p>Egyedi fejlesztés</p>
+            <p>Egyedi fejlesztéssel</p>
           </div>
 
           {/* Animált H1 szülő konténer */}
