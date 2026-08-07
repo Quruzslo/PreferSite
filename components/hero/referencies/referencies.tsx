@@ -17,7 +17,7 @@ export default function Referencies() {
 
   return (
     <div className="w-full mx-auto flex flex-col items-center gap-6">
-      <div className="relative w-full h-[450px] overflow-hidden rounded-lg shadow-md bg-neutral-900">
+      <div className="relative w-full h-[300px] md:h-[450px] overflow-hidden rounded-lg shadow-md bg-neutral-900">
         {/*  Folyadék Canvas */}
         <div className="absolute inset-0 z-0">
           <LiquidSliderBg
