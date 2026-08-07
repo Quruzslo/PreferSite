@@ -62,7 +62,7 @@ export default function Header() {
   const bgTransition = {
     duration: 0.8,
     ease: [0.77, 0, 0.175, 1],
-  };
+  } as const;
 
   return (
     <>
