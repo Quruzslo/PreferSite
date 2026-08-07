@@ -4,11 +4,34 @@ import logo from "@/public/Prefer-logo.png";
 import HamburgerButton from "./hamburgerButton";
 import navItems from "@/lib/navItems";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // -Csúszó háttér  állapota ---
+  const [indicatorStyle, setIndicatorStyle] = useState({
+    left: 0,
+    width: 0,
+    opacity: 0,
+  });
+
+  // Egér ráhúzása egy menüpontra
+  const handleMouseEnter = (e: any) => {
+    const el = e.currentTarget;
+    setIndicatorStyle({
+      left: el.offsetLeft,
+      width: el.offsetWidth,
+      opacity: 1,
+    });
+  };
+
+  // Egér lehúzása a teljes menüről
+  const handleMouseLeave = () => {
+    setIndicatorStyle((prev) => ({ ...prev, opacity: 0 }));
+  };
+  // ----------------------------------------------
 
   // Görgetés figyelés
   useEffect(() => {
@@ -81,11 +104,25 @@ export default function Header() {
 
           {/* Desktop nézet */}
           <nav className="desktop-nav relative bg-dark-color py-[5px] px-[20px] text-white rounded-md hidden md:flex">
-            <ul className="flex flex-row items-center gap-6 font-bold">
+            <ul
+              className="relative flex flex-row items-center gap-6 font-bold"
+              onMouseLeave={handleMouseLeave}
+            >
+              {/* CSÚSZÓ HÁTTÉR */}
+              <div
+                className="absolute top-1/2 -translate-y-1/2 h-[calc(100%+14px)] bg-green rounded-md transition-all duration-300 ease-out pointer-events-none"
+                style={{
+                  left: `${indicatorStyle.left - 10}px`,
+                  width: `${indicatorStyle.width + 20}px`,
+                  opacity: indicatorStyle.opacity,
+                }}
+              />
+
               {navItems.map((item, idx) => (
                 <li
                   key={idx}
-                  className="menu-link hover:opacity-80 cursor-pointer transition-opacity"
+                  onMouseEnter={handleMouseEnter}
+                  className="relative z-10 menu-link hover:text-dark-color cursor-pointer transition-colors"
                   style={{ animationDelay: `${idx * 100}ms` }}
                 >
                   {item.name}

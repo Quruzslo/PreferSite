@@ -63,14 +63,14 @@ export default function Referencies() {
           <button
             onClick={handlePrev}
             disabled={activeSlide === 0}
-            className="cursor-pointer px-4 py-2 w-[45px] h-[45px] flex items-center justify-center rounded-full bg-green-600 disabled:opacity-50 disabled:cursor-not-allowed text-white hover:bg-green-700 transition-colors"
+            className="cursor-pointer px-4 py-2 w-[45px] h-[45px] flex items-center justify-center rounded-full bg-green disabled:opacity-50 disabled:cursor-not-allowed text-white hover:bg-dark-green transition-colors"
           >
             <IoArrowBack />
           </button>
           <button
             onClick={handleNext}
             disabled={activeSlide === refArray.length - 1}
-            className="cursor-pointer px-4 py-2 w-[45px] h-[45px] flex items-center justify-center rounded-full bg-green-600 disabled:opacity-50 disabled:cursor-not-allowed text-white hover:bg-green-700 transition-colors"
+            className="cursor-pointer px-4 py-2 w-[45px] h-[45px] flex items-center justify-center rounded-full bg-green disabled:opacity-50 disabled:cursor-not-allowed text-white hover:bg-dark-green transition-colors"
           >
             <IoArrowForwardOutline />
           </button>
