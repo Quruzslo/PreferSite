@@ -31,7 +31,6 @@ export default function Referencies() {
 
         {/* SZÖVEGEK */}
         {refArray.map((ref, index) => {
-          // Figyeld meg: kivettük a translate-x-full mozgásokat!
           let slideClass = "opacity-0 pointer-events-none";
 
           if (activeSlide === index) {

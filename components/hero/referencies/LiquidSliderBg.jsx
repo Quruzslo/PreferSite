@@ -160,7 +160,7 @@ export default function LiquidSliderBg({ src, intensity = 0.3, speed = 0.6 }) {
     height: 1,
   });
 
-  // 1. WebGL Alapok beállítása (egyszer fut le)
+  // 1. WebGL Alapok beállítása
   useEffect(() => {
     isDestroyed.current = false;
     const canvas = canvasRef.current;
@@ -314,7 +314,7 @@ export default function LiquidSliderBg({ src, intensity = 0.3, speed = 0.6 }) {
     s.raf = requestAnimationFrame(animate);
   }, [renderFrame, speed]);
 
-  // 2. Új kép betöltése
+  // Új kép betöltése
   useEffect(() => {
     if (!src || currentSrcRef.current === src) return;
     currentSrcRef.current = src;
