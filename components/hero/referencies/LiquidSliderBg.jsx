@@ -322,7 +322,6 @@ export default function LiquidSliderBg({ src, intensity = 0.3, speed = 0.6 }) {
     const img = new Image();
     img.crossOrigin = "anonymous";
     img.onload = () => {
-      // JAVÍTÁS 3: Ne fusson le, ha gyorsan továbblapoztál a kép letöltése közben
       if (isDestroyed.current || currentSrcRef.current !== src) return;
 
       const s = stateRef.current;

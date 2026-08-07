@@ -41,7 +41,7 @@ h4 {
 .h1-elem::before {
   content: "";
   position: absolute;
-  left: -15px;
+  left: -30px;
   top: 50%;
   transform: translateY(-50%);
   width: 60px;
@@ -55,6 +55,7 @@ h4 {
   .h1-elem::before {
     height: 5px;
     width: 20px;
+    left: -10px;
   }
 }
 
