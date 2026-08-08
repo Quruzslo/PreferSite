@@ -237,16 +237,16 @@ export default function LiquidSliderBg({ src, intensity = 0.3, speed = 0.6 }) {
         s.raf = null;
       }
 
-      // JAVÍTÁS 1: Nem csak töröljük a WebGL-ből, de a JS referenciákat is NULLÁZZUK!
       if (s.gl) {
         if (s.tex0) {
           s.gl.deleteTexture(s.tex0);
-          s.tex0 = null;
         }
-        if (s.tex1) {
+        if (s.tex1 && s.tex1 !== s.tex0) {
           s.gl.deleteTexture(s.tex1);
-          s.tex1 = null;
         }
+        s.tex0 = null;
+        s.tex1 = null;
+
         if (s.dispTex) {
           s.gl.deleteTexture(s.dispTex);
           s.dispTex = null;
@@ -258,7 +258,6 @@ export default function LiquidSliderBg({ src, intensity = 0.3, speed = 0.6 }) {
         s.gl = null;
       }
 
-      // JAVÍTÁS 2: Engedjük, hogy a Strict Mode visszacsattoláskor újra letöltse a képet
       currentSrcRef.current = null;
     };
   }, []);
@@ -268,7 +267,6 @@ export default function LiquidSliderBg({ src, intensity = 0.3, speed = 0.6 }) {
       if (isDestroyed.current) return;
       const s = stateRef.current;
 
-      // Biztonsági ellenőrzés: ha bármelyik kulcsfontosságú objektum null (törölték), ne rajzoljunk
       if (!s.gl || !s.prog || !s.dispTex) return;
       if (!s.tex0 && !s.tex1) return;
 
@@ -277,7 +275,7 @@ export default function LiquidSliderBg({ src, intensity = 0.3, speed = 0.6 }) {
         s.gl.bindTexture(s.gl.TEXTURE_2D, s.tex0 || s.tex1);
 
         s.gl.activeTexture(s.gl.TEXTURE1);
-        s.gl.bindTexture(s.gl.TEXTURE_2D, s.tex1 || s.tex0); // Fallback ha tex1 még nincs
+        s.gl.bindTexture(s.gl.TEXTURE_2D, s.tex1 || s.tex0);
 
         s.gl.activeTexture(s.gl.TEXTURE2);
         s.gl.bindTexture(s.gl.TEXTURE_2D, s.dispTex);
@@ -331,7 +329,9 @@ export default function LiquidSliderBg({ src, intensity = 0.3, speed = 0.6 }) {
       s.imgRes = [img.width, img.height];
 
       if (s.tex1) {
-        if (s.tex0) s.gl.deleteTexture(s.tex0);
+        if (s.tex0 && s.tex0 !== s.tex1) {
+          s.gl.deleteTexture(s.tex0);
+        }
         s.tex0 = s.tex1;
         s.tex1 = newTex;
         s.progress = 0;
@@ -348,6 +348,9 @@ export default function LiquidSliderBg({ src, intensity = 0.3, speed = 0.6 }) {
   }, [src, animate]);
 
   return (
-    <canvas ref={canvasRef} className="absolute inset-0 w-full h-full block" />
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full block object-contain md:object-cover"
+    />
   );
 }

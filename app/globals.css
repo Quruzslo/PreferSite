@@ -147,6 +147,7 @@ h4 {
 /* Aktív slide részletei */
 .ref-wrapper.active .ref-details {
   transform: translateY(0px);
+
   opacity: 1;
   /* 0.75s delay: így szép lépcsőzetes (staggered) lesz a belépés */
   transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.75s;

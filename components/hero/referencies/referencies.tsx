@@ -46,6 +46,13 @@ export default function Referencies() {
               key={ref.id}
               className={`ref-wrapper absolute inset-0 transition-opacity duration-500 ease-in-out ${slideClass}`}
             >
+              <div className="absolute top-6 right-6 z-10 text-white text-[25px] flex items-center gap-2 overflow-hidden">
+                <span className="ref-title text-[45px] inline-block align-middle [-webkit-text-stroke:1px_white] text-transparent font-bold !duration-900">
+                  {index + 1}
+                </span>
+                <span>|</span>
+                <span className="align-middle">{refArray.length}</span>
+              </div>
               <div className="absolute bottom-6 left-6 z-10 text-white">
                 <h2 className="ref-title text-2xl font-bold">{ref.title}</h2>
                 <div className="ref-details flex gap-4 mt-2 text-neutral-300">
@@ -62,14 +69,14 @@ export default function Referencies() {
           <button
             onClick={handlePrev}
             disabled={activeSlide === 0}
-            className="cursor-pointer px-4 py-2 w-[45px] h-[45px] flex items-center justify-center rounded-full bg-green disabled:opacity-50 disabled:cursor-not-allowed text-white hover:bg-dark-green transition-colors"
+            className="cursor-pointer px-4 py-2 w-[45px] h-[30px] flex items-center justify-center rounded-md bg-green disabled:opacity-50 disabled:cursor-not-allowed text-white hover:bg-dark-green transition-colors"
           >
             <IoArrowBack />
           </button>
           <button
             onClick={handleNext}
             disabled={activeSlide === refArray.length - 1}
-            className="cursor-pointer px-4 py-2 w-[45px] h-[45px] flex items-center justify-center rounded-full bg-green disabled:opacity-50 disabled:cursor-not-allowed text-white hover:bg-dark-green transition-colors"
+            className="cursor-pointer px-4 py-2 w-[45px] h-[30px] flex items-center justify-center rounded-md bg-green disabled:opacity-50 disabled:cursor-not-allowed text-white hover:bg-dark-green transition-colors"
           >
             <IoArrowForwardOutline />
           </button>
