@@ -78,9 +78,15 @@ export default function Referencies() {
               </div>
               <div className="absolute bottom-6 left-6 z-10 text-white">
                 <h2 className="ref-title text-2xl font-bold">{ref.title}</h2>
-                <div className="ref-details flex gap-4 mt-2 text-neutral-300">
+                <div className="ref-details flex gap-4 mt-2 text-neutral-300 flex items-center">
                   <span className="ref-date">{ref.date}</span>
-                  <span className="ref-stack">{ref.stack}</span>
+                  <a
+                    href={ref.link}
+                    target="_blank"
+                    className="ref-stack bg-black/70 px-[15px] py-[5px] rounded-full"
+                  >
+                    Élő oldal
+                  </a>
                 </div>
               </div>
             </div>

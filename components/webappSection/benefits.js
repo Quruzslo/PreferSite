@@ -31,7 +31,7 @@ export const benefits = [
     id: "no-plugin-dependency",
     title: "Nincs plugin-függőség",
     description:
-      "Elfelejtheted az éves licencdíjakat és a frissítések utáni összeomlásokat. A kódbázis kőstabil, kiszámítható, és 100%-ban a te tulajdonodat képezi.",
+      "Elfelejtheted az éves licencdíjakat és a frissítések utáni összeomlásokat. A kódbázis stabil és kiszámítható.",
     badge: "Kiszámítható működés",
   },
   {

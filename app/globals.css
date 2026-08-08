@@ -15,6 +15,12 @@
   cursor: none !important;
 }
 
+@media (max-width: 767px) {
+  * {
+    cursor: auto !important;
+  }
+}
+
 html,
 body {
   overflow-x: clip;
@@ -141,15 +147,61 @@ h4 {
 .ref-wrapper.active .ref-title {
   transform: translateY(0px);
   opacity: 1;
-
   transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.6s;
 }
 
 /* Aktív slide részletei */
 .ref-wrapper.active .ref-details {
   transform: translateY(0px);
-
   opacity: 1;
-  /* 0.75s delay: így szép lépcsőzetes (staggered) lesz a belépés */
   transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.75s;
+}
+
+/* Benefit wrapper konti ------------ */
+
+.benefit-card::before {
+  content: "";
+  position: absolute;
+  left: -3;
+  top: -3;
+  border-top: 2px solid var(--color-green);
+  border-left: 2px solid var(--color-green);
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+}
+
+.benefit-card::after {
+  content: "";
+  position: absolute;
+  right: -3;
+  bottom: -3;
+  border-bottom: 2px solid var(--color-green);
+  border-right: 2px solid var(--color-green);
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+}
+
+/* benefit badge --------------- */
+.benefit-badge {
+  background: -webkit-linear-gradient(var(--color-green) 50%, #fff 50%);
+  background: linear-gradient(var(--color-green) 50%, #fff 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  /* text-shadow: 5px 3px 5px rgb(229, 223, 223); */
+}
+
+.benefit-badge::before {
+  content: "";
+  width: 100%;
+  height: 50%;
+  background-color: var(--color-green);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  border-radius: 50px;
 }
