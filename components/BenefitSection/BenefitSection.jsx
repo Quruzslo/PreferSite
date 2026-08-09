@@ -19,7 +19,7 @@ const BenefitCard = ({ benefit }) => {
     [0, 1],
     ["blur(8px)", "blur(0px)"],
   );
-  const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
     <motion.div
@@ -28,7 +28,7 @@ const BenefitCard = ({ benefit }) => {
         filter,
         opacity,
         willChange: "filter, opacity",
-        transform: "translateZ(0)",
+        // transform: "translateZ(0)",
       }}
       className="flex flex-col gap-4 benefit-card relative p-[10px] bg-white"
     >

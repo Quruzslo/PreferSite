@@ -27,13 +27,13 @@ export default function RootLayout({
         className={`${groteskSans.className} min-h-full flex flex-col antialiased relative`}
       >
         <MouseFollowerElement />
-        <Image
+        {/* <Image
           src="/noisy.svg"
           alt=""
           fill
           priority
           className="object-cover -z-10 pointer-events-none w-full h-full fixed top-0 left-0"
-        />
+        /> */}
         <Header />
         <main className="flex-1">{children}</main>
       </body>
