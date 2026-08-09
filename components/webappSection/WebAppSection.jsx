@@ -24,7 +24,12 @@ const BenefitCard = ({ benefit }) => {
   return (
     <motion.div
       ref={ref}
-      style={{ filter, opacity }}
+      style={{
+        filter,
+        opacity,
+        willChange: "filter, opacity",
+        transform: "translateZ(0)",
+      }}
       className="flex flex-col gap-4 benefit-card relative p-[10px]"
     >
       <span className="w-fit benefit-badge rounded-full bg-green px-3 py-1 text-[20px] font-black uppercase text-dark-color ">
