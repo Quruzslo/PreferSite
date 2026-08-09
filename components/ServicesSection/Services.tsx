@@ -1,8 +1,8 @@
 "use client";
 import myServices from "./MyServices";
 import { motion, Variants } from "motion/react";
+import { useRef } from "react";
 
-// A te tökéletes animációd maradt!
 const servicesVariants: Variants = {
   hidden: {
     scaleX: 0,
@@ -19,26 +19,44 @@ const servicesVariants: Variants = {
 };
 
 export default function Services() {
+  // ref a külső konténernek
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="relative flex w-full flex-col">
+    // viewport figyelő konti
+    <motion.div
+      ref={containerRef}
+      // Behúzza az elem tetejéhez a viewportot
+      onViewportEnter={() => {
+        containerRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }}
+      viewport={{ amount: 0.1 }}
+      className="relative scroll-snap-wrapper flex h-[100dvh] w-full flex-col overflow-y-auto snap-y snap-mandatory scroll-smooth mt-[50px]"
+    >
       {myServices.map((service) => (
         <motion.section
           key={service.id}
           initial="hidden"
           whileInView="visible"
-          viewport={{ amount: 0.3, once: false }}
-          className="flex flex-col justify-center bg-transparent overflow-hidden"
+          viewport={{ amount: 0.2, once: false }}
+          className="flex min-h-[max(100dvh,450px)] h-auto w-full shrink-0 snap-start flex-col justify-center overflow-hidden bg-transparent snap-always"
         >
           <motion.div
             variants={servicesVariants}
             style={{ transformOrigin: "left center" }}
-            className="bg-dark-color min-h-screen w-full flex flex-col justify-center"
+            className="bg-dark-color flex flex-1 w-full flex-col justify-center pt-[110px] pb-[40px] md:pt-0 md:pb-0"
           >
-            <div className="mx-auto max-w-5xl px-4">
-              <span className="text-sm font-semibold uppercase tracking-wider text-green-500 ">
-                0{service.id + 1} // Szolgáltatás
+            <div className="mx-auto w-[90%] max-w-[2560px] px-4">
+              <span className="text-sm font-semibold uppercase tracking-wider text-green-500">
+                <span className="text-4xl font-extrabold text-transparent [-webkit-text-stroke:1px_#ffffff]">
+                  0{service.id + 1}
+                </span>{" "}
+                . szolgáltatásom
               </span>
-              <h2 className="mt-2 text-3xl font-bold md:text-5xl lg:text-6xl text-white">
+              <h2 className="mt-2 text-3xl font-bold text-white md:text-5xl lg:text-6xl">
                 {service.title}
               </h2>
               <p className="mt-6 text-lg text-neutral-600 dark:text-neutral-400 md:text-xl">
@@ -60,6 +78,6 @@ export default function Services() {
           </motion.div>
         </motion.section>
       ))}
-    </div>
+    </motion.div>
   );
 }

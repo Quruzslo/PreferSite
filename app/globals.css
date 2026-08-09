@@ -11,7 +11,7 @@
 
 * {
   box-sizing: border-box;
-  scroll-margin-top: 120px;
+  /* scroll-margin-top: 120px; */
   cursor: none !important;
 }
 
@@ -205,4 +205,17 @@ h4 {
   bottom: 0;
   z-index: -1;
   border-radius: 50px;
+}
+
+.scroll-snap-wrapper {
+  /* Firefox */
+  scrollbar-width: none !important;
+
+  /* Internet Explorer / Edge (régi) */
+  -ms-overflow-style: none !important;
+}
+
+/* Chrome, Safari, Opera */
+.scroll-snap-wrapper::-webkit-scrollbar {
+  display: none !important;
 }

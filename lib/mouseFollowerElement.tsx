@@ -38,7 +38,7 @@ export default function MouseFollowerElement() {
       }
     };
 
-    // Közvetlen DOM frissítés a képkockák igazításához (60/120 FPS)
+    // Közvetlen DOM frissítés a képkockák igazításához
     const updatePosition = () => {
       const transformValue = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
 
