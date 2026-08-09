@@ -28,7 +28,6 @@ const BenefitCard = ({ benefit }) => {
         filter,
         opacity,
         willChange: "filter, opacity",
-        // transform: "translateZ(0)",
       }}
       className="flex flex-col gap-4 benefit-card relative p-[10px] bg-white"
     >
@@ -46,8 +45,8 @@ const BenefitCard = ({ benefit }) => {
 export default function BenefitSection() {
   return (
     <Section className="flex flex-col gap-[40px] py-[50px]">
-      <h2 className="text-center text-3xl font-bold md:text-4xl">
-        Ezért érdemes az egyedi fejlesztést választani
+      <h2 className="text-center text-3xl font-bold md:text-4xl my-[35px]">
+        Ezért érdemes az egyedi fejlesztés mellett dönteni
       </h2>
       <div className="grid grid-cols-1 gap-[25px] md:grid-cols-2 xl:grid-cols-3">
         {benefits.map((benefit) => (

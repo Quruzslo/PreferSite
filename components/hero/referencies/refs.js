@@ -1,16 +1,6 @@
 const refArray = [
   {
     id: 0,
-    title: "Mamma Mia kifőzde ",
-    link: "https://mamma-mia-1nmq.vercel.app/",
-    description:
-      "Egy kifőzde digitalizációs projektje, heti menü rendelési és online fizetési lehetőséggel, stripe integrációval, rendeléskezelő admin panellel. Dinamikus statisztikák és táblázatok a rendelésszám megtekintéséhez.",
-    date: "2026",
-    stack: "Next.js",
-    desktopPhotoSrc: "/references/mammamia-admin.jpg",
-  },
-  {
-    id: 1,
     title: "S.Y.A Solutions",
     link: "https://www.sya-solutions.hu/",
     description:
@@ -19,9 +9,8 @@ const refArray = [
     stack: "Next.js",
     desktopPhotoSrc: "/references/syasolutions.jpg",
   },
-
   {
-    id: 2,
+    id: 1,
     title: "Andocs község weboldala",
     link: "https://andocs.hu/",
     description:
@@ -30,6 +19,17 @@ const refArray = [
     stack: "Bricks Builder",
     desktopPhotoSrc: "/references/andocs.jpg",
   },
+  {
+    id: 2,
+    title: "Mamma Mia kifőzde ",
+    link: "https://mamma-mia-1nmq.vercel.app/",
+    description:
+      "Egy kifőzde digitalizációs projektje, heti menü rendelési és online fizetési lehetőséggel, stripe integrációval, rendeléskezelő admin panellel. Dinamikus statisztikák és táblázatok a rendelésszám megtekintéséhez.",
+    date: "2026",
+    stack: "Next.js",
+    desktopPhotoSrc: "/references/mammamia-admin.jpg",
+  },
+
   {
     id: 3,
     title: "Kiskertészbolt",

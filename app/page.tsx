@@ -7,8 +7,8 @@ export default function HomePage() {
   return (
     <>
       <Hero></Hero>
-      <TechStack></TechStack>
       <BenefitSection></BenefitSection>
+      <TechStack></TechStack>
       <Services></Services>
     </>
   );
