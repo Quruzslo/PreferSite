@@ -47,6 +47,18 @@ const myServices = [
       "Gyorsított tartalommegjelenítés (CDN) a maximális sebességért",
     ],
   },
+  {
+    id: 4,
+    title: "Rendszerfelügyelet és karbantartás",
+    description:
+      "Egy sikeres weboldal vagy rendszer nem áll meg az átadásnál. Folyamatos frissítésekkel, biztonsági mentésekkel és teljesítmény-optimalizálással gondoskodom arról, hogy az oldalad mindig gyors, biztonságos és leállásmentes maradjon.",
+    benefits: [
+      "Rendszeres biztonsági mentések és azonnali helyreállítási lehetőség",
+      "Folyamatos szoftver- és függőségfrissítések a sebezhetőségek ellen",
+      "Proaktív hibafigyelés és teljesítmény-optimalizálás",
+      "Dedikált technikai támogatás és kisebb módosítások elvégzése",
+    ],
+  },
 ];
 
 export default myServices;
