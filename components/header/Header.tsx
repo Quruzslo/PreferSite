@@ -4,7 +4,7 @@ import logo from "@/public/Prefer-logo.png";
 import HamburgerButton from "./hamburgerButton";
 import navItems from "@/lib/navItems";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
@@ -12,25 +12,23 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   // -Csúszó háttér állapota ---
-  const [indicatorStyle, setIndicatorStyle] = useState({
-    left: 0,
-    width: 0,
-    opacity: 0,
-  });
+  const indicatorRef = useRef<HTMLDivElement>(null);
 
-  // Egér ráhúzása egy menüpontra
+  // 2. Egér ráhúzása
   const handleMouseEnter = (e: any) => {
     const el = e.currentTarget;
-    setIndicatorStyle({
-      left: el.offsetLeft,
-      width: el.offsetWidth,
-      opacity: 1,
-    });
+    if (indicatorRef.current) {
+      indicatorRef.current.style.left = `${el.offsetLeft - 10}px`;
+      indicatorRef.current.style.width = `${el.offsetWidth + 20}px`;
+      indicatorRef.current.style.opacity = "1";
+    }
   };
 
-  // Egér lehúzása a teljes menüről
+  // 3. Egér lehúzása
   const handleMouseLeave = () => {
-    setIndicatorStyle((prev) => ({ ...prev, opacity: 0 }));
+    if (indicatorRef.current) {
+      indicatorRef.current.style.opacity = "0";
+    }
   };
   // ----------------------------------------------
 
@@ -155,19 +153,16 @@ export default function Header() {
             >
               {/* CSÚSZÓ HÁTTÉR */}
               <div
-                className="absolute top-1/2 -translate-y-1/2 h-[calc(100%+14px)] bg-green rounded-md transition-all duration-300 ease-out pointer-events-none"
-                style={{
-                  left: `${indicatorStyle.left - 10}px`,
-                  width: `${indicatorStyle.width + 20}px`,
-                  opacity: indicatorStyle.opacity,
-                }}
+                ref={indicatorRef}
+                className="absolute top-1/2 -translate-y-1/2 h-[calc(100%+14px)] bg-green rounded-md transition-all duration-300 ease-out pointer-events-none opacity-0"
               />
 
               {navItems.map((item, idx) => (
                 <li
                   key={idx}
                   onMouseEnter={handleMouseEnter}
-                  className="relative z-10 menu-link hover:text-dark-color cursor-pointer transition-colors"
+                  className="relative z-10 menu-link hover:text-dark-color cursor-pointer transition-colors transition"
+                  style={{ animationDelay: `${idx * 0.1}s` }}
                 >
                   {item.name}
                 </li>
