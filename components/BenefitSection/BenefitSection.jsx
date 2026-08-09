@@ -17,7 +17,7 @@ const BenefitCard = ({ benefit }) => {
   const filter = useTransform(
     scrollYProgress,
     [0, 1],
-    ["blur(15px)", "blur(0px)"],
+    ["blur(8px)", "blur(0px)"],
   );
   const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
 
@@ -30,7 +30,7 @@ const BenefitCard = ({ benefit }) => {
         willChange: "filter, opacity",
         transform: "translateZ(0)",
       }}
-      className="flex flex-col gap-4 benefit-card relative p-[10px]"
+      className="flex flex-col gap-4 benefit-card relative p-[10px] bg-white"
     >
       <span className="w-fit benefit-badge rounded-full bg-green px-3 py-1 text-[20px] font-black uppercase text-dark-color ">
         {benefit.badge}
@@ -43,7 +43,7 @@ const BenefitCard = ({ benefit }) => {
   );
 };
 
-export default function WebAppSection() {
+export default function BenefitSection() {
   return (
     <Section className="flex flex-col gap-[40px] py-[50px]">
       <h2 className="text-center text-3xl font-bold md:text-4xl">

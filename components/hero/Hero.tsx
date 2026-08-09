@@ -41,9 +41,9 @@ export default function Hero() {
     <section className="w-full flex-col flex rounded-b-[50px] relative overflow-hidden zoldhatteres bg-dark-color">
       <div className="w-[90%] max-w-[2560px] mx-auto flex-col flex md:flex-row  pt-[120px] pb-[35px] md:min-h-[calc(100vh_-_100px)] min-h-[450px] items-center justify-center gap-[25px] md:max-h-[1200px] ">
         <div className="hero-bal w-full md:w-[50%] p-[10px] h-full flex-col flex justify-between gap-[20px] order-last md:order-first">
-          <div className="flex flex-row gap-[10px] rounded-md bg-dark-green text-white w-fit p-[5px] items-center ">
+          <div className="flex flex-row gap-[10px] rounded-md bg-green text-white w-fit p-[5px] items-center ">
             <AtomIcon />
-            <p>Egyedi fejlesztéssel</p>
+            <p>Egyedi fejlesztésű termékek</p>
           </div>
 
           {/* Animált H1 szülő konténer */}

@@ -68,6 +68,7 @@ h4 {
 
 .h1-elem:hover::before {
   left: calc(100% - 60px);
+  height: 10px;
 }
 
 @media (max-width: 1280px) {
@@ -84,11 +85,11 @@ h4 {
   top: 50%;
   transform: translateY(-50%);
   width: 45px;
-  height: 15px;
+  height: 10px;
   border-radius: 50px;
   transition: all ease 0.3s;
 
-  transform-origin: calc(100% - 7.5px) 50%;
+  transform-origin: calc(100% - 5px) 50%;
 
   /* Színátmenet animációhoz */
   background: linear-gradient(

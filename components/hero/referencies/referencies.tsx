@@ -85,6 +85,9 @@ export default function Referencies() {
                     target="_blank"
                     className="ref-stack bg-black/70 px-[15px] py-[5px] rounded-full"
                   >
+                    <span className="sr-only">
+                      {ref.title} oldal megnyitása
+                    </span>
                     Élő oldal
                   </a>
                 </div>
@@ -109,6 +112,7 @@ export default function Referencies() {
                 transform: `translate(${prevBtnPos.x}px, ${prevBtnPos.y}px)`,
               }}
             >
+              <span className="sr-only">Előző referenciához lapozás</span>
               <IoArrowBack />
             </button>
           </div>
@@ -127,6 +131,7 @@ export default function Referencies() {
                 transform: `translate(${nextBtnPos.x}px, ${nextBtnPos.y}px)`,
               }}
             >
+              <span className="sr-only">Következő referenciához lapozás</span>
               <IoArrowForwardOutline />
             </button>
           </div>

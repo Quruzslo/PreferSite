@@ -1,13 +1,15 @@
 import Hero from "@/components/hero/Hero";
 import TechStack from "@/components/tech-stack/TechStack";
-import WebAppSection from "../components/webappSection/WebAppSection";
+import BenefitSection from "../components/BenefitSection/BenefitSection";
+import Services from "../components/ServicesSection/Services";
 
 export default function HomePage() {
   return (
     <>
       <Hero></Hero>
       <TechStack></TechStack>
-      <WebAppSection></WebAppSection>
+      <BenefitSection></BenefitSection>
+      <Services></Services>
     </>
   );
 }
