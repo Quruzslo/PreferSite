@@ -91,13 +91,11 @@ export default function MouseFollowerElement() {
     <>
       <div
         ref={dotRef}
-        // OPTIMALIZÁCIÓ: will-change-transform hozzáadva a GPU gyorsításhoz
         className={`fixed top-0 left-0 w-[15px] h-[15px] bg-transparent rounded-full pointer-events-none z-[9999] will-change-transform md:bg-green ${isMobile ? "hidden" : "block"}`}
       />
 
       <div
         ref={circleRef}
-        // OPTIMALIZÁCIÓ: will-change-transform hozzáadva
         className={`fixed top-0 left-0 w-[36px] h-[36px] border-transparent border rounded-full pointer-events-none z-[9998] transition-all duration-300 ease-out will-change-transform md:border-green ${isMobile ? "hidden" : "block"}`}
       />
     </>
