@@ -1,17 +1,35 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function MouseFollowerElement() {
-  // Ref-ek a DOM elemek közvetlen eléréséhez
   const dotRef = useRef<HTMLDivElement>(null);
   const circleRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
+  // ABLAK SZÉLESSÉG FIGYELŐ
   useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 767);
+    };
+
+    checkIsMobile();
+
+    window.addEventListener("resize", checkIsMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkIsMobile);
+    };
+  }, []);
+
+  // EGÉRKÖVETŐ LOGIKA
+  useEffect(() => {
+    if (isMobile) return;
+
     let mouseX = 0;
     let mouseY = 0;
     let isHovered = false;
-    let rafId: number | null = null;
+    let rafId: number;
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseX = e.clientX;
@@ -24,7 +42,6 @@ export default function MouseFollowerElement() {
         target.closest("a")
       );
 
-      // Csak akkor nyúlunk a DOM-hoz class-ügyben, ha VÁLTOZOTT a hover állapota
       if (newIsHovered !== isHovered) {
         isHovered = newIsHovered;
 
@@ -38,7 +55,6 @@ export default function MouseFollowerElement() {
       }
     };
 
-    // Közvetlen DOM frissítés a képkockák igazításához
     const updatePosition = () => {
       const transformValue = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
 
@@ -55,24 +71,23 @@ export default function MouseFollowerElement() {
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
     rafId = requestAnimationFrame(updatePosition);
 
+    //  Ha a komponens megszűnik, VAGY ha a nézet mobilra vált
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      if (rafId) cancelAnimationFrame(rafId);
+      cancelAnimationFrame(rafId);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <>
-      {/* BELSŐ KIS PONT */}
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 w-[15px] h-[15px] bg-transparent rounded-full pointer-events-none z-[9999] md:bg-green"
+        className={`fixed top-0 left-0 w-[15px] h-[15px] bg-transparent rounded-full pointer-events-none z-[9999] md:bg-green ${isMobile ? "hidden" : "block"}`}
       />
 
-      {/* KÜLSŐ KARIKA */}
       <div
         ref={circleRef}
-        className="fixed top-0 left-0 w-[36px] h-[36px] border-transparent border rounded-full pointer-events-none z-[9998] transition-all duration-300 ease-out md:border-green"
+        className={`fixed top-0 left-0 w-[36px] h-[36px] border-transparent border rounded-full pointer-events-none z-[9998] transition-all duration-300 ease-out md:border-green ${isMobile ? "hidden" : "block"}`}
       />
     </>
   );
