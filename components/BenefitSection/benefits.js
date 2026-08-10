@@ -1,44 +1,44 @@
 export const benefits = [
   {
     id: "performance-seo",
-    title: "Villámgyors sebesség & SEO",
+    title: "Villámgyors sebesség és SEO",
     description:
-      "Nincsenek felesleges scriptek és nehéz bővítmények. A 0.5 mp alatti betöltési idő és a kiváló Core Web Vitals értékek jobb Google helyezést és magasabb konverziót eredményeznek.",
+      "Mentes a lassító, felesleges kódoktól és nehézkes bővítményektől. A töredékmásodperc alatti betöltési idő és a kiváló technikai mutatók nemcsak a Google-ben hoznak jobb helyezést, de a látogatókat is sokkal nagyobb eséllyel alakítják vásárlóvá.",
     badge: "< 0.5s betöltés",
   },
   {
     id: "custom-design-ux",
-    title: "100% egyedi design & UX",
+    title: "100% egyedi dizájn és UX",
     description:
-      "Nem kell előre gyártott sablonok korlátaihoz igazodnod. Pixel-pontos arculat és olyan felhasználói élmény építhető fel, ami valóban megkülönböztet a versenytársaidtól.",
-    badge: "Sablonmentes",
+      "Nincsenek előre gyártott sablonok és kompromisszumok. Egy professzionális, egyedi arculat olyan magas vélt minőséget sugároz, ami azonnal hitelesíti a szakértelmedet. Ez a prémium hatás lehetővé teszi, hogy magabiztosan kérj el magasabb árakat a szolgáltatásaidért, hiszen a látogatók azonnal érzik a profizmust.",
+    badge: "Prémium vélt érték",
   },
   {
     id: "bulletproof-security",
     title: "Kiemelkedő biztonság",
     description:
-      "A weboldal-feltörések döntő többsége a sérülékeny CMS-pluginokon keresztül történik. Egyedi fejlesztéssel a támadási felület minimálisra csökken, nincsenek elhanyagolt biztonsági rések.",
-    badge: "Zéró sérülékeny plugin",
+      "A weboldal-feltörések döntő többsége az elavult, sebezhető CMS-bővítményeken keresztül történik. A teljesen egyedi fejlesztéssel a támadási felület minimálisra csökken, így az üzleti adataid és a látogatóid is maximális biztonságban maradnak.",
+    badge: "Zéró sebezhető plugin",
   },
   {
     id: "unlimited-scalability",
     title: "Korlátlan skálázhatóság",
     description:
-      "Legyen szó összetett kalkulátorról, egyedi CRM/ERP integrációról vagy fizetési kapukról, a rendszer akadálytalanul követi és kiszolgálja a vállalkozásod növekedését.",
+      "Ahogy nő a céged, úgy tud vele fejlődni a rendszered is. Legyen szó egyedi árajánlat-kalkulátorról, külső vállalatirányítási rendszerek bekötéséről vagy új fizetési megoldásokról, az egyedi alapoknak köszönhetően nincsenek technikai korlátok.",
     badge: "Jövőálló architektúra",
   },
   {
     id: "no-plugin-dependency",
-    title: "Nincs plugin-függőség",
+    title: "Nincs bővítmény-függőség",
     description:
-      "Elfelejtheted az éves licencdíjakat és a frissítések utáni összeomlásokat. A kódbázis stabil és kiszámítható.",
+      "Felejtsd el a tucatnyi fizetős bővítmény rejtett éves költségeit és a gombnyomásra történő frissítések utáni váratlan rendszerösszeomlásokat. Egy stabil, saját lábán megálló kód kiszámítható működést garantál, kellemetlen meglepetések nélkül.",
     badge: "Kiszámítható működés",
   },
   {
     id: "clean-maintainable-code",
     title: "Tiszta és értékálló kód",
     description:
-      "A modern webes technológiákkal (React, Next.js) megírt kód hosszú távon is könnyen karbantartható és továbbfejleszthető, így valódi digitális vagyontárgyként növeli a céged értékét.",
+      "A legmodernebb webes technológiákkal (React, Next.js) épített alapok garantálják, hogy a rendszered évek múlva is gyors, karbantartható és könnyen bővíthető marad. Ez nem csupán egy weboldal, hanem egy valódi digitális vagyontárgy, ami növeli a céged értékét.",
     badge: "Értékálló befektetés",
   },
 ];
