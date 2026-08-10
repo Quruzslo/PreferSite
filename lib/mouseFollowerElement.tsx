@@ -28,6 +28,11 @@ export default function MouseFollowerElement() {
 
     let mouseX = 0;
     let mouseY = 0;
+
+    // hogy volt-e TÉNYLEGES elmozdulás
+    let prevX = -1;
+    let prevY = -1;
+
     let isHovered = false;
     let rafId: number;
 
@@ -36,11 +41,9 @@ export default function MouseFollowerElement() {
       mouseY = e.clientY;
 
       const target = e.target as HTMLElement;
-      const newIsHovered = !!(
-        target.closest("ul") ||
-        target.closest("button") ||
-        target.closest("a")
-      );
+
+      // Egyetlen DOM lekérdezés három helyett
+      const newIsHovered = !!target.closest("ul, button, a");
 
       if (newIsHovered !== isHovered) {
         isHovered = newIsHovered;
@@ -56,13 +59,20 @@ export default function MouseFollowerElement() {
     };
 
     const updatePosition = () => {
-      const transformValue = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+      //  Csak akkor nyúlunk a DOM-hoz, ha az egér tényleg mozdult
+      if (prevX !== mouseX || prevY !== mouseY) {
+        const transformValue = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
 
-      if (dotRef.current) {
-        dotRef.current.style.transform = transformValue;
-      }
-      if (circleRef.current) {
-        circleRef.current.style.transform = transformValue;
+        if (dotRef.current) {
+          dotRef.current.style.transform = transformValue;
+        }
+        if (circleRef.current) {
+          circleRef.current.style.transform = transformValue;
+        }
+
+        // Elmentjük az új pozíciót
+        prevX = mouseX;
+        prevY = mouseY;
       }
 
       rafId = requestAnimationFrame(updatePosition);
@@ -71,7 +81,6 @@ export default function MouseFollowerElement() {
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
     rafId = requestAnimationFrame(updatePosition);
 
-    //  Ha a komponens megszűnik, VAGY ha a nézet mobilra vált
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       cancelAnimationFrame(rafId);
@@ -82,12 +91,14 @@ export default function MouseFollowerElement() {
     <>
       <div
         ref={dotRef}
-        className={`fixed top-0 left-0 w-[15px] h-[15px] bg-transparent rounded-full pointer-events-none z-[9999] md:bg-green ${isMobile ? "hidden" : "block"}`}
+        // OPTIMALIZÁCIÓ: will-change-transform hozzáadva a GPU gyorsításhoz
+        className={`fixed top-0 left-0 w-[15px] h-[15px] bg-transparent rounded-full pointer-events-none z-[9999] will-change-transform md:bg-green ${isMobile ? "hidden" : "block"}`}
       />
 
       <div
         ref={circleRef}
-        className={`fixed top-0 left-0 w-[36px] h-[36px] border-transparent border rounded-full pointer-events-none z-[9998] transition-all duration-300 ease-out md:border-green ${isMobile ? "hidden" : "block"}`}
+        // OPTIMALIZÁCIÓ: will-change-transform hozzáadva
+        className={`fixed top-0 left-0 w-[36px] h-[36px] border-transparent border rounded-full pointer-events-none z-[9998] transition-all duration-300 ease-out will-change-transform md:border-green ${isMobile ? "hidden" : "block"}`}
       />
     </>
   );
