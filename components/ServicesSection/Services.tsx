@@ -29,7 +29,7 @@ export default function Services() {
 
       setTimeout(() => {
         isSnapping.current = false;
-      }, 800);
+      }, 400);
     }
   };
 
