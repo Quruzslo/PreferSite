@@ -10,6 +10,7 @@ const myServices = [
       "Pontosan a te üzleti logikádra és folyamataidra szabva",
       "Modern technológiák miatt gyors és zökkenőmentes felhasználói élmény",
     ],
+    img: "/webapp.svg",
   },
   {
     id: 1,
@@ -22,6 +23,7 @@ const myServices = [
       "Könnyen átlátható és kezelhető admin felület a termékekhez",
       "Skálázható rendszer: nem omlik össze, ha hirtelen megnő a forgalom",
     ],
+    img: "/webshop.svg",
   },
   {
     id: 2,
@@ -34,6 +36,7 @@ const myServices = [
       "Automatizálható folyamatok (pl. automatikus e-mailek, emlékeztetők)",
       "Magas szintű adatbiztonság és testreszabható jogosultságkezelés",
     ],
+    img: "/crm.svg",
   },
   {
     id: 3,
@@ -46,6 +49,7 @@ const myServices = [
       "Keresőoptimalizált (SEO-barát) kódolás a jobb Google helyezésért",
       "Gyorsított tartalommegjelenítés (CDN) a maximális sebességért",
     ],
+    img: "/website.svg",
   },
   {
     id: 4,
@@ -58,6 +62,7 @@ const myServices = [
       "Proaktív hibafigyelés és teljesítmény-optimalizálás",
       "Dedikált technikai támogatás és kisebb módosítások elvégzése",
     ],
+    img: "/karbantartas.svg",
   },
 ];
 
