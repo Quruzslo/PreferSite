@@ -83,7 +83,7 @@ export default function CustomerStepsComp() {
         className="flex flex-col gap-[20px] justify-between relative py-10"
       >
         {/* Háttér vonal */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[4px] h-full hidden md:block">
+        <div className="absolute left-[2px] md:left-1/2 md:-translate-x-1/2 top-0 w-[4px] h-full block">
           <motion.div
             className="w-full bg-green origin-top rounded-full"
             style={{ height: heightProgress }}
@@ -98,13 +98,15 @@ export default function CustomerStepsComp() {
             viewport={{ margin: "0px 0px -50% 0px", once: false }}
             initial="hidden"
             whileInView="visible"
-            className="flex flex-col p-[0px] rounded-md gap-[15px] w-full md:w-[50%] even:mr-auto even:pr-[50px] odd:ml-auto odd:pl-[50px] relative z-10"
+            className="flex flex-col p-[0px] rounded-md gap-[15px] w-full md:w-[50%] pl-[30px] pr-[0px] md:even:mr-auto md:even:pr-[50px] md:odd:ml-auto md:odd:pl-[50px] relative z-10"
           >
             {/* Fehér ikon kör háttere */}
             <motion.div
               variants={iconVariants}
-              className={`absolute top-[50%] translate-y-[-50%] flex items-center justify-center p-[5px] bg-white z-20 w-fit rounded-full ${
-                index % 2 === 0 ? "right-[-20px]" : "left-[-20px]"
+              className={`absolute top-[50%] translate-y-[-50%] flex items-center justify-center p-[5px] bg-white z-20 w-fit rounded-full left-[-20px] ${
+                index % 2 === 0
+                  ? "md:left-auto md:right-[-20px]"
+                  : "md:right-auto md:left-[-20px]"
               }`}
             >
               <div className="relative w-[30px] h-[30px]">
@@ -122,7 +124,7 @@ export default function CustomerStepsComp() {
               </div>
             </motion.div>
 
-            <motion.h3 variants={itemVariants} className="text-xl font-bold">
+            <motion.h3 variants={itemVariants} className="text-xl font-bold ">
               {step.title}
             </motion.h3>
             <motion.p variants={itemVariants} className="text-gray-400">
