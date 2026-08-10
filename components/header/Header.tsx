@@ -67,54 +67,54 @@ export default function Header() {
       {/* Mobil layer + Animációk */}
       <AnimatePresence>
         {menuOpen && (
-          <div className="fixed inset-0 w-full h-[100dvh] z-[998] md:hidden bg-white text-white overflow-y-auto overflow-x-hidden">
+          <div className="fixed inset-0 w-full h-[100dvh] z-[998] md:hidden bg-white text-white overflow-y-auto overflow-x-hidden overscroll-none">
             <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
               {/* Felső sáv */}
               <motion.div
-                initial={{ y: "-152%" }}
-                animate={{ y: "15%" }}
-                exit={{ y: "-152%" }}
+                initial={{ y: "-152%", z: 0 }}
+                animate={{ y: "15%", z: 0 }}
+                exit={{ y: "-152%", z: 0 }}
                 transition={bgTransition}
-                className="absolute w-[300%] h-[50%] bg-dark-color left-[-100%] top-[-10%] rotate-[-45deg] origin-center"
+                className="absolute w-[300%] h-[50%] bg-dark-color left-[-100%] top-[-10%] rotate-[-45deg] origin-center will-change-transform [backface-visibility:hidden]"
               />
 
               {/* Középső sáv */}
               <motion.div
-                initial={{ scaleY: 0 }}
-                animate={{ scaleY: 1.25 }}
-                exit={{ scaleY: 0 }}
+                initial={{ scaleY: 0, z: 0 }}
+                animate={{ scaleY: 1.25, z: 0 }}
+                exit={{ scaleY: 0, z: 0 }}
                 transition={bgTransition}
-                className="absolute w-[300%] h-[60%] bg-dark-color left-[-100%] top-[20%] rotate-[-45deg] origin-center"
+                className="absolute w-[300%] h-[60%] bg-dark-color left-[-100%] top-[20%] rotate-[-45deg] origin-center will-change-transform [backface-visibility:hidden]"
               />
 
               {/* Alsó sáv */}
               <motion.div
-                initial={{ y: "150%" }}
-                animate={{ y: "-15%" }}
-                exit={{ y: "150%" }}
+                initial={{ y: "150%", z: 0 }}
+                animate={{ y: "-15%", z: 0 }}
+                exit={{ y: "150%", z: 0 }}
                 transition={bgTransition}
-                className="absolute w-[300%] h-[50%] bg-dark-color left-[-100%] top-[60%] rotate-[-45deg] origin-center"
+                className="absolute w-[300%] h-[50%] bg-dark-color left-[-100%] top-[60%] rotate-[-45deg] origin-center will-change-transform [backface-visibility:hidden]"
               />
             </div>
 
-            {/* 2. GÖRGETHETŐ TARTALOM - legalább 100dvh magas, de ha nem fér el, görgethető */}
+            {/* 2. GÖRGETHETŐ TARTALOM */}
             <div className="relative z-10 w-full min-h-[100dvh] flex flex-col items-center justify-center py-16 px-4">
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30, z: 0 }}
+                animate={{ opacity: 1, y: 0, z: 0 }}
+                exit={{ opacity: 0, y: 20, z: 0 }}
                 transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
-                className="menu-container w-full max-w-[320px] mx-auto flex flex-col items-center justify-center text-center my-auto"
+                className="menu-container w-full max-w-[320px] mx-auto flex flex-col items-center justify-center text-center my-auto will-change-transform [backface-visibility:hidden]"
               >
                 <nav className="w-full py-[5px] px-[20px] text-white">
                   <ul className="flex flex-col items-center gap-6 font-bold">
                     {navItems.map((item, idx) => (
                       <motion.li
                         key={item.path || item.name}
-                        initial={{ opacity: 0, y: 15 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, y: 15, z: 0 }}
+                        animate={{ opacity: 1, y: 0, z: 0 }}
                         transition={{ delay: 0.35 + idx * 0.08 }}
-                        className="hover:opacity-80 cursor-pointer transition-opacity menu-link text-2xl"
+                        className="hover:opacity-80 cursor-pointer transition-opacity menu-link text-2xl will-change-transform [backface-visibility:hidden]"
                         onClick={() => setMenuOpen(false)}
                       >
                         {item.name}

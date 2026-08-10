@@ -29,7 +29,7 @@ export default function Services() {
               });
             }
           }}
-          className="flex min-h-[max(100dvh,450px)] w-full shrink-0 flex-col justify-center overflow-hidden bg-transparent"
+          className="flex min-h-[max(100vh,450px)] w-full shrink-0 flex-col justify-center overflow-hidden bg-transparent"
         >
           <motion.div
             variants={servicesVariants}
