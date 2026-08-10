@@ -49,7 +49,7 @@ export default function CustomerStepsComp() {
     },
   };
 
-  // 1. Kisebbik szár animációja
+  //  Kisebbik szár animációja
   const shortLineVariants: Variants = {
     hidden: { clipPath: "inset(0% 100% 0% 0%)" },
     visible: {
@@ -62,7 +62,7 @@ export default function CustomerStepsComp() {
     },
   };
 
-  // 2. Hosszabbik szár animációja
+  // Hosszabbik szár animációja
   const longLineVariants: Variants = {
     hidden: { clipPath: "inset(0% 100% 0% 0%)" },
     visible: {
@@ -77,6 +77,7 @@ export default function CustomerStepsComp() {
 
   return (
     <Section className="flex flex-col gap-[25px] my-[50px]">
+      <h2 className="mx-auto my-[35px]">Így készül el a digitális terméked</h2>
       {/* A szülő */}
       <div
         ref={sentryWrapperRef}
