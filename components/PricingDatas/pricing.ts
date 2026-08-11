@@ -5,6 +5,7 @@ export interface PricingItem {
   description: string;
   useCase: string;
   attributes: string[];
+  mostPopular?: boolean;
   popular?: boolean;
 }
 
@@ -33,7 +34,7 @@ const pricingData: PricingItem[] = [
       "Többoldalas, professzionális digitális névjegykártya a vállalkozásodnak.",
     useCase:
       "Céges márkaépítéshez, szolgáltatások részletes bemutatásához, bizalomépítéshez és Google keresőből érkező ügyfélszerzéshez.",
-    popular: true,
+    mostPopular: true,
     attributes: [
       "Többoldalas szerkezet (Rólunk, Szolgáltatások, Karrier stb.)",
       "Egyedi, márkára szabott UI/UX design",
@@ -97,11 +98,12 @@ const pricingData: PricingItem[] = [
   {
     id: "maintenance",
     title: "Rendszerfelügyelet és Karbantartás",
-    price: "35 000 Ft/hó-tól",
+    price: "20 000 Ft/hó-tól",
     description:
       "Folyamatos technikai támogatás, biztonsági frissítések és maximális rendelkezésre állás.",
     useCase:
       "Már meglévő weboldalak, webshopok vagy egyedi rendszerek stabil, biztonságos és leállásmentes működtetéséhez.",
+    popular: true,
     attributes: [
       "24/7 Automatizált szerver- és hibafigyelés (Uptime monitoring)",
       "Rendszeres automatikus adatbázis- és fájlmentés (Offsite backup)",
