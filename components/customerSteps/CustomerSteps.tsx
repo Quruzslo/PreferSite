@@ -88,7 +88,9 @@ export default function CustomerStepsComp() {
 
   return (
     <Section className="flex flex-col gap-[25px] my-[50px]">
-      <h2 className="mx-auto my-[35px]">Így készül el a rendszered</h2>
+      <h2 className="mt-2 text-3xl text-center font-bold text-dark-color md:text-5xl lg:text-6xl">
+        Így készül el a rendszered
+      </h2>
 
       <div
         ref={sentryWrapperRef}
@@ -142,7 +144,7 @@ export default function CustomerStepsComp() {
 
             {/* Háromszög SVG elem háttér pozícionáló dobozban ---- */}
             <div
-              className={`absolute top-0 h-full w-[250px] z-[-1] opacity-50 pointer-events-none ${
+              className={`absolute top-0 h-full w-[100px] md:w-[250px] z-[-1] opacity-50 pointer-events-none ${
                 index % 2 === 0 ? "left-0" : "right-0"
               }`}
             >

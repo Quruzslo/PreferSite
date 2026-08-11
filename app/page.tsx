@@ -3,6 +3,7 @@ import TechStack from "@/components/tech-stack/TechStack";
 import BenefitSection from "../components/BenefitSection/BenefitSection";
 import Services from "../components/ServicesSection/Services";
 import CustomerStepsComp from "@/components/customerSteps/CustomerSteps";
+import PricingSection from "@/components/PricingDatas/PricingSection";
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       <TechStack></TechStack>
       <Services></Services>
       <CustomerStepsComp></CustomerStepsComp>
+      <PricingSection></PricingSection>
     </>
   );
 }

@@ -26,7 +26,7 @@ export default function AnimateSvgPaths({ className }: AnimateSvgPathsProps) {
       transition: {
         duration: 0.5,
         ease: [0.95, 0, 0.35, 1],
-        delay: 0.4,
+        delay: 0.5,
       },
     },
   };
