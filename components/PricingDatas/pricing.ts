@@ -20,7 +20,7 @@ const pricingData: PricingItem[] = [
     attributes: [
       "Egy oldalas, letisztult struktúra",
       "1 konkrét termékre/szolgáltatásra fókuszál",
-      "Látványos Framer Motion animációk",
+      "Látványos animációk",
       "Interaktív görgetési effektek",
       "Mobil-first, villámgyors betöltés",
       "Kontakt űrlap és ReCAPTCHA védelem",

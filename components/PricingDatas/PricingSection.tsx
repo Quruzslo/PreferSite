@@ -20,7 +20,7 @@ export default function PricingSection() {
         {pricingData.map((plan: any) => (
           <div
             key={plan.id}
-            className={`relative group flex flex-col justify-between p-[10px] md:p-8 rounded-md shadow-md overflow-hidden zoldhatteres  ${
+            className={`relative group flex flex-col justify-between p-[10px] gap-[20px] md:p-8 rounded-md shadow-md overflow-hidden zoldhatteres  ${
               plan.popular || plan.mostPopular
                 ? "border-green shadow-xl ring-2 ring-green/20"
                 : ""
@@ -64,8 +64,8 @@ export default function PricingSection() {
                 </span>
               </div>
 
-              <div className="bg-green p-[10px] rounded-xl mb-6 ">
-                <p className="text-xs font-bold text-gray-100 uppercase tracking-wider mb-1">
+              <div className="bg-dark-green p-[10px] rounded-xl mb-6 ">
+                <p className="text-[15px] font-bold text-gray-100 uppercase tracking-wider mb-1">
                   Mikor válaszd ezt?
                 </p>
                 <p className="text-xs text-gray-100 leading-relaxed">
