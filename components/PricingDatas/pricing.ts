@@ -23,7 +23,7 @@ const pricingData: PricingItem[] = [
       "Látványos animációk",
       "Interaktív görgetési effektek",
       "Mobil-first, villámgyors betöltés",
-      "Kontakt űrlap és ReCAPTCHA védelem",
+      "Kontakt űrlap és robotok elleni védelem",
     ],
   },
   {
@@ -71,7 +71,7 @@ const pricingData: PricingItem[] = [
       "SaaS (Software-as-a-Service) termékekhez, ügyfélportálokhoz vagy összetett kalkulátorokhoz/eszközökhöz.",
     attributes: [
       "Egyedi adatbázis-architektúra (MongoDB / PostgreSQL)",
-      "Felhasználói fiókok, Auth és szerepkörök (RBAC)",
+      "Felhasználói fiókok, Auth és szerepkörök ",
       "Interaktív Dashboard és adatvizualizáció",
       "Előfizetéses rendszerek (Stripe Billing / Subscriptions)",
       "REST API integrációk",
@@ -105,12 +105,12 @@ const pricingData: PricingItem[] = [
       "Már meglévő weboldalak, webshopok vagy egyedi rendszerek stabil, biztonságos és leállásmentes működtetéséhez.",
     popular: true,
     attributes: [
-      "24/7 Automatizált szerver- és hibafigyelés (Uptime monitoring)",
-      "Rendszeres automatikus adatbázis- és fájlmentés (Offsite backup)",
-      "Rendszer- és biztonsági frissítések (Security patches)",
+      "24/7 Automatizált szerver- és hibafigyelés",
+      "Rendszeres automatikus adatbázis- és fájlmentés ",
+      "Rendszer- és biztonsági frissítések",
       "Kisebb hibajavítások és apróbb tartalmi módosítások",
       "Adatbázis- és sebességoptimalizálás",
-      "Prioritásos technikai support és gyors hibaelhárítás (SLA)",
+      "Prioritásos technikai support és gyors hibaelhárítás ",
     ],
   },
 ];
