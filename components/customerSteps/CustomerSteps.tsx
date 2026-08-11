@@ -75,6 +75,19 @@ export default function CustomerStepsComp() {
     },
   };
 
+  const underLineVariants: Variants = {
+    hidden: { scaleX: 0, opacity: 0 },
+    visible: {
+      scaleX: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.25,
+        ease: "easeOut",
+        delay: 0.55,
+      },
+    },
+  };
+
   return (
     <Section className="flex flex-col gap-[25px] my-[50px]">
       <h2 className="mx-auto my-[35px]">Így készül el a digitális terméked</h2>
@@ -125,10 +138,23 @@ export default function CustomerStepsComp() {
               </div>
             </motion.div>
 
-            <motion.h3 variants={itemVariants} className="text-xl font-bold ">
+            <motion.h3
+              variants={itemVariants}
+              className="text-[20px] md:!text-[25px] xl:!text-[35px] font-black text-dark-color"
+            >
               {step.title}
             </motion.h3>
-            <motion.p variants={itemVariants} className="text-gray-400">
+
+            {/* Animált, díszítő csík---- */}
+            <motion.div
+              variants={underLineVariants}
+              className="flex bg-[linear-gradient(90deg,rgba(255,255,255,0)_0%,rgba(0,0,0,1)_50%,rgba(255,255,255,0)_100%)] h-[2px] w-[90%]  rounded-full origin-center"
+            />
+
+            <motion.p
+              variants={itemVariants}
+              className="text-[15px] md:text-[20px] text-dark-color"
+            >
               {step.description}
             </motion.p>
           </motion.div>

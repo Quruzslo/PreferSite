@@ -53,8 +53,8 @@ h4 {
   left: -30px;
   top: 50%;
   transform: translateY(-50%);
-  width: 60px;
-  height: 15px;
+  width: 40px;
+  height: 8px;
   border-radius: 50px;
   background-color: var(--color-green);
   transition: all ease 0.4s;
@@ -70,7 +70,7 @@ h4 {
 
 .h1-elem:hover::before {
   left: calc(100% - 60px);
-  height: 10px;
+  height: 5px;
 }
 
 @media (max-width: 1280px) {
@@ -86,7 +86,7 @@ h4 {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 45px;
+  width: 35px;
   height: 10px;
   border-radius: 50px;
   transition: all ease 0.3s;

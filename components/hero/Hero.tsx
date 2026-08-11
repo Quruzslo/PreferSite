@@ -39,7 +39,7 @@ export default function Hero() {
 
   return (
     <section className="w-full flex-col flex rounded-b-[50px] relative overflow-hidden zoldhatteres bg-dark-color shadow-2xl">
-      <div className="w-[90%] max-w-[2560px] mx-auto flex-col flex md:flex-row  pt-[120px] pb-[35px] md:min-h-[calc(100vh_-_100px)] min-h-[450px] items-center justify-center gap-[25px] md:max-h-[1200px] ">
+      <div className="w-[90%] max-w-[2560px] mx-auto flex-col flex md:flex-row  pt-[120px] pb-[35px] md:!min-h-[calc(100vh_-_50px)] min-h-[450px] items-center justify-center gap-[25px] max-h-[1400px] ">
         <div className="hero-bal w-full md:w-[50%] p-[10px] h-full flex-col flex justify-between gap-[20px] order-last md:order-first">
           <div className="flex flex-row gap-[10px] rounded-md bg-green text-white w-fit p-[5px] items-center ">
             <AtomIcon />
@@ -51,7 +51,7 @@ export default function Hero() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="font-black text-[20px] md:text-[35px] xl:!text-[75px] flex !flex-col gap-[10px]"
+            className="font-black text-[20px] md:!text-[45px]  flex !flex-col gap-[10px]"
           >
             {h1Items.map((item, idx) => (
               <motion.span
@@ -66,8 +66,9 @@ export default function Hero() {
             ))}
           </motion.h1>
 
-          <p className="text-[15px] md:text-[20px] text-white">
-            Vállalkozásod igényeire optimalizált digitális eszközök fejlesztése.
+          <p className="text-[15px] md:!text-[20px] text-white">
+            Színvonalas, egyedi igényekre optimalizált digitális eszközök
+            fejlesztése, haladó gondolkodású vállalkozók számára.
           </p>
         </div>
 
