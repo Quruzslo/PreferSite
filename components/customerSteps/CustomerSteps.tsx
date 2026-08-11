@@ -3,7 +3,7 @@ import Section from "@/lib/section";
 import customerSteps from "./customerStepsData";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
-import { CiBookmarkCheck } from "react-icons/ci";
+import AnimateSvgPaths from "./AnimateSvgPaths";
 
 export default function CustomerStepsComp() {
   const sentryWrapperRef = useRef<HTMLDivElement>(null);
@@ -49,7 +49,6 @@ export default function CustomerStepsComp() {
     },
   };
 
-  //  Kisebbik szár animációja
   const shortLineVariants: Variants = {
     hidden: { clipPath: "inset(0% 100% 0% 0%)" },
     visible: {
@@ -62,7 +61,6 @@ export default function CustomerStepsComp() {
     },
   };
 
-  // Hosszabbik szár animációja
   const longLineVariants: Variants = {
     hidden: { clipPath: "inset(0% 100% 0% 0%)" },
     visible: {
@@ -90,8 +88,8 @@ export default function CustomerStepsComp() {
 
   return (
     <Section className="flex flex-col gap-[25px] my-[50px]">
-      <h2 className="mx-auto my-[35px]">Így készül el a digitális terméked</h2>
-      {/* A szülő */}
+      <h2 className="mx-auto my-[35px]">Így készül el a rendszered</h2>
+
       <div
         ref={sentryWrapperRef}
         className="flex flex-col gap-[20px] justify-between relative py-10"
@@ -112,7 +110,7 @@ export default function CustomerStepsComp() {
             viewport={{ margin: "0px 0px -50% 0px", once: false }}
             initial="hidden"
             whileInView="visible"
-            className="flex flex-col p-[0px] rounded-md gap-[15px] w-full md:w-[50%] pl-[30px] pr-[0px] md:even:mr-auto md:even:pr-[50px] md:odd:ml-auto md:odd:pl-[50px] relative z-10"
+            className="flex flex-col p-[0px] my-[25px] rounded-md gap-[15px] w-full md:w-[50%] pl-[30px] pr-[0px] md:even:mr-auto md:even:pr-[50px] md:odd:ml-auto md:odd:pl-[50px] relative z-10"
           >
             {/* Fehér ikon kör háttere */}
             <motion.div
@@ -124,13 +122,10 @@ export default function CustomerStepsComp() {
               }`}
             >
               <div className="relative w-[30px] h-[30px]">
-                {/* Rövid szár  */}
                 <motion.div
                   variants={shortLineVariants}
                   className="absolute h-[4px] w-[12px] bg-green rotate-[45deg] left-[4px] top-[16px] rounded-full"
                 />
-
-                {/* Hosszú szár  */}
                 <motion.div
                   variants={longLineVariants}
                   className="absolute h-[4px] w-[22px] bg-green rotate-[-50deg] left-[10px] top-[12px] rounded-full"
@@ -145,15 +140,28 @@ export default function CustomerStepsComp() {
               {step.title}
             </motion.h3>
 
+            {/* Háromszög SVG elem háttér pozícionáló dobozban ---- */}
+            <div
+              className={`absolute top-0 h-full w-[250px] z-[-1] opacity-50 pointer-events-none ${
+                index % 2 === 0 ? "left-0" : "right-0"
+              }`}
+            >
+              <AnimateSvgPaths
+                className={`w-full h-full object-contain ${
+                  index % 2 === 0 ? "rotate-90" : "rotate-[-90deg]"
+                }`}
+              />
+            </div>
+
             {/* Animált, díszítő csík---- */}
             <motion.div
               variants={underLineVariants}
-              className="flex bg-[linear-gradient(90deg,rgba(255,255,255,0)_0%,rgba(0,0,0,1)_50%,rgba(255,255,255,0)_100%)] h-[2px] w-[90%]  rounded-full origin-center"
+              className="flex bg-[linear-gradient(90deg,rgba(255,255,255,0)_0%,rgba(0,0,0,1)_50%,rgba(255,255,255,0)_100%)] h-[2px] w-[90%] rounded-full origin-center"
             />
 
             <motion.p
               variants={itemVariants}
-              className="text-[15px] md:text-[20px] text-dark-color"
+              className="text-[15px] font-black md:text-[20px] text-dark-color"
             >
               {step.description}
             </motion.p>
