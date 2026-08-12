@@ -4,6 +4,7 @@ import BenefitSection from "../components/BenefitSection/BenefitSection";
 import Services from "../components/ServicesSection/Services";
 import CustomerStepsComp from "@/components/customerSteps/CustomerSteps";
 import PricingSection from "@/components/PricingDatas/PricingSection";
+import ContactSection from "@/components/Contact//ContactSection";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Services></Services>
       <CustomerStepsComp></CustomerStepsComp>
       <PricingSection></PricingSection>
+      <ContactSection></ContactSection>
     </>
   );
 }
