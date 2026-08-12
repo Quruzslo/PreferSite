@@ -79,21 +79,23 @@ export default function ContactSection() {
   return (
     <section className="w-[90%] max-w-[2560px] mx-auto my-[50px] flex flex-col md:flex-row gap-[25px] bg-dark-color p-[10px] rounded-md  text-white font-bold ">
       {/* Bal oldali infók --------- */}
-      <div className="flex flex-col w-full md:w-1/2 gap-[20px] ">
+      <div className="flex flex-col w-full md:w-1/2  gap-[20px] ">
         <div className=" p-[10px] rounded-md w-fit">
           <h2 className="!text-[20px]">
             Növeld vállalkozásod hatásfokát egyedi fejlesztésű webes
             megoldásaimmal
           </h2>
         </div>
-        <div className="flex flex-col md:flex-row gap-[15px] w-full">
-          <div className="w-full md:w-[250px] flex flex-col overflow-hidden rounded-md">
+
+        <div className="flex flex-col xl:flex-row gap-[15px] w-full">
+          {/* Kép és elérhetőség ikonok ------- */}
+          <div className="w-full md:w-[350px] flex flex-col overflow-hidden rounded-md">
             <Image
               alt="Egyedi weboldal fejlesztés, webshop fejlesztés, crm rendszer feljesztés"
               src={Kepem}
-              className="w-full h-[350px] md:h-[250px] object-cover rounded-md"
+              className="w-full  h-[350px] md:h-[250px] object-cover rounded-md"
             ></Image>
-            <div className="flex-row flex gap-[10px] my-[20px] items-center justify-center">
+            <div className="flex-col md:flex-row flex gap-[10px] my-[20px] items-center justify-center">
               <div className="flex flex-row gap-3 items-center">
                 <a
                   href="mailto:sziligalaron@gmail.com"
@@ -114,6 +116,8 @@ export default function ContactSection() {
               </div>
             </div>
           </div>
+
+          {/* Kapcsolat előnyök ------ */}
           <div className="flex flex-col gap-[15px] p-[10px] rounded-md w-full md:w-fit">
             {contactPrios.map((prio, _) => (
               <div key={prio} className="relative flex items-center w-full">
