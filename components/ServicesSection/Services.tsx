@@ -41,7 +41,7 @@ export default function Services() {
           key={service.id}
           initial="hidden"
           whileInView="visible"
-          viewport={{ amount: 0.3, once: false }}
+          viewport={{ amount: 0.15, once: false }}
           onViewportEnter={(entry) => handleSnap(entry)}
           className="flex min-h-[max(100vh,450px)] w-full shrink-0 flex-col justify-center overflow-hidden bg-transparent"
         >

@@ -19,7 +19,7 @@ export default function CustomerStepsComp() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -31,7 +31,7 @@ export default function CustomerStepsComp() {
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.2,
         ease: [0.95, 0, 0.35, 1],
       },
     },
@@ -56,7 +56,7 @@ export default function CustomerStepsComp() {
       transition: {
         duration: 0.15,
         ease: "linear",
-        delay: 0.4,
+        delay: 0.2,
       },
     },
   };
@@ -68,7 +68,7 @@ export default function CustomerStepsComp() {
       transition: {
         duration: 0.25,
         ease: "easeOut",
-        delay: 0.55,
+        delay: 0.4,
       },
     },
   };
