@@ -83,7 +83,7 @@ const pricingData: PricingItem[] = [
     title: "Egyedi CRM rendszer",
     price: "850 000 Ft-tól",
     description:
-      "Belső belső belső folyamatokat és ügyfélkapcsolatokat digitalizáló rendszer.",
+      "Belső folyamatokat és ügyfélkapcsolatokat digitalizáló rendszer.",
     useCase:
       "Cégre szabott ügyfélnyilvántartásra, projektmenedzsmentre, árajánlat-készítésre és munkafolyamat-automatizálásra.",
     attributes: [
