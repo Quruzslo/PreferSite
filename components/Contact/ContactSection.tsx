@@ -150,7 +150,7 @@ export default function ContactSection() {
                   {/* Balról jobbra kitöltő zöld háttér */}
                   <motion.div
                     variants={containerVariant}
-                    className="bg-green rounded-md p-[10px] w-full md:w-fit"
+                    className="bg-green rounded-full p-[10px] w-full md:w-fit"
                   >
                     <p className="text-white">{prio}</p>
                   </motion.div>
