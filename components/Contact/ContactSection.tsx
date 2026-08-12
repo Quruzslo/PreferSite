@@ -8,6 +8,8 @@ import { HiOutlineMail } from "react-icons/hi";
 import { FiPhoneCall } from "react-icons/fi";
 import { linearGradient } from "motion/react-client";
 
+import ContactForm from "./ContacForm";
+
 export default function ContactSection() {
   const contactPrios = [
     "Minőségi megjelenés",
@@ -160,7 +162,9 @@ export default function ContactSection() {
       </div>
 
       {/* Jobb oldali form wrapper --------- */}
-      <div className="flex flex-col w-full md:w-1/2"></div>
+      <div className="flex flex-col w-full md:w-1/2">
+        <ContactForm></ContactForm>
+      </div>
     </section>
   );
 }
