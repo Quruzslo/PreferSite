@@ -94,7 +94,7 @@ export default function ContactSection() {
           </p>
           {/* Kép és elérhetőség ikonok ------- */}
           <div className="w-full md:w-[350px] flex flex-col">
-            <div className="relative w-[350px] h-[350px]  rounded-full flex items-center justify-center overflow-hidden shadow-xl">
+            <div className="relative w-[350px] h-[350px]  rounded-full flex items-center justify-center overflow-hidden ">
               <svg
                 className="absolute inset-0 w-full h-full"
                 viewBox="0 0 350 350"
