@@ -5,7 +5,7 @@ import "../components/header/header.css";
 import Header from "@/components/header/Header";
 import MouseFollowerElement from "@/lib/mouseFollowerElement";
 import ScrollToTop from "@/lib/scrollToTop";
-
+import Footer from "../components/Footer/Footer";
 const groteskSans = Space_Grotesk({
   subsets: ["latin"],
 });
@@ -30,6 +30,7 @@ export default function RootLayout({
         <ScrollToTop />
         <Header />
         <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );

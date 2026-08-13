@@ -79,14 +79,17 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="w-[90%] max-w-[2560px] mx-auto my-[50px] relative flex flex-col md:flex-row gap-[25px] bg-[#17202a] p-[10px] rounded-md  text-white font-bold ">
+    <section className="w-[90%] max-w-[2560px] mx-auto my-[150px] relative flex flex-col md:flex-row gap-[25px] justify-between p-[10px]  text-white font-bold ">
       <div className="bg-white text-dark-color border-2 border-dark-color absolute top-0 left-1/2 -translate-x-1/2  -translate-y-1/2 p-[10px] rounded-md w-fit">
         <h2 className="!text-[20px] font-black leading-tight ">Kapcsolat</h2>
       </div>
 
       {/* Bal oldali infók --------- */}
-      <div className="flex flex-col w-full md:w-1/2  gap-[20px] ">
-        <div className="flex flex-col xl:flex-row gap-[15px] w-full">
+      <div className="flex flex-col w-full md:w-1/2  gap-[20px] mt-[35px] text-dark-color rounded-2xl p-[15px] ">
+        <div className="flex flex-col gap-[15px] w-full items-center justify-center">
+          <p className="text-[20px] md:text-[35px] font-black">
+            KERESS BIZALOMMAL
+          </p>
           {/* Kép és elérhetőség ikonok ------- */}
           <div className="w-full md:w-[350px] flex flex-col">
             <Image
@@ -94,22 +97,22 @@ export default function ContactSection() {
               src={Kepem}
               className="w-full h-[350px] md:h-[350px] object-cover rounded-md"
             />
-            <div className="flex-col md:flex-row flex gap-[10px] py-[20px] px-[10px] items-center justify-center border border-white border-t-0 rounded-b-md">
+            <div className="flex-col md:flex-row flex gap-[10px] py-[20px] px-[10px] items-center justify-center ">
               <div className="flex flex-row gap-3 items-center">
                 <a
                   href="mailto:sziligalaron@gmail.com"
-                  className="rounded-full bg-white p-[5px]"
+                  className="rounded-full bg-dark-green p-[10px] shadow-[0_0_10px_2px_rgba(0,0,0,0.6)]"
                 >
-                  <HiOutlineMail size={25} className="text-dark-color" />
+                  <HiOutlineMail size={30} className="text-white" />
                 </a>
                 <a
                   href="tel:+36203127968"
-                  className="rounded-full bg-white p-[5px]"
+                  className="rounded-full bg-dark-green p-[10px] shadow-[0_0_10px_2px_rgba(0,0,0,0.6)]"
                 >
-                  <FiPhoneCall size={25} className="text-dark-color" />
+                  <FiPhoneCall size={30} className="text-white" />
                 </a>
               </div>
-              <div className="flex flex-col md:border-l-2 md:border-white pl-[10px] !text-neutral-200">
+              <div className="flex flex-col md:border-l-2 md:border-neutral-600 pl-[10px] !text-neutral-600">
                 <p>Szili Gál Áron</p>
                 <p>FullStack fejlesztő</p>
               </div>
@@ -117,7 +120,8 @@ export default function ContactSection() {
           </div>
 
           {/* Kapcsolat előnyök ------ */}
-          <div className="flex flex-col gap-[15px] p-[10px] rounded-md w-full md:w-fit">
+
+          <div className="flex flex-col gap-[15px] p-[10px] rounded-md w-full md:max-w-[350px] hidden">
             {contactPrios.map((prio, _) => (
               <div
                 key={prio}

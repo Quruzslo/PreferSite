@@ -222,3 +222,33 @@ h4 {
 .scroll-snap-wrapper::-webkit-scrollbar {
   display: none !important;
 }
+
+.footer-logo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  height: 30px;
+  width: 30px;
+  aspect-ratio: 1;
+  background: radial-gradient(
+    circle 30px at bottom left,
+    var(--color-dark-green) 98%,
+    #17202a
+  );
+}
+
+.footer-logo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -30px;
+  height: 30px;
+  width: 30px;
+  aspect-ratio: 1;
+  background: radial-gradient(
+    circle 30px at bottom right,
+    var(--color-dark-green) 98%,
+    #17202a
+  );
+}

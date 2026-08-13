@@ -40,7 +40,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-full flex flex-col my-[50px] gap-[35px] p-[10px]">
+    <div className="w-full h-full flex flex-col mt-[35px] gap-[35px] px-[15px] py-[30px] rounded-2xl">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col gap-[35px]"
@@ -68,8 +68,8 @@ export default function ContactForm() {
                   placeholder=" "
                   required={field.required}
                   rows={4}
-                  className={`peer input-field w-full bg-transparent outline-none py-[5px] text-white border-b-2 resize-none ${
-                    hasError ? "border-red-500" : "border-white/75"
+                  className={`peer input-field w-full bg-transparent outline-none py-[5px] text-dark-color border-b-2  resize-none ${
+                    hasError ? "border-red-500" : "border-dark-color/75"
                   }`}
                 />
               ) : (
@@ -79,15 +79,15 @@ export default function ContactForm() {
                   type={field.type}
                   placeholder=" "
                   required={field.required}
-                  className={`peer input-field w-full h-full bg-transparent outline-none py-[5px] text-white border-b-2 ${
-                    hasError ? "border-red-500" : "border-white/75"
+                  className={`peer input-field w-full h-full bg-transparent outline-none py-[5px] text-dark-color border-b-2 ${
+                    hasError ? "border-red-500" : "border-dark-color/75"
                   }`}
                 />
               )}
 
               <label
                 htmlFor={field.name}
-                className="absolute left-[0px] top-[50%] -translate-y-[50%] text-base transition-all duration-300 pointer-events-none text-white/70
+                className="absolute left-[0px] top-[50%] -translate-y-[50%] text-base transition-all duration-300 pointer-events-none text-dark-color/70
                   peer-focus:top-[-10px] peer-focus:text-xs peer-focus:text-red-400
                   peer-[:not(:placeholder-shown)]:top-[-10px] peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-green"
               >
@@ -105,7 +105,7 @@ export default function ContactForm() {
 
         {/* Adatkezelési nyilatkozat */}
         <div className="flex flex-col gap-1 mt-4">
-          <label className="flex items-center gap-2 text-white/70 text-sm cursor-pointer w-max">
+          <label className="flex items-center gap-2 text-dark-green/70 text-sm cursor-pointer w-max">
             <input
               type="checkbox"
               name="adatkezeles"
@@ -122,7 +122,7 @@ export default function ContactForm() {
 
         <button
           type="submit"
-          className="mt-4 px-6 py-2 bg-green text-white rounded font-medium hover:bg-dark-green transition-colors self-start"
+          className="mt-4 px-6 py-2 bg-transparent text-dark-color rounded font-medium hover:bg-dark-green transition-colors self-start duration-300"
         >
           Elküldés
         </button>
