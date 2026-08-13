@@ -3,10 +3,12 @@ import Kepem from "@/public/cv-kep-github.jpg";
 import Image from "next/image";
 import AnimateSvgPaths from "../customerSteps/AnimateSvgPaths";
 import { motion, Variants } from "framer-motion";
-
+// Ikonok---------------
 import { HiOutlineMail } from "react-icons/hi";
 import { FiPhoneCall } from "react-icons/fi";
 import { linearGradient } from "motion/react-client";
+import { SiCoffeescript, SiAnswer } from "react-icons/si";
+import { BsCalendarCheckFill } from "react-icons/bs";
 
 import ContactForm from "./ContacForm";
 
@@ -92,30 +94,75 @@ export default function ContactSection() {
           </p>
           {/* Kép és elérhetőség ikonok ------- */}
           <div className="w-full md:w-[350px] flex flex-col">
-            <Image
-              alt="Egyedi weboldal fejlesztés, webshop fejlesztés, crm rendszer feljesztés"
-              src={Kepem}
-              className="w-full h-[350px] md:h-[350px] object-cover rounded-md"
-            />
+            <div className="relative w-[350px] h-[350px]  rounded-full flex items-center justify-center overflow-hidden shadow-xl">
+              <svg
+                className="absolute inset-0 w-full h-full"
+                viewBox="0 0 350 350"
+              >
+                <path
+                  id="circlePath"
+                  d="M 175, 25 
+         A 150, 150 0 1,1 175, 325 
+         A 150, 150 0 1,1 175, 25"
+                  fill="none"
+                />
+
+                <text
+                  className="text-dark-color text-[22px] font-bold uppercase"
+                  fill="currentColor"
+                >
+                  <textPath
+                    href="#circlePath"
+                    textLength="880"
+                    lengthAdjust="spacing"
+                  >
+                    Webfejlesztés
+                  </textPath>
+                </text>
+              </svg>
+
+              <Image
+                alt="Egyedi weboldal fejlesztés, webshop fejlesztés, crm rendszer feljesztés"
+                src={Kepem}
+                className="w-[250px] h-[250px] object-cover rounded-full z-10 border-4 border-dark-color"
+              />
+            </div>
+
             <div className="flex-col md:flex-row flex gap-[10px] py-[20px] px-[10px] items-center justify-center ">
               <div className="flex flex-row gap-3 items-center">
                 <a
                   href="mailto:sziligalaron@gmail.com"
                   className="rounded-full bg-dark-green p-[10px] shadow-[0_0_10px_2px_rgba(0,0,0,0.6)]"
                 >
-                  <HiOutlineMail size={30} className="text-white" />
+                  <HiOutlineMail size={25} className="text-white" />
                 </a>
                 <a
                   href="tel:+36203127968"
                   className="rounded-full bg-dark-green p-[10px] shadow-[0_0_10px_2px_rgba(0,0,0,0.6)]"
                 >
-                  <FiPhoneCall size={30} className="text-white" />
+                  <FiPhoneCall size={25} className="text-white" />
                 </a>
               </div>
               <div className="flex flex-col md:border-l-2 md:border-neutral-600 pl-[10px] !text-neutral-600">
                 <p>Szili Gál Áron</p>
                 <p>FullStack fejlesztő</p>
               </div>
+            </div>
+          </div>
+
+          {/* Gyors válasz ,stb... blokk ------------- */}
+          <div className="flex flex-row gap-[20px] mt-[25px]">
+            <div className="contact-pros flex flex-col items-center justify-center ">
+              <SiCoffeescript size={25} className="text-green" />
+              <p>Kötetlenség</p>
+            </div>
+            <div className="contact-pros flex flex-col items-center justify-center ">
+              <SiAnswer size={25} className="text-green" />
+              <p>Gyors válasz</p>
+            </div>
+            <div className="contact-pros flex flex-col items-center justify-center ">
+              <BsCalendarCheckFill size={25} className="text-green" />
+              <p>Átláthatóság</p>
             </div>
           </div>
 
