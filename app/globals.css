@@ -6,7 +6,8 @@
   --color-dark-green: #4d8853;
   --color-green: #52be80;
   --color-light-green: #50ff6d;
-  --color-dark-color: #1f211f;
+  /* --color-dark-color: #1f211f; */
+  --color-dark-color: #17202a;
 }
 
 * {
