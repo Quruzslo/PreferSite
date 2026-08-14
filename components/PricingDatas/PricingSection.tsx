@@ -6,7 +6,7 @@ import { MdArrowForward, MdArrowOutward } from "react-icons/md";
 
 export default function PricingSection() {
   return (
-    <section className="w-[90%] max-w-[2560px] mx-auto my-[50px]">
+    <section id="arazas" className="w-[90%] max-w-[2560px] mx-auto my-[50px]">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
           Csomagok és árazás

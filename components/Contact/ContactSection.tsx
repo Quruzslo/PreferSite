@@ -88,7 +88,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="w-[90%] max-w-[2560px] mx-auto my-[150px] relative flex flex-col md:flex-row gap-[25px] justify-between p-[10px]  text-white font-bold ">
+    <section
+      id="kapcsolat"
+      className="w-[90%] max-w-[2560px] mx-auto my-[150px] relative flex flex-col md:flex-row gap-[25px] justify-between p-[10px]  text-white font-bold "
+    >
       <div className="bg-white text-dark-color border-2 border-dark-color absolute top-0 left-1/2 -translate-x-1/2  -translate-y-1/2 p-[10px] rounded-md w-fit">
         <h2 className="!text-[20px] font-black leading-tight ">Kapcsolat</h2>
       </div>

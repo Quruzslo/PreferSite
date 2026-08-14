@@ -4,12 +4,14 @@ import logo from "@/public/Prefer-logo.png";
 import HamburgerButton from "./hamburgerButton";
 import navItems from "@/lib/navItems";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ScrollContext } from "@/lib/ScrollContext";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { triggerIsScrolling }: any = useContext(ScrollContext);
 
   // -Csúszó háttér állapota ---
   const indicatorRef = useRef<HTMLDivElement>(null);
@@ -107,16 +109,19 @@ export default function Header() {
                 <nav className="w-full py-[5px] px-[20px] text-white">
                   <ul className="flex flex-col items-center gap-6 font-bold">
                     {navItems.map((item, idx) => (
-                      <motion.li
+                      <motion.a
                         key={item.path || item.name}
+                        href={item.path}
                         initial={{ opacity: 0, y: 15, z: 0 }}
                         animate={{ opacity: 1, y: 0, z: 0 }}
                         transition={{ delay: 0.35 + idx * 0.08 }}
                         className="hover:opacity-80 cursor-pointer transition-opacity menu-link text-2xl will-change-transform [backface-visibility:hidden]"
-                        onClick={() => setMenuOpen(false)}
+                        onClick={() => {
+                          (setMenuOpen(false), triggerIsScrolling());
+                        }}
                       >
                         {item.name}
-                      </motion.li>
+                      </motion.a>
                     ))}
                   </ul>
                 </nav>
@@ -156,14 +161,18 @@ export default function Header() {
               />
 
               {navItems.map((item, idx) => (
-                <li
+                <a
                   key={idx}
+                  href={item.path}
+                  onClick={() => {
+                    triggerIsScrolling();
+                  }}
                   onMouseEnter={handleMouseEnter}
                   className="relative z-10 menu-link hover:text-dark-color cursor-pointer transition-colors transition"
                   style={{ animationDelay: `${idx * 0.1}s` }}
                 >
                   {item.name}
-                </li>
+                </a>
               ))}
             </ul>
           </nav>
@@ -176,12 +185,16 @@ export default function Header() {
 
           {/* Kapcsolat */}
           <div className="hidden md:flex flex-row gap-4 items-center justify-center">
-            <button
+            <a
+              href="/#kapcsolat"
+              onClick={() => {
+                triggerIsScrolling();
+              }}
               aria-label="Weboldal és webshop fejlesztés kapcsolat"
               className="kapcsolat-btn cursor-pointer relative font-black text-[15px] flex flex-row gap-[5px] bg-dark-color text-white rounded-md py-[5px] px-[20px]"
             >
               KAPCSOLAT
-            </button>
+            </a>
           </div>
         </header>
       </section>
