@@ -6,6 +6,8 @@ import Header from "@/components/header/Header";
 import MouseFollowerElement from "@/lib/mouseFollowerElement";
 import ScrollToTop from "@/lib/scrollToTop";
 import Footer from "../components/Footer/Footer";
+import ScrollContextProvider from "@/lib/ScrollContext";
+
 const groteskSans = Space_Grotesk({
   subsets: ["latin"],
 });
@@ -26,11 +28,13 @@ export default function RootLayout({
       <body
         className={`${groteskSans.className} min-h-full flex flex-col antialiased relative`}
       >
-        <MouseFollowerElement />
-        <ScrollToTop />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <ScrollContextProvider>
+          <MouseFollowerElement />
+          <ScrollToTop />
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ScrollContextProvider>
       </body>
     </html>
   );

@@ -1,9 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import myServices from "./MyServices";
 import { motion, Variants } from "motion/react";
 import Image from "next/image";
+import { ScrollContext } from "@/lib/ScrollContext";
 
 const servicesVariants: Variants = {
   hidden: { scaleX: 0, opacity: 1 },
@@ -15,9 +16,12 @@ const servicesVariants: Variants = {
 };
 
 export default function Services() {
+  const { isScrolling } = useContext(ScrollContext)!;
+
   const isSnapping = useRef(false);
 
   const handleSnap = (entry: any) => {
+    if (isScrolling || isSnapping.current) return;
     if (isSnapping.current) return;
 
     if (entry && entry.target) {

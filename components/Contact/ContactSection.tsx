@@ -136,7 +136,23 @@ export default function ContactSection() {
                     fill="none"
                   />
                 </defs>
-
+                <motion.path
+                  d="M 175, 25 A 150, 150 0 1,1 175, 325 A 150, 150 0 1,1 175, 25"
+                  fill="none"
+                  className="stroke-green/20"
+                  strokeWidth="45"
+                  strokeLinecap="round"
+                  initial={{
+                    strokeDasharray: pathLength,
+                    strokeDashoffset: pathLength,
+                  }}
+                  animate={isInView ? { strokeDashoffset: 0 } : {}}
+                  transition={{
+                    duration: 1,
+                    ease: "easeInOut",
+                    delay: 1,
+                  }}
+                />
                 <text
                   className="text-dark-color text-[15px] md:text-[22px] font-bold uppercase tracking-[0.1em]"
                   fill="currentColor"

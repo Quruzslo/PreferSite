@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { IoCaretUp } from "react-icons/io5";
+import { ScrollContext } from "./ScrollContext";
 
 export default function ScrollToTop() {
+  const { triggerIsScrolling } = useContext(ScrollContext);
   const [active, setIsActive] = useState(false);
 
   useEffect(() => {
@@ -29,7 +31,10 @@ export default function ScrollToTop() {
 
   return (
     <button
-      onClick={scrollingToTop}
+      onClick={() => {
+        scrollingToTop();
+        triggerIsScrolling();
+      }}
       type="button"
       aria-label="Vissza az oldal tetejére."
       className={`${

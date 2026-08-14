@@ -14,7 +14,6 @@ export default function Header() {
   // -Csúszó háttér állapota ---
   const indicatorRef = useRef<HTMLDivElement>(null);
 
-  // 2. Egér ráhúzása
   const handleMouseEnter = (e: any) => {
     const el = e.currentTarget;
     if (indicatorRef.current) {
@@ -24,7 +23,6 @@ export default function Header() {
     }
   };
 
-  // 3. Egér lehúzása
   const handleMouseLeave = () => {
     if (indicatorRef.current) {
       indicatorRef.current.style.opacity = "0";
