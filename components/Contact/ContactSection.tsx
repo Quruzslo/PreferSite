@@ -1,8 +1,11 @@
 "use client";
+
+import { useRef } from "react";
+
 import Kepem from "@/public/cv-kep-github.jpg";
 import Image from "next/image";
 import AnimateSvgPaths from "../customerSteps/AnimateSvgPaths";
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, useInView } from "framer-motion";
 // Ikonok---------------
 import { HiOutlineMail } from "react-icons/hi";
 import { FiPhoneCall } from "react-icons/fi";
@@ -13,6 +16,10 @@ import { BsCalendarCheckFill } from "react-icons/bs";
 import ContactForm from "./ContacForm";
 
 export default function ContactSection() {
+  // 360 szöveg animáció-------
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: false, amount: 0.5 });
+  const pathLength = 943;
   const contactPrios = [
     "Minőségi termékek",
     "Céges imázs növelés",
@@ -93,23 +100,47 @@ export default function ContactSection() {
             KERESS BIZALOMMAL
           </p>
           {/* Kép és elérhetőség ikonok ------- */}
-          <div className="w-full md:w-[350px] flex flex-col">
-            <div className="relative w-[350px] h-[350px]  rounded-full flex items-center justify-center overflow-hidden ">
+          <div className="w-full md:w-[350px] flex flex-col items-center">
+            <div
+              ref={containerRef}
+              className="relative w-[90%] max-w-[350px] aspect-square rounded-full flex items-center justify-center overflow-hidden mx-auto"
+            >
               <svg
-                className="absolute inset-0 w-full h-full"
+                className="absolute inset-0 w-full h-full origin-center"
                 viewBox="0 0 350 350"
               >
-                <path
-                  id="circlePath"
-                  d="M 175, 25 
-         A 150, 150 0 1,1 175, 325 
-         A 150, 150 0 1,1 175, 25"
-                  fill="none"
-                />
+                <defs>
+                  <mask id="textDrawingMask">
+                    <motion.path
+                      d="M 175, 25 A 150, 150 0 1,1 175, 325 A 150, 150 0 1,1 175, 25"
+                      fill="none"
+                      stroke="white"
+                      strokeWidth="50"
+                      strokeLinecap="round"
+                      initial={{
+                        strokeDasharray: pathLength,
+                        strokeDashoffset: pathLength,
+                      }}
+                      animate={isInView ? { strokeDashoffset: 0 } : {}}
+                      transition={{
+                        duration: 1,
+                        ease: "easeInOut",
+                        delay: 0.2,
+                      }}
+                    />
+                  </mask>
+
+                  <path
+                    id="circlePath"
+                    d="M 175, 25 A 150, 150 0 1,1 175, 325 A 150, 150 0 1,1 175, 25"
+                    fill="none"
+                  />
+                </defs>
 
                 <text
-                  className="text-dark-color text-[22px] font-bold uppercase"
+                  className="text-dark-color text-[15px] md:text-[22px] font-bold uppercase tracking-[0.1em]"
                   fill="currentColor"
+                  mask="url(#textDrawingMask)"
                 >
                   <textPath
                     href="#circlePath"
@@ -124,12 +155,14 @@ export default function ContactSection() {
               <Image
                 alt="Egyedi weboldal fejlesztés, webshop fejlesztés, crm rendszer feljesztés"
                 src={Kepem}
-                className="w-[250px] h-[250px] object-cover rounded-full z-10 border-4 border-dark-color"
+                width={250}
+                height={250}
+                className="w-[71%] h-[71%] object-cover rounded-full z-10 border-4 border-dark-color"
               />
             </div>
 
             <div className="flex-col md:flex-row flex gap-[10px] py-[20px] px-[10px] items-center justify-center ">
-              <div className="flex flex-row gap-3 items-center">
+              <div className="flex flex-row gap-[20px] items-center">
                 <a
                   href="mailto:sziligalaron@gmail.com"
                   className="rounded-full bg-dark-green p-[10px] shadow-[0_0_10px_2px_rgba(0,0,0,0.6)]"
@@ -143,7 +176,7 @@ export default function ContactSection() {
                   <FiPhoneCall size={25} className="text-white" />
                 </a>
               </div>
-              <div className="flex flex-col md:border-l-2 md:border-neutral-600 pl-[10px] !text-neutral-600">
+              <div className="flex flex-col md:border-l-2 md:border-neutral-600 pl-[10px] !text-neutral-600 gap-[20px]">
                 <p>Szili Gál Áron</p>
                 <p>FullStack fejlesztő</p>
               </div>
@@ -151,7 +184,7 @@ export default function ContactSection() {
           </div>
 
           {/* Gyors válasz ,stb... blokk ------------- */}
-          <div className="flex flex-row gap-[20px] mt-[25px]">
+          <div className="flex flex-row flex-wrap gap-[20px] mt-[25px]">
             <div className="contact-pros flex flex-col items-center justify-center ">
               <SiCoffeescript size={25} className="text-green" />
               <p>Kötetlenség</p>
