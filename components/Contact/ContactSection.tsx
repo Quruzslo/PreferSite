@@ -97,7 +97,7 @@ export default function ContactSection() {
       </div>
 
       {/* Bal oldali infók --------- */}
-      <div className="flex flex-col w-full md:w-1/2  gap-[20px] mt-[35px] text-dark-color rounded-2xl p-[15px] ">
+      <div className="flex flex-col w-full md:w-1/2  gap-[20px] mt-[35px] text-dark-color rounded-2xl bg-gray-100 shadow-[0px_2px_20px_-2px_rgba(0,0,0,0.3)] p-[15px] ">
         <div className="flex flex-col gap-[15px] w-full items-center justify-center">
           <p className="text-[20px] md:text-[35px] font-black">
             KERESS BIZALOMMAL
