@@ -92,12 +92,12 @@ export default function ContactSection() {
       id="kapcsolat"
       className="w-[90%] max-w-[2560px] mx-auto my-[150px] relative flex flex-col md:flex-row gap-[25px] justify-between p-[0px]  text-white font-bold "
     >
-      <div className="bg-white text-dark-color border-2 border-dark-color absolute top-0 left-1/2 -translate-x-1/2  -translate-y-1/2 p-[10px] rounded-md w-fit">
+      <div className="bg-white text-dark-color border-2 border-dark-color absolute top-0 left-1/2 -translate-x-1/2  -translate-y-1/2 p-[10px] rounded-md w-fit ">
         <h2 className="!text-[20px] font-black leading-tight ">Kapcsolat</h2>
       </div>
 
       {/* Bal oldali infók --------- */}
-      <div className="flex flex-col w-full md:w-1/2  gap-[20px] mt-[35px] text-dark-color rounded-2xl bg-gray-100 shadow-[0px_2px_20px_-2px_rgba(0,0,0,0.3)] p-[15px] ">
+      <div className="flex flex-col w-full md:w-1/2  gap-[20px] mt-[55px] text-dark-color rounded-2xl bg-gray-100 shadow-[0px_2px_20px_-2px_rgba(0,0,0,0.3)] p-[15px] ">
         <div className="flex flex-col gap-[15px] w-full items-center justify-center">
           <p className="text-[20px] md:text-[35px] font-black">
             KERESS BIZALOMMAL

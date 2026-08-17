@@ -4,6 +4,8 @@ import validateContactForm, { ContactFormErrors } from "./validate";
 
 export default function ContactForm() {
   const [errors, setErrors] = useState<ContactFormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const inputFields = [
     { name: "name", type: "text", label: "Teljes neved", required: true },
@@ -18,9 +20,10 @@ export default function ContactForm() {
     },
   ];
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
     const validationErrors = validateContactForm(data);
@@ -36,7 +39,32 @@ export default function ContactForm() {
     }
 
     setErrors({});
-    console.log("Sikeres validáció! Form adatok:", data);
+    setIsSubmitting(true);
+    setIsSuccess(false);
+
+    try {
+      const response = await fetch("/api/formSubmit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const res = await response.json();
+
+      if (res.success) {
+        setIsSuccess(true);
+        form.reset();
+      } else {
+        alert("Hiba történt az üzenet küldése során.");
+      }
+    } catch (error) {
+      console.error("Hálózati hiba:", error);
+      alert("Hálózati hiba történt, próbáld újra később!");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -68,7 +96,7 @@ export default function ContactForm() {
                   placeholder=" "
                   required={field.required}
                   rows={4}
-                  className={`peer input-field w-full bg-transparent outline-none py-[5px] text-dark-color border-b-2  resize-none ${
+                  className={`peer input-field w-full bg-transparent outline-none py-[5px] text-dark-color border-b-2 resize-none ${
                     hasError ? "border-red-500" : "border-dark-color/75"
                   }`}
                 />
@@ -120,11 +148,18 @@ export default function ContactForm() {
           )}
         </div>
 
+        {isSuccess && (
+          <p className="text-green-600 font-medium text-sm">
+            Köszönöm! Az üzenetet sikeresen elküldtem.
+          </p>
+        )}
+
         <button
           type="submit"
-          className="mt-4 px-6 py-2 bg-dark-green/50 text-dark-color rounded font-medium hover:bg-dark-green hover:text-white transition-colors self-start duration-300"
+          disabled={isSubmitting}
+          className="mt-4 px-6 py-2 bg-dark-green/50 text-dark-color rounded font-medium hover:bg-dark-green hover:text-white transition-colors self-start duration-300 disabled:opacity-50 cursor-pointer"
         >
-          Elküldés
+          {isSubmitting ? "Küldés..." : "Elküldés"}
         </button>
       </form>
     </div>
