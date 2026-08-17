@@ -180,7 +180,7 @@ export default function ContactSection() {
               />
             </div>
 
-            <div className="flex-col md:flex-row flex gap-[10px] py-[20px] px-[10px] items-center justify-center ">
+            <div className="flex-row flex gap-[10px] py-[20px] px-[10px] items-center justify-center ">
               <div className="flex flex-row gap-[20px] items-center">
                 <a
                   href="mailto:sziligalaron@gmail.com"
@@ -195,7 +195,7 @@ export default function ContactSection() {
                   <FiPhoneCall size={25} className="text-white" />
                 </a>
               </div>
-              <div className="flex flex-col md:border-l-2 md:border-neutral-600 pl-[10px] !text-neutral-600 gap-[20px]">
+              <div className="flex flex-col border-l-2 border-neutral-600 pl-[10px] !text-neutral-600 gap-[10px]">
                 <p>Szili Gál Áron</p>
                 <p>FullStack fejlesztő</p>
               </div>
@@ -203,18 +203,18 @@ export default function ContactSection() {
           </div>
 
           {/* Gyors válasz ,stb... blokk ------------- */}
-          <div className="flex flex-row flex-wrap gap-[20px] mt-[25px]">
+          <div className="flex flex-row flex-wrap gap-[10px] md:gap-[20px] mt-[25px] w-full justify-between md:justify-center">
             <div className="contact-pros flex flex-col items-center justify-center ">
-              <SiCoffeescript size={25} className="text-green" />
-              <p>Kötetlenség</p>
+              <SiCoffeescript size={20} className="text-green" />
+              <p className="text-sm md:text-[15px]">Kötetlenség</p>
             </div>
             <div className="contact-pros flex flex-col items-center justify-center ">
-              <SiAnswer size={25} className="text-green" />
-              <p>Gyors válasz</p>
+              <SiAnswer size={20} className="text-green" />
+              <p className="text-sm md:text-[15px]">Gyors válasz</p>
             </div>
             <div className="contact-pros flex flex-col items-center justify-center ">
-              <BsCalendarCheckFill size={25} className="text-green" />
-              <p>Átláthatóság</p>
+              <BsCalendarCheckFill size={20} className="text-green" />
+              <p className="text-sm md:text-[15px]">Átláthatóság</p>
             </div>
           </div>
 

@@ -122,7 +122,7 @@ export default function ContactForm() {
 
         <button
           type="submit"
-          className="mt-4 px-6 py-2 bg-transparent text-dark-color rounded font-medium hover:bg-dark-green transition-colors self-start duration-300"
+          className="mt-4 px-6 py-2 bg-dark-green/50 text-dark-color rounded font-medium hover:bg-dark-green hover:text-white transition-colors self-start duration-300"
         >
           Elküldés
         </button>
