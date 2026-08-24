@@ -51,7 +51,7 @@ function Card({ item, idx, total, progress }: CardProps) {
           alt={item.title}
           fill
           src={item.desktopPhotoSrc}
-          className="absolute inset-0 object-contain md:object-cover ratio-video"
+          className="absolute inset-0 object-cover ratio-video"
           priority={idx === 0}
         />
 
