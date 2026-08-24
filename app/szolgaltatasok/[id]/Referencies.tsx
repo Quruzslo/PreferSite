@@ -35,7 +35,7 @@ function Card({ item, idx, total, progress }: CardProps) {
   );
 
   return (
-    <div className="sticky top-0 flex gap-[25px] md:h-screen w-full items-center justify-center overflow-hidden my-[25px]">
+    <div className="sticky top-[120px] md:top-0 flex gap-[25px] md:h-screen w-full items-center justify-center overflow-hidden my-[25px]">
       <motion.div
         style={{
           scale: scaleing,
