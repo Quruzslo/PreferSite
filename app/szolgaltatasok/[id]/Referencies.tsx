@@ -35,7 +35,7 @@ function Card({ item, idx, total, progress }: CardProps) {
   );
 
   return (
-    <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden">
+    <div className="sticky top-0 flex  md:h-screen w-full items-center justify-center overflow-hidden">
       <motion.div
         style={{
           scale: scaleing,
@@ -43,9 +43,9 @@ function Card({ item, idx, total, progress }: CardProps) {
           filter,
           zIndex: idx + 1,
 
-          top: `${idx * 20}px`,
+          top: `0px`,
         }}
-        className="relative h-[350px] md:h-[80vh] min-h-[350px] w-[90%] overflow-hidden rounded-2xl shadow-2xl origin-top transition-shadow duration-300"
+        className="relative h-[450px] md:h-[80vh] min-h-[350px] w-[90%] overflow-hidden rounded-2xl shadow-2xl origin-top transition-shadow duration-300"
       >
         <Image
           alt={item.title}
@@ -76,7 +76,7 @@ export default function Referencies() {
   return (
     <section
       ref={containerRef}
-      className="relative flex w-full flex-col bg-dark-color min-h-[300vh] py-[50px] [perspective:1000px]"
+      className="relative flex w-full flex-col bg-dark-color md:min-h-[300vh] py-[50px] [perspective:1000px]"
     >
       <h2 className="text-white text-3xl mx-auto w-[90%] text-center">
         Néhány korábbi fejlesztésem
