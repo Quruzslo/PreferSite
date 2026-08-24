@@ -45,13 +45,13 @@ function Card({ item, idx, total, progress }: CardProps) {
 
           top: `${idx * 20}px`,
         }}
-        className="relative h-[80vh] min-h-[350px] w-[90%] overflow-hidden rounded-2xl shadow-2xl origin-top transition-shadow duration-300"
+        className="relative h-[350px] md:h-[80vh] min-h-[350px] w-[90%] overflow-hidden rounded-2xl shadow-2xl origin-top transition-shadow duration-300"
       >
         <Image
           alt={item.title}
           fill
           src={item.desktopPhotoSrc}
-          className="absolute inset-0 object-cover"
+          className="absolute inset-0 object-contain md:object-cover ratio-video"
           priority={idx === 0}
         />
 
