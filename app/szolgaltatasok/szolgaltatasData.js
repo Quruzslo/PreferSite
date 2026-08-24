@@ -94,7 +94,7 @@ export const szolgaltatasokData = [
       ctaText: "Érdekel!",
     },
     importance: {
-      title: "Miért ilyen fontos a weboldal? Mert…",
+      title: "Miért ilyen fontos a weboldal?",
       items: [
         "A céged online arca és digitális központja",
         "Termékeid és szolgáltatásaid tükre",
