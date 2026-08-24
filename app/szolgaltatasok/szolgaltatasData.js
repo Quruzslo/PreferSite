@@ -2,6 +2,90 @@
 
 export const szolgaltatasokData = [
   {
+    slug: "webapplikacio",
+    hero: {
+      title: "A belső rendszereid automatizálnak, vagy fejfájást okoznak?",
+      subtitle:
+        "Egy jól megtervezett webalkalmazás nem csak egy szoftver, hanem a céged legszorgalmasabb munkaereje. Érdekel, hogyan válthatod ki az Excel táblákat és az ismétlődő feladatokat?",
+      ctaText: "Érdekel!",
+    },
+    importance: {
+      title: "Miért kritikus egy saját webapplikáció? Mert…",
+      items: [
+        "Automatizálja a monoton, időrabló folyamatokat",
+        "Valós idejű adatokat és statisztikákat biztosít",
+        "Kiváltja a drága, dobozos szoftverek kompromisszumait",
+        "Skálázható alapot ad a céged növekedéséhez",
+        "Növeli az ügyfélélményt és a belső hatékonyságot",
+        "Bárhonnan, bármilyen eszközről biztonságosan elérhető",
+      ],
+    },
+    benefits: {
+      title: "Mire jó az egyedi webalkalmazás fejlesztés?",
+      description:
+        "A sablon megoldások gyakran korlátok közé szorítanak. Egy egyedi webapplikáció hajszálpontosan a te üzleti logikádra épül, így jelentősen megnöveli a csapatod és a céged teljesítményét.",
+      stats: [
+        {
+          number: "100%",
+          title: "Zéró kompromisszum",
+          text: "Csak olyan funkciókat kapsz, amikre a vállalkozásodnak ténylegesen szüksége van, felesleges sallangok nélkül.",
+        },
+        {
+          number: "-50%",
+          title: "Kevesebb adminisztráció",
+          text: "Az automatizált folyamatokkal radikálisan csökkenthető a manuális adatrögzítésre és papírmunkára szánt idő.",
+        },
+        {
+          number: "24/7",
+          title: "Folyamatos elérés",
+          text: "A modern, felhőalapú megoldásokkal a rendszered mindig gyors, megbízható és fennakadások nélkül működik.",
+        },
+      ],
+    },
+    midCta: {
+      title: "Készen állsz a digitális szintlépésre?",
+      subtitle:
+        "Fektess a hatékonyságba! A táblázatkezelőkön és nehézkes folyamatokon alapuló cégek hamarosan lemaradnak. Egy profi webapplikációval olyan előnyre teszel szert, amit a konkurencia nehezen tud behozni.",
+      question:
+        "Mit gondolsz, eljött az ideje, hogy modernizáld a folyamataidat?",
+      ctaText: "Igen, vágjunk bele!",
+    },
+    features: {
+      title: "Az általam fejlesztett webalkalmazások",
+      items: [
+        {
+          title: "Villámgyorsak",
+          text: "Modern technológiákat (React, Next.js, Node.js) használok, így a rendszer azonnal reagál a felhasználói interakciókra.",
+        },
+        {
+          title: "Biztonságosak",
+          text: "A legmagasabb iparági sztenderdek szerint építem fel az adatbázisokat és a jogosultságkezelési rendszereket.",
+        },
+        {
+          title: "Skálázhatók",
+          text: "Az alkalmazás architektúrája együtt nő a cégeddel, legyen szó 10 vagy akár több ezer felhasználóról.",
+        },
+        {
+          title: "Felhasználóbarátok",
+          text: "Intuitív dashboardokat és admin felületeket tervezek, amiket hosszas betanítás nélkül is könnyű használni.",
+        },
+        {
+          title: "Integrálhatók",
+          text: "Zökkenőmentesen összekötöm külső szolgáltatásokkal (pl. Stripe fizetés, számlázók, egyedi API-k).",
+        },
+        {
+          title: "Reszponzívak",
+          text: "Mobilra, tabletre és asztali gépre is tökéletesen optimalizált felületeket és logikát építek.",
+        },
+      ],
+    },
+    footerCta: {
+      title: "Konzultálj velem díjmentesen és tervezzük meg,",
+      subtitle:
+        "hogyan automatizálhatná egy egyedi webapplikáció a mindennapi folyamataidat!",
+    },
+  },
+  {
     slug: "weboldal",
     hero: {
       title: "A weboldalad előrevisz, vagy hátráltat?",

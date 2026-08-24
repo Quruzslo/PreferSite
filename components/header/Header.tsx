@@ -105,23 +105,71 @@ export default function Header() {
                 transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
                 className="menu-container w-full max-w-[320px] mx-auto flex flex-col items-center justify-center text-center my-auto will-change-transform [backface-visibility:hidden]"
               >
-                <nav className="w-full py-[5px] px-[20px] text-white">
-                  <ul className="flex flex-col items-center gap-6 font-bold">
-                    {navItems.map((item, idx) => (
-                      <motion.a
-                        key={item.path || item.name}
-                        href={item.path}
-                        initial={{ opacity: 0, y: 15, z: 0 }}
-                        animate={{ opacity: 1, y: 0, z: 0 }}
-                        transition={{ delay: 0.35 + idx * 0.08 }}
-                        className="hover:opacity-80 cursor-pointer transition-opacity menu-link text-2xl will-change-transform [backface-visibility:hidden]"
-                        onClick={() => {
-                          (setMenuOpen(false), triggerIsScrolling());
-                        }}
-                      >
-                        {item.name}
-                      </motion.a>
-                    ))}
+                <nav className=" py-[5px] px-[20px] text-white mx-auto w-fit">
+                  <ul className="flex flex-col items-start gap-6 font-bold">
+                    {navItems.map((item, idx) =>
+                      item.items && item.items.length > 0 ? (
+                        <div
+                          key={idx}
+                          className="relative group z-10 flex flex-col "
+                          onMouseEnter={handleMouseEnter}
+                        >
+                          <a
+                            href={item.path}
+                            onClick={() => triggerIsScrolling()}
+                            className="hover:opacity-80 cursor-pointer transition-opacity menu-link text-2xl will-change-transform [backface-visibility:hidden] flex flex-row items-center"
+                            style={{ animationDelay: `${idx * 0.1}s` }}
+                          >
+                            {item.name}
+                            <svg
+                              className="w-4 h-4 transition-transform group-hover:rotate-180"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M19 9l-7 7-7-7"
+                              />
+                            </svg>
+                          </a>
+
+                          {/* Dropdown */}
+                          <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr]">
+                            <div className="overflow-hidden">
+                              <div className="flex flex-col rounded-md bg-green py-2 min-w-[160px] shadow-lg">
+                                {item.items.map((subItem, subIdx) => (
+                                  <a
+                                    key={subIdx}
+                                    href={`${subItem.path}`}
+                                    onClick={() => triggerIsScrolling()}
+                                    className="px-4 py-2 text-sm text-white hover:text-dark-color transition-colors"
+                                  >
+                                    {subItem.name}
+                                  </a>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <motion.a
+                          key={item.path || item.name}
+                          href={item.path}
+                          initial={{ opacity: 0, y: 15, z: 0 }}
+                          animate={{ opacity: 1, y: 0, z: 0 }}
+                          transition={{ delay: 0.35 + idx * 0.08 }}
+                          className="hover:opacity-80 cursor-pointer transition-opacity menu-link text-2xl will-change-transform [backface-visibility:hidden]"
+                          onClick={() => {
+                            (setMenuOpen(false), triggerIsScrolling());
+                          }}
+                        >
+                          {item.name}
+                        </motion.a>
+                      ),
+                    )}
                   </ul>
                 </nav>
               </motion.div>
@@ -137,7 +185,10 @@ export default function Header() {
           } `}
         >
           {/* Logó konténer */}
-          <div className="relative w-[50px] h-[50px] bg-dark-color rounded-full flex flex-row">
+          <a
+            href="/"
+            className="relative w-[50px] h-[50px] bg-dark-color rounded-full flex flex-row"
+          >
             <Image
               src={logo}
               alt="Prefer Logo - Egyedi weboldal és webshop fejlesztés"
@@ -145,7 +196,7 @@ export default function Header() {
               priority
               className="object-contain !w-[40px] !h-[40px] mx-auto my-auto"
             />
-          </div>
+          </a>
 
           {/* Desktop nézet */}
           <nav className="desktop-nav relative bg-dark-color py-[5px] px-[20px] text-white rounded-md hidden md:flex">
@@ -194,7 +245,7 @@ export default function Header() {
                       {item.items.map((subItem, subIdx) => (
                         <a
                           key={subIdx}
-                          href={`#${subItem.path}`}
+                          href={`${subItem.path}`}
                           onClick={() => triggerIsScrolling()}
                           className="px-4 py-2 text-sm text-white  hover:text-dark-color transition-colors"
                         >
