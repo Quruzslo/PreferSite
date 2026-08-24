@@ -45,7 +45,7 @@ function Card({ item, idx, total, progress }: CardProps) {
 
           top: `0px`,
         }}
-        className="relative h-[450px] md:h-[80vh] min-h-[350px] w-[90%] overflow-hidden rounded-2xl shadow-2xl origin-top transition-shadow duration-300 bg-dark-color"
+        className="relative h-[450px] md:h-[80vh] min-h-[350px] w-[90%] overflow-hidden rounded-2xl shadow-2xl origin-top transition-shadow duration-300 "
       >
         <Image
           alt={item.title}
@@ -57,7 +57,7 @@ function Card({ item, idx, total, progress }: CardProps) {
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
 
-        <div className="absolute bottom-8 left-8 z-10 text-white">
+        <div className="absolute bottom-8 left-8 z-10 text-white bg-dark-color">
           <h3 className="text-2xl font-bold md:text-4xl">{item.title}</h3>
         </div>
       </motion.div>
