@@ -111,18 +111,31 @@ export default function Header() {
                       item.items && item.items.length > 0 ? (
                         <div
                           key={idx}
-                          className="relative group z-10 flex flex-col "
+                          className="relative group z-10 flex flex-col"
                           onMouseEnter={handleMouseEnter}
                         >
-                          <a
-                            href={item.path}
-                            onClick={() => triggerIsScrolling()}
-                            className="hover:opacity-80 cursor-pointer transition-opacity menu-link text-2xl will-change-transform [backface-visibility:hidden] flex flex-row items-center"
+                          {/*  checkbox a mobilos tappeléshez */}
+                          <input
+                            type="checkbox"
+                            id={`menu-toggle-${idx}`}
+                            className="peer sr-only"
+                          />
+
+                          <label
+                            htmlFor={`menu-toggle-${idx}`}
+                            className="hover:opacity-80 cursor-pointer transition-opacity menu-link text-2xl will-change-transform [backface-visibility:hidden] flex flex-row items-start justify-between"
                             style={{ animationDelay: `${idx * 0.1}s` }}
                           >
-                            {item.name}
+                            <a
+                              href={item.path}
+                              onClick={() => triggerIsScrolling()}
+                              className=""
+                            >
+                              {item.name}
+                            </a>
+
                             <svg
-                              className="w-4 h-4 transition-transform group-hover:rotate-180"
+                              className="w-4 h-4 transition-transform group-hover:rotate-180 peer-checked:rotate-180"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -134,10 +147,10 @@ export default function Header() {
                                 d="M19 9l-7 7-7-7"
                               />
                             </svg>
-                          </a>
+                          </label>
 
-                          {/* Dropdown */}
-                          <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr]">
+                          {/* Dropdown  */}
+                          <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr] peer-checked:grid-rows-[1fr]">
                             <div className="overflow-hidden">
                               <div className="flex flex-col rounded-md bg-green py-2 min-w-[160px] shadow-lg">
                                 {item.items.map((subItem, subIdx) => (
