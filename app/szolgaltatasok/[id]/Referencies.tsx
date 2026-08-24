@@ -35,7 +35,7 @@ function Card({ item, idx, total, progress }: CardProps) {
   );
 
   return (
-    <div className="sticky top-0 flex  md:h-screen w-full items-center justify-center overflow-hidden">
+    <div className="sticky top-0 flex gap-[25px] md:h-screen w-full items-center justify-center overflow-hidden my-[25px]">
       <motion.div
         style={{
           scale: scaleing,
@@ -45,19 +45,21 @@ function Card({ item, idx, total, progress }: CardProps) {
 
           top: `0px`,
         }}
-        className="relative h-[450px] md:h-[80vh] min-h-[350px] w-[90%] overflow-hidden rounded-2xl shadow-2xl origin-top transition-shadow duration-300 "
+        className="relative h-[450px] md:h-[80vh] min-h-[350px] w-[90%] overflow-hidden rounded-2xl shadow-2xl origin-top transition-shadow duration-300 bg-black"
       >
-        <Image
-          alt={item.title}
-          fill
-          src={item.desktopPhotoSrc}
-          className="absolute inset-0 object-contain md:object-cover ratio-video"
-          priority={idx === 0}
-        />
+        <div className="flex">
+          <Image
+            alt={item.title}
+            fill
+            src={item.desktopPhotoSrc}
+            className="absolute inset-0 object-contain md:object-cover ratio-video"
+            priority={idx === 0}
+          />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+        </div>
 
-        <div className="absolute bottom-8 left-8 z-10 text-white bg-dark-color">
+        <div className="absolute bottom-8 left-[15px] z-10 text-white bg-dark-green rounded-md p-[10px]">
           <h3 className="text-2xl font-bold md:text-4xl">{item.title}</h3>
         </div>
       </motion.div>
