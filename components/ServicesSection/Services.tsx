@@ -43,6 +43,7 @@ export default function Services() {
       {myServices.map((service) => (
         <motion.section
           key={service.id}
+          id={service.path}
           initial="hidden"
           whileInView="visible"
           viewport={{ amount: 0.15, once: false }}

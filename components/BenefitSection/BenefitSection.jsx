@@ -5,7 +5,6 @@ import Section from "../../lib/section";
 import { benefits } from "./benefits";
 import { motion, useScroll, useTransform } from "motion/react";
 
-// Külön alkomponens a useRef, useScroll miatt
 const BenefitCard = ({ benefit }) => {
   const ref = useRef(null);
 

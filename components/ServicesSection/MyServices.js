@@ -2,6 +2,7 @@ const myServices = [
   {
     id: 0,
     title: "Webapplikáció fejlesztés",
+    path: "webapp",
     description:
       "Asztali programok gyorsaságát és élményét nyújtó, egyedi webes szoftverek fejlesztése. Olyan rendszereket építek, amelyek pontosan a te céged működéséhez igazodnak, kiváltva a rugalmatlan, kész dobozos megoldásokat.",
     benefits: [
@@ -17,6 +18,7 @@ const myServices = [
   {
     id: 1,
     title: "Webshop fejlesztés",
+    path: "webshop",
     description:
       "Gyors és megbízható e-kereskedelmi rendszerek építése, amelyek stabil alapot adnak a növekvő forgalomhoz. A gyors oldalbetöltés, a biztonságos fizetés és a felhasználóbarát felépítés együttesen maximalizálják a vásárlások számát.",
     benefits: [
@@ -32,6 +34,7 @@ const myServices = [
   {
     id: 2,
     title: "CRM rendszer fejlesztés",
+    path: "crm",
     description:
       "Egyedi ügyfélkapcsolati és belső adatkezelő rendszerek, amelyek egy helyre gyűjtik az információkat és automatizálják a papírmunkát. Csak olyan funkciókat tartalmaz, amire a cégnek ténylegesen szüksége van, felesleges extrák nélkül.",
     benefits: [
@@ -47,6 +50,7 @@ const myServices = [
   {
     id: 3,
     title: "Weboldal fejlesztés",
+    path: "weboldal",
     description:
       "Prémium, egyedi tervezésű weboldalak készítése, amelyek a modern megjelenést hibátlan műszaki alapokkal ötvözik. Keresőbarát felépítés és tökéletes mobilnézet a hiteles és profi online jelenlétért.",
     benefits: [
@@ -62,6 +66,7 @@ const myServices = [
   {
     id: 4,
     title: "Rendszerfelügyelet és karbantartás",
+    path: "karbantartas",
     description:
       "Folyamatos technikai háttérbiztosítás, amely garantálja a weboldalad vagy rendszered állandó elérhetőségét és gyorsaságát. Rendszeres karbantartás, frissítés és felügyelet a váratlan leállások és hibák megelőzésére.",
     benefits: [

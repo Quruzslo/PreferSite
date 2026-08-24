@@ -56,7 +56,6 @@ export default function Header() {
     };
   }, [menuOpen]);
 
-  // bg animáció objektuma
   const bgTransition = {
     duration: 0.8,
     ease: [0.77, 0, 0.175, 1],
@@ -97,7 +96,7 @@ export default function Header() {
               />
             </div>
 
-            {/* 2. GÖRGETHETŐ TARTALOM */}
+            {/*  tartalom */}
             <div className="relative z-10 w-full min-h-[100dvh] flex flex-col items-center justify-center py-16 px-4">
               <motion.div
                 initial={{ opacity: 0, y: 30, z: 0 }}
@@ -135,7 +134,7 @@ export default function Header() {
         <header
           className={`header w-[90%] max-w-[2560px] mx-auto p-[10px] flex flex-row items-center justify-between ${
             isScrolled ? "active mt-[15px]" : ""
-          } overflow-hidden`}
+          } `}
         >
           {/* Logó konténer */}
           <div className="relative w-[50px] h-[50px] bg-dark-color rounded-full flex flex-row">
@@ -154,26 +153,69 @@ export default function Header() {
               className="relative flex flex-row items-center gap-6 font-bold"
               onMouseLeave={handleMouseLeave}
             >
-              {/* CSÚSZÓ HÁTTÉR */}
+              {/* Csúszó elem */}
               <div
                 ref={indicatorRef}
                 className="absolute top-1/2 -translate-y-1/2 h-[calc(100%+14px)] bg-green rounded-md transition-all duration-300 ease-out pointer-events-none opacity-0"
               />
 
-              {navItems.map((item, idx) => (
-                <a
-                  key={idx}
-                  href={item.path}
-                  onClick={() => {
-                    triggerIsScrolling();
-                  }}
-                  onMouseEnter={handleMouseEnter}
-                  className="relative z-10 menu-link hover:text-dark-color cursor-pointer transition-colors transition"
-                  style={{ animationDelay: `${idx * 0.1}s` }}
-                >
-                  {item.name}
-                </a>
-              ))}
+              {navItems.map((item, idx) =>
+                item.items && item.items.length > 0 ? (
+                  <div
+                    key={idx}
+                    className="relative group z-10 flex "
+                    onMouseEnter={handleMouseEnter}
+                  >
+                    <a
+                      href={item.path}
+                      onClick={() => triggerIsScrolling()}
+                      className="menu-link hover:text-dark-color cursor-pointer transition-colors transition flex items-center gap-1"
+                      style={{ animationDelay: `${idx * 0.1}s` }}
+                    >
+                      {item.name}
+                      <svg
+                        className="w-4 h-4 transition-transform group-hover:rotate-180"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </a>
+
+                    {/* Dropdown */}
+                    <div className="absolute -left-1/4 top-full flex flex-col bg-green shadow-lg rounded-md py-2 min-w-[160px] z-50 transition-all duration-300 ease-out opacity-0 invisible translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto">
+                      {" "}
+                      {item.items.map((subItem, subIdx) => (
+                        <a
+                          key={subIdx}
+                          href={`#${subItem.path}`}
+                          onClick={() => triggerIsScrolling()}
+                          className="px-4 py-2 text-sm text-white  hover:text-dark-color transition-colors"
+                        >
+                          {subItem.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <a
+                    key={idx}
+                    href={item.path}
+                    onClick={() => triggerIsScrolling()}
+                    onMouseEnter={handleMouseEnter}
+                    className="relative z-10 menu-link hover:text-dark-color cursor-pointer transition-colors transition"
+                    style={{ animationDelay: `${idx * 0.1}s` }}
+                  >
+                    {item.name}
+                  </a>
+                ),
+              )}
             </ul>
           </nav>
 
