@@ -123,7 +123,7 @@ export default function Header() {
 
                           <label
                             htmlFor={`menu-toggle-${idx}`}
-                            className="hover:opacity-80 cursor-pointer transition-opacity menu-link text-2xl will-change-transform [backface-visibility:hidden] flex flex-row items-start justify-between"
+                            className="hover:opacity-80 cursor-pointer transition-opacity menu-link text-2xl will-change-transform [backface-visibility:hidden] flex flex-row items-center justify-between"
                             style={{ animationDelay: `${idx * 0.1}s` }}
                           >
                             <a
@@ -135,7 +135,7 @@ export default function Header() {
                             </a>
 
                             <svg
-                              className="w-4 h-4 transition-transform group-hover:rotate-180 peer-checked:rotate-180"
+                              className="w-[25px] h-[25px] transition-transform group-hover:rotate-180 peer-checked:rotate-180"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -152,13 +152,13 @@ export default function Header() {
                           {/* Dropdown  */}
                           <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr] peer-checked:grid-rows-[1fr]">
                             <div className="overflow-hidden">
-                              <div className="flex flex-col rounded-md bg-green py-2 min-w-[160px] shadow-lg">
+                              <div className="flex flex-col items-start rounded-md bg-white py-2 min-w-[160px] shadow-lg">
                                 {item.items.map((subItem, subIdx) => (
                                   <a
                                     key={subIdx}
                                     href={`${subItem.path}`}
                                     onClick={() => triggerIsScrolling()}
-                                    className="px-4 py-2 text-sm text-white hover:text-dark-color transition-colors"
+                                    className="px-4 py-2 text-sm text-dark-color hover:text-dark-color transition-colors"
                                   >
                                     {subItem.name}
                                   </a>
