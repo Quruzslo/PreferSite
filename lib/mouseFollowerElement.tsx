@@ -29,7 +29,7 @@ export default function MouseFollowerElement() {
     let mouseX = 0;
     let mouseY = 0;
 
-    // hogy volt-e TÉNYLEGES elmozdulás
+    // volt-e elmozdulás
     let prevX = -1;
     let prevY = -1;
 
@@ -42,7 +42,6 @@ export default function MouseFollowerElement() {
 
       const target = e.target as HTMLElement;
 
-      // Egyetlen DOM lekérdezés három helyett
       const newIsHovered = !!target.closest("ul, button, a");
 
       if (newIsHovered !== isHovered) {
@@ -59,7 +58,7 @@ export default function MouseFollowerElement() {
     };
 
     const updatePosition = () => {
-      //  Csak akkor nyúlunk a DOM-hoz, ha az egér tényleg mozdult
+      //  ha az egér tényleg mozdult
       if (prevX !== mouseX || prevY !== mouseY) {
         const transformValue = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
 
@@ -70,7 +69,7 @@ export default function MouseFollowerElement() {
           circleRef.current.style.transform = transformValue;
         }
 
-        // Elmentjük az új pozíciót
+        //  új pozíció
         prevX = mouseX;
         prevY = mouseY;
       }

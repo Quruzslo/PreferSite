@@ -253,7 +253,7 @@ export default function Header() {
                     </a>
 
                     {/* Dropdown */}
-                    <div className="absolute -left-1/4 top-full flex flex-col bg-green shadow-lg rounded-md py-2 min-w-[160px] z-50 transition-all duration-300 ease-out opacity-0 invisible translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto">
+                    <div className="absolute left-1/2 translate-x-[-50%]  top-full flex flex-col bg-green shadow-lg rounded-md py-2 min-w-[160px] z-50 transition-all duration-300 ease-out opacity-0 invisible translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto">
                       {" "}
                       {item.items.map((subItem, subIdx) => (
                         <a
