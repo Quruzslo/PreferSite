@@ -75,7 +75,7 @@ export default function NavigateToContact() {
   return (
     <section
       id="referenciak"
-      className="flex w-full bg-neutral-100 mx-auto py-[50px] px-[10px] my-[50px]"
+      className="flex w-full bg-neutral-100 mx-auto py-[150px] px-[10px] "
     >
       <div className="flex-col flex md:flex-row gap-[25px] w-[90%] max-w-[2560px] mx-auto">
         <div className="flex flex-col gap-[20px] w-full md:w-1/2">

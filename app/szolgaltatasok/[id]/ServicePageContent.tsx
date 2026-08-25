@@ -197,7 +197,7 @@ export default function ServicePageContent({
         <div className="relative mx-auto max-w-6xl">
           <Link
             href="/#szolgaltatas"
-            className="group mb-10 inline-flex items-center gap-2 text-sm text-gray-300 transition-colors hover:text-white"
+            className="group mb-10 inline-flex items-center gap-2 text-sm text-gray-100 transition-colors hover:text-white"
           >
             <FiArrowLeft className="transition-transform group-hover:-translate-x-1" />
             Vissza a szolgáltatásokhoz
@@ -215,7 +215,15 @@ export default function ServicePageContent({
             <p className="mb-10 text-lg leading-relaxed text-white md:text-xl">
               {service.hero.subtitle}
             </p>
-            <CtaButton href="/kapcsolat">{service.hero.ctaText}</CtaButton>
+            <ContactButton
+              path={"/kapcsolat"}
+              title={"Érdekel"}
+              wrapperClass={
+                "bg-green rounded-full w-fit py-[10px] px-[20px] items-center justify-center flex flex-row nowrap mx-auto"
+              }
+              titleClass={"text-white bg-green z-2 w-fit"}
+              decorClass="border-white bg-white"
+            ></ContactButton>
           </motion.div>
         </div>
       </section>
@@ -239,10 +247,10 @@ export default function ServicePageContent({
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false, amount: 0.3 }}
-                className="flex items-start gap-3 rounded-2xl border border-gray-100 bg-gray-50 p-6 transition-colors hover:border-green/30"
+                className="flex items-start gap-3 rounded-2xl bg-dark-color p-6 transition-colors "
               >
                 <FiCheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green" />
-                <p className="text-sm font-medium text-dark-color">{item}</p>
+                <p className=" font-medium text-white">{item}</p>
               </motion.div>
             ))}
           </div>
@@ -300,7 +308,7 @@ export default function ServicePageContent({
           <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white">
             {service.midCta.subtitle}
           </p>
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm w-full md:w-1/2 mx-auto">
             <p className="mb-6 text-xl font-semibold text-white">
               {service.midCta.question}
             </p>
