@@ -9,7 +9,7 @@ import { MdOutlineCookie } from "react-icons/md";
 export default function Footer() {
   const now = new Date().getFullYear();
   return (
-    <section className="w-full flex flex-col bg-dark-color  text-white py-[50px]">
+    <section className="w-full flex flex-col bg-dark-color  text-white py-[50px] z-1">
       <div className="w-[90%] max-w-[2560px] grid grid-cols-1 md:grid-cols-3 gap-[20px] bg-dark-green p-[15px] mx-auto rounded-[24px]">
         <div className="w-full flex flex-col gap-[15px]">
           <div className="footer-logo flex flex-row px-[20px] py-[10px] rounded-b-[24px] mb-[25px] bg-dark-color  items-center relative w-fit mx-auto mt-[-15px]">

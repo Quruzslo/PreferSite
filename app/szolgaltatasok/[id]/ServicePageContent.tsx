@@ -113,7 +113,7 @@ export default function ServicePageContent({
   service: ServiceData;
 }) {
   return (
-    <main className="min-h-screen bg-white pb-20 text-dark-color">
+    <section className="min-h-screen bg-white pb-20 text-dark-color">
       {/* Hero */}
       <section className="zoldhatteres relative overflow-hidden bg-dark-color px-6 py-24 text-white md:py-32 w-[90%] mx-auto rounded-xl mt-[120px] shadow-[0_0_10px_0px_rgba(0_0_0_0.6)] ">
         <div
@@ -284,6 +284,6 @@ export default function ServicePageContent({
           <CtaButton href="/kapcsolat">Ingyenes konzultációt kérek</CtaButton>
         </div>
       </section>
-    </main>
+    </section>
   );
 }

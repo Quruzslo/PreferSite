@@ -292,7 +292,7 @@ export default function Header() {
           {/* Kapcsolat */}
           <div className="hidden md:flex flex-row gap-4 items-center justify-center">
             <a
-              href="/#kapcsolat"
+              href="/kapcsolat"
               onClick={() => {
                 triggerIsScrolling();
               }}

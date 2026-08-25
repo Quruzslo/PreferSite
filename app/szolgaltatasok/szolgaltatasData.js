@@ -105,9 +105,9 @@ export const szolgaltatasokData = [
       ],
     },
     benefits: {
-      title: "Mire jó a profi webdizájn?",
+      title: "Miért fontos a minőségi weboldal?",
       description:
-        "Üzleti céljaid elérése érdekében elengedhetetlen, hogy céged naprakész weboldallal rendelkezzen. A profi webdesign megsokszorozza sikereid lehetőségét.",
+        "Üzleti céljaid elérése érdekében elengedhetetlen, hogy céged naprakész és megbízható weboldallal rendelkezzen. Egy stabil, átgondolt rendszer megsokszorozza sikereid lehetőségét.",
       stats: [
         {
           number: "3x",
