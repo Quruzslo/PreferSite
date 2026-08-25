@@ -19,7 +19,10 @@ export default function TechStack() {
 
   return (
     <Section className="flex flex-col my-[50px] ">
-      <h2 className="text-center text-3xl font-bold md:text-4xl my-[35px]">
+      <h2
+        id="stack"
+        className="text-center text-3xl font-bold md:text-4xl my-[35px]"
+      >
         Eszközök, amikkel dolgozom
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6 w-full">

@@ -73,7 +73,10 @@ export default function NavigateToContact() {
   };
 
   return (
-    <section className="flex w-full bg-neutral-100 mx-auto py-[50px] px-[10px] my-[50px]">
+    <section
+      id="referenciak"
+      className="flex w-full bg-neutral-100 mx-auto py-[50px] px-[10px] my-[50px]"
+    >
       <div className="flex-col flex md:flex-row gap-[25px] w-[90%] max-w-[2560px] mx-auto">
         <div className="flex flex-col gap-[20px] w-full md:w-1/2">
           <h2 className=" uppercase font-black md:!text-[65px] bg-clip-text text-transparent bg-gradient-to-r from-green to-violet-600 text-shadow-md">
@@ -132,6 +135,7 @@ export default function NavigateToContact() {
           ></ContactButton>
         </div>
         <div className="flex flex-col gap-[20px] w-full md:w-1/2">
+          <h2 className="font-bold ">Néhány korábbi projektem</h2>
           <Referencies></Referencies>
         </div>
       </div>
