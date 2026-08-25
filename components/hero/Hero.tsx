@@ -79,7 +79,6 @@ export default function Hero() {
             alt="Weboldal készítés, webshop és webapplikáció fejlesztés, crm rendszer fejlesztés"
             fill
             className="object-contain p-4"
-            priority
           />
         </div>
       </div>
