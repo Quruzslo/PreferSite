@@ -1,6 +1,7 @@
 "use client";
 import Referencies from "../hero/referencies/referencies";
 import { motion, Variants } from "motion/react";
+import ContactButton from "@/lib/ContactButton";
 
 export default function NavigateToContact() {
   const contactPrios = [
@@ -75,11 +76,11 @@ export default function NavigateToContact() {
     <section className="flex w-full bg-neutral-100 mx-auto py-[50px] px-[10px] my-[50px]">
       <div className="flex-col flex md:flex-row gap-[25px] w-[90%] max-w-[2560px] mx-auto">
         <div className="flex flex-col gap-[20px] w-full md:w-1/2">
-          <h2 className="mx-auto uppercase font-black bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-600">
+          <h2 className=" uppercase font-black md:!text-[65px] bg-clip-text text-transparent bg-gradient-to-r from-green to-violet-600 text-shadow-md">
             Ha szükséged van
           </h2>
 
-          <div className="flex flex-col gap-[10px] w-full md:w-fit mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px] w-full mx-auto">
             {contactPrios.map((prio, _) => (
               <div
                 key={prio}
@@ -89,7 +90,7 @@ export default function NavigateToContact() {
                   initial="hidden"
                   variants={wrapperVariants}
                   whileInView="visible"
-                  viewport={{ margin: "0px 0px 0% 0px", once: false }}
+                  viewport={{ margin: "-10% 0px -10% 0px", once: false }}
                   className="relative flex items-center w-full"
                 >
                   {/* Balról jobbra kitöltő zöld háttér */}
@@ -120,6 +121,15 @@ export default function NavigateToContact() {
               </div>
             ))}
           </div>
+          <ContactButton
+            path={"/kapcsolat"}
+            title={"Beszéljünk!"}
+            wrapperClass={
+              "bg-dark-color rounded-full w-fit p-[15px] items-center justify-center flex flex-row nowrap"
+            }
+            titleClass={"text-white bg-dark-color z-2 w-fit"}
+            decorClass="border-white bg-white"
+          ></ContactButton>
         </div>
         <div className="flex flex-col gap-[20px] w-full md:w-1/2">
           <Referencies></Referencies>

@@ -254,3 +254,69 @@ h4 {
     #17202a
   );
 }
+
+/* Kontank gombos --------------
+ */
+
+/* Alapállapot: bal oldali elemek jobbra tolva (rejtve/eltolva) */
+.contact-btn {
+  gap: 0px;
+  transition: all ease 0.4s;
+}
+
+.contact-btn:hover {
+  gap: 10px;
+}
+
+.decor-1,
+.decor-2,
+.decor-3 {
+  transform: translateX(100px);
+  width: 0px;
+  opacity: 0;
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease,
+    width 0.4s ease;
+}
+
+/* Alapállapot: jobb oldali elemek balra tolva */
+.decor-4,
+.decor-5,
+.decor-6 {
+  transform: translateX(-100px);
+  opacity: 0;
+  width: 0px;
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease,
+    width 0.4s ease;
+}
+
+/* KÉSLELTETÉSEK HOVER-RE (Kintről befelé: 3/4 -> 2/5 -> 1/6) */
+.contact-btn:hover .decor-3,
+.contact-btn:hover .decor-4 {
+  transition-delay: 0s;
+}
+
+.contact-btn:hover .decor-2,
+.contact-btn:hover .decor-5 {
+  transition-delay: 0.1s;
+}
+
+.contact-btn:hover .decor-1,
+.contact-btn:hover .decor-6 {
+  transition-delay: 0.2s;
+}
+
+/* Hover állapot: minden elem beúszik az eredeti helyére */
+.contact-btn:hover .decor-1,
+.contact-btn:hover .decor-2,
+.contact-btn:hover .decor-3,
+.contact-btn:hover .decor-4,
+.contact-btn:hover .decor-5,
+.contact-btn:hover .decor-6 {
+  transform: translateX(0);
+  width: 15px;
+  opacity: 1;
+}
