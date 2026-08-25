@@ -128,8 +128,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="w-[90%] max-w-[2560px] flex flex-row gap-[10px] p-[15px] mx-auto border-white/20 border-t-2 mt-[25px] items-center justify-center">
-        {now} <p> © Prefer Site - Minden jog fenntartva.</p>
+      <div className="w-[90%] max-w-[2560px] flex flex-row gap-[10px] p-[15px] mx-auto border-white/20 border-t-2 mt-[25px] items-center justify-center text-center">
+        <p> {now} © Prefer Site - Minden jog fenntartva.</p>
       </div>
     </section>
   );
