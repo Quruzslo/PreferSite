@@ -8,7 +8,28 @@ import Image from "next/image";
 import RefMockup from "@/public/references/ref-mockup-nobg.png";
 
 export default function Hero() {
-  const h1Items = ["Webapplikáció", "Webshop", "CRM", "Weboldal"];
+  const h1Items = [
+    {
+      name: "Webapplikáció",
+      link: "/szolgaltatasok/webapplikacio",
+    },
+    {
+      name: "Webshop",
+      link: "/szolgaltatasok/webshop",
+    },
+    {
+      name: "CRM",
+      link: "/szolgaltatasok/crm",
+    },
+    {
+      name: "Weboldal",
+      link: "/szolgaltatasok/weboldal",
+    },
+    {
+      name: "Karbantartás",
+      link: "/szolgaltatasok/karbantartas",
+    },
+  ];
 
   const containerVariants: Variants = {
     hidden: { opacity: 1 },
@@ -55,15 +76,16 @@ export default function Hero() {
             className="font-black text-[20px] md:!text-[45px]  flex !flex-col gap-[10px]"
           >
             {h1Items.map((item, idx) => (
-              <motion.span
+              <motion.a
                 key={idx}
                 variants={itemVariants}
+                href={item.link}
                 className="h1-elem origin-top-left inline-block relative text-white"
               >
-                {item}
+                {item.name}
                 <span className="arrow-left"></span>
                 <span className="arrow-right"></span>
-              </motion.span>
+              </motion.a>
             ))}
           </motion.h1>
 
@@ -76,9 +98,9 @@ export default function Hero() {
         <div className="hero-jobb relative w-full h-[300px] md:h-full md:min-h-[400px] md:w-[50%] flex items-center justify-center">
           <Image
             src={RefMockup}
-            alt="Weboldal készítés, webshop és webapplikáció fejlesztés, crm rendszer fejlesztés"
             fill
-            className="object-contain p-4"
+            alt="Weboldal készítés, webshop és webapplikáció fejlesztés, crm rendszer fejlesztés"
+            className="object-contain w-full"
           />
         </div>
       </div>
