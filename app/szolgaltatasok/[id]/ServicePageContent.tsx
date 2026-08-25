@@ -222,7 +222,7 @@ export default function ServicePageContent({
                 "bg-green rounded-full w-fit py-[10px] px-[20px] items-center justify-center flex flex-row nowrap mx-auto"
               }
               titleClass={"text-white bg-green z-2 w-fit"}
-              decorClass="border-white bg-white"
+              decorClass=" bg-white"
             ></ContactButton>
           </motion.div>
         </div>
