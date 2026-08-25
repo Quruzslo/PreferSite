@@ -1,6 +1,6 @@
 "use client";
 
-import refArray from "../../../components/hero/referencies/refs";
+import refArray from "../../../lib/referencies/refs";
 import { motion, useScroll, useTransform, MotionValue } from "motion/react";
 import { useRef } from "react";
 import Image from "next/image";

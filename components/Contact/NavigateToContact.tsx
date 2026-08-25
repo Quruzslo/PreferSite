@@ -1,5 +1,5 @@
 "use client";
-import Referencies from "../hero/referencies/referencies";
+import Referencies from "../../lib/referencies/referencies";
 import { motion, Variants } from "motion/react";
 import ContactButton from "@/lib/ContactButton";
 

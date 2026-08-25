@@ -1,10 +1,11 @@
 "use client";
 import AtomIcon from "@/public/icons/HeroAtomIcon";
 import { motion, Variants } from "framer-motion";
-import Section from "@/lib/section";
-import Referencies from "./referencies/referencies";
-import Herobg from "@/public/herobg.svg";
+// import Section from "@/lib/section";
+// import Referencies from "../../lib/referencies/referencies";
+// import Herobg from "@/public/herobg.svg";
 import Image from "next/image";
+import RefMockup from "@/public/references/ref-mockup-nobg.png";
 
 export default function Hero() {
   const h1Items = ["Webapplikáció", "Webshop", "CRM", "Weboldal"];
@@ -40,7 +41,7 @@ export default function Hero() {
   return (
     <section className="w-full flex-col flex rounded-b-[50px] relative overflow-hidden zoldhatteres bg-dark-color shadow-2xl">
       <div className="w-[90%] max-w-[2560px] mx-auto flex-col flex md:flex-row  pt-[120px] pb-[35px] md:!min-h-[calc(100vh_-_50px)] min-h-[450px] items-center justify-center gap-[25px] max-h-[1400px] ">
-        <div className="hero-bal w-full md:w-[50%] p-[10px] h-full flex-col flex justify-between gap-[20px] order-last md:order-first">
+        <div className="hero-bal w-full md:w-[50%] p-[10px] h-full flex-col flex justify-between gap-[20px] ">
           <div className="flex flex-row gap-[10px] rounded-md bg-green text-white w-fit p-[5px] items-center ">
             <AtomIcon />
             <p>Egyedi fejlesztésű termékek</p>
@@ -72,8 +73,14 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="hero-jobb w-full md:w-[50%] ">
-          <Referencies></Referencies>
+        <div className="hero-jobb relative w-full h-[300px] md:h-full md:min-h-[400px] md:w-[50%] flex items-center justify-center">
+          <Image
+            src={RefMockup}
+            alt="Weboldal készítés, webshop és webapplikáció fejlesztés, crm rendszer fejlesztés"
+            fill
+            className="object-contain p-4"
+            priority
+          />
         </div>
       </div>
     </section>
