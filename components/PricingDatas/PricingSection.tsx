@@ -86,7 +86,8 @@ export default function PricingSection() {
               </div>
             </div>
 
-            <button
+            <a
+              href="/kapcsolat"
               className={`group z-1 flex w-fit flex-row items-center justify-center gap-3 rounded-full py-3 px-6 font-bold transition-all duration-300 ${
                 plan.popular
                   ? "bg-green text-white shadow-md hover:shadow-lg"
@@ -100,7 +101,7 @@ export default function PricingSection() {
                   className="text-white rounded-full p-1 shrink-0"
                 />
               </div>
-            </button>
+            </a>
           </div>
         ))}
       </div>

@@ -5,6 +5,7 @@ import { motion, Variants } from "motion/react";
 import { FiCheckCircle, FiArrowLeft } from "react-icons/fi";
 import { MdArrowForward } from "react-icons/md";
 import Referencies from "./Referencies";
+import ContactButton from "@/lib/ContactButton";
 
 interface ServiceData {
   hero: { title: string; subtitle: string; ctaText: string };
@@ -53,6 +54,74 @@ const fadeUp: Variants = {
       delay: i * 0.07,
     },
   }),
+};
+
+const contactPrios = [
+  "Minőségi termékre",
+  "Céges imázs növelésre",
+  "Hatékony munkaeszközre",
+  "Stabil partneri viszonyra",
+  "Kiszámítható működésre",
+  "Bevétel növelésre",
+];
+
+const wrapperVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const containerVariant: Variants = {
+  hidden: {
+    clipPath: "inset(0% 100% 0% 0%)",
+  },
+  visible: {
+    clipPath: "inset(0% 0% 0% 0%)",
+    transition: {
+      duration: 0.5,
+      ease: [0.95, 0, 0.35, 1],
+      delay: 0.4,
+    },
+  },
+};
+
+const iconVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.85 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.95, 0, 0.35, 1],
+    },
+  },
+};
+
+const shortLineVariants: Variants = {
+  hidden: { clipPath: "inset(0% 100% 0% 0%)" },
+  visible: {
+    clipPath: "inset(0% 0% 0% 0%)",
+    transition: {
+      duration: 0.15,
+      ease: "linear",
+      delay: 0.6,
+    },
+  },
+};
+
+const longLineVariants: Variants = {
+  hidden: { clipPath: "inset(0% 100% 0% 0%)" },
+  visible: {
+    clipPath: "inset(0% 0% 0% 0%)",
+    transition: {
+      duration: 0.25,
+      ease: "easeOut",
+      delay: 0.8,
+    },
+  },
 };
 
 function SectionRule() {
@@ -146,7 +215,7 @@ export default function ServicePageContent({
             <p className="mb-10 text-lg leading-relaxed text-white md:text-xl">
               {service.hero.subtitle}
             </p>
-            <CtaButton href="#kapcsolat">{service.hero.ctaText}</CtaButton>
+            <CtaButton href="/kapcsolat">{service.hero.ctaText}</CtaButton>
           </motion.div>
         </div>
       </section>
@@ -235,7 +304,7 @@ export default function ServicePageContent({
             <p className="mb-6 text-xl font-semibold text-white">
               {service.midCta.question}
             </p>
-            <CtaButton href="/#kapcsolat">{service.midCta.ctaText}</CtaButton>
+            <CtaButton href="/kapcsolat">{service.midCta.ctaText}</CtaButton>
           </div>
         </div>
       </section>
@@ -273,15 +342,62 @@ export default function ServicePageContent({
       <Referencies></Referencies>
 
       {/* Utolsó CTA  */}
-      <section id="kapcsolat" className="mx-auto mt-10 max-w-6xl px-6">
-        <div className="rounded-3xl border border-gray-200 bg-gray-50 p-8 text-center md:p-14">
-          <h2 className="mb-4 text-2xl font-bold md:text-4xl">
-            {service.footerCta.title}
+      <section id="kapcsolat" className="mx-auto mt-10 w-full px-6">
+        <div className="flex flex-col gap-[20px] w-full md:w-1/2 mx-auto">
+          <h2 className=" mx-auto uppercase font-black md:!text-[65px] bg-clip-text text-transparent bg-gradient-to-r from-green to-violet-600 text-shadow-md">
+            Ha szükséged van
           </h2>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-600 md:text-xl">
-            {service.footerCta.subtitle}
-          </p>
-          <CtaButton href="/kapcsolat">Ingyenes konzultációt kérek</CtaButton>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px] w-full mx-auto">
+            {contactPrios.map((prio, _) => (
+              <div
+                key={prio}
+                className="relative flex items-stretch h-full w-full  "
+              >
+                <motion.div
+                  initial="hidden"
+                  variants={wrapperVariants}
+                  whileInView="visible"
+                  viewport={{ margin: "-10% 0px -10% 0px", once: false }}
+                  className="relative flex items-center w-full"
+                >
+                  {/* Balról jobbra kitöltő zöld háttér */}
+                  <motion.div
+                    variants={containerVariant}
+                    className="bg-green rounded-full p-[10px] w-full md:w-full flex flex-row items-center gap-[10px]"
+                  >
+                    {/* Ikon konténer */}
+                    <motion.div
+                      variants={iconVariants}
+                      className="flex items-center justify-center p-[5px] z-20 w-fit rounded-full bg-white"
+                    >
+                      <motion.div className="relative w-[30px] h-[30px]">
+                        <motion.div
+                          variants={shortLineVariants}
+                          className="absolute h-[4px] w-[12px] bg-green rotate-[45deg] left-[4px] top-[16px] rounded-full"
+                        />
+                        <motion.div
+                          variants={longLineVariants}
+                          className="absolute h-[4px] w-[22px] bg-green rotate-[-50deg] left-[10px] top-[12px] rounded-full"
+                        />
+                      </motion.div>
+                    </motion.div>
+
+                    <p className="text-white">{prio}</p>
+                  </motion.div>
+                </motion.div>
+              </div>
+            ))}
+          </div>
+          <ContactButton
+            path={"/kapcsolat"}
+            title={"Beszéljünk!"}
+            wrapperClass={
+              "bg-dark-color rounded-full w-fit p-[15px] items-center justify-center flex flex-row nowrap mx-auto"
+            }
+            titleClass={"text-white bg-dark-color z-2 w-fit"}
+            decorClass="border-white bg-white"
+          ></ContactButton>
         </div>
       </section>
     </section>
