@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: OpenImage.src,
-        width: OpenImage.width || 1200,
-        height: OpenImage.height || 630,
+        url: "/references/ref-mockup-nobg.png",
+        width: 1200,
+        height: 630,
         alt: "Prefersite - Webfejlesztés Vállalkozásoknak. Weboldal, Webshop, CRM, Admin rendszer és Webapplikáció.",
       },
     ],
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Prefersite | Egyedi Weboldal, Webshop és CRM Fejlesztés",
     description:
       "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak.",
-    images: [OpenImage.src],
+    images: ["/references/ref-mockup-nobg.png"],
   },
 };
 
