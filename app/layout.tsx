@@ -7,7 +7,6 @@ import MouseFollowerElement from "@/lib/mouseFollowerElement";
 import ScrollToTop from "@/lib/scrollToTop";
 import Footer from "../components/Footer/Footer";
 import ScrollContextProvider from "@/lib/ScrollContext";
-import OpenImage from "../public/references/ref-mockup-nobg.png";
 
 const groteskSans = Space_Grotesk({
   subsets: ["latin"],
@@ -32,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "",
+        url: "/references/ref-mockup-nobg.png",
         width: 1200,
         height: 630,
         alt: "Prefersite - Webfejlesztés Vállalkozásoknak. Weboldal, Webshop, CRM, Admin rendszer és Webapplikáció.",
@@ -44,7 +43,7 @@ export const metadata: Metadata = {
     title: "Prefersite | Egyedi Weboldal, Webshop és CRM Fejlesztés",
     description:
       "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak.",
-    images: [""],
+    images: ["/references/ref-mockup-nobg.png"],
   },
 };
 
