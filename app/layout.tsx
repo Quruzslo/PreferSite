@@ -7,15 +7,45 @@ import MouseFollowerElement from "@/lib/mouseFollowerElement";
 import ScrollToTop from "@/lib/scrollToTop";
 import Footer from "../components/Footer/Footer";
 import ScrollContextProvider from "@/lib/ScrollContext";
+import OpenImage from "../public/references/ref-mockup-nobg.png";
 
 const groteskSans = Space_Grotesk({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Prefer Site",
+export const metadata: Metadata = {
+  metadataBase: new URL("https://prefersite.hu"),
+
+  title:
+    "Prefersite | Egyedi Weboldal, Webshop és CRM Fejlesztés Vállalkozásoknak",
   description:
-    "Egyedi webalkalmazás, weboldal, webshop, CRM rendszer fejlesztés.",
+    "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak. Növelje vállalkozása hatékonyságát modern szoftverekkel! Kérjen egyedi ajánlatot!",
+
+  openGraph: {
+    title:
+      "Prefersite | Egyedi Weboldal, Webshop és CRM Fejlesztés Vállalkozásoknak",
+    description:
+      "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak. Növelje vállalkozása hatékonyságát modern szoftverekkel! Kérjen egyedi ajánlatot!",
+    url: "https://prefersite.hu",
+    siteName: "Prefersite",
+    locale: "hu_HU",
+    type: "website",
+    images: [
+      {
+        url: OpenImage.src,
+        width: OpenImage.width || 1200,
+        height: OpenImage.height || 630,
+        alt: "Prefersite - Webfejlesztés Vállalkozásoknak. Weboldal, Webshop, CRM, Admin rendszer és Webapplikáció.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Prefersite | Egyedi Weboldal, Webshop és CRM Fejlesztés",
+    description:
+      "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak.",
+    images: [OpenImage.src],
+  },
 };
 
 export default function RootLayout({

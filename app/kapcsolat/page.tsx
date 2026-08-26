@@ -2,6 +2,11 @@ import ContactSection from "../../components/Contact/ContactSection";
 import CurvedLines from "./CurvedLine";
 
 const h2Elements = ["Weboldal", "Webshop", "CRM", "Webapplikáció"];
+export const metadata = {
+  title: "Webfejlesztés - Kapcsolat",
+  description:
+    "Weboldal készítés országosan bárhonnan. Weboldal készítés Kaposváron, webfejlesztés Budapesten, Győrben.",
+};
 
 export default function ContactPage() {
   return (
