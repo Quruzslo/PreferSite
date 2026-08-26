@@ -184,7 +184,7 @@ export default function ServicePageContent({
   return (
     <section className="min-h-screen bg-white pb-20 text-dark-color">
       {/* Hero */}
-      <section className="zoldhatteres relative overflow-hidden bg-dark-color px-6 py-24 text-white md:py-32 w-[90%] mx-auto rounded-xl mt-[120px] shadow-[0_0_10px_0px_rgba(0_0_0_0.6)] ">
+      <section className="zoldhatteres relative overflow-hidden bg-dark-color px-[10px] py-24 text-white md:py-32 w-[90%] mx-auto rounded-xl mt-[120px] shadow-[0_0_10px_0px_rgba(0_0_0_0.6)] ">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 flex select-none items-center overflow-hidden"
@@ -196,11 +196,11 @@ export default function ServicePageContent({
 
         <div className="relative mx-auto max-w-6xl">
           <Link
-            href="/#szolgaltatas"
+            href="/"
             className="group mb-10 inline-flex items-center gap-2 text-sm text-gray-100 transition-colors hover:text-white"
           >
             <FiArrowLeft className="transition-transform group-hover:-translate-x-1" />
-            Vissza a szolgáltatásokhoz
+            Vissza a főoldalra
           </Link>
 
           <motion.div
@@ -229,8 +229,8 @@ export default function ServicePageContent({
       </section>
 
       {/* Miért */}
-      <section className="border-b border-gray-100 px-6 py-20">
-        <div className="mx-auto w-[90%]">
+      <section className="border-b border-gray-100 py-20">
+        <div className="mx-auto w-[90%] ">
           <div className=" flex flex-col w-fit">
             <SectionRule />
             <h2 className="mb-10 max-w-2xl text-2xl font-bold md:text-3xl">
@@ -258,7 +258,7 @@ export default function ServicePageContent({
       </section>
 
       {/* ELŐNYÖK  */}
-      <section className="bg-gray-50/50 px-6 py-20">
+      <section className="bg-gray-50/50 py-20">
         <div className="mx-auto w-[90%]">
           <div className="mb-16 w-fit">
             <SectionRule />
@@ -300,8 +300,8 @@ export default function ServicePageContent({
       </section>
 
       {/* KÖZÉPSŐ CTA */}
-      <section className="zoldhatteres bg-dark-green px-6 py-20 text-center text-white">
-        <div className="mx-auto w-[90%]">
+      <section className="zoldhatteres bg-dark-green py-20 text-center text-white">
+        <div className="mx-auto w-[90%] px-[10px]">
           <h2 className="mb-6 text-3xl font-bold md:text-4xl">
             {service.midCta.title}
           </h2>
@@ -318,8 +318,8 @@ export default function ServicePageContent({
       </section>
 
       {/*  FUNKCIÓK */}
-      <section className="px-6 py-20">
-        <div className="mx-auto w-[90%]">
+      <section className=" py-20">
+        <div className="mx-auto w-[90%] px-[10px]">
           <div className="mb-12 w-fit">
             <SectionRule />
             <h2 className="text-3xl font-bold">{service.features.title}</h2>
