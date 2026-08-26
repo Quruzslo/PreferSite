@@ -5,10 +5,11 @@ const BASE_URL = "https://prefersite.hu";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routesMap = new Map<string, MetadataRoute.Sitemap[number]>();
+  const currentDate = new Date();
 
   routesMap.set("/", {
     url: BASE_URL,
-    lastModified: new Date(),
+    lastModified: currentDate,
     changeFrequency: "weekly" as const,
     priority: 1.0,
   });
@@ -19,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         if (subItem.path && !subItem.path.includes("#")) {
           routesMap.set(subItem.path, {
             url: `${BASE_URL}${subItem.path}`,
-            lastModified: new Date(),
+            lastModified: currentDate,
             changeFrequency: "weekly" as const,
             priority: 0.9,
           });
@@ -30,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     if (item.path && !item.path.includes("#") && item.path !== "/") {
       routesMap.set(item.path, {
         url: `${BASE_URL}${item.path}`,
-        lastModified: new Date(),
+        lastModified: currentDate,
         changeFrequency: "monthly" as const,
         priority: 0.8,
       });
