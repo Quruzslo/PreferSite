@@ -268,16 +268,15 @@ export default function Header() {
                     </div>
                   </li>
                 ) : (
-                  <a
-                    key={idx}
-                    href={item.path}
+                  <li
                     onClick={() => triggerIsScrolling()}
                     onMouseEnter={handleMouseEnter}
-                    className="relative z-10 menu-link hover:text-dark-color cursor-pointer transition-colors transition"
+                    key={idx}
                     style={{ animationDelay: `${idx * 0.1}s` }}
+                    className="relative z-10 menu-link hover:text-dark-color cursor-pointer transition-colors transition"
                   >
-                    {item.name}
-                  </a>
+                    <a href={item.path}>{item.name}</a>
+                  </li>
                 ),
               )}
             </ul>
