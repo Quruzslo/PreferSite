@@ -109,7 +109,7 @@ export default function Header() {
                   <ul className="flex flex-col items-start gap-6 font-bold">
                     {navItems.map((item, idx) =>
                       item.items && item.items.length > 0 ? (
-                        <div
+                        <li
                           key={idx}
                           className="relative group z-10 flex flex-col"
                           onMouseEnter={handleMouseEnter}
@@ -166,7 +166,7 @@ export default function Header() {
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </li>
                       ) : (
                         <motion.a
                           key={item.path || item.name}
@@ -225,7 +225,7 @@ export default function Header() {
 
               {navItems.map((item, idx) =>
                 item.items && item.items.length > 0 ? (
-                  <div
+                  <li
                     key={idx}
                     className="relative group z-10 flex "
                     onMouseEnter={handleMouseEnter}
@@ -266,7 +266,7 @@ export default function Header() {
                         </a>
                       ))}
                     </div>
-                  </div>
+                  </li>
                 ) : (
                   <a
                     key={idx}

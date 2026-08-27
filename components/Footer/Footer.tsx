@@ -47,7 +47,7 @@ export default function Footer() {
             <ul className="relative flex flex-col items-start gap-6 font-bold w-fit">
               {navItems.map((item, idx) =>
                 item.items && item.items.length > 0 ? (
-                  <div
+                  <li
                     key={idx}
                     className="relative group z-11 flex cursor-pointer"
                   >
@@ -85,7 +85,7 @@ export default function Footer() {
                         </a>
                       ))}
                     </div>
-                  </div>
+                  </li>
                 ) : (
                   <a
                     key={idx}

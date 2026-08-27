@@ -65,10 +65,10 @@ export default function PricingSection() {
               </div>
 
               <div className="bg-dark-green p-[10px] rounded-xl mb-6 ">
-                <p className="text-[15px] font-bold text-gray-100 uppercase tracking-wider mb-1">
+                <p className="text-[15px] font-bold text-white uppercase tracking-wider mb-1">
                   Mikor válaszd ezt?
                 </p>
-                <p className="text-xs text-gray-100 leading-relaxed">
+                <p className="text-xs text-white leading-relaxed">
                   {plan.useCase}
                 </p>
               </div>
