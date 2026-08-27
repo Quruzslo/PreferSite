@@ -15,8 +15,7 @@ const groteskSans = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL("https://prefersite.hu"),
 
-  title:
-    "Prefersite | Egyedi Weboldal, Webshop és CRM Fejlesztés Vállalkozásoknak",
+  title: "Prefersite | Weboldal, Webshop és CRM Fejlesztés Vállalkozásoknak",
   description:
     "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak. Növelje vállalkozása hatékonyságát modern szoftverekkel! Kérjen egyedi ajánlatot!",
 
