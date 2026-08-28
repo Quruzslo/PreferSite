@@ -106,7 +106,7 @@ export default function Header() {
                 className="menu-container w-full max-w-[320px] mx-auto flex flex-col items-center justify-center text-center my-auto will-change-transform [backface-visibility:hidden]"
               >
                 <nav className=" py-[5px] px-[20px] text-white mx-auto w-fit">
-                  <ul className="flex flex-col items-start gap-6 font-bold">
+                  <ul className="flex flex-col items-start gap-6 font-bold mb-6">
                     {navItems.map((item, idx) =>
                       item.items && item.items.length > 0 ? (
                         <li
@@ -223,17 +223,26 @@ export default function Header() {
                 className="absolute top-1/2 -translate-y-1/2 h-[calc(100%+14px)] bg-green rounded-md transition-all duration-300 ease-out pointer-events-none opacity-0"
               />
 
-              {navItems.map((item, idx) =>
-                item.items && item.items.length > 0 ? (
+              {navItems.map((item, idx) => {
+                if (
+                  item.path === "/kapcsolat" &&
+                  (!item.items || item.items.length === 0)
+                ) {
+                  return null;
+                }
+
+                const hasSubitems = item.items && item.items.length > 0;
+
+                return hasSubitems ? (
                   <li
-                    key={idx}
-                    className="relative group z-10 flex "
+                    key={item.path || idx}
+                    className="relative group z-10 flex"
                     onMouseEnter={handleMouseEnter}
                   >
                     <a
                       href={item.path}
                       onClick={() => triggerIsScrolling()}
-                      className="menu-link hover:text-dark-color cursor-pointer transition-colors transition flex items-center gap-1"
+                      className="menu-link hover:text-dark-color cursor-pointer transition-colors flex items-center gap-1"
                       style={{ animationDelay: `${idx * 0.1}s` }}
                     >
                       {item.name}
@@ -253,14 +262,13 @@ export default function Header() {
                     </a>
 
                     {/* Dropdown */}
-                    <div className="absolute left-1/2 translate-x-[-50%]  top-full flex flex-col bg-green shadow-lg rounded-md py-2 min-w-[160px] z-50 transition-all duration-300 ease-out opacity-0 invisible translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto">
-                      {" "}
+                    <div className="absolute left-1/2 -translate-x-1/2 top-full flex flex-col bg-green shadow-lg rounded-md py-2 min-w-[160px] z-50 transition-all duration-300 ease-out opacity-0 invisible translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto">
                       {item.items.map((subItem, subIdx) => (
                         <a
-                          key={subIdx}
-                          href={`${subItem.path}`}
+                          key={subItem.path || subIdx}
+                          href={subItem.path}
                           onClick={() => triggerIsScrolling()}
-                          className="px-4 py-2 text-sm text-white  hover:text-dark-color transition-colors"
+                          className="px-4 py-2 text-sm text-white hover:text-dark-color transition-colors"
                         >
                           {subItem.name}
                         </a>
@@ -269,16 +277,16 @@ export default function Header() {
                   </li>
                 ) : (
                   <li
+                    key={item.path || idx}
                     onClick={() => triggerIsScrolling()}
                     onMouseEnter={handleMouseEnter}
-                    key={idx}
                     style={{ animationDelay: `${idx * 0.1}s` }}
-                    className="relative z-10 menu-link hover:text-dark-color cursor-pointer transition-colors transition"
+                    className="relative z-10 menu-link hover:text-dark-color cursor-pointer transition-colors"
                   >
                     <a href={item.path}>{item.name}</a>
                   </li>
-                ),
-              )}
+                );
+              })}
             </ul>
           </nav>
 
