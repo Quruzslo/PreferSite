@@ -6,7 +6,7 @@ import { MdArrowForward, MdArrowOutward } from "react-icons/md";
 
 export default function PricingSection() {
   return (
-    <section id="arazas" className="w-[90%] max-w-[2560px] mx-auto my-[50px]">
+    <section id="arazas" className="w-[90%] max-w-[2560px] mx-auto my-[50px] ">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
           Csomagok és árazás
@@ -20,7 +20,7 @@ export default function PricingSection() {
         {pricingData.map((plan: any) => (
           <div
             key={plan.id}
-            className={`relative group flex flex-col justify-between p-[10px] gap-[20px] md:p-8 rounded-md shadow-md overflow-hidden zoldhatteres  ${
+            className={`relative group flex flex-col hero-conti justify-between p-[10px] gap-[20px] md:p-8 rounded-md zoldhatteres bg-dark-color/10 ${
               plan.popular || plan.mostPopular
                 ? "border-green shadow-xl ring-2 ring-green/20"
                 : ""
@@ -39,13 +39,13 @@ export default function PricingSection() {
             <div className="bg-white/70 z-1 absolute bottom-0 left-0  h-full w-full "></div>
 
             {plan.mostPopular && (
-              <span className="absolute z-2 top-[5px] left-[5px] bg-green text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md shadow-sm">
+              <span className="absolute z-2 top-[5px] left-[50%] -translate-x-1/2 bg-green text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md shadow-sm">
                 Legnépszerűbb
               </span>
             )}
 
             {plan.popular && (
-              <span className="absolute z-2 top-[5px] left-[5px] bg-green text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md shadow-sm">
+              <span className="absolute z-2 top-[5px] left-[50%] -translate-x-1/2  bg-green text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md shadow-sm">
                 Népszerű
               </span>
             )}
@@ -88,7 +88,7 @@ export default function PricingSection() {
 
             <a
               href="/kapcsolat"
-              className={`group z-1 flex w-fit flex-row items-center justify-center gap-3 rounded-full py-3 px-6 font-bold transition-all duration-300 ${
+              className={`group mx-auto z-1 flex w-fit flex-row items-center justify-center gap-3 rounded-full py-3 px-6 font-bold transition-all duration-300 ${
                 plan.popular
                   ? "bg-green text-white shadow-md hover:shadow-lg"
                   : "bg-dark-color text-white"
