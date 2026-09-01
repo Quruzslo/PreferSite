@@ -3,6 +3,7 @@
 export const szolgaltatasokData = [
   {
     slug: "webapplikacio",
+    img: "/webapp.svg",
     hero: {
       title: "A belső rendszereid automatizálnak, vagy fejfájást okoznak?",
       subtitle:
@@ -87,6 +88,7 @@ export const szolgaltatasokData = [
   },
   {
     slug: "weboldal",
+    img: "/website.svg",
     hero: {
       title: "A weboldalad előrevisz, vagy hátráltat?",
       subtitle:
@@ -170,6 +172,7 @@ export const szolgaltatasokData = [
 
   {
     slug: "webshop",
+    img: "/webshop.svg",
     hero: {
       title: "A webshopod termeli a profitot, vagy viszi a pénzt?",
       subtitle:
@@ -253,6 +256,7 @@ export const szolgaltatasokData = [
 
   {
     slug: "crm",
+    img: "/crm.svg",
     hero: {
       title: "A cégvezetés felemészt, vagy szabadságot ad?",
       subtitle:
@@ -336,6 +340,7 @@ export const szolgaltatasokData = [
 
   {
     slug: "karbantartas",
+    img: "/karbantartas.svg",
     hero: {
       title: "A weboldalad biztonságban van, vagy időzített bomba?",
       subtitle:

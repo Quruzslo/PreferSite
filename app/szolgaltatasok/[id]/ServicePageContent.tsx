@@ -6,9 +6,11 @@ import { FiCheckCircle, FiArrowLeft } from "react-icons/fi";
 import { MdArrowForward } from "react-icons/md";
 import Referencies from "./Referencies";
 import ContactButton from "@/lib/ContactButton";
+import Image from "next/image";
 
 interface ServiceData {
   hero: { title: string; subtitle: string; ctaText: string };
+  img: any;
   importance: { title: string; items: string[] };
   benefits: {
     title: string;
@@ -184,7 +186,7 @@ export default function ServicePageContent({
   return (
     <section className="min-h-screen bg-white pb-20 text-dark-color">
       {/* Hero */}
-      <section className="zoldhatteres relative overflow-hidden bg-dark-color px-[10px] py-24 text-white md:py-32 w-[90%] mx-auto rounded-xl mt-[120px] shadow-[0_0_10px_0px_rgba(0_0_0_0.6)] ">
+      <section className="zoldhatteres flex flex-col md:flex-row px-[10px] relative overflow-hidden bg-dark-color px-[10px] py-24 text-white md:py-32 w-[90%] mx-auto rounded-xl mt-[120px] shadow-[0_0_10px_0px_rgba(0_0_0_0.6)] ">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 flex select-none items-center overflow-hidden"
@@ -194,7 +196,7 @@ export default function ServicePageContent({
           </span>
         </div>
 
-        <div className="relative mx-auto max-w-6xl">
+        <div className="relative mx-auto w-full md:w-1/2 p-[10px]">
           <Link
             href="/"
             className="group mb-10 inline-flex items-center gap-2 text-sm text-gray-100 transition-colors hover:text-white"
@@ -225,6 +227,17 @@ export default function ServicePageContent({
               decorClass=" bg-white"
             ></ContactButton>
           </motion.div>
+        </div>
+        <div className="w-[90%] md:w-1/2 mx-auto mt-[35px] md:mt-0">
+          <div className="service-page-img-wrapper relative w-fit mx-auto z-0 ">
+            <Image
+              alt={service.hero.title}
+              height={500}
+              width={500}
+              src={service.img}
+              className="mx-auto z-10"
+            ></Image>
+          </div>
         </div>
       </section>
 
