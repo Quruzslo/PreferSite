@@ -40,7 +40,7 @@ export default function HamburgerButton({
     >
       <svg
         viewBox="0 0 68 68"
-        className={`hamburger-svg ${isOpen || isScrolled ? "!text-white" : "text-white"}`}
+        className={`hamburger-svg ${isOpen || isScrolled ? "!text-white" : "text-dark-color"}`}
         xmlns="http://www.w3.org/2000/svg"
       >
         <circle
