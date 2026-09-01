@@ -16,11 +16,11 @@ export default function PricingSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8 items-stretch p-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8 items-stretch  w-full">
         {pricingData.map((plan: any) => (
           <div
             key={plan.id || plan.title}
-            className="relative drop-shadow-[0_5px_10px_rgba(0,0,0,0.3)] z-0"
+            className="relative drop-shadow-[0_5px_10px_rgba(0,0,0,0.3)] z-0 w-full"
           >
             <div className="hero-conti bg-white z-0 h-full">
               <div
