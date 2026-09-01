@@ -28,13 +28,15 @@ const BenefitCard = ({ benefit }) => {
         opacity,
         willChange: "filter, opacity",
       }}
-      className="flex flex-col gap-4 benefit-card relative p-[10px] bg-white"
+      className="flex flex-col gap-4 benefit-card relative p-[10px] bg-dark-color rounded-[19px] text-white"
     >
-      <span className="w-fit benefit-badge rounded-full bg-green px-3 py-1 text-[20px] font-black uppercase text-dark-color ">
+      <span className="w-fit benefit-badge rounded-[11px] bg-green px-3 py-1 text-[20px] font-black uppercase text-white ">
         {benefit.badge}
       </span>
-      <h3 className="text-xl font-bold">{benefit.title}</h3>
-      <p className="text-neutral-600 dark:text-neutral-400">
+      <h3 className="text-xl font-bold bg-white ml-[-10px] my-[15px] w-fit text-dark-color rounded-tr-[20px] rounded-br-[20px] pr-[5px] py-[15px] benefit-title relative">
+        {benefit.title}
+      </h3>
+      <p className="text-neutral-600 dark:text-neutral-100">
         {benefit.description}
       </p>
     </motion.div>
