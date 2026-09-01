@@ -1,9 +1,7 @@
 "use client";
 import AtomIcon from "@/public/icons/HeroAtomIcon";
 import { motion, Variants } from "framer-motion";
-// import Section from "@/lib/section";
-// import Referencies from "../../lib/referencies/referencies";
-// import Herobg from "@/public/herobg.svg";
+import ClipMask from "@/lib/ClipMask";
 import Image from "next/image";
 import RefMockup from "@/public/references/ref-mockup-nobg.png";
 
@@ -60,8 +58,8 @@ export default function Hero() {
   };
 
   return (
-    <section className="w-full flex-col flex rounded-b-[50px] relative overflow-hidden zoldhatteres bg-dark-color shadow-2xl">
-      <div className="w-[90%] max-w-[2560px] mx-auto flex-col flex md:flex-row  pt-[120px] pb-[35px] md:!min-h-[calc(100vh_-_50px)] min-h-[450px] items-center justify-center gap-[25px] max-h-[1400px] ">
+    <section className="w-full flex-col flex  relative overflow-hidden ">
+      <div className="w-[90%] max-w-[2560px] p-[15px] hero-conti zoldhatteres bg-dark-color rounded-2xl filter drop-shadow-[0_5px_20px_rgba(0,0,0,0.6)] mx-auto flex-col flex md:flex-row mt-[100px] mb-[75px] md:!min-h-[calc(100vh_-_150px)] min-h-[450px] items-center justify-center gap-[25px] max-h-[1400px] ">
         <div className="hero-bal w-full md:w-[50%] p-[10px] h-full flex-col flex justify-between gap-[20px] ">
           <div className="flex flex-row gap-[10px] rounded-md bg-dark-green text-white w-fit p-[5px] items-center ">
             <AtomIcon />

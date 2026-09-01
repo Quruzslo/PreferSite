@@ -48,6 +48,19 @@ h4 {
   -webkit-hyphens: auto;
 }
 
+.hero-conti {
+  -webkit-mask-box-image-source: url("/cutCorner.svg");
+  mask-border-source: url("/cutCorner.svg");
+  -webkit-mask-box-image-slice: 50 fill;
+  mask-border-slice: 50 fill;
+  -webkit-mask-box-image-width: 60px;
+  mask-border-width: 60px;
+  -webkit-mask-box-image-repeat: stretch;
+  mask-border-repeat: stretch;
+  -webkit-mask-box-image-mode: alpha;
+  mask-border-mode: alpha;
+}
+
 .h1-elem::before {
   content: "";
   position: absolute;
