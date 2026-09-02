@@ -313,7 +313,7 @@ export default function ServicePageContent({
       </section>
 
       {/* KÖZÉPSŐ CTA */}
-      <section className="zoldhatteres bg-dark-green py-20 text-center text-white">
+      <section className="zoldhatteres bg-dark-green py-20 text-center text-white w-[90%] hero-conti mx-auto">
         <div className="mx-auto w-[90%] px-[10px]">
           <h2 className="mb-6 text-3xl font-bold md:text-4xl">
             {service.midCta.title}
