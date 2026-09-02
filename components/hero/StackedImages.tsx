@@ -14,7 +14,7 @@ export default function StackedImages() {
         <Image
           fill
           className="stacked-img"
-          alt="Andocs weboldal referencia"
+          alt="Weboldal készítés cégeknek, vállalkozásoknak."
           src={Andocs}
           // sizes="(max-width: 768px) 100vw, 50vw"
         />
@@ -25,7 +25,7 @@ export default function StackedImages() {
         <Image
           fill
           className="stacked-img"
-          alt="SYA Solutions weboldal referencia"
+          alt="Webshop és weboldal fejlesztés Kaposvár"
           src={Sya}
           // sizes="(max-width: 768px) 100vw, 50vw"
         />
@@ -35,9 +35,10 @@ export default function StackedImages() {
       <div className="stacked-item stacked-3">
         <Image
           fill
-          className="stacked-img"
-          alt="Glam by Panna weboldal referencia"
+          className="stacked-img "
+          alt="Webshop és weboldal fejlesztés Budapest"
           src={Panna}
+
           // sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
@@ -47,7 +48,7 @@ export default function StackedImages() {
         <Image
           fill
           className="stacked-img"
-          alt="Kiskertész bolt weboldal referencia"
+          alt="Webshop és weboldal készítés Kaposvár, Budapest"
           src={Kiskertesz}
           // sizes="(max-width: 768px) 100vw, 50vw"
         />

@@ -26,6 +26,14 @@
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@media (max-width: 800px) {
+  .stacked-img {
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
 .stacked-1 {
   transform: translate(calc(50% + 10px), calc(50% + 10px)) rotateX(30deg)
     rotateZ(45deg) rotateY(-45deg) translateZ(-90px);
