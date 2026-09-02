@@ -1,4 +1,5 @@
 "use client";
+import { RxCookie } from "react-icons/rx";
 
 import { useState, useEffect } from "react";
 
@@ -21,8 +22,14 @@ export default function CookieBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed flex flex-row flex-wrap bottom-[15px] left-[15px] bg-white text-dark-color/70 p-4 rounded-md z-50 flex gap-4 items-center mx-auto justify-between w-[90%] md:w-fit shadow-[0px_5px_10px_0px_rgba(0,0,0,0.6)] ">
-      <p className="font-bold">Az oldal csak szükséges sütiket használ.</p>
+    <div className="fixed flex flex-col flex-wrap bottom-[15px] left-[15px] bg-dark-color/50 backdrop-blur-md text-white p-4 rounded-md z-50 flex gap-[15px] items-center mx-auto justify-between w-[90%] md:w-fit shadow-[0px_5px_10px_0px_rgba(0,0,0,0.6)] ">
+      <RxCookie
+        size={45}
+        className="mr-auto border-2 border-white rounded-full p-[5px] "
+      />
+      <p className="font-bold text-[12px] md:text-[15px]">
+        Az oldal kizárólag szükséges sütiket használ.
+      </p>
       <button
         onClick={handleAccept}
         className="bg-dark-green text-white px-4 py-2 rounded-full text-sm font-bold"
