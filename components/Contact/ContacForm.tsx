@@ -133,7 +133,7 @@ export default function ContactForm() {
 
         {/* Adatkezelési nyilatkozat */}
         <div className="flex flex-col gap-1 mt-4">
-          <label className="flex items-center gap-2 text-dark-green/70 text-sm cursor-pointer w-max">
+          <label className="flex items-center gap-2 text-white cursor-pointer w-max">
             <input
               type="checkbox"
               name="adatkezeles"
@@ -149,7 +149,7 @@ export default function ContactForm() {
         </div>
 
         {isSuccess && (
-          <p className="text-green-600 font-medium text-sm">
+          <p className="text-green-600 font-medium ">
             Köszönöm! Az üzeneted sikeresen elküldve.
           </p>
         )}
