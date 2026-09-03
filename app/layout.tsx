@@ -18,13 +18,31 @@ const groteskSans = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL("https://prefersite.hu"),
 
-  title: "Prefersite | Weboldal, Webshop és CRM Fejlesztés Vállalkozásoknak",
+  title: {
+    default: "Egyedi Weboldal, Webshop és CRM Fejlesztés | Prefersite",
+    template: "%s | Prefersite",
+  },
   description:
     "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak. Növelje vállalkozása hatékonyságát modern szoftverekkel! Kérjen egyedi ajánlatot!",
 
+  alternates: {
+    canonical: "./",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
   openGraph: {
-    title:
-      "Prefersite | Egyedi Weboldal, Webshop és CRM Fejlesztés Vállalkozásoknak",
+    title: "Prefersite | Egyedi Weboldal, Webshop és CRM Fejlesztés",
     description:
       "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak. Növelje vállalkozása hatékonyságát modern szoftverekkel! Kérjen egyedi ajánlatot!",
     url: "https://prefersite.hu",
@@ -36,7 +54,7 @@ export const metadata: Metadata = {
         url: "/references/ref-mockup-nobg.png",
         width: 1200,
         height: 630,
-        alt: "Prefersite - Webfejlesztés Vállalkozásoknak. Weboldal, Webshop, CRM, Admin rendszer és Webapplikáció.",
+        alt: "Prefersite - Webfejlesztés Vállalkozásoknak. Weboldal, Webshop, CRM és Webapplikáció.",
       },
     ],
   },
@@ -49,6 +67,24 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Prefersite",
+  url: "https://prefersite.hu",
+  logo: "https://prefersite.hu/icon.png",
+  description:
+    "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak.",
+  areaServed: "HU",
+  serviceType: [
+    "Weboldal fejlesztés",
+    "Webshop fejlesztés",
+    "CRM rendszerek",
+    "Egyedi szoftverfejlesztés",
+    "Webapplikáció fejlesztés",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -56,6 +92,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="hu" className="h-full w-full">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${groteskSans.className} min-h-full flex flex-col antialiased relative`}
       >
@@ -65,7 +107,7 @@ export default function RootLayout({
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
-          <CookieBanner></CookieBanner>
+          <CookieBanner />
         </ScrollContextProvider>
       </body>
     </html>
