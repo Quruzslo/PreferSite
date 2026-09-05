@@ -28,9 +28,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  verification: {
-    google: "AHZKSVZ5jEQZltaslXpmr4oadX5FFhLnMUDajo56wlhA",
-  },
 
   robots: {
     index: true,
@@ -99,6 +96,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <meta
+          name="google-site-verification"
+          content="HZKSVZ5jEQZltaslXpmr4oadX5FFhLnMUDajo56wlhA"
         />
       </head>
       <body
