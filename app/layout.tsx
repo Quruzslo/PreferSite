@@ -16,7 +16,7 @@ const groteskSans = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://prefersite.hu"),
+  metadataBase: new URL("https://www.prefersite.hu"),
 
   title: {
     default: "Egyedi Weboldal, Webshop és CRM Fejlesztés | Prefersite",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak. Növelje vállalkozása hatékonyságát modern szoftverekkel! Kérjen egyedi ajánlatot!",
 
   alternates: {
-    canonical: "./",
+    canonical: "/",
   },
 
   robots: {
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "Prefersite | Egyedi Weboldal, Webshop és CRM Fejlesztés",
     description:
       "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak. Növelje vállalkozása hatékonyságát modern szoftverekkel! Kérjen egyedi ajánlatot!",
-    url: "https://prefersite.hu",
+    url: "https://www.prefersite.hu",
     siteName: "Prefersite",
     locale: "hu_HU",
     type: "website",
@@ -71,13 +71,13 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Prefersite",
-  url: "https://prefersite.hu",
-  logo: "https://prefersite.hu/icon.png",
+  url: "https://www.prefersite.hu",
+  logo: "https://www.prefersite.hu/icon.png",
   description:
     "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak.",
   areaServed: "HU",
   serviceType: [
-    "Weboldal fejlesztés",
+    "Weboldal fejlesztés Budapest, Kaposvár, Győr",
     "Webshop fejlesztés",
     "CRM rendszerek",
     "Egyedi szoftverfejlesztés",
