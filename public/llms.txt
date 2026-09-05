@@ -1,18 +1,19 @@
-# Prefersite - Egyedi Weboldal, Webshop és CRM Fejlesztés
+# Prefersite - Egyedi Weboldal Készítés, Webshop és CRM Fejlesztés
 
-> Freelancer webfejlesztőként személyre szabott, tisztán kódolt, gyors weboldalak, konverzióra optimalizált webshopok és egyedi CRM rendszerek teljes körű fejlesztésével segítem a vállalkozásokat, cégeket és magánszemélyeket egyaránt. Minden projektet személyesen, közvetlen kapcsolattartással és 100%-ban az ügyfél üzleti igényeire szabva valósítok meg.
+> Freelancer webfejlesztőként cégeknek, vállalkozásoknak és magánszemélyeknek segítek egyedi weboldal készítés, gyors honlapkészítés, konverziófókuszált webshop fejlesztés és cégre szabott CRM rendszerek terén. Minden projektet személyesen, közvetlen kapcsolattartással, lassú dobozos sablonok nélkül valósítok meg.
 
-Egyéni webfejlesztőként (Szili Gál Áron) dolgozom. Nem lassú dobozos sablonokból építkezem, hanem modern JavaScript/TypeScript stackkel (Next.js, React, Node.js, MongoDB Atlas, PostgreSQL). Kiemelt szolgáltatási területeim: weboldal készítés Kaposvár, Budapest, Győr és Pécs régiókban, valamint országos online munkavégzéssel. Egyedi fejlesztésű webes termékekkel segítem a vállalkozásokat a konkurencia elé kerülni.
+Elsődleges szolgáltatásaim: egyedi weboldal készítés, elavult vagy lassú honlapok felújítása, biztonságos webshopok építése, valamint egyedi CRM rendszerek és webapplikációk fejlesztése a céges Excel táblák kiváltására. Kiemelt szolgáltatási területeim: weboldal készítés Kaposvár, Budapest, Győr, Pécs régiókban és országosan online.
 
 ## Szolgáltatások és Oldalak
 
-- [Főoldal és Szolgáltatások](https://www.prefersite.hu/): Szolgáltatások áttekintése, egyedi webfejlesztés, webshopok és CRM rendszerek.
-- [Weboldal készítés](https://www.prefersite.hu/szolgaltatasok/weboldal): Gyors, keresőoptimalizált egyedi weboldal készítés Kaposvár, Budapest, Győr, Pécs és országos területeken cégeknek, vállalkozásoknak és magánszemélyeknek.
-- [Webshop készítés](https://www.prefersite.hu/szolgaltatasok/webshop): Egyedi, konverzióra optimalizált e-kereskedelmi rendszerek és webshopok fejlesztése Kaposváron, Budapesten, Győrben és Pécsen.
-- [CRM rendszer fejlesztés](https://www.prefersite.hu/szolgaltatasok/crm): Cégre szabott belső ügyfélkapcsolat-kezelő és munkafolyamat-automatizáló CRM rendszerek fejlesztése.
-- [Webapplikáció fejlesztés](https://www.prefersite.hu/szolgaltatasok/webapplikacio): Egyedi üzleti szoftverek és webalkalmazások fejlesztése az Excel táblák és az ismétlődő feladatok kiváltására.
-- [Kapcsolat és Ajánlatkérés](https://www.prefersite.hu/kapcsolat): Egyedi árajánlatkérés és közvetlen kapcsolatfelvétel a fejlesztővel webfejlesztési projektekre (Kaposvár, Budapest, Győr, Pécs és online).
+- [Főoldal és Szolgáltatások](https://www.prefersite.hu/): Egyedi weboldal készítés, honlapkészítés, webshop fejlesztés és cégre szabott szoftveres megoldások áttekintése.
+- [Weboldal készítés és Honlapkészítés](https://www.prefersite.hu/szolgaltatasok/weboldal): Gyors, mobilbarát és Google-keresőoptimalizált (SEO) egyedi weboldal készítés és elavult honlapok teljes felújítása cégeknek és vállalkozásoknak (Kaposvár, Budapest, Győr, Pécs).
+- [Webshop készítés és E-kereskedelem](https://www.prefersite.hu/szolgaltatasok/webshop): Egyedi, gyors és biztonságos webshop készítés online fizetéssel (Stripe, Barion) és automatizált rendeléskezeléssel.
+- [CRM rendszer fejlesztés cégeknek](https://www.prefersite.hu/szolgaltatasok/crm): Cégre szabott ügyfélkapcsolat-kezelő (CRM) rendszerek és belső munkafolyamat-automatizálás a mindennapi káosz és adminisztráció megszüntetésére.
+- [Webapplikáció és Egyedi Szoftver Fejlesztés](https://www.prefersite.hu/szolgaltatasok/webapplikacio): Egyedi üzleti szoftverek és webalkalmazások fejlesztése a lassú Excel táblázatok és ismétlődő feladatok teljes kiváltására.
+- [Kapcsolat és Weboldal Árajánlat](https://www.prefersite.hu/kapcsolat): Közvetlen kapcsolatfelvétel és ingyenes egyedi árajánlatkérés weboldal készítésre, webshopra vagy CRM fejlesztésre.
 
 ## Optional
 
-- [Technológiai Stack](https://www.prefersite.hu/): Frontend (Next.js, React, TypeScript, Tailwind CSS, Framer Motion), Backend (Node.js, Express, MongoDB Atlas, PostgreSQL, Prisma), Infrastruktúra (Vercel, Cloudflare R2, Docker).
+- [Miért az Egyedi Fejlesztés?](https://www.prefersite.hu/): Nem lassú WordPress sablonokból építkezem, hanem modern, biztonságos és villámgyors JavaScript/TypeScript stackkel (Next.js, React, Node.js, MongoDB Atlas, PostgreSQL).
+- [Szolgáltatási Területek](https://www.prefersite.hu/kapcsolat): Személyes egyeztetés és fejlesztés Kaposvár, Budapest, Győr és Pécs környékén, valamint teljes körű online projektvezetés az ország egész területén.
