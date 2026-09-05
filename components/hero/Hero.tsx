@@ -3,6 +3,7 @@ import AtomIcon from "@/public/icons/HeroAtomIcon";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import StackedImages from "./StackedImages";
+import NextCtaButton from "@/lib/KapcsolatGomb";
 
 export default function Hero() {
   const services = [
@@ -35,13 +36,13 @@ export default function Hero() {
   };
 
   return (
-    <section className="w-full flex-col flex relative overflow-hidden">
-      <div className="w-[90%] max-w-[2560px] p-[20px] md:p-[40px] hero-conti zoldhatteres bg-dark-color rounded-2xl filter drop-shadow-[0_5px_20px_rgba(0,0,0,0.6)] mx-auto flex-col flex lg:flex-row mt-[100px] mb-[75px] min-h-[calc(100vh_-_150px)] items-center justify-center gap-[30px] max-h-[1400px]">
+    <section className="w-full flex-col flex relative overflow-hidden bg-white">
+      <div className="w-[90%] max-w-[2560px] p-[20px] md:p-[40px]  hero-conti zoldhatteres bg-dark-color rounded-2xl filter drop-shadow-[0_5px_20px_rgba(0,0,0,0.6)] mx-auto flex-col flex lg:flex-row mt-[100px] mb-[75px] min-h-[calc(100vh_-_150px)] items-center justify-center gap-[30px] max-h-[1400px]">
         {/* Bal oldal */}
         <div className="hero-bal w-full lg:w-[50%] flex-col flex justify-center gap-[24px]">
-          <div className="flex flex-row gap-[10px] rounded-md bg-dark-green text-white w-fit px-3 py-1.5 items-center text-sm font-medium mt-[20px]">
+          <div className="flex flex-row gap-[10px] mx-auto md:mx-[0px] rounded-md bg-dark-green text-white w-fit px-3 py-1.5 items-center text-sm font-medium mt-[20px]">
             <AtomIcon />
-            <span>Egyedi fejlesztésű webes megoldások</span>
+            <p>Egyedi fejlesztésű webes megoldások</p>
           </div>
 
           <h1 className="font-black !text-[20px] md:!text-[35px] lg:text-[40px] text-white ">
@@ -53,7 +54,7 @@ export default function Hero() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="font-black !text-[20px] grid grid-cols-1 md:grid-cols-2 gap-[25px] w-full"
+            className="font-black !text-[20px] md:!text-[30px] grid grid-cols-1 md:grid-cols-2 gap-[25px] w-full"
           >
             {services.map((item, idx) => (
               <motion.a
@@ -78,12 +79,7 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-2">
-            <Link
-              href="/kapcsolat"
-              className="px-7 py-3.5 rounded-xl bg-green-500 hover:bg-green-600 text-black font-bold text-center text-lg transition-transform active:scale-95 shadow-lg shadow-green-500/20"
-            >
-              Konzultáció
-            </Link>
+            <NextCtaButton></NextCtaButton>
           </div>
         </div>
 
