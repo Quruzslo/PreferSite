@@ -1,0 +1,18 @@
+# Prefersite - Egyedi Weboldal, Webshop és CRM Fejlesztés
+
+> Freelancer webfejlesztőként személyre szabott, tisztán kódolt, gyors weboldalak, konverzióra optimalizált webshopok és egyedi CRM rendszerek teljes körű fejlesztésével segítem a vállalkozásokat, cégeket és magánszemélyeket egyaránt. Minden projektet személyesen, közvetlen kapcsolattartással és 100%-ban az ügyfél üzleti igényeire szabva valósítok meg.
+
+Egyéni webfejlesztőként (Szili Gál Áron) dolgozom. Nem lassú dobozos sablonokból építkezem, hanem modern JavaScript/TypeScript stackkel (Next.js, React, Node.js, MongoDB Atlas, PostgreSQL). Kiemelt szolgáltatási területeim: weboldal készítés Kaposvár, Budapest, Győr és Pécs régiókban, valamint országos online munkavégzéssel. Egyedi fejlesztésű webes termékekkel segítem a vállalkozásokat a konkurencia elé kerülni.
+
+## Szolgáltatások és Oldalak
+
+- [Főoldal és Szolgáltatások](https://www.prefersite.hu/): Szolgáltatások áttekintése, egyedi webfejlesztés, webshopok és CRM rendszerek.
+- [Weboldal készítés](https://www.prefersite.hu/szolgaltatasok/weboldal): Gyors, keresőoptimalizált egyedi weboldal készítés Kaposvár, Budapest, Győr, Pécs és országos területeken cégeknek, vállalkozásoknak és magánszemélyeknek.
+- [Webshop készítés](https://www.prefersite.hu/szolgaltatasok/webshop): Egyedi, konverzióra optimalizált e-kereskedelmi rendszerek és webshopok fejlesztése Kaposváron, Budapesten, Győrben és Pécsen.
+- [CRM rendszer fejlesztés](https://www.prefersite.hu/szolgaltatasok/crm): Cégre szabott belső ügyfélkapcsolat-kezelő és munkafolyamat-automatizáló CRM rendszerek fejlesztése.
+- [Webapplikáció fejlesztés](https://www.prefersite.hu/szolgaltatasok/webapplikacio): Egyedi üzleti szoftverek és webalkalmazások fejlesztése az Excel táblák és az ismétlődő feladatok kiváltására.
+- [Kapcsolat és Ajánlatkérés](https://www.prefersite.hu/kapcsolat): Egyedi árajánlatkérés és közvetlen kapcsolatfelvétel a fejlesztővel webfejlesztési projektekre (Kaposvár, Budapest, Győr, Pécs és online).
+
+## Optional
+
+- [Technológiai Stack](https://www.prefersite.hu/): Frontend (Next.js, React, TypeScript, Tailwind CSS, Framer Motion), Backend (Node.js, Express, MongoDB Atlas, PostgreSQL, Prisma), Infrastruktúra (Vercel, Cloudflare R2, Docker).
