@@ -1,0 +1,54 @@
+# Prefersite - Egyedi Weboldal, Webshop és CRM Fejlesztés
+
+> Freelance webfejlesztőként személyre szabott, tisztán kódolt weboldalak, konverzióra optimalizált webshopok és egyedi CRM rendszerek teljes körű fejlesztésével segítem a vállalkozásokat. Minden projektet személyesen, közvetlen kapcsolattartással és 100%-ban az ügyfél üzleti igényeire szabva valósítok meg.
+
+## Alapvető Információk
+- **Márkanév:** Prefersite
+- **Fejlesztő:** Szili Gál Áron (Egyéni Webfejlesztő)
+- **Fő weboldal:** https://www.prefersite.hu
+- **Szolgáltatási területek:** Budapest, Kaposvár, Győr, Pécs (és országos online munkavégzés)
+- **Kapcsolat & Ajánlatkérés:** https://www.prefersite.hu/kapcsolat
+
+## Fő Szolgáltatások
+
+### 1. Egyedi Weboldal Fejlesztés
+- Személyre szabott weboldalak vállalkozásoknak, akik ki szeretnének tűnni a versenytársak közül.
+- Villámgyors betöltési sebőség és tiszta kódarchitektúra (Next.js és React alapon).
+- Teljes mértékben mobilbarát, reszponzív felületek és modern UX/UI dizájn.
+- Keresőoptimalizált (SEO-barát) felépítés a magas Google helyezésekért.
+
+### 2. Egyedi Webshop Fejlesztés
+- Egyedi igényekre szabott e-kereskedelmi rendszerek dobozos korlátok nélkül.
+- Biztonságos online fizetési integrációk (Stripe, Barion stb.).
+- Automatizált raktárkészlet- és rendeléskezelő felületek.
+- Átlátható vásárlói élmény és magas konverziós ráta.
+
+### 3. Egyedi CRM és Üzleti Szoftver Fejlesztés
+- Cégre szabott ügyfélkapcsolat-kezelő (CRM) rendszerek.
+- Egyedi munkafolyamatok és adminisztráció automatizálása a hatékonyság növelésére.
+- Raktárkezelő, számlázó és belső nyilvántartó modulok integrációja.
+- Szerepkör alapú hozzáférés-kezelés és valós idejű adatanalitika.
+
+## Kiemelt Szolgáltatási Területek (Lokális SEO)
+
+Kiemelten az alábbi régiókban vállalok egyedi webfejlesztési és szoftveres projekteket helyi és regionális vállalkozások számára:
+- **Budapest:** Egyedi weboldal, webshop és CRM fejlesztés budapesti cégeknek.
+- **Kaposvár:** Helyi vállalkozások digitális fejlesztése, egyedi webfejlesztés Kaposváron és Somogy megyében.
+- **Győr:** Ipari és kereskedelmi cégek egyedi szoftver- és webfejlesztése Győrben.
+- **Pécs:** Innovatív webes megoldások és CRM rendszerek pécsi vállalkozások számára.
+
+## Technológiai Stack
+- **Frontend:** Next.js, React, TypeScript, Tailwind CSS, Framer Motion
+- **Backend & Adatbázis:** Node.js, Express, MongoDB Atlas, PostgreSQL, Prisma
+- **Infrastruktúra:** Vercel, Cloudflare R2, Docker
+
+## Miért a Prefersite?
+- **Személyes figyelem:** Nem egy ügynökségi futószalagon fut a projekt – közvetlenül a fejlesztővel egyeztetsz a teljes folyamat során.
+- **Nincs dobozos sablon:** Minden megoldást nulláról, 100%-ban az adott cég igényeire és üzleti céljaira tervezek.
+- **Modern kódalap:** Lassú, túlterhelt sablonok helyett modern, biztonságos és gyors JavaScript/TypeScript stackkel dolgozom.
+- **Profi SEO alaptól:** Az oldalak struktúráját kezdettől fogva a jó keresőmotoros szereplésre készítem fel.
+
+## Linkek és Hivatkozások
+- [Főoldal és Szolgáltatások](https://www.prefersite.hu/)
+- [Portfólió és Referenciák](https://www.prefersite.hu/#referenciak)
+- [Egyedi Ajánlatkérés](https://www.prefersite.hu/kapcsolat)

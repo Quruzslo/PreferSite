@@ -1,25 +1,30 @@
-# 1. Szabályok minden keresőrobotra (Google, Bing stb.)
 User-agent: *
 Allow: /
 
-# Belső API végpontok és admin felületek elrejtése a keresőkből
+
 Disallow: /api/
 Disallow: /admin/
 Disallow: /dashboard/
 
-# 2. Rosszindulatú / agresszív scraping botok letiltása (Opcionális)
+
 User-agent: AhrefsBot
 Disallow: /
 
 User-agent: SemrushBot
 Disallow: /
 
-# 3. AI gyűjtőbotok kizárása a tartalomkivonásból (Opcionális)
+
 User-agent: GPTBot
-Disallow: /
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
 
 User-agent: CCBot
 Disallow: /
 
-# 4. Az elküldendő Webhelytérkép (Sitemap) pontos URL-je
-Sitemap: https://prefersite.hu/sitemap.xml
+
+Sitemap: https://www.prefersite.hu/sitemap.xml
