@@ -36,7 +36,7 @@ export default function StackedImages() {
         <Image
           fill
           className="stacked-img "
-          alt="Webshop és weboldal fejlesztés Budapest"
+          alt="Webshop és weboldal készítés vállalkozásoknak, cégeknek. Kaposváron, Budapesten és Győrben egyaránt."
           src={Panna}
 
           // sizes="(max-width: 768px) 100vw, 50vw"
@@ -48,7 +48,7 @@ export default function StackedImages() {
         <Image
           fill
           className="stacked-img"
-          alt="Webshop és weboldal készítés Kaposvár, Budapest"
+          alt="Webshop és weboldal készítés vállalkozásoknak, cégeknek. Kaposváron, Budapesten és Győrben egyaránt. "
           src={Kiskertesz}
           // sizes="(max-width: 768px) 100vw, 50vw"
         />
