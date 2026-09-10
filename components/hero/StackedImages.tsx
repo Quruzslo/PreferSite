@@ -4,7 +4,7 @@ import Image from "next/image";
 import Andocs from "@/public/references/andocs.jpg";
 import Sya from "@/public/references/syasolutions.jpg";
 import Panna from "@/public/references/glambypanna.jpg";
-import Kiskertesz from "@/public/references/kiskerteszbolt.jpg";
+import Kiskertesz from "@/public/references/mammamia-2.jpg";
 
 export default function StackedImages() {
   return (
