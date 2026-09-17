@@ -5,168 +5,171 @@ export const szolgaltatasokData = [
     slug: "webapplikacio",
     img: "/webapp.svg",
     hero: {
-      title: "A belső rendszereid automatizálnak, vagy fejfájást okoznak?",
+      title: "Egyedi Webapplikáció Fejlesztés Cégeknek és Vállalkozásoknak",
       subtitle:
-        "Egy jól megtervezett webalkalmazás nem csak egy szoftver, hanem a céged legszorgalmasabb munkaereje. Érdekel, hogyan válthatod ki az Excel táblákat és az ismétlődő feladatokat?",
-      ctaText: "Érdekel!",
+        "Egy jól megtervezett webalkalmazás nem csupán szoftver, hanem a vállalkozásod leghatékonyabb digitális munkaereje. Kiváltanád a kaotikus Excel táblázatokat és a manuális folyamatokat?",
+      ctaText: "Kérek egy konzultációt!",
     },
     importance: {
-      title: "Miért kritikus egy saját webapplikáció? Mert…",
+      title: "Miért elengedhetetlen egy egyedi webapplikáció? Mert…",
       items: [
-        "Automatizálja a monoton, időrabló folyamatokat",
-        "Valós idejű adatokat és statisztikákat biztosít",
-        "Kiváltja a drága, dobozos szoftverek kompromisszumait",
-        "Skálázható alapot ad a céged növekedéséhez",
-        "Növeli az ügyfélélményt és a belső hatékonyságot",
+        "Automatizálja az időrabló, ismétlődő céges feladatokat",
+        "Valós idejű adatokat és azonnali riportokat biztosít",
+        "Kiváltja a drága, korlátozott dobozos szoftvereket",
+        "Skálázható technológiai alapot ad a növekedéshez",
+        "Növeli a belső hatékonyságot és az ügyfélélményt",
         "Bárhonnan, bármilyen eszközről biztonságosan elérhető",
       ],
     },
     benefits: {
-      title: "Mire jó az egyedi webalkalmazás fejlesztés?",
+      title: "Milyen üzleti előnyöket hoz az egyedi webalkalmazás?",
       description:
-        "A sablon megoldások gyakran korlátok közé szorítanak. Egy egyedi webapplikáció hajszálpontosan a te üzleti logikádra épül, így jelentősen megnöveli a csapatod és a céged teljesítményét.",
+        "A sablonos megoldások gyorsan korlátok közé szorítják a növekedést. Egy célzottan fejlesztett egyedi webapplikáció hajszálpontosan a te üzleti logikádra épül, így megszünteti a működési szűk keresztmetszeteket.",
       stats: [
         {
           number: "100%",
-          title: "Zéró kompromisszum",
-          text: "Csak olyan funkciókat kapsz, amikre a vállalkozásodnak ténylegesen szüksége van, felesleges sallangok nélkül.",
+          title: "Személyre szabott logika",
+          text: "Kizárólag olyan funkciók kerülnek a rendszerbe, amelyekre a vállalkozásodnak ténylegesen szüksége van.",
         },
         {
           number: "-50%",
-          title: "Kevesebb adminisztráció",
-          text: "Az automatizált folyamatokkal radikálisan csökkenthető a manuális adatrögzítésre és papírmunkára szánt idő.",
+          title: "Adminisztrációs teher",
+          text: "Az automatizált adattovábbítással radikálisan csökkenthető a manuális papírmunka és a hibázás lehetősége.",
         },
         {
           number: "24/7",
-          title: "Folyamatos elérés",
-          text: "A modern, felhőalapú megoldásokkal a rendszered mindig gyors, megbízható és fennakadások nélkül működik.",
+          title: "Folyamatos rendelkezésre állás",
+          text: "A modern felhőalapú architektúrának köszönhetően a rendszered mindig gyors, megbízható és stabil marad.",
         },
       ],
     },
     midCta: {
-      title: "Készen állsz a digitális szintlépésre?",
+      title: "Készen állsz az automatizált működésre?",
       subtitle:
-        "Fektess a hatékonyságba! A táblázatkezelőkön és nehézkes folyamatokon alapuló cégek hamarosan lemaradnak. Egy profi webapplikációval olyan előnyre teszel szert, amit a konkurencia nehezen tud behozni.",
+        "Fektess a hosszú távú hatékonyságba! A nehézkes, manuális folyamatokra épülő vállalkozások gyorsan lemaradnak a piacon. Egy céges webapplikációval olyan technológiai előnyre tehetsz szert, amit a konkurencia nehezen tud behozni.",
       question:
-        "Mit gondolsz, eljött az ideje, hogy modernizáld a folyamataidat?",
-      ctaText: "Igen, vágjunk bele!",
+        "Eljött az ideje, hogy digitális alapokra helyezd a céges folyamataidat?",
+      ctaText: "Igen, indítsuk el!",
     },
     features: {
-      title: "Az általam fejlesztett webalkalmazások",
+      title: "Az általam fejlesztett egyedi webalkalmazások jellemzői",
       items: [
         {
-          title: "Villámgyorsak",
-          text: "Modern technológiákat (React, Next.js, Node.js) használok, így a rendszer azonnal reagál a felhasználói interakciókra.",
+          title: "Csúcsteljesítmény",
+          text: "Modern technológiai stacket (React, Next.js, Node.js) használok a villámgyors reakcióidőért.",
         },
         {
-          title: "Biztonságosak",
-          text: "A legmagasabb iparági sztenderdek szerint építem fel az adatbázisokat és a jogosultságkezelési rendszereket.",
+          title: "Magas fokú adatvédelem",
+          text: "Szigorú iparági szabványok szerint építem fel az adatbázisokat és a jogosultsági szinteket.",
         },
         {
-          title: "Skálázhatók",
-          text: "Az alkalmazás architektúrája együtt nő a cégeddel, legyen szó 10 vagy akár több ezer felhasználóról.",
+          title: "Bővíthető architektúra",
+          text: "A rendszer felépítése rugalmasan követi a céged növekedését, legyen szó tíz vagy több ezer felhasználóról.",
         },
         {
-          title: "Felhasználóbarátok",
-          text: "Intuitív dashboardokat és admin felületeket tervezek, amiket hosszas betanítás nélkül is könnyű használni.",
+          title: "Intuitív kezelőfelület",
+          text: "Átlátható dashboardokat és adminisztrációs felületeket tervezek, amiket betanítás nélkül is egyszerű használni.",
         },
         {
-          title: "Integrálhatók",
-          text: "Zökkenőmentesen összekötöm külső szolgáltatásokkal (pl. Stripe fizetés, számlázók, egyedi API-k).",
+          title: "Rendszerintegrációk",
+          text: "Zökkenőmentes összeköttetést biztosítok külső szoftverekkel (Stripe, számlázók, CRM, egyedi API-k).",
         },
         {
-          title: "Reszponzívak",
-          text: "Mobilra, tabletre és asztali gépre is tökéletesen optimalizált felületeket és logikát építek.",
+          title: "Teljes reszponzivitás",
+          text: "Asztali gépen, tableten és okostelefonon is hibátlanul működő, optimalizált felületeket készítek.",
         },
       ],
     },
     footerCta: {
-      title: "Konzultálj velem díjmentesen és tervezzük meg,",
+      title: "Kérj díjmentes konzultációt,",
       subtitle:
-        "hogyan automatizálhatná egy egyedi webapplikáció a mindennapi folyamataidat!",
+        "és tervezzük meg az a webapplikációt, ami automatizálja a vállalkozásod mindennapjait!",
     },
   },
   {
     slug: "weboldal",
     img: "/website.svg",
     hero: {
-      title: "A weboldalad előrevisz, vagy hátráltat?",
+      title: "Profi Céges Weboldal Készítés és Vállalkozói Weboldal Fejlesztés",
       subtitle:
-        "Céged jövőjére hatással van a weboldalad: itt dől el, hogy az érdeklőkből vásárlók lesznek-e. Érdekel, hogyan emelheted vele új szintre vállalkozásodat?",
-      ctaText: "Érdekel!",
+        "A céges weboldalad a digitális értékesítésed alapja: itt dől el, hogy a látogatókból fizető ügyfelek lesznek-e. Szeretnél egy konverzióra optimalizált vállalkozói weboldalt, ami folyamatosan termeli a megkereséseket?",
+      ctaText: "Kérek egy ajánlatot!",
     },
     importance: {
-      title: "Miért ilyen fontos a weboldal?",
+      title: "Miért stratégiai kérdés a profi céges weboldal?",
       items: [
-        "A céged online arca és digitális központja",
-        "Termékeid és szolgáltatásaid tükre",
-        "Fizetett kampányaid végcélja",
-        "Az értékesítési tölcséred kritikus része",
-        "Piaci pozíciód meghatározója",
-        "A bevételed szabályzója",
+        "A vállalkozásod első számú online hitelességi forrása",
+        "A szolgáltatásaid és termékeid professzionális bemutatója",
+        "A fizetett marketingkampányok és hirdetések érkezési oldala",
+        "Az online ügyfélszerzési és értékesítési folyamatod alapja",
+        "A piaci pozicionálásod és márkaértéked meghatározója",
+        "A szintlépés és a kiszámítható árbevétel-növekedés záloga",
       ],
     },
     benefits: {
-      title: "Miért fontos a minőségi weboldal?",
+      title:
+        "Miért térül meg egy szakértők által épített vállalkozói weboldal?",
       description:
-        "Üzleti céljaid elérése érdekében elengedhetetlen, hogy céged naprakész és megbízható weboldallal rendelkezzen. Egy stabil, átgondolt rendszer megsokszorozza sikereid lehetőségét.",
+        "Az üzleti célok eléréséhez elengedhetetlen egy technológiailag naprakész, gyors és bizalmat építő céges weboldal. Egy átgondolt struktúra folyamatos ügyfélszerzési csatornává alakítja a weboldaladat.",
       stats: [
         {
           number: "3x",
-          title: "Hatékonyabb bevételszerzés",
-          text: "A tudatosan megtervezett vásárlói útvonal jelentős bevételtöbblethez juttatja cégedet.",
+          title: "Több megkeresés",
+          text: "A tudatosan felépített vásárlói útvonal és a tiszta üzenetek jelentősen növelik a konverziós arányt.",
         },
         {
           number: "10x",
-          title: "Könnyebb bizalomépítés",
-          text: "Az arculatodba illő modern, felhasználóbarát weboldallal radikálisan egyszerűbb a bizalomépítés.",
+          title: "Eredményesebb bizalomépítés",
+          text: "A prémium megjelenés és a letisztult UX azonnal professzionális benyomást kelt a leendő ügyfeleidben.",
         },
         {
-          number: "99%-ban",
-          title: "Mérhető weboldal forgalom",
-          text: "A fizetett kampányaid eredményeit precíz pontossággal követheted a weboldaladon keresztül.",
+          number: "99%",
+          title: "Mérhető konverziók",
+          text: "Minden látogatói interakció és hirdetési eredmény pontosan mérhetővé válik az analitikai integrációkkal.",
         },
       ],
     },
     midCta: {
-      title: "Kész vagy szintet lépni?",
+      title: "Kész vagy piaci előnyre szert tenni?",
       subtitle:
-        "Fektess céged jövőjébe! Elavult weboldallal vagy weboldal nélkül mára már semmilyen piacon nem lehet labdába rúgni. Professzionális webes megjelenéssel azonban versenyelőnyre tehetsz szert konkurenciáiddal szemben.",
-      question: "Mit gondolsz, érdemes nagyot lépned céged életében?",
-      ctaText: "Igen, lépek!",
+        "Fektess a vállalkozásod online jelenlétébe! Elavult oldallal vagy céges weboldal nélkül a potenciális ügyfeleid a konkurenciát választják. Egy professzionális vállalkozói weboldal viszont azonnal kiemel a piaci zajból.",
+      question:
+        "Szeretnéd, ha a weboldalad végre érdemi bevételeket és ügyfeleket hozna?",
+      ctaText: "Igen, vágjunk bele!",
     },
     features: {
-      title: "Az általam tervezett webdesign",
+      title: "A professzionális céges weboldal fejlesztés pillérei",
       items: [
         {
-          title: "Felhasználóbarát",
-          text: "A célcsoportod igényeinek leginkább megfelelő felületet hozok létre.",
+          title: "Konverzióközpontú",
+          text: "A felépítést és a tartalomstruktúrát a látogatók ügyféllé konvertálására tervezem.",
         },
         {
-          title: "Esztétikus",
-          text: "A szemnek kellemes látványt kölcsönző koncepcióban gondolkodom.",
+          title: "Prémium arculat",
+          text: "A vállalkozásod pozicionálásához illeszkedő, modern és letisztult vizuális világot hozok létre.",
         },
         {
-          title: "Modern",
-          text: "Az aktuális és előremutató trendeknek megfelelő látványtervet készítek.",
+          title: "Keresőoptimalizált (SEO)",
+          text: "Technikailag és strukturálisan úgy építem fel az oldalt, hogy jó eséllyel induljon a Google találati listáján.",
         },
         {
-          title: "Logikus",
-          text: "Logikus, könnyen átlátható felépítést és felhasználóbarát funkciókat tervezek.",
+          title: "Logikus struktúra",
+          text: "A látogatók számára egyértelmű, könnyen átlátható információáramlást és navigációt alakítok ki.",
         },
         {
-          title: "Szerethető",
-          text: "Szerethető végeredményre törekszem, ami minden szempontból megállja a helyét.",
+          title: "Ügyfélszerző szövegezés",
+          text: "Eredményorientált megközelítéssel segítem az üzeneteid tisztázását és a bizalom kiépítését.",
         },
         {
-          title: "Élményt adó",
-          text: "Élménnyé teszem a böngészést új, potenciális és meglévő weboldal látogatóid számára.",
+          title: "Kiváló felhasználói élmény (UX)",
+          text: "Gyors, gördülékeny és élvezetes böngészést biztosítok minden eszközön és kijelzőméreten.",
         },
       ],
     },
     footerCta: {
-      title: "Konzultálj velem díjmentesen és derítsd ki,",
-      subtitle: "milyen weboldallal emelhetnéd új szintre a vállalkozásod!",
+      title: "Foglalj ingyenes konzultációt,",
+      subtitle:
+        "és derítsük ki, milyen céges weboldal hozná a legtöbb ügyfelet a vállalkozásodnak!",
     },
   },
 
@@ -174,83 +177,86 @@ export const szolgaltatasokData = [
     slug: "webshop",
     img: "/webshop.svg",
     hero: {
-      title: "A webshopod termeli a profitot, vagy viszi a pénzt?",
+      title:
+        "Egyedi Webshop Készítés és Konverzióorientált Webáruház Fejlesztés",
       subtitle:
-        "Céged jövőjére hatással van az online áruházad: itt dől el, hogy a látogatókból visszatérő vásárlók lesznek-e. Érdekel, hogyan emelheted vele új szintre az értékesítést?",
-      ctaText: "Érdekel!",
+        "Az online áruházad nem csupán egy katalógus, hanem az értékesítésed elsődleges motorja. Szeretnél egy villámgyors, stabil webshopot, ami minimalizálja a kosárelhagyást és maximalizálja a profitot?",
+      ctaText: "Kérek egy ajánlatot!",
     },
     importance: {
-      title: "Miért ilyen fontos egy profi webshop? Mert…",
+      title: "Miért kulcsfontosságú egy egyedi fejlesztésű webshop? Mert…",
       items: [
-        "A nap 24 órájában nyitva tartó üzleted",
-        "A termékeid legjövedelmezőbb kirakata",
-        "A hirdetéseid konverziós motorja",
-        "Az automatizált értékesítésed lelke",
-        "Piaci részesedésed meghatározója",
-        "A bevételed közvetlen és skálázható forrása",
+        "Automatizált értékesítési csatorna a nap 24 órájában",
+        "A termékkínálatod leghatékonyabb bemutatóterme",
+        "A teljesítményalapú marketingkampányok konverziós központja",
+        "A raktárkészlet és az értékesítés automatizálásának alapja",
+        "A skálázható e-kereskedelmi növekedés záloga",
+        "Közvetlen és folyamatosan mérhető bevételi forrás a cégednek",
       ],
     },
     benefits: {
-      title: "Mire jó az egyedi webshop fejlesztés?",
+      title: "Milyen előnyöket nyújt a profi webáruház fejlesztés?",
       description:
-        "Üzleti céljaid elérése érdekében elengedhetetlen egy akadálymentesen működő, konverzióra optimalizált webáruház. A profi felépítés megsokszorozza a bevételedet.",
+        "Az e-kereskedelemben a másodpercek és a kattintások száma dönt a vásárlásról. Egy egyedi webshop megszünteti a technikai akadásokat és végigkíséri a vásárlót a checkout folyamaton.",
       stats: [
         {
           number: "3x",
-          title: "Magasabb kosárérték",
-          text: "A tudatosan felépített vásárlási útvonal és a beépített upsell stratégiák jelentős bevételtöbblethez juttatnak.",
+          title: "Magasabb átlagos kosárérték",
+          text: "A beépített cross-sell és upsell funkciókkal, valamint a gördülékeny vásárlási útvonallal növelhető a rendelési érték.",
         },
         {
           number: "10x",
-          title: "Kevesebb kosárelhagyás",
-          text: "Egy gyors, megbízható és egyértelmű fizetési folyamattal radikálisan növelhető a sikeres tranzakciók száma.",
+          title: "Alacsonyabb kosárelhagyás",
+          text: "A villámgyors betöltés és az egyszerűsített fizetési folyamat radikálisan növeli a befejezett tranzakciók számát.",
         },
         {
-          number: "99%-ban",
-          title: "Automatizált eladások",
-          text: "A raktárkészlet-kezeléstől a számlázásig mindent mérhetsz és a háttérben automatizálhatsz.",
+          number: "99%",
+          title: "Automatizált folyamatok",
+          text: "A számlázás, a készletkezelés és a logisztikai rendszerek összekötésével a háttérmunka nagy része automatizálható.",
         },
       ],
     },
     midCta: {
-      title: "Kész vagy szintet lépni?",
+      title: "Készen állsz az e-kereskedelmi skálázásra?",
       subtitle:
-        "Fektess céged jövőjébe! Egy lassú, megbízhatatlan webshoppal minden nap vásárlókat veszítesz. Professzionális e-kereskedelmi motorral azonban letarolhatod a piacodat.",
-      question: "Mit gondolsz, érdemes nagyot lépned céged életében?",
-      ctaText: "Igen, lépek!",
+        "Ne hagyj pénzt az asztalon! Egy lassú vagy nehezen használható webáruházzal naponta veszítesz vásárlókat. Egy professzionális e-kereskedelmi felülettel viszont dominálhatod a piacodat.",
+      question:
+        "Szeretnél egy olyan webáruházat, ami valóban termeli a bevételt?",
+      ctaText: "Igen, vágjunk bele!",
     },
     features: {
-      title: "Az általam fejlesztett webshop",
+      title: "Az általam fejlesztett egyedi webshopok jellemzői",
       items: [
         {
-          title: "Konverzióvezérelt",
-          text: "A felület minden elemét arra optimalizálom, hogy a látogató a kosárba tegye a terméket.",
+          title: "Maximalizált konverzió",
+          text: "Minden felületi elemet úgy alakítok ki, hogy az a sikeres vásárlást és tranzakciót szolgálja.",
         },
         {
-          title: "Biztonságos",
-          text: "Zárt, stabil rendszert építek, hogy a vásárlóid adatai és a bevételed is maximális biztonságban legyen.",
+          title: "Biztonságos fizetési rendszerek",
+          text: "Stabil, zárt architektúra és integrált bankkártyás fizetési megoldások (Stripe, Barion stb.).",
         },
         {
-          title: "Villámgyors",
-          text: "Az azonnali betöltődéssel megelőzöm a várakozásból fakadó lemorzsolódást.",
+          title: "Kiváló betöltési sebesség",
+          text: "Az optimalizált kódbázis megelőzi a lassulásból eredő vásárlói lemorzsolódást.",
         },
         {
-          title: "Logikus",
-          text: "Tiszta kategória-rendszert és villámgyors keresőt építek be az azonnali találatokért.",
+          title: "Atmoszférikus termékoldalak",
+          text: "Átlátható kategóriarendszer, szűrési opciók és azonnali találatot adó keresőmotor.",
         },
         {
-          title: "Skálázható",
-          text: "A rendszered bírni fogja a terhelést, legyen szó 100 vagy 10 000 termékről.",
+          title: "Skálázható teljesítmény",
+          text: "A szerveroldali felépítés bírja a terhelést a kampányok alatt, akár több tízezer termék esetén is.",
         },
         {
-          title: "Vásárlóbarát",
-          text: "Élménnyé teszem a pénzköltést új és visszatérő vásárlóid számára.",
+          title: "Optimalizált checkout",
+          text: "A vásárlási folyamat felesleges lépéseit kiiktatva egyszerű és gyors fizetést teszek lehetővé.",
         },
       ],
     },
     footerCta: {
-      title: "Konzultálj velem díjmentesen és derítsd ki,",
-      subtitle: "milyen webshoppal emelhetnéd új szintre az értékesítést!",
+      title: "Kérj ingyenes konzultációt,",
+      subtitle:
+        "és tervezzük meg a vállalkozásod igényeire szabott e-kereskedelmi rendszert!",
     },
   },
 
@@ -258,83 +264,85 @@ export const szolgaltatasokData = [
     slug: "crm",
     img: "/crm.svg",
     hero: {
-      title: "A cégvezetés felemészt, vagy szabadságot ad?",
+      title: "Egyedi CRM Rendszer Fejlesztés és Üzleti Folyamatautomatizálás",
       subtitle:
-        "Céged hatékonyságára közvetlen hatással van a belső rendszered: itt dől el, hogy a káosz uralja a mindennapokat, vagy a folyamatok. Érdekel, hogyan emelheted vele új szintre a működésedet?",
-      ctaText: "Érdekel!",
+        "A cégvezetés hatékonysága a belső rendszerek szervezettségén múlik. Egy egyedi CRM rendszer megszünteti az adatkáoszt, automatizálja az ügyfélkezelést és teljes rálátást biztosít a számaidra.",
+      ctaText: "Kérek egy konzultációt!",
     },
     importance: {
-      title: "Miért ilyen fontos egy egyedi CRM rendszer? Mert…",
+      title: "Miért nélkülözhetetlen egy saját CRM rendszer? Mert…",
       items: [
-        "A céged digitális memóriája és agya",
-        "Az ügyfélkapcsolataid biztonságos központja",
-        "A munkatársaid idejének megmentője",
-        "A napi adminisztráció automatizálója",
-        "A növekedésed stabil, méretezhető alapja",
-        "A profitabilitásod legtisztább mérőeszköze",
+        "A céges ügyféladatok és előzmények egyetlen biztonságos központja",
+        "Megszünteti az elveszett megkereséseket és elfelejtett feladatokat",
+        "Radikálisan csökkenti a munkatársak manuális adminisztrációs idejét",
+        "Automatizálja a napi munkafolyamatokat és az utánkövetést",
+        "Mérhetővé és átláthatóvá teszi az értékesítési tölcsért",
+        "Stabil és rendezett technológiai alapot nyújt a cég skálázásához",
       ],
     },
     benefits: {
-      title: "Mire jó a saját CRM rendszer?",
+      title: "Milyen üzleti értéket teremt egy céges CRM szoftver?",
       description:
-        "Üzleti céljaid elérése érdekében elengedhetetlen, hogy a cég a te szabályaid szerint, dobozos kompromisszumok nélkül működjön.",
+        "A dobozos CRM-ek gyakran bonyolultak és felesleges funkciókkal terheltek. Egy egyedi szoftver pontosan a te munkafolyamataidhoz igazodik, így a csapatod ténylegesen használni fogja.",
       stats: [
         {
           number: "3x",
-          title: "Hatékonyabb munkavégzés",
-          text: "A manuális adatrögzítés és keresgélés kiiktatása heteket spórol a csapatodnak minden hónapban.",
+          title: "Hatékonyabb csapatmunka",
+          text: "Az automatizált feladatkiosztás és státuszkezelés révén a kollégák az érdemi munkára fókuszálhatnak.",
         },
         {
           number: "10x",
-          title: "Jobb ügyfélmegtartás",
-          text: "A naprakész ügyféltörténettel és időzített értesítésekkel radikálisan nő a professzionalizmus és a bizalom.",
+          title: "Magasabb ügyfélmegtartás",
+          text: "A pontos ügyféltörténet és a rendszeres, időzített megkeresések növelik az ügyfélelégedettséget.",
         },
         {
-          number: "99%-ban",
-          title: "Átlátható folyamatok",
-          text: "A delegálás és az utánkövetés mérhetővé, az emberi hiba és felejtés pedig szinte nullává válik.",
+          number: "99%",
+          title: "Átlátható céges adatok",
+          text: "A valós idejű kimutatásoknak köszönhetően azonnal látod a cég teljesítményét és az értékesítési mutatókat.",
         },
       ],
     },
     midCta: {
-      title: "Kész vagy szintet lépni?",
+      title: "Átvennéd az teljes irányítást a folyamataid felett?",
       subtitle:
-        "Fektess céged jövőjébe! Excel táblákkal és papírfecnikkel mára már lehetetlen skálázni egy vállalkozást. Egy okos CRM rendszerrel azonban átveszed az irányítást a céged felett.",
-      question: "Mit gondolsz, érdemes nagyot lépned céged életében?",
-      ctaText: "Igen, lépek!",
+        "Lépj túl a követhetetlen e-maileken és Excel táblákon! A skálázható növekedés alapja a rendezett belső infrastruktúra. Egy egyedi CRM rendszerrel időt és jelentős költséget takarítasz meg.",
+      question:
+        "Készen állsz arra, hogy automatizált alapokra helyezd az ügyfélkezelést?",
+      ctaText: "Igen, vágjunk bele!",
     },
     features: {
-      title: "Az általam épített CRM",
+      title: "Az általam fejlesztett CRM rendszerek előnyei",
       items: [
         {
-          title: "Cégre szabott",
-          text: "Pontosan a te folyamataidra írom meg, nincsenek felesleges, zavaró menüpontok.",
+          title: "Folyamatokra szabott",
+          text: "A szoftver hajszálpontosan a te meglévő értékesítési és működési lépéseidet követi.",
         },
         {
-          title: "Automatizált",
-          text: "Amit gépnek kell csinálnia, azt a rendszer fogja elvégezni az embereid helyett.",
+          title: "Automatizált munkafolyamatok",
+          text: "Értesítések, emlékeztetők és státuszváltások automatikus generálása emberi beavatkozás nélkül.",
         },
         {
-          title: "Integrálható",
-          text: "Összekötöm a számlázóddal, weboldaladdal, hogy az adatok maguktól áramoljanak.",
+          title: "Szoftverintegrációk",
+          text: "Közvetlen adatkapcsolat a céges weboldallal, a számlázóval és az e-mail rendszerekkel.",
         },
         {
-          title: "Átlátható",
-          text: "Logikus dashboardokat építek, ahol azonnal látod a céged valós számait.",
+          title: "Letisztult dashboardok",
+          text: "Azonnal értelmezhető kimutatások és grafikonok a cégvezetői döntéshozatal támogatásához.",
         },
         {
-          title: "Biztonságos",
-          text: "Szigorú jogosultsági rendszert alakítok ki, mindenki csak azt látja, ami a dolga.",
+          title: "Fejlett jogosultságkezelés",
+          text: "Szigorúan szabályozott hozzáférési szintek: minden munkatárs csak a számára releváns adatokat látja.",
         },
         {
-          title: "Felhasználóbarát",
-          text: "Nem egy újabb nyűg a kollégáknak, hanem egy eszköz, amit imádni fognak használni.",
+          title: "Könnyű adaptáció",
+          text: "Egyszerű, átlátható kezelőfelület, amit a csapat gyorsan és szívesen sajátít el.",
         },
       ],
     },
     footerCta: {
-      title: "Konzultálj velem díjmentesen és derítsd ki,",
-      subtitle: "milyen CRM rendszerrel emelhetnéd új szintre a működésedet!",
+      title: "Kérj díjmentes konzultációt,",
+      subtitle:
+        "és tervezzük meg a vállalkozásodra szabott hatékony CRM rendszert!",
     },
   },
 
@@ -342,84 +350,87 @@ export const szolgaltatasokData = [
     slug: "karbantartas",
     img: "/karbantartas.svg",
     hero: {
-      title: "A weboldalad biztonságban van, vagy időzített bomba?",
+      title:
+        "Weboldal Karbantartás, Technikai Üzemeltetés és Biztonsági Felügyelet",
       subtitle:
-        "Céged hírnevére hatással van az oldalad állapota: itt dől el, hogy egy frissítés hiánya mikor okoz adatvesztést vagy leállást. Érdekel, hogyan tudhatod teljes biztonságban az online jelenlétedet?",
-      ctaText: "Érdekel!",
+        "Egy elhanyagolt weboldal komoly biztonsági és üzleti kockázatot jelent. Szeretnéd teljes biztonságban tudni az online jelenlétedet folyamatos technikai frissítésekkel és felügyelettel?",
+      ctaText: "Kérek egy ajánlatot!",
     },
     importance: {
-      title: "Miért ilyen fontos a folyamatos karbantartás? Mert…",
+      title: "Miért elengedhetetlen a folyamatos weboldal karbantartás? Mert…",
       items: [
-        "A weboldalad pajzsa a hackerek ellen",
-        "A gyors és stabil betöltődés garanciája",
-        "A technikai hibák proaktív megelőzője",
-        "A Google helyezésed védelmezője",
-        "A látogatói élmény folyamatos fenntartója",
-        "A te nyugodt alvásod záloga",
+        "A leghatékonyabb védelmi vonal a cybertámadások és feltörések ellen",
+        "A villámgyors betöltési sebesség és a stabil működés garanciája",
+        "Proaktívan megelőzi a technikai összeomlásokat és leállásokat",
+        "Védi a keresőmotorokban elért SEO helyezéseidet",
+        "Biztosítja a vásárlói adatok és céges adatok folyamatos mentését",
+        "Garantálja a zavartalan üzletmenetet és az ügyfelek bizalmát",
       ],
     },
     benefits: {
-      title: "Mire jó a professzionális karbantartás?",
+      title:
+        "Milyen előnyöket garantál a professzionális weboldal üzemeltetés?",
       description:
-        "Üzleti céljaid elérése érdekében elengedhetetlen, hogy az oldalad holnap is hibátlanul működjön. A tudatos karbantartás megmenti a cégedet a váratlan leállásoktól.",
+        "Az online jelenlét nem ér véget a weboldal átadásával. A rendszeres frissítések és a biztonsági ellenőrzések megmentik a vállalkozásodat a váratlan leállásoktól és az anyagi veszteségektől.",
       stats: [
         {
           number: "3x",
-          title: "Gyorsabb hibaelhárítás",
-          text: "A folyamatos monitorozásnak köszönhetően a problémákat még azelőtt javítom, hogy a vásárlóid észrevennék.",
+          title: "Gyorsabb reakcióidő",
+          text: "A folyamatos szerver- és rendszerfelügyeletnek köszönhetően az esetleges hibákat azonnal észlelem és javítom.",
         },
         {
           number: "10x",
-          title: "Nagyobb adatbiztonság",
-          text: "Rendszeres biztonsági mentésekkel és szoftverfrissítésekkel radikálisan csökken az adatvesztés esélye.",
+          title: "Magasabb adatbiztonság",
+          text: "Automatizált biztonsági mentésekkel és frissítésekkel az adatvesztés kockázata minimálisra csökken.",
         },
         {
-          number: "99%-os",
+          number: "99.9%",
           title: "Rendelkezésre állás",
-          text: "A nap 24 órájában stabil, gyors és hiba nélkül elérhető marad a weboldalad a látogatók számára.",
+          text: "Biztosítom, hogy a weboldalad vagy webáruházad a nap 24 órájában zökkenőmentesen elérhető legyen.",
         },
       ],
     },
     midCta: {
-      title: "Kész vagy szintet lépni?",
+      title: "Biztonságban tudnád a digitális vagyontárgyadat?",
       subtitle:
-        "Fektess céged jövőjébe! Magára hagyott, elavult rendszerekkel kockára teszed az eddig felépített bizalmat. Professzionális háttértámogatással azonban a weboldalad mindig a maximumot nyújtja.",
-      question: "Mit gondolsz, érdemes nagyot lépned céged életében?",
-      ctaText: "Igen, lépek!",
+        "Ne várd meg, amíg leáll az oldal vagy feltörik a rendszert! A magára hagyott weboldalak veszélyeztetik a cég hírnevét. Professzionális technikai háttértámogatással a weboldalad folyamatosan stabil marad.",
+      question:
+        "Szeretnél végre nyugodtan aludni, tudva, hogy a weboldalad jó kezekben van?",
+      ctaText: "Igen, kérem a védelmet!",
     },
     features: {
-      title: "Karbantartási szolgáltatásom",
+      title: "A weboldal karbantartási szolgáltatás elemei",
       items: [
         {
-          title: "Proaktív",
-          text: "Nem várom meg a bajt, folyamatosan keresem és javítom a sebezhetőségeket.",
+          title: "Proaktív hibamegelőzés",
+          text: "Rendszeres technikai auditokkal és sebezhetőségi vizsgálatokkal előzöm meg a problémákat.",
         },
         {
-          title: "Láthatatlan",
-          text: "A háttérben dolgozom: te és az ügyfeleid csak annyit vesztek észre, hogy minden hibátlanul működik.",
+          title: "Láthatatlan háttérmunka",
+          text: "A frissítéseket és karbantartásokat úgy ütemezem, hogy azok ne zavarják az oldal látogatóit.",
         },
         {
-          title: "Naprakész",
-          text: "Rendszeresen frissítem a motorokat és bővítményeket a legújabb, legbiztonságosabb verziókra.",
+          title: "Rendszeres frissítések",
+          text: "A CMS motor, a bővítmények és a biztonsági modulok naprakészen tartása a legújabb verziókra.",
         },
         {
-          title: "Mentett",
-          text: "Automata és manuális biztonsági mentéseket készítek, hogy soha ne vesszen el egyetlen adat sem.",
+          title: "Automatizált mentések",
+          text: "Rendszeres adatbázis- és fájlmentések készítése, ahonnan az oldal bármikor azonnal visszaállítható.",
         },
         {
-          title: "Gyors",
-          text: "Folyamatosan optimalizálom az oldal sebességét a maximális felhasználói élményért.",
+          title: "Sebességoptimalizálás",
+          text: "A cache-elés és az adatbázis folyamatos finomhangolása a maximális betöltési sebességért.",
         },
         {
-          title: "Nyugalmat adó",
-          text: "Végre nem neked kell a szerverhibákkal és az összeomlásokkal idegesítened magad.",
+          title: "Garantált háttértámogatás",
+          text: "Közvetlen technikai segítségnyújtás, ha tartalommódosításra vagy fejlesztésre van szükséged.",
         },
       ],
     },
     footerCta: {
-      title: "Konzultálj velem díjmentesen és derítsd ki,",
+      title: "Kérj ingyenes konzultációt,",
       subtitle:
-        "hogyan biztosíthatom weboldalad maximális teljesítményét és védelmét!",
+        "és gondoskodjunk a weboldalad maximális biztonságáról és folyamatos üzemeltetéséről!",
     },
   },
 ];

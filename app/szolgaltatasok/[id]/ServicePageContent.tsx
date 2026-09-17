@@ -331,13 +331,14 @@ export default function ServicePageContent({
       </section>
 
       {/*  FUNKCIÓK */}
-      <section className=" py-20">
+      <section className="py-20">
         <div className="mx-auto w-[90%] px-[10px]">
-          <div className="mb-12 w-fit">
+          <div className="mb-16 w-fit">
             <SectionRule />
             <h2 className="text-3xl font-bold">{service.features.title}</h2>
           </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+          <div className="grid grid-cols-1   md:grid-cols-2 lg:grid-cols-3">
             {service.features.items.map((feature, idx) => (
               <motion.div
                 key={idx}
@@ -346,12 +347,21 @@ export default function ServicePageContent({
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false, amount: 0.3 }}
-                className="benefit-card  bg-white p-8  relative"
+                className="p-[10px] group relative border-t border-black/10 py-10 pr-8 lg:border-r lg:last:border-r-0
+                     [&:nth-child(3n)]:lg:border-r-0
+                     md:[&:nth-child(2n)]:border-r-0 md:[&:nth-child(3n)]:lg:border-r
+                     md:[&:nth-child(2n)]:lg:border-r"
               >
-                <h3 className="mb-3 text-xl font-bold text-dark-color">
+                {/* index szám — nem "AI badge", hanem editoriális sorszám */}
+                <span className="font-mono text-xs text-zold/70">
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+
+                <h3 className="mt-4 text-xl font-bold text-dark-color transition-colors duration-300 group-hover:text-zold">
                   {feature.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-gray-600">
+
+                <p className="mt-3 text-sm leading-relaxed text-gray-600">
                   {feature.text}
                 </p>
               </motion.div>
@@ -369,7 +379,7 @@ export default function ServicePageContent({
             Ha szükséged van
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px] w-full mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[15px] w-full mx-auto">
             {contactPrios.map((prio, _) => (
               <div
                 key={prio}
