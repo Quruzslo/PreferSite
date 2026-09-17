@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import navItems from "@/lib/navItems";
 
-const BASE_URL = "https://prefersite.hu";
+const BASE_URL = "https://www.prefersite.hu";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routesMap = new Map<string, MetadataRoute.Sitemap[number]>();
