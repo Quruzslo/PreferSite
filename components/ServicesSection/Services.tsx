@@ -39,7 +39,7 @@ export default function Services() {
   };
 
   return (
-    <div id="szolgaltatas" className="relative flex w-full flex-col mt-[50px]">
+    <div id="szolgaltatas" className="relative flex w-full flex-col my-[35px]">
       {myServices.map((service) => (
         <motion.section
           key={service.id}

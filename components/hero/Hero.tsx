@@ -37,7 +37,7 @@ export default function Hero() {
 
   return (
     <section className="w-full flex-col flex relative overflow-hidden bg-white">
-      <div className="w-[90%] max-w-[2560px] py-[50px] p-[20px] md:p-[40px] hero-conti zoldhatteres bg-dark-color rounded-2xl filter drop-shadow-[0_5px_20px_rgba(0,0,0,0.6)] mx-auto flex-col flex lg:flex-row mt-[75px] md:mt-[100px] mb-[75px] min-h-[calc(100vh_-_150px)] items-center justify-center gap-[30px] max-h-[1400px]">
+      <div className="w-[90%] max-w-[2560px] py-[50px] p-[20px] md:p-[40px] hero-conti zoldhatteres bg-dark-color rounded-2xl filter drop-shadow-[0_5px_20px_rgba(0,0,0,0.6)] mx-auto flex-col flex lg:flex-row mt-[75px] md:mt-[100px] mb-[35px] min-h-[calc(100vh_-_150px)] items-center justify-center gap-[30px] max-h-[1400px]">
         {/* Bal oldal */}
         <div className="hero-bal w-full lg:w-[50%] flex-col flex justify-center gap-[24px]">
           <div className="hidden md:flex flex-row gap-[10px] mx-auto md:mx-[0px] rounded-md bg-dark-green text-white w-fit px-3 py-1.5 items-center text-sm font-medium mt-[20px]">

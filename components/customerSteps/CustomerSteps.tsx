@@ -87,8 +87,8 @@ export default function CustomerStepsComp() {
   };
 
   return (
-    <Section className="flex flex-col gap-[25px] my-[50px]">
-      <h2 className="mt-2 text-3xl text-center font-bold text-dark-color md:text-5xl lg:text-6xl">
+    <Section className="flex flex-col gap-[25px] my-[35px]">
+      <h2 className="mt-2 text-3xl text-center font-bold text-dark-color md:text-5xl lg:text-6xl my-[35px]">
         Így készül el a rendszered
       </h2>
 

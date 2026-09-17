@@ -18,7 +18,7 @@ export default function TechStack() {
   };
 
   return (
-    <Section className="flex flex-col my-[50px] ">
+    <Section className="flex flex-col my-[35px] ">
       <h2
         id="stack"
         className="text-center text-3xl font-bold md:text-4xl my-[35px]"
