@@ -186,7 +186,7 @@ export default function ServicePageContent({
   return (
     <section className="min-h-screen bg-white pb-20 text-dark-color">
       {/* Hero */}
-      <section className="zoldhatteres flex flex-col md:flex-row px-[10px] relative overflow-hidden bg-dark-color px-[10px] py-24 text-white md:py-32 w-[90%] mx-auto rounded-xl mt-[120px] shadow-[0_0_10px_0px_rgba(0_0_0_0.6)] ">
+      <section className="zoldhatteres flex flex-col md:flex-row px-[10px] relative overflow-hidden bg-dark-color px-[10px] py-[35px] md:py-24 text-white md:py-32 w-[90%] mx-auto rounded-xl mt-[75px] md:mt-[100px] shadow-[0_0_10px_0px_rgba(0_0_0_0.6)] ">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 flex select-none items-center overflow-hidden"
