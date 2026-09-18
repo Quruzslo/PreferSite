@@ -78,7 +78,7 @@ export default function Hero() {
             készítése, igényes vállalkozásoknak.
           </p>
 
-          <div className="mx-auto flex flex-col sm:flex-row gap-4 mt-2">
+          <div className="mx-auto md:mr-auto flex flex-col sm:flex-row gap-4 mt-2">
             <NextCtaButton></NextCtaButton>
           </div>
         </div>
