@@ -155,7 +155,7 @@ export default function ContactSection() {
       </div>
 
       {/* Jobb oldali form wrapper --------- */}
-      <div className="flex flex-col w-full md:w-1/2">
+      <div className="flex flex-col w-full md:w-1/2 mt-[55px] relative">
         <ContactForm></ContactForm>
       </div>
     </section>

@@ -545,3 +545,14 @@ path.two {
     fill: white;
   }
 }
+
+.form-fields-wrapper.active {
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all ease 0.6s !important;
+}
+.form-fields-wrapper.inactive {
+  transform: translateX(0);
+  opacity: 1;
+}
