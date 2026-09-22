@@ -96,7 +96,7 @@ export default function ContactForm() {
                   placeholder=" "
                   required={field.required}
                   rows={4}
-                  className={`peer input-field w-full bg-transparent outline-none py-[5px] text-white border-b-2 resize-none ${
+                  className={`peer input-field w-full bg-transparent outline-none py-[5px] text-dark-color border-b-2 resize-none ${
                     hasError ? "border-red-500" : "border-neutral-300"
                   }`}
                 />
@@ -107,7 +107,7 @@ export default function ContactForm() {
                   type={field.type}
                   placeholder=" "
                   required={field.required}
-                  className={`peer input-field w-full h-full bg-transparent outline-none py-[5px] text-white border-b-2 ${
+                  className={`peer input-field w-full h-full bg-transparent outline-none py-[5px] text-dark-color border-b-2 ${
                     hasError ? "border-red-500" : "border-neutral-300"
                   }`}
                 />
@@ -115,7 +115,7 @@ export default function ContactForm() {
 
               <label
                 htmlFor={field.name}
-                className="absolute left-[0px] top-[50%] -translate-y-[50%] text-base transition-all duration-300 pointer-events-none text-neutral-300
+                className="absolute left-[0px] top-[50%] -translate-y-[50%] text-base transition-all duration-300 pointer-events-none text-dark-color
                   peer-focus:top-[-10px] peer-focus:text-xs peer-focus:text-red-400
                   peer-[:not(:placeholder-shown)]:top-[-10px] peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-green"
               >
@@ -133,7 +133,7 @@ export default function ContactForm() {
 
         {/* Adatkezelési nyilatkozat */}
         <div className="flex flex-col gap-1 mt-4">
-          <label className="flex items-center gap-2 text-white cursor-pointer w-max">
+          <label className="flex items-center gap-2 text-dark-color cursor-pointer w-max">
             <input
               type="checkbox"
               name="adatkezeles"
@@ -157,7 +157,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="mt-4 px-6 py-2 bg-dark-green text-dark-color rounded font-medium hover:bg-dark-green hover:text-white transition-colors self-start duration-300 disabled:opacity-50 cursor-pointer"
+          className="mt-4 px-6 py-2 bg-dark-green text-white rounded font-medium hover:bg-dark-green hover:scale-[1.05] transition self-start duration-300 disabled:opacity-50 cursor-pointer"
         >
           {isSubmitting ? "Küldés..." : "Elküldés"}
         </button>

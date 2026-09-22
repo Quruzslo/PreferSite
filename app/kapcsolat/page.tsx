@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="flex w-full min-h-full flex-col gap-[25px] bg-dark-color py-[150px]">
+    <section className="flex w-full min-h-fit h-[100vh] flex-col gap-[25px] bg-white py-[100px] md:py-[150px]">
       <CurvedLines className="z-0 bottom-0 left-0"></CurvedLines>
       <CurvedLines className="z-0 top-[120px] md:top-0 left-0"></CurvedLines>
       {/* <div className="flex flex-col mb-[50px]  w-[90%] max-w-[2560px] mx-auto justify-center items-center">

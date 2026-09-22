@@ -13,7 +13,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+export default async function HomePage() {
   return (
     <>
       <Hero></Hero>

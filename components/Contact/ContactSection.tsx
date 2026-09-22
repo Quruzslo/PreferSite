@@ -24,7 +24,7 @@ export default function ContactSection() {
   return (
     <section
       id="kapcsolat"
-      className="w-[90%] max-w-[2560px] mx-auto z-1 relative flex flex-col md:flex-row gap-[25px] justify-between p-[0px]  text-white font-bold "
+      className="w-[90%] max-w-[2560px] mx-auto z-1 relative flex flex-col md:flex-row gap-[25px] justify-between p-[0px]  text-dark-color font-bold "
     >
       <div className="bg-white text-dark-color border-2 border-dark-color absolute top-0 left-1/2 -translate-x-1/2  -translate-y-1/2 p-[10px] rounded-md w-fit ">
         <h2 className="!text-[20px] font-black leading-tight ">Kapcsolat</h2>
@@ -33,7 +33,7 @@ export default function ContactSection() {
       {/* Bal oldali infók --------- */}
       <div className="flex flex-col w-full md:w-1/2  gap-[20px] mt-[55px] text-dark-color rounded-2xl bg-transparent  p-[15px] ">
         <div className="flex flex-col gap-[15px] w-full items-center justify-center">
-          <p className="text-[20px] md:text-[35px] font-black text-white ">
+          <p className="text-[20px] md:text-[35px] font-black  ">
             KERESS BIZALOMMAL
           </p>
           {/* Kép és elérhetőség ikonok ------- */}
@@ -129,9 +129,9 @@ export default function ContactSection() {
                   <FiPhoneCall size={25} className="text-white" />
                 </a>
               </div>
-              <div className="flex flex-col border-l-2 border-neutral-100 pl-[10px] !text-neutral-100 gap-[10px]">
+              <div className="flex flex-col border-l-2 border-neutral-600 pl-[10px]  gap-[10px]">
                 <p>Szili Gál Áron</p>
-                <p>FullStack fejlesztő</p>
+                <p>Full-stack fejlesztő</p>
               </div>
             </div>
           </div>
@@ -139,22 +139,16 @@ export default function ContactSection() {
           {/* Gyors válasz ,stb... blokk ------------- */}
           <div className="flex flex-row flex-wrap gap-[10px] md:gap-[20px] mt-[25px] w-full justify-between md:justify-center">
             <div className="contact-pros flex flex-col items-center justify-center ">
-              <SiCoffeescript size={20} className="text-neutral-100" />
-              <p className="text-sm md:text-[15px] text-neutral-100">
-                Kötetlenség
-              </p>
+              <SiCoffeescript size={20} className="" />
+              <p className="text-sm md:text-[15px] ">Kötetlenség</p>
             </div>
             <div className="contact-pros flex flex-col items-center justify-center ">
-              <SiAnswer size={20} className="text-neutral-100" />
-              <p className="text-sm md:text-[15px] text-neutral-100">
-                Gyors válasz
-              </p>
+              <SiAnswer size={20} className="" />
+              <p className="text-sm md:text-[15px] ">Gyors válasz</p>
             </div>
             <div className="contact-pros flex flex-col items-center justify-center ">
-              <BsCalendarCheckFill size={20} className="text-neutral-100" />
-              <p className="text-sm md:text-[15px] text-neutral-100">
-                Átláthatóság
-              </p>
+              <BsCalendarCheckFill size={20} className="" />
+              <p className="text-sm md:text-[15px] ">Átláthatóság</p>
             </div>
           </div>
         </div>
