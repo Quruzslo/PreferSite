@@ -195,7 +195,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={isSubmitting || isExiting}
-            className="group relative flex items-center justify-center gap-2 px-6 py-2 bg-dark-green text-white rounded-full font-medium hover:bg-dark-green hover:scale-[1.05] transition-all duration-300 self-start disabled:opacity-50 cursor-pointer overflow-hidden"
+            className="group relative flex shadow-md items-center justify-center gap-2 px-6 py-2 bg-dark-green text-white rounded-full font-medium hover:bg-dark-green hover:scale-[1.05] transition-all duration-300 self-start disabled:opacity-50 cursor-pointer overflow-hidden"
           >
             {isSubmitting ? (
               <>
