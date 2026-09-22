@@ -118,13 +118,13 @@ export default function ContactSection() {
               <div className="flex flex-row gap-[20px] items-center">
                 <a
                   href="mailto:sziligalaron@gmail.com"
-                  className="rounded-full bg-dark-green p-[10px] shadow-[0_0_10px_2px_rgba(0,0,0,0.6)]"
+                  className="rounded-full transition duration-300 hover:scale-[1.06] bg-dark-green p-[10px] shadow-[0_0_10px_2px_rgba(0,0,0,0.6)]"
                 >
                   <HiOutlineMail size={25} className="text-white" />
                 </a>
                 <a
                   href="tel:+36203127968"
-                  className="rounded-full bg-dark-green p-[10px] shadow-[0_0_10px_2px_rgba(0,0,0,0.6)]"
+                  className="rounded-full transition duration-300 hover:scale-[1.06]  bg-dark-green p-[10px] shadow-[0_0_10px_2px_rgba(0,0,0,0.6)]"
                 >
                   <FiPhoneCall size={25} className="text-white" />
                 </a>
