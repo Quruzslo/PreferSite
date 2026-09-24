@@ -556,3 +556,23 @@ path.two {
   transform: translateX(0);
   opacity: 1;
 }
+
+.functions {
+  padding: 35px 10px;
+  transition: all 0.3s ease;
+}
+
+.functions.active {
+  background-color: var(--color-dark-green);
+  color: #ffffff !important;
+  border-radius: 15px;
+  padding: 50px 20px;
+}
+
+.functions.active .icon-box {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.functions.active .icon-box svg {
+  color: #ffffff;
+}

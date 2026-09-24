@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { motion, Variants } from "motion/react";
 import { FiCheckCircle, FiArrowLeft } from "react-icons/fi";
@@ -192,13 +193,15 @@ export default function ServicePageContent({
 }: {
   service: ServiceData;
 }) {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   return (
     <section className="min-h-screen bg-white pb-20 text-dark-color">
       {/* Hero */}
       <section className="zoldhatteres flex flex-col md:flex-row px-[10px] relative overflow-hidden bg-dark-color px-[10px] py-[35px] md:py-24 text-white md:py-32 w-[90%] mx-auto rounded-xl mt-[75px] md:mt-[100px] shadow-[0_0_10px_0px_rgba(0_0_0_0.6)] ">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 flex select-none items-center overflow-hidden"
+          className="pointer-events-none absolute inset-0 flex select-none items-center overflow-hidden hidden md:flex"
         >
           <span className="-translate-y-2 whitespace-nowrap text-[5vw] font-extrabold leading-none text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.2)]">
             {service.seoTitle}
@@ -346,33 +349,34 @@ export default function ServicePageContent({
             <SectionRule />
             <h2 className="text-3xl font-bold">{service.features.title}</h2>
           </div>
-          <div className="border-t border-dark-color/20">
+          <div className="border-t border-dark-color/20 flex flex-col gap-[25px]">
             {service.features.items.map((feature, idx) => {
               const IconComponent = (FiIcons[
                 feature.icon as keyof typeof FiIcons
               ] || FiIcons.FiCheckCircle) as IconType;
 
+              const isActive = activeIndex === idx;
+
               return (
                 <motion.div
                   key={idx}
                   custom={idx}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: false, amount: 0.3 }}
-                  className="grid grid-cols-1 text-dark-color gap-x-12 gap-y-3 border-b border-dark-color/20 py-[35px] px-[10px] md:grid-cols-12 items-center hover:bg-dark-green hover:!text-white hover:rounded-lg hover:px-[20px] hover:py-[50px] transition-all duration-300 ease"
+                  onViewportEnter={() => setActiveIndex(idx)}
+                  viewport={{ once: false, margin: "-45% 0px -45% 0px" }}
+                  className={`functions grid grid-cols-1 text-dark-color gap-x-12 gap-y-3 border-b border-dark-color/20 md:grid-cols-12 items-center ${
+                    isActive ? "active" : ""
+                  }`}
                 >
-                  {/* Ikon + Cím egy blokkban */}
                   <div className="flex items-center gap-4 md:col-span-5 lg:col-span-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-dark-color/5 text-dark-color">
-                      <IconComponent className="h-6 w-6 text-dark-color" />
+                    <div className="icon-box flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-dark-color/5 text-dark-color transition-colors duration-300">
+                      <IconComponent className="h-6 w-6 text-dark-color transition-colors duration-300" />
                     </div>
-                    <h3 className="text-xl font-semibold  lg:text-2xl">
+                    <h3 className="text-xl font-semibold lg:text-2xl">
                       {feature.title}
                     </h3>
                   </div>
 
-                  <p className="text-base leading-relaxed  md:col-span-7 lg:col-span-6 lg:col-start-6">
+                  <p className="text-base leading-relaxed md:col-span-7 lg:col-span-6 lg:col-start-6">
                     {feature.text}
                   </p>
                 </motion.div>
