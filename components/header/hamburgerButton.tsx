@@ -35,7 +35,7 @@ export default function HamburgerButton({
     <button
       type="button"
       aria-label="Menü kapcsoló"
-      className={`svg-hamburger-btn ${stateClass} flex md:!hidden `}
+      className={`svg-hamburger-btn ${stateClass} flex lg:!hidden `}
       onClick={handleClick}
     >
       <svg

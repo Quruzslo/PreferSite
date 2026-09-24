@@ -45,8 +45,8 @@ export default function Hero() {
             <p>Egyedi fejlesztésű webes megoldások</p>
           </div>
 
-          <h1 className=" font-black !text-[20px] md:!text-[35px] lg:text-[40px] text-white ">
-            Minőségi weboldal készítés és webes szoftverfejlesztése cégeknek és
+          <h1 className=" font-black !text-[20px] md:!text-[30px] lg:text-[35px] text-white ">
+            Minőségi weboldal-és webes szoftverfejlesztése cégeknek és
             vállalkozásoknak.
           </h1>
 
@@ -54,31 +54,30 @@ export default function Hero() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="font-black !text-[20px] md:!text-[30px] grid grid-cols-1 sm:grid-cols-2 gap-[25px] w-full"
+            className="font-black !text-[18px] sm:!text-[20px] md:!text-[30px] flex flex-row flex-wrap w-full"
           >
             {services.map((item, idx) => (
               <motion.a
                 key={idx}
                 variants={itemVariants}
                 href={item.link}
-                className="h1-elem origin-top-left inline-block w-full  relative text-white"
+                className="h1-elem origin-top-left relative block w-full min-[400px]:w-1/2 text-white p-[10px] truncate"
               >
                 {item.name}
 
                 <span className="arrow-left"></span>
-
                 <span className="arrow-right"></span>
               </motion.a>
             ))}
           </motion.div>
 
           <p className="text-[16px] md:text-[19px] text-gray-300 leading-relaxed max-w-[600px]">
-            Sablonok helyett villámgyors, keresőoptimalizált weboldalak,
+            Sablonok helyett megbízható, keresőoptimalizált weboldalak,
             konverzióra épített webshopok és cégre optimalizált CRM rendszerek
             készítése, igényes vállalkozásoknak.
           </p>
 
-          <div className="mx-auto md:mr-auto flex flex-col sm:flex-row gap-4 mt-2">
+          <div className="mx-auto md:mx-0 w-fit flex flex-col sm:flex-row gap-4 mt-2">
             <NextCtaButton></NextCtaButton>
           </div>
         </div>

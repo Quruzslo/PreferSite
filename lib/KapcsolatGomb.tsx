@@ -1,9 +1,13 @@
 import Link from "next/link";
 
-export default function NextCtaButton() {
+export default function NextCtaButton({ classes = "" }: any) {
   return (
-    <div className="wrapper w-fit">
-      <Link className="cta" href="/kapcsolat">
+    <div className={`wrapper w-fit ${classes}`}>
+      <Link
+        className="cta"
+        href="/kapcsolat"
+        aria-label="Weboldal készítő kapcsolat gomb"
+      >
         <span className="font-bold">Beszéljünk</span>
         <span>
           <svg

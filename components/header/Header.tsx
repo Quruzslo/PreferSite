@@ -66,7 +66,7 @@ export default function Header() {
       {/* Mobil layer + Animációk */}
       <AnimatePresence>
         {menuOpen && (
-          <div className="fixed inset-0 w-full h-[100dvh] z-[998] md:hidden bg-white text-white overflow-y-auto overflow-x-hidden overscroll-none">
+          <div className="fixed inset-0 w-full h-[100dvh] z-[998] lg:hidden bg-white text-white overflow-y-auto overflow-x-hidden overscroll-none">
             <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
               {/* Felső sáv */}
               <motion.div
@@ -212,7 +212,7 @@ export default function Header() {
           </a>
 
           {/* Desktop nézet */}
-          <nav className="desktop-nav relative bg-dark-color py-[5px] px-[20px] text-white rounded-md hidden md:flex">
+          <nav className="desktop-nav relative bg-dark-color py-[10px] px-[20px] text-white rounded-full hidden lg:flex">
             <ul
               className="relative flex flex-row items-center gap-6 font-bold"
               onMouseLeave={handleMouseLeave}
@@ -220,7 +220,7 @@ export default function Header() {
               {/* Csúszó elem */}
               <div
                 ref={indicatorRef}
-                className="absolute top-1/2 -translate-y-1/2 h-[calc(100%+14px)] bg-green rounded-md transition-all duration-300 ease-out pointer-events-none opacity-0"
+                className="absolute top-1/2 -translate-y-1/2 h-[calc(100%)] bg-green rounded-full transition-all duration-300 ease-out pointer-events-none opacity-0"
               />
 
               {navItems.map((item, idx) => {
@@ -236,11 +236,10 @@ export default function Header() {
                 return hasSubitems ? (
                   <li
                     key={item.path || idx}
-                    className="relative group z-10 flex"
+                    className="relative group z-10 flex p-[2px]"
                     onMouseEnter={handleMouseEnter}
                   >
-                    <a
-                      href={item.path}
+                    <div
                       onClick={() => triggerIsScrolling()}
                       className="menu-link hover:text-dark-color cursor-pointer transition-colors flex items-center gap-1"
                       style={{ animationDelay: `${idx * 0.1}s` }}
@@ -259,7 +258,7 @@ export default function Header() {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
-                    </a>
+                    </div>
 
                     {/* Dropdown */}
                     <div className="absolute left-1/2 -translate-x-1/2 top-full flex flex-col bg-green shadow-lg rounded-md py-2 min-w-[160px] z-50 transition-all duration-300 ease-out opacity-0 invisible translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto">
@@ -297,7 +296,7 @@ export default function Header() {
           />
 
           {/* Kapcsolat */}
-          <div className="hidden md:flex flex-row gap-4 items-center justify-center">
+          <div className="hidden lg:flex flex-row gap-4 items-center justify-center">
             <a
               href="/kapcsolat"
               onClick={() => {

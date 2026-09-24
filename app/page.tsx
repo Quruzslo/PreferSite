@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
 };
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+// const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export default async function HomePage() {
   return (
