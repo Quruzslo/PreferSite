@@ -56,26 +56,32 @@ export const szolgaltatasokData = [
       title: "Az általam fejlesztett egyedi webalkalmazások jellemzői",
       items: [
         {
+          icon: "FiZap",
           title: "Csúcsteljesítmény",
           text: "Modern technológiai stacket (React, Next.js, Node.js) használok a villámgyors reakcióidőért.",
         },
         {
+          icon: "FiShieldCheck",
           title: "Magas fokú adatvédelem",
           text: "Szigorú iparági szabványok szerint építem fel az adatbázisokat és a jogosultsági szinteket.",
         },
         {
+          icon: "FiLayers",
           title: "Bővíthető architektúra",
           text: "A rendszer felépítése rugalmasan követi a céged növekedését, legyen szó tíz vagy több ezer felhasználóról.",
         },
         {
+          icon: "FiLayout",
           title: "Intuitív kezelőfelület",
           text: "Átlátható dashboardokat és adminisztrációs felületeket tervezek, amiket betanítás nélkül is egyszerű használni.",
         },
         {
+          icon: "FiLink",
           title: "Rendszerintegrációk",
           text: "Zökkenőmentes összeköttetést biztosítok külső szoftverekkel (Stripe, számlázók, CRM, egyedi API-k).",
         },
         {
+          icon: "FiSmartphone",
           title: "Teljes reszponzivitás",
           text: "Asztali gépen, tableten és okostelefonon is hibátlanul működő, optimalizált felületeket készítek.",
         },
@@ -146,26 +152,32 @@ export const szolgaltatasokData = [
       title: "A professzionális céges weboldal fejlesztés pillérei",
       items: [
         {
+          icon: "FiTarget",
           title: "Konverzióközpontú",
           text: "A felépítést és a tartalomstruktúrát a látogatók ügyféllé konvertálására tervezem.",
         },
         {
+          icon: "FiAward",
           title: "Prémium arculat",
           text: "A vállalkozásod pozicionálásához illeszkedő, modern és letisztult vizuális világot hozok létre.",
         },
         {
+          icon: "FiSearch",
           title: "Keresőoptimalizált (SEO)",
           text: "Technikailag és strukturálisan úgy építem fel az oldalt, hogy jó eséllyel induljon a Google találati listáján.",
         },
         {
+          icon: "FiGrid",
           title: "Logikus struktúra",
           text: "A látogatók számára egyértelmű, könnyen átlátható információáramlást és navigációt alakítok ki.",
         },
         {
+          icon: "FiEdit3",
           title: "Ügyfélszerző szövegezés",
           text: "Eredményorientált megközelítéssel segítem az üzeneteid tisztázását és a bizalom kiépítését.",
         },
         {
+          icon: "FiSmile",
           title: "Kiváló felhasználói élmény (UX)",
           text: "Gyors, gördülékeny és élvezetes böngészést biztosítok minden eszközön és kijelzőméreten.",
         },
@@ -235,26 +247,32 @@ export const szolgaltatasokData = [
       title: "Az általam fejlesztett egyedi webshopok jellemzői",
       items: [
         {
+          icon: "FiShoppingCart",
           title: "Maximalizált konverzió",
           text: "Minden felületi elemet úgy alakítok ki, hogy az a sikeres vásárlást és tranzakciót szolgálja.",
         },
         {
+          icon: "FiCreditCard",
           title: "Biztonságos fizetési rendszerek",
           text: "Stabil, zárt architektúra és integrált bankkártyás fizetési megoldások (Stripe, Barion stb.).",
         },
         {
+          icon: "FiZap",
           title: "Kiváló betöltési sebesség",
           text: "Az optimalizált kódbázis megelőzi a lassulásból eredő vásárlói lemorzsolódást.",
         },
         {
+          icon: "FiPackage",
           title: "Atmoszférikus termékoldalak",
           text: "Átlátható kategóriarendszer, szűrési opciók és azonnali találatot adó keresőmotor.",
         },
         {
+          icon: "FiServer",
           title: "Skálázható teljesítmény",
           text: "A szerveroldali felépítés bírja a terhelést a kampányok alatt, akár több tízezer termék esetén is.",
         },
         {
+          icon: "FiCheckCircle",
           title: "Optimalizált checkout",
           text: "A vásárlási folyamat felesleges lépéseit kiiktatva egyszerű és gyors fizetést teszek lehetővé.",
         },
@@ -323,26 +341,32 @@ export const szolgaltatasokData = [
       title: "Az általam fejlesztett CRM rendszerek előnyei",
       items: [
         {
+          icon: "FiSliders",
           title: "Folyamatokra szabott",
           text: "A szoftver hajszálpontosan a te meglévő értékesítési és működési lépéseidet követi.",
         },
         {
+          icon: "FiRepeat",
           title: "Automatizált munkafolyamatok",
           text: "Értesítések, emlékeztetők és státuszváltások automatikus generálása emberi beavatkozás nélkül.",
         },
         {
+          icon: "FiShare2",
           title: "Szoftverintegrációk",
           text: "Közvetlen adatkapcsolat a céges weboldallal, a számlázóval és az e-mail rendszerekkel.",
         },
         {
+          icon: "FiPieChart",
           title: "Letisztult dashboardok",
           text: "Azonnal értelmezhető kimutatások és grafikonok a cégvezetői döntéshozatal támogatásához.",
         },
         {
+          icon: "FiKey",
           title: "Fejlett jogosultságkezelés",
           text: "Szigorúan szabályozott hozzáférési szintek: minden munkatárs csak a számára releváns adatokat látja.",
         },
         {
+          icon: "FiUsers",
           title: "Könnyű adaptáció",
           text: "Egyszerű, átlátható kezelőfelület, amit a csapat gyorsan és szívesen sajátít el.",
         },
@@ -356,7 +380,7 @@ export const szolgaltatasokData = [
   },
   {
     slug: "karbantartas",
-    seoTitle: "Weboldal Karbantartás & Technikai Üzemeltetés | Prefersite",
+    seoTitle: "Weboldal karbantartás és technikai üzemeltetés | Prefersite",
     seoDescription:
       "Weboldal karbantartás, technikai üzemeltetés és folyamatos biztonsági felügyelet. Gyorsítás, frissítések és biztonsági mentések vállalkozásoknak.",
     img: "/karbantartas.svg",
@@ -413,26 +437,32 @@ export const szolgaltatasokData = [
       title: "A weboldal karbantartási szolgáltatás elemei",
       items: [
         {
+          icon: "FiActivity",
           title: "Proaktív hibamegelőzés",
           text: "Rendszeres technikai auditokkal és sebezhetőségi vizsgálatokkal előzöm meg a problémákat.",
         },
         {
+          icon: "FiEyeOff",
           title: "Láthatatlan háttérmunka",
           text: "A frissítéseket és karbantartásokat úgy ütemezem, hogy azok ne zavarják az oldal látogatóit.",
         },
         {
+          icon: "FiRefreshCw",
           title: "Rendszeres frissítések",
           text: "A CMS motor, a bővítmények és a biztonsági modulok naprakészen tartása a legújabb verziókra.",
         },
         {
+          icon: "FiDatabase",
           title: "Automatizált mentések",
           text: "Rendszeres adatbázis- és fájlmentések készítése, ahonnan az oldal bármikor azonnal visszaállítható.",
         },
         {
+          icon: "FiZap",
           title: "Sebességoptimalizálás",
           text: "A cache-elés és az adatbázis folyamatos finomhangolása a maximális betöltési sebességért.",
         },
         {
+          icon: "FiLifeBuoy",
           title: "Garantált háttértámogatás",
           text: "Közvetlen technikai segítségnyújtás, ha tartalommódosításra vagy fejlesztésre van szükséged.",
         },

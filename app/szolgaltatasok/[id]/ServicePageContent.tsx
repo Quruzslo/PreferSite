@@ -7,11 +7,14 @@ import { MdArrowForward } from "react-icons/md";
 import Referencies from "./Referencies";
 import ContactButton from "@/lib/ContactButton";
 import Image from "next/image";
+import * as FiIcons from "react-icons/fi";
+import { IconType } from "react-icons";
 
 interface ServiceData {
   hero: { title: string; subtitle: string; ctaText: string };
   img: any;
   importance: { title: string; items: string[] };
+  seoTitle: string;
   benefits: {
     title: string;
     description: string;
@@ -23,10 +26,16 @@ interface ServiceData {
     question: string;
     ctaText: string;
   };
-  features: { title: string; items: { title: string; text: string }[] };
+  features: {
+    title: string;
+    items: {
+      icon: string;
+      title: string;
+      text: string;
+    }[];
+  };
   footerCta: { title: string; subtitle: string };
 }
-
 const lineVariants: Variants = {
   hidden: { scaleX: 0, opacity: 1 },
   visible: {
@@ -191,8 +200,8 @@ export default function ServicePageContent({
           aria-hidden
           className="pointer-events-none absolute inset-0 flex select-none items-center overflow-hidden"
         >
-          <span className="-translate-y-2 whitespace-nowrap text-[16vw] font-extrabold leading-none text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.2)]">
-            {service.hero.title}
+          <span className="-translate-y-2 whitespace-nowrap text-[5vw] font-extrabold leading-none text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.2)]">
+            {service.seoTitle}
           </span>
         </div>
 
@@ -337,35 +346,38 @@ export default function ServicePageContent({
             <SectionRule />
             <h2 className="text-3xl font-bold">{service.features.title}</h2>
           </div>
+          <div className="border-t border-dark-color/20">
+            {service.features.items.map((feature, idx) => {
+              const IconComponent = (FiIcons[
+                feature.icon as keyof typeof FiIcons
+              ] || FiIcons.FiCheckCircle) as IconType;
 
-          <div className="grid grid-cols-1   md:grid-cols-2 lg:grid-cols-3">
-            {service.features.items.map((feature, idx) => (
-              <motion.div
-                key={idx}
-                custom={idx}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.3 }}
-                className="p-[10px] group relative border-t border-black/10 py-10 pr-8 lg:border-r lg:last:border-r-0
-                     [&:nth-child(3n)]:lg:border-r-0
-                     md:[&:nth-child(2n)]:border-r-0 md:[&:nth-child(3n)]:lg:border-r
-                     md:[&:nth-child(2n)]:lg:border-r"
-              >
-                {/* index szám — nem "AI badge", hanem editoriális sorszám */}
-                <span className="font-mono text-xs text-zold/70">
-                  {String(idx + 1).padStart(2, "0")}
-                </span>
+              return (
+                <motion.div
+                  key={idx}
+                  custom={idx}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="grid grid-cols-1 gap-x-12 gap-y-3 border-b border-dark-color/20 py-8 md:grid-cols-12 md:py-10 items-center"
+                >
+                  {/* Ikon + Cím egy blokkban */}
+                  <div className="flex items-center gap-4 md:col-span-5 lg:col-span-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-dark-color/5 text-dark-color">
+                      <IconComponent className="h-6 w-6 text-dark-color" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-dark-color lg:text-2xl">
+                      {feature.title}
+                    </h3>
+                  </div>
 
-                <h3 className="mt-4 text-xl font-bold text-dark-color transition-colors duration-300 group-hover:text-zold">
-                  {feature.title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-relaxed text-gray-600">
-                  {feature.text}
-                </p>
-              </motion.div>
-            ))}
+                  <p className="text-base leading-relaxed text-gray-600 md:col-span-7 lg:col-span-6 lg:col-start-6">
+                    {feature.text}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
