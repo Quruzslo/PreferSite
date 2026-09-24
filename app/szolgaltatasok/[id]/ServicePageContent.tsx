@@ -360,19 +360,19 @@ export default function ServicePageContent({
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: false, amount: 0.3 }}
-                  className="grid grid-cols-1 gap-x-12 gap-y-3 border-b border-dark-color/20 py-8 md:grid-cols-12 md:py-10 items-center"
+                  className="grid grid-cols-1 text-dark-color gap-x-12 gap-y-3 border-b border-dark-color/20 py-[35px] px-[10px] md:grid-cols-12 items-center hover:bg-dark-green hover:!text-white hover:rounded-lg hover:px-[20px] hover:py-[50px] transition-all duration-300 ease"
                 >
                   {/* Ikon + Cím egy blokkban */}
                   <div className="flex items-center gap-4 md:col-span-5 lg:col-span-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-dark-color/5 text-dark-color">
                       <IconComponent className="h-6 w-6 text-dark-color" />
                     </div>
-                    <h3 className="text-xl font-semibold text-dark-color lg:text-2xl">
+                    <h3 className="text-xl font-semibold  lg:text-2xl">
                       {feature.title}
                     </h3>
                   </div>
 
-                  <p className="text-base leading-relaxed text-gray-600 md:col-span-7 lg:col-span-6 lg:col-start-6">
+                  <p className="text-base leading-relaxed  md:col-span-7 lg:col-span-6 lg:col-start-6">
                     {feature.text}
                   </p>
                 </motion.div>
