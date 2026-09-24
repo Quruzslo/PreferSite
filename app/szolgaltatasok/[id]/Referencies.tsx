@@ -83,7 +83,7 @@ export default function Referencies() {
       <h2 className="text-white text-3xl mx-auto w-[90%] text-center">
         Néhány korábbi fejlesztésem
       </h2>
-      {refArray.slice(0, 3).map((item, idx, slicedArray) => (
+      {refArray.slice(0, 4).map((item, idx, slicedArray) => (
         <Card
           key={item.title}
           item={item}

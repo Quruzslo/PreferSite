@@ -3,8 +3,6 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import "../components/header/header.css";
 import "../components/hero/stacked.css";
-// import PageRevealWrapper from "@/lib/_PageRevealWrapper";
-
 import Header from "@/components/header/Header";
 import MouseFollowerElement from "@/lib/mouseFollowerElement";
 import ScrollToTop from "@/lib/scrollToTop";

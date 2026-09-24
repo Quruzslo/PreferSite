@@ -5,7 +5,7 @@ const h2Elements = ["Weboldal", "Webshop", "CRM", "Webapplikáció"];
 export const metadata = {
   title: "Webfejlesztés - Kapcsolat",
   description:
-    "Weboldal készítés országosan bárhonnan. Weboldal készítés Kaposváron, webfejlesztés Budapesten, Győrben.",
+    "Weboldal készítés országosan. Weboldal készítés Kaposváron, webfejlesztés Budapesten, Győrben.",
 };
 
 export default function ContactPage() {

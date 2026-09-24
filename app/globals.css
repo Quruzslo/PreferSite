@@ -196,8 +196,10 @@ h4 {
     0 0;
   background-color: #141414;
   width: 100%;
-  box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+  box-shadow: rgba(32, 32, 32, 0.6) 5px 5px 10px 0px;
   transition: all 0.5s ease-in-out;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .benefit-card:hover {
@@ -207,7 +209,6 @@ h4 {
   transform: rotate3d(0.5, 1, 0, 30deg);
 }
 
-/* Badge (Date-box mintára) */
 .benefit-date-box {
   position: absolute;
   top: 30px;
@@ -216,6 +217,7 @@ h4 {
   width: fit-content;
   background: var(--color-dark-color);
   border: 2px solid white;
+  border-radius: 15px;
   padding: 10px;
   transform: translate3d(0px, 0px, 80px);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
@@ -232,13 +234,14 @@ h4 {
   color: #8ed500;
   font-size: 10px;
   font-weight: 900;
+
   text-transform: uppercase;
 }
 
 /* Tartalom konténer */
 .benefit-content-box {
   position: relative;
-  background: var(--color-dark-green);
+  background: white;
   transition: all 0.5s ease-in-out;
   padding: 60px 25px 25px 25px;
   transform-style: preserve-3d;
@@ -247,7 +250,7 @@ h4 {
 
 .benefit-title {
   display: inline-block;
-  color: #ffffff;
+  color: var(--color-dark-green);
   font-size: 25px;
   font-weight: 900;
   transition: all 0.5s ease-in-out;
@@ -262,7 +265,7 @@ h4 {
   margin-top: 10px;
   font-size: 12px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--color-dark-color);
   transition: all 0.5s ease-in-out;
   transform: translate3d(0px, 0px, 30px);
 }
@@ -276,10 +279,11 @@ h4 {
   margin-top: 1rem;
   display: inline-block;
   font-weight: 900;
-  font-size: 9px;
+  font-size: 15px;
   text-transform: uppercase;
   color: #8ed500;
   background: #141414;
+  border-radius: 15px;
   padding: 0.5rem 0.7rem;
   transition: all 0.5s ease-in-out;
   transform: translate3d(0px, 0px, 20px);
