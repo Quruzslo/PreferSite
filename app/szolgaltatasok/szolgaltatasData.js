@@ -1,7 +1,7 @@
 export const szolgaltatasokData = [
   {
     slug: "webapplikacio",
-    seoTitle: "Egyedi Webapplikáció Fejlesztés Cégeknek | Prefersite",
+    seoTitle: "Egyedi Webapplikáció Fejlesztés Cégeknek",
     seoDescription:
       "Egyedi webapplikáció és webalkalmazás fejlesztés vállalkozásoknak. Automatizáld a céges folyamatokat és cseréld le az Excel táblázatokat! Kérj ajánlatot!",
     img: "/webapp.svg",
@@ -95,8 +95,7 @@ export const szolgaltatasokData = [
   },
   {
     slug: "weboldal",
-    seoTitle:
-      "Céges weboldal készítés és vállalkozói weboldal fejlesztés | Prefersite",
+    seoTitle: "Céges weboldal készítés és vállalkozói weboldal fejlesztés",
     seoDescription:
       "Profi céges weboldal készítés és egyedi weboldal fejlesztés vállalkozásoknak. Konverzióorientált, gyors és keresőoptimalizált weboldalak.",
     img: "/website.svg",
@@ -191,7 +190,7 @@ export const szolgaltatasokData = [
   },
   {
     slug: "webshop",
-    seoTitle: "Egyedi Webshop Készítés & Webáruház Fejlesztés | Prefersite",
+    seoTitle: "Egyedi Webshop Készítés & Webáruház Fejlesztés",
     seoDescription:
       "Egyedi webshop készítés és konverzióorientált webáruház fejlesztés. Villámgyors betöltés, biztonságos fizetési rendszerek és skálázható e-kereskedelem.",
     img: "/webshop.svg",
@@ -286,7 +285,7 @@ export const szolgaltatasokData = [
   },
   {
     slug: "crm",
-    seoTitle: "Egyedi CRM Rendszer Fejlesztés Cégeknek | Prefersite",
+    seoTitle: "Egyedi CRM Rendszer Fejlesztés Cégeknek",
     seoDescription:
       "Egyedi CRM rendszer fejlesztés és üzleti folyamatautomatizálás. Szüntesd meg az adatkáoszt, automatizáld az ügyfélkezelést és az értékesítést!",
     img: "/crm.svg",
@@ -380,7 +379,7 @@ export const szolgaltatasokData = [
   },
   {
     slug: "karbantartas",
-    seoTitle: "Weboldal karbantartás és technikai üzemeltetés | Prefersite",
+    seoTitle: "Weboldal karbantartás és technikai üzemeltetés",
     seoDescription:
       "Weboldal karbantartás, technikai üzemeltetés és folyamatos biztonsági felügyelet. Gyorsítás, frissítések és biztonsági mentések vállalkozásoknak.",
     img: "/karbantartas.svg",
