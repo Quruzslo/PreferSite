@@ -61,7 +61,7 @@ export default function Hero() {
                 key={idx}
                 variants={itemVariants}
                 href={item.link}
-                className="h1-elem origin-top-left relative block w-full min-[400px]:w-1/2 text-white p-[10px] truncate"
+                className="h1-elem origin-top-left relative block w-full min-[350px]:w-1/2 text-white p-[10px] truncate"
               >
                 {item.name}
 
