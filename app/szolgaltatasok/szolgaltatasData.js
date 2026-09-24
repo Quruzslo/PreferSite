@@ -1,8 +1,9 @@
-// szolgaltatasokData.js
-
 export const szolgaltatasokData = [
   {
     slug: "webapplikacio",
+    seoTitle: "Egyedi Webapplikáció Fejlesztés Cégeknek | Prefersite",
+    seoDescription:
+      "Egyedi webapplikáció és webalkalmazás fejlesztés vállalkozásoknak. Automatizáld a céges folyamatokat és cseréld le az Excel táblázatokat! Kérj ajánlatot!",
     img: "/webapp.svg",
     hero: {
       title: "Egyedi Webapplikáció Fejlesztés Cégeknek és Vállalkozásoknak",
@@ -88,6 +89,10 @@ export const szolgaltatasokData = [
   },
   {
     slug: "weboldal",
+    seoTitle:
+      "Céges weboldal készítés és vállalkozói weboldal fejlesztés | Prefersite",
+    seoDescription:
+      "Profi céges weboldal készítés és egyedi weboldal fejlesztés vállalkozásoknak. Konverzióorientált, gyors és keresőoptimalizált weboldalak.",
     img: "/website.svg",
     hero: {
       title: "Profi Céges Weboldal Készítés és Vállalkozói Weboldal Fejlesztés",
@@ -172,9 +177,11 @@ export const szolgaltatasokData = [
         "és derítsük ki, milyen céges weboldal hozná a legtöbb ügyfelet a vállalkozásodnak!",
     },
   },
-
   {
     slug: "webshop",
+    seoTitle: "Egyedi Webshop Készítés & Webáruház Fejlesztés | Prefersite",
+    seoDescription:
+      "Egyedi webshop készítés és konverzióorientált webáruház fejlesztés. Villámgyors betöltés, biztonságos fizetési rendszerek és skálázható e-kereskedelem.",
     img: "/webshop.svg",
     hero: {
       title:
@@ -259,9 +266,11 @@ export const szolgaltatasokData = [
         "és tervezzük meg a vállalkozásod igényeire szabott e-kereskedelmi rendszert!",
     },
   },
-
   {
     slug: "crm",
+    seoTitle: "Egyedi CRM Rendszer Fejlesztés Cégeknek | Prefersite",
+    seoDescription:
+      "Egyedi CRM rendszer fejlesztés és üzleti folyamatautomatizálás. Szüntesd meg az adatkáoszt, automatizáld az ügyfélkezelést és az értékesítést!",
     img: "/crm.svg",
     hero: {
       title: "Egyedi CRM Rendszer Fejlesztés és Üzleti Folyamatautomatizálás",
@@ -345,9 +354,11 @@ export const szolgaltatasokData = [
         "és tervezzük meg a vállalkozásodra szabott hatékony CRM rendszert!",
     },
   },
-
   {
     slug: "karbantartas",
+    seoTitle: "Weboldal Karbantartás & Technikai Üzemeltetés | Prefersite",
+    seoDescription:
+      "Weboldal karbantartás, technikai üzemeltetés és folyamatos biztonsági felügyelet. Gyorsítás, frissítések és biztonsági mentések vállalkozásoknak.",
     img: "/karbantartas.svg",
     hero: {
       title:

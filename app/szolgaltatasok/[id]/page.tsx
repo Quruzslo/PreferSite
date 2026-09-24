@@ -6,21 +6,42 @@ interface PageProps {
   params: Promise<{ id: string }>;
 }
 
+const BASE_URL = "https://www.prefersite.hu";
+
+export async function generateStaticParams() {
+  return szolgaltatasokData.map((service) => ({
+    id: service.slug,
+  }));
+}
+
 export async function generateMetadata({ params }: PageProps) {
   const { id } = await params;
   const service = szolgaltatasokData.find((item) => item.slug === id);
 
   if (!service) {
     return {
-      title: "Szolgáltatás nem található",
+      title: "Szolgáltatás nem található - Prefersite",
     };
   }
 
+  const canonicalUrl = `${BASE_URL}/szolgaltatasok/${service.slug}`;
+
   return {
-    title: service.benefits.title,
+    title: `${service.seoTitle}`,
     description:
-      service.hero.subtitle ||
+      service.seoDescription ||
       "Egyedi webalkalmazás, weboldal, webshop, CRM rendszer fejlesztés.",
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `${service.seoTitle}`,
+      description:
+        service.seoDescription ||
+        "Egyedi webalkalmazás, weboldal, webshop, CRM rendszer fejlesztés.",
+      url: canonicalUrl,
+      type: "website",
+    },
   };
 }
 

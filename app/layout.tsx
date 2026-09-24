@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Prefersite",
   },
   description:
-    "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak. Növelje vállalkozása hatékonyságát modern szoftverekkel! Kérjen egyedi ajánlatot!",
+    "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak. Növelje vállalkozása hatékonyságát modern szoftverekkel!",
 
   alternates: {
     canonical: "/",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Prefersite | Egyedi Weboldal, Webshop és CRM Fejlesztés",
     description:
-      "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak. Növelje vállalkozása hatékonyságát modern szoftverekkel! Kérjen egyedi ajánlatot!",
+      "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak. Növelje vállalkozása hatékonyságát modern szoftverekkel!",
     url: "https://www.prefersite.hu",
     siteName: "Prefersite",
     locale: "hu_HU",
