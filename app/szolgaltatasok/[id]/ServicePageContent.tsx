@@ -272,10 +272,10 @@ export default function ServicePageContent({
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false, amount: 0.3 }}
-                className="flex items-start gap-3 rounded-2xl bg-dark-color p-6 transition-colors "
+                className="flex items-center gap-3 rounded-2xl bg-transparent p-6 transition-colors "
               >
                 <FiCheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green" />
-                <p className=" font-medium text-white">{item}</p>
+                <p className=" font-medium text-dark-color">{item}</p>
               </motion.div>
             ))}
           </div>
