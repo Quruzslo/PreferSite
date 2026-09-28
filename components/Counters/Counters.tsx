@@ -39,7 +39,7 @@ export default function Counter({
       ref={containerRef}
       className={`flex flex-col items-center ${classList}`}
     >
-      {Icon && <Icon className="text-3xl text-green-500 mb-2" />}
+      {Icon && <Icon className="text-[35px] text-green mb-2" />}
 
       <div className="relative flex h-12 w-24 items-center justify-center overflow-hidden bg-green font-bold text-[40px] [clip-path:polygon(90%_0,_100%_50%,_91%_100%,_0%_100%,_10%_50%,_0%_0%)] ">
         <AnimatePresence mode="popLayout">
@@ -56,7 +56,7 @@ export default function Counter({
         </AnimatePresence>
       </div>
 
-      <p className="mt-1 text-[20px] text-gray-300">{title}</p>
+      <p className="mt-1 text-[20px] text-gray-300 px-[10px]">{title}</p>
     </div>
   );
 }

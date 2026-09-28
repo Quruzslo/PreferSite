@@ -24,7 +24,7 @@ const counterArray = [
 
 export default function CounterSection() {
   return (
-    <Section className="rounded-md bg-dark-color p-[10px] md:p-[25px] text-white my-[35px] shadow-[5px_5px_15px_0px_rgba(0,0,0,0.6)]">
+    <Section className="rounded-[15px] bg-dark-color p-[10px] md:p-[25px] text-white my-[35px] shadow-[5px_5px_15px_0px_rgba(0,0,0,0.6)]">
       <div className="flex flex-col md:flex-row gap-[35px] w-full">
         <div className="flex flex-col gap-[20px] w-full md:w-1/2">
           <h2 className="text-[30px] lg:!text-[60px] font-black">
@@ -32,7 +32,7 @@ export default function CounterSection() {
           </h2>
           <a
             href="/kapcsolat"
-            className="group flex flex-row items-center gap-[5px]"
+            className="group flex flex-row items-center gap-[5px] w-fit"
           >
             <span className="relative z-10 bg-green flex items-center justify-center text-white text-[20px] font-bold w-[35px] h-[35px] border-3 border-dark-color rounded-full transition-transform duration-300 ease-in-out">
               Á
