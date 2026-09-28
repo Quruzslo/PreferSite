@@ -6,6 +6,7 @@ import Services from "../components/ServicesSection/Services";
 import CustomerStepsComp from "@/components/customerSteps/CustomerSteps";
 import PricingSection from "@/components/PricingDatas/PricingSection";
 import NavigateToContact from "@/components/Contact/NavigateToContact";
+import CounterSection from "@/components/Counters/CounterSection";
 
 export const metadata: Metadata = {
   alternates: {
@@ -21,6 +22,7 @@ export default async function HomePage() {
       <Hero></Hero>
       <BenefitSection></BenefitSection>
       <TechStack></TechStack>
+      <CounterSection></CounterSection>
       <Services></Services>
       <CustomerStepsComp></CustomerStepsComp>
       <PricingSection></PricingSection>

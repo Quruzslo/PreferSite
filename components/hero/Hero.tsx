@@ -72,9 +72,9 @@ export default function Hero() {
           </motion.div>
 
           <p className="text-[16px] md:text-[19px] text-gray-300 leading-relaxed max-w-[600px]">
-            Sablonok helyett megbízható, keresőoptimalizált weboldalak,
-            konverzióra épített webshopok és cégre optimalizált CRM rendszerek
-            készítése, igényes vállalkozásoknak.
+            Megbízható, keresőoptimalizált weboldalak, konverzióra épített
+            webshopok és cégre optimalizált CRM rendszerek készítése, igényes
+            vállalkozásoknak.
           </p>
 
           <div className="mx-auto md:mx-0 w-fit flex flex-col sm:flex-row gap-4 mt-2">
