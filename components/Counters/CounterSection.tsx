@@ -50,7 +50,7 @@ export default function CounterSection() {
               N
             </span>
           </a>
-          <div className="flex flex-row gap-[25px] flex-wrap my-[15px]">
+          <div className="flex flex-row md:gap-[25px] nowrap my-[15px]">
             {counterArray.map((elem) => (
               <Counter
                 key={elem.id}
@@ -65,37 +65,37 @@ export default function CounterSection() {
 
         <div className="flex flex-col gap-[35px] w-full md:w-1/2 justify-between py-[25px]">
           <div className="flex flex-col gap-[5px]">
-            <div className="flex flex-row gap-[15px] items-center">
+            <div className="flex flex-col md:flex-row gap-[15px] items-center">
               <Image
                 alt="Vállalkozóknak weboldal készítés"
                 src="/icons/upstair.svg"
                 height={45}
                 width={45}
-                className="p-[2px] rounded-full border-1 border-green shadow-green shadow-xl"
+                className="p-[2px] rounded-full border-1 border-green shadow-green shadow-xl w-[75px] h-[75px] md:w-[50px] md:h-[50px]"
               />
-              <h3 className="text-[22px] font-bold">
-                Nem csak szép — Vevőket hoz
+              <h3 className="text-[15px] md:text-[25px] font-bold">
+                Nem csak szép, de ügyfeleket is generál
               </h3>
             </div>
             <p className="text-[15px] font-semibold text-gray-200">
               Egyedi, prémium weboldal, ami növeli a vállalkozásod hitelességét,
               jobb konverziót ér el és folyamatosan termeli a megrendeléseket.
             </p>
-            <p className="text-[15px] font-bold text-green-400">
+            <p className="text-[15px] font-bold text-green">
               Nem AI sablon, amiket a konkurenciád használ !
             </p>
           </div>
 
           <div className="flex flex-col gap-[15px]">
-            <div className="flex flex-row gap-[15px] items-center">
+            <div className="flex flex-col md:flex-row gap-[15px] items-center">
               <Image
                 alt="Vállalkozóknak weboldal készítés"
                 src="/icons/maintenance.svg"
                 height={45}
                 width={45}
-                className="p-[2px] rounded-full border-1 border-green shadow-green shadow-xl"
+                className="p-[2px] rounded-full border-1 border-green shadow-green shadow-xl w-[75px] h-[75px] md:w-[50px] md:h-[50px]"
               />
-              <h3 className="text-[22px] font-bold">
+              <h3 className="text-[15px] md:text-[25px] font-bold">
                 Teljes körű nyugalom a számodra
               </h3>
             </div>
