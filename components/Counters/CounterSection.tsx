@@ -83,7 +83,7 @@ export default function CounterSection() {
                   src="/icons/upstair.svg"
                   height={45}
                   width={45}
-                  className="p-[2px] rounded-full border-1 border-green shadow-green shadow-md w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] md:w-[75px] md:h-[75px]"
+                  className="p-[2px] rounded-full border-1 border-green shadow-green shadow-md w-[40px] h-[40px] lg:w-[75px] lg:h-[75px]"
                 />
               </div>
 
@@ -112,7 +112,7 @@ export default function CounterSection() {
                         : "whitespace-nowrap"
                     }`}
                   >
-                    Nem csak szép, ügyfeleket is generál
+                    Nem csak szép, ügyfeleket is generál.
                   </h3>
                 </div>
               </motion.div>
@@ -135,7 +135,7 @@ export default function CounterSection() {
                   src="/icons/maintenance.svg"
                   height={45}
                   width={45}
-                  className="p-[2px] rounded-full border-1 border-green shadow-green shadow-md w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] md:w-[75px] md:h-[75px]"
+                  className="p-[2px] rounded-full border-1 border-green shadow-green shadow-md w-[40px] h-[40px] lg:w-[75px] lg:h-[75px]"
                 />
               </div>
 
@@ -164,7 +164,7 @@ export default function CounterSection() {
                         : "whitespace-nowrap"
                     }`}
                   >
-                    Teljes körű nyugalom a számodra
+                    Teljes körű nyugalom a számodra.
                   </h3>
                 </div>
               </motion.div>
