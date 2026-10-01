@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Counter from "./Counters";
 import Section from "@/lib/section";
 import Image from "next/image";
@@ -25,12 +26,15 @@ const counterArray = [
 ];
 
 export default function CounterSection() {
+  const [isAnimated1, setIsAnimated1] = useState(false);
+  const [isAnimated2, setIsAnimated2] = useState(false);
+
   return (
     <Section className="rounded-[15px] bg-dark-color p-[15px] md:p-[25px] text-white my-[35px] shadow-[5px_5px_15px_0px_rgba(0,0,0,0.6)]">
       <div className="flex flex-col md:flex-row gap-[35px] w-full">
-        <div className="flex flex-col gap-[20px] w-full md:w-1/2">
-          <div className="grid grid-cols-2 md:flex md:flex-col gap-[0px] !text-[30px] lg:!text-[45px] font-black ">
-            <p>Átbeszéljük.</p>
+        <div className="flex flex-col gap-[20px] w-full lg:w-1/2">
+          <div className="flex flex-wrap md:flex-col gap-2 !text-[30px] lg:!text-[45px] font-black break-words min-w-0">
+            <span>Átbeszéljük.</span>
             <span>Megtervezem.</span>
             <span>Elkészítem.</span>
             <span>Neked adom.</span>
@@ -40,19 +44,19 @@ export default function CounterSection() {
             href="/kapcsolat"
             className="group flex flex-row items-center gap-[5px] w-fit text-[35px]"
           >
-            <span className="relative z-10 bg-green flex items-center justify-center text-white  font-bold w-[45px] h-[45px] border-3 border-dark-color rounded-full transition-transform duration-300 ease-in-out">
+            <span className="relative z-10 bg-green flex items-center justify-center text-white font-bold w-[45px] h-[45px] border-3 border-dark-color rounded-full transition-transform duration-300 ease-in-out">
               Á
             </span>
 
-            <span className="relative z-20 -translate-x-[18px] group-hover:translate-x-0 bg-green flex items-center justify-center text-white  font-bold w-[45px] h-[45px] border-3 border-dark-color rounded-full transition-transform duration-300 ease-in-out">
+            <span className="relative z-20 -translate-x-[18px] group-hover:translate-x-0 bg-green flex items-center justify-center text-white font-bold w-[45px] h-[45px] border-3 border-dark-color rounded-full transition-transform duration-300 ease-in-out">
               M
             </span>
 
-            <span className="relative z-30 -translate-x-[36px] group-hover:translate-x-0 bg-green flex items-center justify-center text-white  font-bold w-[45px] h-[45px] border-3 border-dark-color rounded-full transition-transform duration-300 ease-in-out">
+            <span className="relative z-30 -translate-x-[36px] group-hover:translate-x-0 bg-green flex items-center justify-center text-white font-bold w-[45px] h-[45px] border-3 border-dark-color rounded-full transition-transform duration-300 ease-in-out">
               E
             </span>
 
-            <span className="relative z-40 -translate-x-[54px] group-hover:translate-x-0 bg-green flex items-center justify-center text-white  font-bold w-[45px] h-[45px] border-3 border-dark-color rounded-full transition-transform duration-300 ease-in-out">
+            <span className="relative z-40 -translate-x-[54px] group-hover:translate-x-0 bg-green flex items-center justify-center text-white font-bold w-[45px] h-[45px] border-3 border-dark-color rounded-full transition-transform duration-300 ease-in-out">
               N
             </span>
           </a>
@@ -69,29 +73,48 @@ export default function CounterSection() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-[35px] w-full md:w-1/2 justify-between py-[25px] ">
+        <div className="flex flex-col gap-[35px] w-full lg:w-1/2 justify-between py-[25px]">
+          {/* Első kapszula */}
           <div className="flex flex-col gap-[15px]">
-            <div className="flex flex-row items-center border-2 border-green rounded-full p-[10px] w-fit overflow-hidden">
+            <div className="flex flex-row items-center border-2 border-green rounded-full p-[8px] md:p-[10px] w-fit max-w-full overflow-hidden">
               <div className="flex-shrink-0">
                 <Image
                   alt="Vállalkozóknak weboldal készítés"
                   src="/icons/upstair.svg"
                   height={45}
                   width={45}
-                  className="p-[2px] rounded-full border-1 border-green shadow-green shadow-md w-[50px] h-[50px] md:w-[75px] md:h-[75px]"
+                  className="p-[2px] rounded-full border-1 border-green shadow-green shadow-md w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] md:w-[75px] md:h-[75px]"
                 />
               </div>
 
               <motion.div
-                initial={{ width: 0, opacity: 0, marginLeft: 0 }}
-                whileInView={{ width: "auto", opacity: 1, marginLeft: 15 }}
+                initial={{
+                  gridTemplateColumns: "0fr",
+                  opacity: 0,
+                  marginLeft: 0,
+                }}
+                whileInView={{
+                  gridTemplateColumns: "1fr",
+                  opacity: 1,
+                  marginLeft: 12,
+                }}
                 transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="overflow-hidden whitespace-nowrap"
+                onAnimationStart={() => setIsAnimated1(false)}
+                onAnimationComplete={() => setIsAnimated1(true)}
+                className="grid"
               >
-                <h3 className="!text-[15px] md:!text-[25px] font-bold">
-                  Nem csak szép, ügyfeleket is generál
-                </h3>
+                <div className="overflow-hidden min-w-0 flex items-center">
+                  <h3
+                    className={`!text-[15px] lg:!text-[25px] font-bold leading-tight ${
+                      isAnimated1
+                        ? "whitespace-normal break-words"
+                        : "whitespace-nowrap"
+                    }`}
+                  >
+                    Nem csak szép, ügyfeleket is generál
+                  </h3>
+                </div>
               </motion.div>
             </div>
             <p className="text-[15px] font-semibold text-gray-200">
@@ -103,28 +126,47 @@ export default function CounterSection() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-[15px] ">
-            <div className="flex flex-row items-center border-2 border-green rounded-full p-[10px] w-fit overflow-hidden">
+          {/* Második kapszula */}
+          <div className="flex flex-col gap-[15px]">
+            <div className="flex flex-row items-center border-2 border-green rounded-full p-[8px] md:p-[10px] w-fit max-w-full overflow-hidden">
               <div className="flex-shrink-0">
                 <Image
                   alt="Vállalkozóknak weboldal készítés"
                   src="/icons/maintenance.svg"
                   height={45}
                   width={45}
-                  className="p-[2px] rounded-full border-1 border-green shadow-green shadow-md w-[50px] h-[50px] md:w-[75px] md:h-[75px]"
+                  className="p-[2px] rounded-full border-1 border-green shadow-green shadow-md w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] md:w-[75px] md:h-[75px]"
                 />
               </div>
 
               <motion.div
-                initial={{ width: 0, opacity: 0, marginLeft: 0 }}
-                whileInView={{ width: "auto", opacity: 1, marginLeft: 15 }}
+                initial={{
+                  gridTemplateColumns: "0fr",
+                  opacity: 0,
+                  marginLeft: 0,
+                }}
+                whileInView={{
+                  gridTemplateColumns: "1fr",
+                  opacity: 1,
+                  marginLeft: 12,
+                }}
                 transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="overflow-hidden whitespace-nowrap"
+                onAnimationStart={() => setIsAnimated2(false)}
+                onAnimationComplete={() => setIsAnimated2(true)}
+                className="grid"
               >
-                <h3 className="!text-[15px] md:!text-[25px] font-bold">
-                  Teljes körű nyugalom a számodra
-                </h3>
+                <div className="overflow-hidden min-w-0 flex items-center">
+                  <h3
+                    className={`!text-[15px] lg:!text-[25px] font-bold leading-tight ${
+                      isAnimated2
+                        ? "whitespace-normal break-words"
+                        : "whitespace-nowrap"
+                    }`}
+                  >
+                    Teljes körű nyugalom a számodra
+                  </h3>
+                </div>
               </motion.div>
             </div>
             <p className="text-[15px] font-semibold text-gray-200">
