@@ -48,25 +48,25 @@ export default function CounterSection() {
         <div className="flex flex-col gap-[20px] w-full lg:w-1/2">
           <div className="flex flex-wrap md:flex-col gap-2 !text-[30px] lg:!text-[45px] font-black break-words min-w-0">
             <span>
-              <span className="bg-green text-white px-1.5 py-0.5 rounded mr-1 inline-block leading-none">
+              <span className="bg-green text-white px-1.5 py-1.5 rounded mr-1 inline-block leading-none">
                 Á
               </span>
               tbeszéljük.
             </span>
             <span>
-              <span className="bg-green text-white px-1.5 py-0.5 rounded mr-1 inline-block leading-none">
+              <span className="bg-green text-white px-1.5 py-1.5rounded mr-1 inline-block leading-none">
                 M
               </span>
               egtervezem.
             </span>
             <span>
-              <span className="bg-green text-white px-1.5 py-0.5 rounded mr-1 inline-block leading-none">
+              <span className="bg-green text-white px-1.5 py-1.5 rounded mr-1 inline-block leading-none">
                 E
               </span>
               lkészítem.
             </span>
             <span>
-              <span className="bg-green text-white px-1.5 py-0.5 rounded mr-1 inline-block leading-none">
+              <span className="bg-green text-white px-1.5 py-1.5 rounded mr-1 inline-block leading-none">
                 N
               </span>
               eked adom.
@@ -158,7 +158,7 @@ export default function CounterSection() {
 
                 <div className="pl-3 pr-2 min-w-0">
                   <h3 className="!text-[15px] lg:!text-[25px] font-bold leading-tight text-left break-words">
-                    Teljes körű nyugalom a számodra.
+                    Teljeskörű nyugalom a számodra.
                   </h3>
                 </div>
               </motion.div>
