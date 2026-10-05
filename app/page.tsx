@@ -8,25 +8,25 @@ import PricingSection from "@/components/PricingDatas/PricingSection";
 import NavigateToContact from "@/components/Contact/NavigateToContact";
 import CounterSection from "@/components/Counters/CounterSection";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
 };
 
-// const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
 export default async function HomePage() {
   return (
     <>
-      <Hero></Hero>
-      <BenefitSection></BenefitSection>
-      <TechStack></TechStack>
-      <CounterSection></CounterSection>
-      <Services></Services>
-      <CustomerStepsComp></CustomerStepsComp>
-      <PricingSection></PricingSection>
-      <NavigateToContact></NavigateToContact>
+      <Hero />
+      <BenefitSection />
+      <TechStack />
+      <CounterSection />
+      <Services />
+      <CustomerStepsComp />
+      <PricingSection />
+      <NavigateToContact />
     </>
   );
 }
