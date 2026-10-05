@@ -24,7 +24,7 @@ export default function PricingSection() {
           >
             <div className="hero-conti bg-white z-0 h-full">
               <div
-                className={`relative group flex flex-col justify-between p-[10px] gap-[20px] z-[1] md:p-8 h-full zoldhatteres ${
+                className={`relative group flex flex-col justify-between p-[10px] gap-[20px] z-[1] md:p-8 h-full  ${
                   plan.popular || plan.mostPopular
                     ? "border-green shadow-xl ring-2 ring-green/20"
                     : ""

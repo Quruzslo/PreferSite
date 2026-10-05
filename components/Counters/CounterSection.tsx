@@ -45,28 +45,28 @@ export default function CounterSection() {
   return (
     <Section className="rounded-[15px] bg-dark-color p-[15px] md:p-[25px] text-white my-[35px] shadow-[5px_5px_15px_0px_rgba(0,0,0,0.6)]">
       <div className="flex flex-col md:flex-row gap-[35px] w-full">
-        <div className="flex flex-col gap-[20px] w-full lg:w-1/2">
-          <div className="flex flex-wrap md:flex-col gap-2 !text-[30px] lg:!text-[45px] font-black break-words min-w-0">
-            <span>
-              <span className="bg-green text-white px-1.5 py-1.5 rounded mr-1 inline-block leading-none">
+        <div className="flex flex-col gap-[20px] w-full lg:w-1/2 justify-center">
+          <div className="flex flex-wrap md:flex-col gap-2 !text-[30px] lg:!text-[45px] font-black break-words min-w-0 w-fit mx-auto">
+            <span className="inline-flex items-center">
+              <span className="bg-green text-white rounded-full w-[35px] h-[35px] lg:w-[50px] lg:h-[50px] mr-1 flex items-center justify-center leading-none shrink-0">
                 Á
               </span>
               tbeszéljük.
             </span>
-            <span>
-              <span className="bg-green text-white px-1.5 py-1.5rounded mr-1 inline-block leading-none">
+            <span className="inline-flex items-center">
+              <span className="bg-green text-white rounded-full w-[35px] h-[35px] lg:w-[50px] lg:h-[50px] mr-1 flex items-center justify-center leading-none shrink-0">
                 M
               </span>
               egtervezem.
             </span>
-            <span>
-              <span className="bg-green text-white px-1.5 py-1.5 rounded mr-1 inline-block leading-none">
+            <span className="inline-flex items-center">
+              <span className="bg-green text-white rounded-full w-[35px] h-[35px] lg:w-[50px] lg:h-[50px] mr-1 flex items-center justify-center leading-none shrink-0">
                 E
               </span>
               lkészítem.
             </span>
-            <span>
-              <span className="bg-green text-white px-1.5 py-1.5 rounded mr-1 inline-block leading-none">
+            <span className="inline-flex items-center">
+              <span className="bg-green text-white rounded-full w-[35px] h-[35px] lg:w-[50px] lg:h-[50px] mr-1 flex items-center justify-center leading-none shrink-0">
                 N
               </span>
               eked adom.
@@ -75,7 +75,7 @@ export default function CounterSection() {
 
           <a
             href="/kapcsolat"
-            className="group flex flex-row items-center gap-[5px] w-fit text-[35px]"
+            className="group mx-auto flex flex-row items-center gap-[5px] w-fit text-[35px]"
           >
             <span className="relative z-10 bg-green flex items-center justify-center text-white font-bold w-[45px] h-[45px] border-3 border-dark-color rounded-full transition-transform duration-300 ease-in-out">
               Á
