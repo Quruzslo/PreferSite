@@ -4,6 +4,7 @@ import { useRef } from "react";
 import myServices from "./MyServices";
 import { motion, useInView, Variants } from "framer-motion";
 import Image from "next/image";
+import { ScrollContext } from "@/lib/ScrollContext";
 
 const servicesVariants: Variants = {
   hidden: {
@@ -18,6 +19,38 @@ const servicesVariants: Variants = {
 };
 
 function ServiceCard({ service }: { service: (typeof myServices)[0] }) {
+  // const { isScrolling } = useContext(ScrollContext)!;
+
+  // const isSnapping = useRef(false);
+
+  // const handleSnap = (entry: any) => {
+
+  //   if (isScrolling || isSnapping.current) return;
+
+  //   if (isSnapping.current) return;
+
+  //   if (entry && entry.target) {
+
+  //     isSnapping.current = true;
+
+  //     entry.target.scrollIntoView({
+
+  //       behavior: "smooth",
+
+  //       block: "start",
+
+  //     });
+
+  //     setTimeout(() => {
+
+  //       isSnapping.current = false;
+
+  //     }, 400);
+
+  //   }
+
+  // };
+
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.3, once: false });
 
@@ -25,6 +58,7 @@ function ServiceCard({ service }: { service: (typeof myServices)[0] }) {
     <section
       ref={ref}
       id={service.path}
+      // onViewportEnter={(entry) => handleSnap(entry)}
       className="flex min-h-[max(100vh,450px)] w-full shrink-0 flex-col justify-center overflow-hidden bg-transparent"
     >
       <motion.div
