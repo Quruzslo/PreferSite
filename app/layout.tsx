@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Prefersite",
   },
   description:
-    "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak. Növelje vállalkozása hatékonyságát modern szoftverekkel!",
+    "Egyedi weboldal, webshop és CRM fejlesztés cégeknek és vállalkozóknak Kaposváron, Győrben és Budapesten. Növelje vállalkozása hatékonyságát modern szoftverekkel!",
 
   alternates: {
     canonical: "/",
@@ -77,6 +77,7 @@ const jsonLd = {
   areaServed: "HU",
   serviceType: [
     "Weboldal fejlesztés Budapest, Kaposvár, Győr",
+    "Weboldal készítés Kaposváron, Győrben és Budapesten",
     "Webshop fejlesztés",
     "CRM rendszerek",
     "Egyedi szoftverfejlesztés",

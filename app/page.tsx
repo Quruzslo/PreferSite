@@ -8,8 +8,6 @@ import PricingSection from "@/components/PricingDatas/PricingSection";
 import NavigateToContact from "@/components/Contact/NavigateToContact";
 import CounterSection from "@/components/Counters/CounterSection";
 
-export const revalidate = 3600;
-
 export const metadata: Metadata = {
   alternates: {
     canonical: "/",
