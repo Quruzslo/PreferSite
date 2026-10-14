@@ -1,116 +1,119 @@
 "use client";
 
-import pricingData from "./pricing";
-import { FiCheckCircle } from "react-icons/fi";
-import { MdArrowForward, MdArrowOutward } from "react-icons/md";
+import { useId, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import pricingData, { PricingItem } from "./pricing";
+import RevealText from "@/lib/ui/RevealText";
+import ArrowButton from "@/lib/ui/ArrowButton";
+
+function PricingRow({ item }: { item: PricingItem }) {
+  const [open, setOpen] = useState(false);
+  const panelId = useId();
+  const tag = item.mostPopular ? "Legnépszerűbb" : item.popular ? "Népszerű" : null;
+
+  return (
+    <li className="border-t border-ink/20">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-controls={panelId}
+        className="group grid w-full grid-cols-[minmax(0,1fr)_auto] gap-x-4 gap-y-3 py-6 text-left sm:gap-x-6 lg:grid-cols-12 lg:gap-x-8 lg:py-8"
+      >
+        <span className="flex min-w-0 flex-col gap-2 lg:col-span-4">
+          <span className="type-h3">{item.title}</span>
+          {tag && (
+            <span className="w-fit rounded-[3px] bg-green px-1.5 py-0.5 text-[0.8rem] font-medium text-ink">
+              {tag}
+            </span>
+          )}
+        </span>
+        <span className="col-start-1 row-start-2 font-mono text-lg lg:col-span-3 lg:col-start-5 lg:row-start-1 lg:pt-1">
+          {item.price}
+        </span>
+        <span className="col-span-2 max-w-[48ch] text-stone lg:col-span-4 lg:col-start-8">
+          {item.description}
+        </span>
+        <span
+          aria-hidden
+          className="col-start-2 row-start-1 grid size-9 place-items-center justify-self-end rounded-[4px] bg-ink/8 transition-colors group-hover:bg-ink group-hover:text-paper lg:col-span-1 lg:col-start-12"
+        >
+          <motion.svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            className="size-4"
+            animate={{ rotate: open ? 45 : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <path d="M12 5v14M5 12h14" />
+          </motion.svg>
+        </span>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            id={panelId}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            className="overflow-hidden"
+          >
+            <div className="grid gap-6 pb-10 lg:grid-cols-12 lg:gap-x-8">
+              <p className="lg:col-span-4">
+                <span className="mb-1 block text-sm text-stone">Kinek ajánlom?</span>
+                {item.useCase}
+              </p>
+              <ul className="grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:col-span-7 lg:col-start-5">
+                {item.attributes.map((attr) => (
+                  <li key={attr} className="flex gap-2.5">
+                    <span aria-hidden className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-ink" />
+                    {attr.trim()}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </li>
+  );
+}
 
 export default function PricingSection() {
   return (
-    <section id="arazas" className="w-[90%] max-w-[2560px] mx-auto my-[50px]">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
-          Csomagok és árazás
-        </h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Válaszd ki a céljaidnak leginkább megfelelő digitális megoldást.
-        </p>
+    <section
+      id="arazas"
+      data-theme="light"
+      className="grain bg-paper py-24 site-gutter md:py-36"
+    >
+      <div className="mb-14 grid gap-8 lg:grid-cols-12 lg:gap-x-8">
+        <RevealText
+          as="h2"
+          inView
+          text="Átlátható árak, rejtett költségek nélkül"
+          className="type-h2 max-w-[16ch] lg:col-span-7"
+        />
+        <div className="flex flex-col gap-5 self-end lg:col-span-4 lg:col-start-9">
+          <p className="text-stone">
+            Az árak kiinduló árak. A pontos összeget az igényfelmérés után,
+            írásos árajánlatban kapod meg.
+          </p>
+          <ArrowButton href="/kapcsolat" variant="ink">
+            Árajánlatot kérek
+          </ArrowButton>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8 items-stretch  w-full">
-        {pricingData.map((plan: any) => (
-          <div
-            key={plan.id || plan.title}
-            className="relative drop-shadow-[0_5px_10px_rgba(0,0,0,0.3)] z-0 w-full"
-          >
-            <div className="hero-conti bg-white z-0 h-full">
-              <div
-                className={`relative group flex flex-col justify-between p-[10px] gap-[20px] z-[1] md:p-8 h-full  ${
-                  plan.popular || plan.mostPopular
-                    ? "border-green shadow-xl ring-2 ring-green/20"
-                    : ""
-                } transition-all duration-300`}
-              >
-                {/* háttér elem 1 */}
-                <div
-                  className="bg-green/30 z-0 absolute bottom-0 left-0 h-3/4 w-full rounded-3xl transition duration-500 translate-y-[50%]
-            group-hover:bg-green/60 group-hover:translate-y-[20%]
-            group-active:bg-green/60 group-active:translate-y-[20%]
-            group-focus:bg-green/60 group-focus:translate-y-[20%]"
-                  style={{ transform: "skew(0, 10deg)" }}
-                ></div>
-
-                {/* háttér elem 2 */}
-                <div className="bg-white/70 z-[1] absolute bottom-0 left-0 h-full w-full"></div>
-
-                {plan.mostPopular && (
-                  <span className="absolute z-[20] top-[5px] left-[50%] -translate-x-1/2 bg-green text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md shadow-sm">
-                    Legnépszerűbb
-                  </span>
-                )}
-
-                {plan.popular && (
-                  <span className="absolute z-[20] top-[5px] left-[50%] -translate-x-1/2 bg-green text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md shadow-sm">
-                    Népszerű
-                  </span>
-                )}
-
-                <div className="z-[10] relative mt-[35px]">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    {plan.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 mb-4 min-h-[40px]">
-                    {plan.description}
-                  </p>
-
-                  <div className="my-4 pb-4 border-b border-gray-400">
-                    <span className="text-3xl font-extrabold text-dark-color">
-                      {plan.price}
-                    </span>
-                  </div>
-
-                  <div className="bg-dark-green p-[10px] rounded-xl mb-6">
-                    <p className="text-[15px] font-bold text-white uppercase tracking-wider mb-1">
-                      Mikor válaszd ezt?
-                    </p>
-                    <p className="text-xs text-white leading-relaxed">
-                      {plan.useCase}
-                    </p>
-                  </div>
-
-                  <div className="space-y-3 mb-8">
-                    {plan.attributes.map((attr: any, index: any) => (
-                      <div
-                        key={index}
-                        className="flex items-start gap-2.5 text-sm text-gray-700"
-                      >
-                        <FiCheckCircle className="w-5 h-5 text-green shrink-0 mt-0.5" />
-                        <span>{attr}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <a
-                  href="/kapcsolat"
-                  className={`group mx-auto z-[10] relative flex w-fit flex-row items-center justify-center gap-3 rounded-full py-3 px-6 font-bold transition-all duration-300 ${
-                    plan.popular
-                      ? "bg-green text-white shadow-md hover:shadow-lg"
-                      : "bg-dark-color text-white"
-                  }`}
-                >
-                  <span>Erre van szükségem</span>
-                  <div className="flex items-center justify-center w-0 opacity-0 -translate-x-2 transition-all duration-300 ease-in-out group-hover:w-6 group-hover:opacity-100 group-hover:translate-x-0 overflow-hidden">
-                    <MdArrowForward
-                      size={24}
-                      className="text-white rounded-full p-1 shrink-0"
-                    />
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
+      <ul className="border-b border-ink/20">
+        {pricingData.map((item) => (
+          <PricingRow key={item.id} item={item} />
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

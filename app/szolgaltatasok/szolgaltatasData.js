@@ -290,7 +290,7 @@ export const szolgaltatasokData = [
       "Egyedi CRM rendszer fejlesztés és üzleti folyamatautomatizálás. Szüntesd meg az adatkáoszt, automatizáld az ügyfélkezelést és az értékesítést!",
     img: "/crm.svg",
     hero: {
-      title: "Egyedi CRM Rendszer Fejlesztés és Üzleti Folyamatautomatizálás",
+      title: "Egyedi CRM Rendszer Fejlesztés és Üzleti Folyamat­automatizálás",
       subtitle:
         "A cégvezetés hatékonysága a belső rendszerek szervezettségén múlik. Egy egyedi CRM rendszer megszünteti az adatkáoszt, automatizálja az ügyfélkezelést és teljes rálátást biztosít a számaidra.",
       ctaText: "Kérek egy konzultációt!",

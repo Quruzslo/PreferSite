@@ -1,136 +1,167 @@
 "use client";
-import Image from "next/image";
-import Logom from "@/public/Prefer-logo.png";
+
+import { useRef, useSyncExternalStore } from "react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "motion/react";
+import { useLenis } from "lenis/react";
 import navItems from "@/lib/navItems";
-// Ikonok------------
-import { HiOutlineMail } from "react-icons/hi";
-import { FaPhoneVolume } from "react-icons/fa6";
-import { MdOutlineCookie } from "react-icons/md";
-import { useRef, useContext } from "react";
-import { ScrollContext } from "@/lib/ScrollContext";
+import { TransitionLink } from "@/lib/site/transition";
+import { ArrowIcon } from "@/lib/ui/ArrowButton";
+
+const services = navItems.find((item) => item.items)?.items ?? [];
+const pages = navItems.filter((item) => !item.items);
+
+const aiQuestion = encodeURIComponent(
+  "Mit tudsz a Prefersite-ról (prefersite.hu)? Milyen webfejlesztési szolgáltatásokat kínál, és mennyibe kerülnek?",
+);
+const aiLinks = [
+  { name: "ChatGPT", href: `https://chatgpt.com/?q=${aiQuestion}` },
+  { name: "Claude", href: `https://claude.ai/new?q=${aiQuestion}` },
+  {
+    name: "Perplexity",
+    href: `https://www.perplexity.ai/search?q=${aiQuestion}`,
+  },
+];
+
+const timeFormat = new Intl.DateTimeFormat("hu-HU", {
+  hour: "2-digit",
+  minute: "2-digit",
+  timeZone: "Europe/Budapest",
+});
+
+function subscribeToClock(callback: () => void) {
+  const interval = setInterval(callback, 15_000);
+  return () => clearInterval(interval);
+}
+
+// A szerveren nincs óra (null), így nem lesz eltérés a hidratáláskor.
+function useBudapestTime() {
+  return useSyncExternalStore(
+    subscribeToClock,
+    () => timeFormat.format(new Date()),
+    () => null,
+  );
+}
+
+function FooterColumn({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex flex-col gap-3">
+      <p className="text-sm text-stone-light">{title}</p>
+      <ul className="flex flex-col gap-1.5">{children}</ul>
+    </div>
+  );
+}
+
+const linkClass = "break-words transition-opacity hover:opacity-60";
 
 export default function Footer() {
-  const { triggerIsScrolling }: any = useContext(ScrollContext);
+  const ref = useRef<HTMLElement>(null);
+  const reduceMotion = useReducedMotion();
+  const lenis = useLenis();
+  const time = useBudapestTime();
+  const year = new Date().getFullYear();
 
-  const now = new Date().getFullYear();
+  // Görgetéskor a footer tartalma lassabban érkezik, mint az oldal: előcsúszik.
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end end"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["-30%", "0%"]);
 
   return (
-    <section className="w-full flex flex-col bg-dark-color text-white py-[50px] z-1">
-      <div className="w-[90%] max-w-[2560px] grid grid-cols-1 md:grid-cols-3 gap-[20px] bg-dark-green p-[15px] mx-auto rounded-[24px]">
-        <div className="w-full flex flex-col gap-[15px]">
-          <div className="footer-logo flex flex-row px-[20px] py-[10px] rounded-b-[24px] mb-[25px] bg-dark-color items-center relative w-fit mx-auto mt-[-15px]">
-            <Image
-              height={40}
-              width={40}
-              alt="Weboldal készítés, webshop készítés, CRM rendszer készítés"
-              src={Logom}
-            />
-          </div>
-
-          <p>
-            Több éves tapasztalat webfejlesztés terén. Célom, hogy pénztermelő
-            rendszereket fejlesszek cégeknek, vállalkozásoknak, akik valóban
-            szeretnének kitűnni a konkurenciájuk közül.
-          </p>
-          <p>
-            A folyamatos partneri viszony nálam alapvetés, a közös munka mindig
-            meghozza a várt sikereket!
-          </p>
-        </div>
-
-        <div className="w-full flex flex-col gap-[15px] justify-center">
-          <div className="flex flex-row gap-[10px] mb-[25px] pb-[10px]">
-            <h3>- Navigáció -</h3>
-          </div>
-
-          <nav className="desktop-nav relative py-[15px] px-[20px] text-white rounded-md flex justify-start">
-            <ul className="relative flex flex-col items-start gap-6 font-bold w-fit">
-              {navItems.map((item, idx) =>
-                item.items && item.items.length > 0 ? (
-                  <li
-                    key={idx}
-                    className="relative group z-11 flex cursor-pointer"
-                  >
-                    <a
-                      href={item.path}
-                      onClick={() => triggerIsScrolling()}
-                      className="menu-link hover:text-green transition-colors flex items-center gap-1"
-                    >
-                      {item.name}
-                      <svg
-                        className="w-4 h-4 transition-transform group-hover:rotate-180"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </a>
-
-                    {/* Dropdown */}
-                    <div className="absolute left-1/2 -translate-x-1/2 top-full flex flex-col bg-green shadow-lg rounded-md py-2 min-w-[160px] !z-50 transition-all duration-300 ease-out opacity-0 invisible translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto">
-                      {item.items.map((subItem, subIdx) => (
-                        <a
-                          key={subIdx}
-                          href={`${subItem.path}`}
-                          onClick={() => triggerIsScrolling()}
-                          className="px-4 py-2 text-sm text-white hover:text-dark-color transition-colors"
-                        >
-                          {subItem.name}
-                        </a>
-                      ))}
-                    </div>
-                  </li>
-                ) : (
-                  <a
-                    key={idx}
-                    href={item.path}
-                    onClick={() => triggerIsScrolling()}
-                    className="relative z-10 menu-link hover:text-green cursor-pointer transition-colors"
-                  >
-                    {item.name}
-                  </a>
-                ),
-              )}
-            </ul>
-          </nav>
-        </div>
-
-        <div className="w-full flex flex-col gap-[15px]">
-          <div className="flex flex-row gap-[10px] mb-[25px] pb-[10px] items-center">
-            <h3>- Kapcsolat -</h3>
-          </div>
-          <div className="w-full flex flex-col gap-[15px] justify-center">
+    <footer
+      ref={ref}
+      data-theme="dark"
+      className="relative overflow-hidden bg-ink text-paper"
+    >
+      <motion.div
+        style={reduceMotion ? undefined : { y }}
+        className="flex min-h-[60svh] flex-col justify-between gap-20 pb-6 pt-24 site-gutter"
+      >
+        <div className="grid gap-14 lg:grid-cols-12">
+          <div className="flex flex-col gap-4 lg:col-span-5">
+            <p className="text-sm text-stone-light">Írj egy e-mailt</p>
             <a
               href="mailto:info@prefersite.hu"
-              className="flex flex-row gap-[15px] items-center"
+              data-cursor="Írok"
+              className="type-h2 w-fit break-all transition-colors hover:text-green"
             >
-              <HiOutlineMail size={25} /> info@prefersite.hu
+              info@prefersite.hu
             </a>
-            <a
-              href="tel:+36203127968"
-              className="flex flex-row gap-[15px] items-center"
-            >
-              <FaPhoneVolume size={25} /> +36 20 312 7968
-            </a>
-            <a
-              href="https://prefersite.hu/adatkezeles"
-              className="flex flex-row gap-[15px] items-center"
-            >
-              <MdOutlineCookie size={25} /> Süti -és adatkezelés
+            <a href="tel:+36203127968" className={`w-fit text-lg ${linkClass}`}>
+              +36 20 312 7968
             </a>
           </div>
-        </div>
-      </div>
 
-      <div className="w-[90%] max-w-[2560px] flex flex-row gap-[10px] p-[15px] mx-auto border-white/20 border-t-2 mt-[25px] items-center justify-center text-center">
-        <p> {now} © Prefer Site - Minden jog fenntartva.</p>
-      </div>
-    </section>
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 sm:gap-10 lg:col-span-6 lg:col-start-7">
+            <FooterColumn title="Oldalak">
+              {pages.map((item) => (
+                <li key={item.path}>
+                  <TransitionLink href={item.path} className={linkClass}>
+                    {item.name}
+                  </TransitionLink>
+                </li>
+              ))}
+            </FooterColumn>
+            <FooterColumn title="Szolgáltatások">
+              {services.map((item) => (
+                <li key={item.path}>
+                  <TransitionLink href={item.path} className={linkClass}>
+                    {item.name}
+                  </TransitionLink>
+                </li>
+              ))}
+            </FooterColumn>
+            <FooterColumn title="Kérdezd az AI-t rólam">
+              {aiLinks.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-1 ${linkClass}`}
+                  >
+                    {item.name}
+                    <ArrowIcon className="size-3.5" />
+                  </a>
+                </li>
+              ))}
+            </FooterColumn>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4 border-t border-paper/15 pt-5 text-sm text-stone-light md:flex-row md:items-center md:justify-between">
+          <p>© {year} Prefersite. Minden jog fenntartva.</p>
+          <TransitionLink href="/adatkezeles" className={linkClass}>
+            Adatkezelési tájékoztató
+          </TransitionLink>
+          <p>
+            Helyi idő Kaposváron:{" "}
+            <span className="font-mono text-paper">{time ?? "--:--"}</span>
+          </p>
+          <button
+            type="button"
+            onClick={() =>
+              lenis
+                ? lenis.scrollTo(0)
+                : window.scrollTo({ top: 0, behavior: "smooth" })
+            }
+            className={`w-fit text-left text-paper ${linkClass}`}
+          >
+            Vissza a tetejére ↑
+          </button>
+        </div>
+      </motion.div>
+    </footer>
   );
 }

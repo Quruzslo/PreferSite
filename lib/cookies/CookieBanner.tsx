@@ -1,41 +1,56 @@
 "use client";
-import { RxCookie } from "react-icons/rx";
 
-import { useState, useEffect } from "react";
+import { useState, useSyncExternalStore } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { TransitionLink } from "@/lib/site/transition";
+
+const subscribe = () => () => {};
 
 export default function CookieBanner() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const hasConsent = document.cookie.includes("cookie-consent=true");
-    if (!hasConsent) {
-      setIsVisible(true);
-    }
-  }, []);
+  // A szerveren elfogadottnak tekintjük, így a sáv csak a böngészőben jelenik meg.
+  const hasConsent = useSyncExternalStore(
+    subscribe,
+    () => document.cookie.includes("cookie-consent=true"),
+    () => true,
+  );
+  const [dismissed, setDismissed] = useState(false);
+  const isVisible = !hasConsent && !dismissed;
 
   const handleAccept = () => {
     document.cookie =
       "cookie-consent=true; max-age=31536000; path=/; SameSite=Lax";
-    setIsVisible(false);
+    setDismissed(true);
   };
 
-  if (!isVisible) return null;
-
   return (
-    <div className="fixed flex flex-col flex-wrap bottom-[15px] left-[15px] bg-dark-color/50 backdrop-blur-md text-white p-4 rounded-md z-50 flex gap-[15px] items-center mx-auto justify-between w-[90%] md:w-fit shadow-[0px_5px_10px_0px_rgba(0,0,0,0.6)] ">
-      <RxCookie
-        size={45}
-        className="mr-auto border-2 border-white rounded-full p-[5px] "
-      />
-      <p className="font-bold text-[12px] md:text-[15px]">
-        Az oldal kizárólag szükséges sütiket használ.
-      </p>
-      <button
-        onClick={handleAccept}
-        className="bg-dark-green text-white px-4 py-2 rounded-full text-sm font-bold"
-      >
-        Elfogadom
-      </button>
-    </div>
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          role="region"
+          aria-label="Süti tájékoztató"
+          initial={{ y: 24, opacity: 0 }}
+          animate={{ y: 0, opacity: 1, transition: { delay: 1.2 } }}
+          exit={{ y: 24, opacity: 0 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="fixed bottom-4 left-4 right-4 z-50 flex flex-col gap-3 rounded-[4px] bg-ink p-4 text-paper sm:right-auto sm:max-w-sm"
+        >
+          <p className="text-[0.95rem]">
+            Az oldal csak a működéshez szükséges sütiket használ.{" "}
+            <TransitionLink
+              href="/adatkezeles"
+              className="underline underline-offset-4 hover:text-green"
+            >
+              Részletek
+            </TransitionLink>
+          </p>
+          <button
+            onClick={handleAccept}
+            className="w-fit rounded-[4px] bg-green px-4 py-1.5 text-[0.95rem] font-medium text-ink transition-colors hover:bg-[#66c98f]"
+          >
+            Rendben
+          </button>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

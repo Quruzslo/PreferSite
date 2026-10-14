@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 import Hero from "@/components/hero/Hero";
-import TechStack from "@/components/tech-stack/TechStack";
-import BenefitSection from "../components/BenefitSection/BenefitSection";
-import Services from "../components/ServicesSection/Services";
-import CustomerStepsComp from "@/components/customerSteps/CustomerSteps";
+import BenefitSection from "@/components/BenefitSection/BenefitSection";
+import Statement from "@/components/Statement/Statement";
+import References from "@/components/References/References";
+import Services from "@/components/ServicesSection/Services";
 import PricingSection from "@/components/PricingDatas/PricingSection";
+import CustomerStepsComp from "@/components/customerSteps/CustomerSteps";
 import NavigateToContact from "@/components/Contact/NavigateToContact";
-import CounterSection from "@/components/Counters/CounterSection";
 
 export const metadata: Metadata = {
   alternates: {
@@ -19,11 +19,11 @@ export default async function HomePage() {
     <>
       <Hero />
       <BenefitSection />
-      <TechStack />
-      <CounterSection />
+      <Statement />
+      <References />
       <Services />
-      <CustomerStepsComp />
       <PricingSection />
+      <CustomerStepsComp />
       <NavigateToContact />
     </>
   );

@@ -1,19 +1,44 @@
-"use client";
-
-import { useState } from "react";
-import Link from "next/link";
-import { motion, Variants } from "motion/react";
-import { FiCheckCircle, FiArrowLeft } from "react-icons/fi";
-import { MdArrowForward } from "react-icons/md";
-import Referencies from "./Referencies";
-import ContactButton from "@/lib/ContactButton";
 import Image from "next/image";
-import * as FiIcons from "react-icons/fi";
 import { IconType } from "react-icons";
+import {
+  FiActivity,
+  FiAward,
+  FiCheckCircle,
+  FiCreditCard,
+  FiDatabase,
+  FiEyeOff,
+  FiGrid,
+  FiKey,
+  FiLayers,
+  FiLayout,
+  FiLifeBuoy,
+  FiLink,
+  FiPackage,
+  FiPieChart,
+  FiRefreshCw,
+  FiRepeat,
+  FiSearch,
+  FiServer,
+  FiShield,
+  FiShoppingCart,
+  FiSliders,
+  FiSmartphone,
+  FiSmile,
+  FiTarget,
+  FiUsers,
+  FiZap,
+} from "react-icons/fi";
+import navItems from "@/lib/navItems";
+import { TransitionLink } from "@/lib/site/transition";
+import ArrowButton from "@/lib/ui/ArrowButton";
+import RevealText from "@/lib/ui/RevealText";
+import References from "@/components/References/References";
+import NavigateToContact from "@/components/Contact/NavigateToContact";
 
 interface ServiceData {
+  slug: string;
   hero: { title: string; subtitle: string; ctaText: string };
-  img: any;
+  img: string;
   importance: { title: string; items: string[] };
   seoTitle: string;
   benefits: {
@@ -37,416 +62,208 @@ interface ServiceData {
   };
   footerCta: { title: string; subtitle: string };
 }
-const lineVariants: Variants = {
-  hidden: { scaleX: 0, opacity: 1 },
-  visible: {
-    scaleX: 1,
-    opacity: 1,
-    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
-  },
+
+// Csak a ténylegesen használt ikonok, hogy ne kerüljön a teljes ikoncsomag a bundle-be.
+const icons: Record<string, IconType> = {
+  FiActivity,
+  FiAward,
+  FiCheckCircle,
+  FiCreditCard,
+  FiDatabase,
+  FiEyeOff,
+  FiGrid,
+  FiKey,
+  FiLayers,
+  FiLayout,
+  FiLifeBuoy,
+  FiLink,
+  FiPackage,
+  FiPieChart,
+  FiRefreshCw,
+  FiRepeat,
+  FiSearch,
+  FiServer,
+  FiShieldCheck: FiShield,
+  FiShoppingCart,
+  FiSliders,
+  FiSmartphone,
+  FiSmile,
+  FiTarget,
+  FiUsers,
+  FiZap,
 };
 
-const fadeUp: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 24,
-    scale: 0.94,
-    filter: "blur(6px)",
-  },
-  visible: (i: number = 0) => ({
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    filter: "blur(0px)",
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 15,
-      mass: 0.8,
-      delay: i * 0.07,
-    },
-  }),
-};
-
-const contactPrios = [
-  "Minőségi termékre",
-  "Céges imázs növelésre",
-  "Hatékony munkaeszközre",
-  "Stabil partneri viszonyra",
-  "Kiszámítható működésre",
-  "Bevétel növelésre",
-];
-
-const wrapperVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const containerVariant: Variants = {
-  hidden: {
-    clipPath: "inset(0% 100% 0% 0%)",
-  },
-  visible: {
-    clipPath: "inset(0% 0% 0% 0%)",
-    transition: {
-      duration: 0.5,
-      ease: [0.95, 0, 0.35, 1],
-      delay: 0.4,
-    },
-  },
-};
-
-const iconVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.85 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: [0.95, 0, 0.35, 1],
-    },
-  },
-};
-
-const shortLineVariants: Variants = {
-  hidden: { clipPath: "inset(0% 100% 0% 0%)" },
-  visible: {
-    clipPath: "inset(0% 0% 0% 0%)",
-    transition: {
-      duration: 0.15,
-      ease: "linear",
-      delay: 0.6,
-    },
-  },
-};
-
-const longLineVariants: Variants = {
-  hidden: { clipPath: "inset(0% 100% 0% 0%)" },
-  visible: {
-    clipPath: "inset(0% 0% 0% 0%)",
-    transition: {
-      duration: 0.25,
-      ease: "easeOut",
-      delay: 0.8,
-    },
-  },
-};
-
-function SectionRule() {
-  return (
-    <motion.span
-      variants={lineVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false }}
-      style={{ transformOrigin: "left center" }}
-      className="mb-6 block h-[5px] w-full rounded-full bg-green shadow-xl"
-    />
-  );
-}
-
-function CtaButton({
-  href,
-  children,
-  variant = "solid",
-}: {
-  href: string;
-  children: React.ReactNode;
-  variant?: "solid" | "outline";
-}) {
-  const styles =
-    variant === "solid"
-      ? "bg-green text-white hover:shadow-lg hover:shadow-green/20"
-      : "bg-white text-dark-green hover:bg-white/90";
-
-  const className = `group relative inline-flex items-center gap-3 rounded-full py-4 pl-8 pr-6 font-semibold transition-all duration-300 ${styles}`;
-
-  const content = (
-    <>
-      <span>{children}</span>
-      <span className="flex w-0 items-center justify-center overflow-hidden opacity-0 -translate-x-2 transition-all duration-300 ease-in-out group-hover:w-6 group-hover:translate-x-0 group-hover:opacity-100">
-        <MdArrowForward size={20} />
-      </span>
-    </>
-  );
-
-  if (href.startsWith("#")) {
-    return (
-      <a href={href} className={className}>
-        {content}
-      </a>
-    );
-  }
-  return (
-    <Link href={href} className={className}>
-      {content}
-    </Link>
-  );
-}
+const serviceLinks = navItems.find((item) => item.items)?.items ?? [];
 
 export default function ServicePageContent({
   service,
 }: {
   service: ServiceData;
 }) {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const shortName =
+    serviceLinks.find((s) => s.path.endsWith(`/${service.slug}`))?.name ??
+    service.seoTitle;
 
   return (
-    <section className="min-h-screen bg-white pb-20 text-dark-color">
+    <>
       {/* Hero */}
-      <section className="zoldhatteres flex flex-col md:flex-row px-[10px] relative overflow-hidden bg-dark-color px-[10px] py-[35px] md:py-24 text-white md:py-32 w-[90%] mx-auto rounded-xl mt-[75px] md:mt-[100px] shadow-[0_0_10px_0px_rgba(0_0_0_0.6)] ">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 flex select-none items-center overflow-hidden hidden md:flex"
-        >
-          <span className="-translate-y-2 whitespace-nowrap text-[5vw] font-extrabold leading-none text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.2)]">
-            {service.seoTitle}
+      <section
+        data-theme="light"
+        className="grain bg-paper pb-20 pt-28 site-gutter md:pb-28 md:pt-32"
+      >
+        <nav aria-label="Morzsamenü" className="mb-8 text-[0.95rem]">
+          <TransitionLink
+            href="/#szolgaltatasok"
+            className="text-stone transition-colors hover:text-ink"
+          >
+            Szolgáltatások
+          </TransitionLink>
+          <span className="mx-2 text-stone" aria-hidden>
+            /
           </span>
-        </div>
+          <span aria-current="page">{shortName}</span>
+        </nav>
 
-        <div className="relative mx-auto w-full md:w-1/2 p-[10px]">
-          <Link
-            href="/"
-            className="group mb-10 inline-flex items-center gap-2 text-sm text-gray-100 transition-colors hover:text-white"
-          >
-            <FiArrowLeft className="transition-transform group-hover:-translate-x-1" />
-            Vissza a főoldalra
-          </Link>
+        <RevealText
+          as="h1"
+          text={service.hero.title}
+          className="type-h1 max-w-[18ch]"
+          delay={0.1}
+        />
 
-          <motion.div
-            initial={{ opacity: 0, y: 55 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-3xl"
-          >
-            <h1 className="mb-6 text-3xl font-bold leading-tight md:text-5xl">
-              {service.hero.title}
-            </h1>
-            <p className="mb-10 text-lg leading-relaxed text-white md:text-xl">
-              {service.hero.subtitle}
-            </p>
-            <ContactButton
-              path={"/kapcsolat"}
-              title={"Érdekel"}
-              wrapperClass={
-                "bg-green rounded-full w-fit py-[10px] px-[20px] items-center justify-center flex flex-row nowrap mx-auto"
-              }
-              titleClass={"text-white bg-green z-2 w-fit"}
-              decorClass=" bg-white"
-            ></ContactButton>
-          </motion.div>
-        </div>
-        <div className="w-[90%] md:w-1/2 mx-auto mt-[35px] md:mt-0">
-          <div className="service-page-img-wrapper relative w-fit mx-auto z-0 ">
+        <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-x-8">
+          <div className="flex flex-col gap-6 lg:col-span-5">
+            <p className="type-lead max-w-[38ch]">{service.hero.subtitle}</p>
+            <ArrowButton href="/kapcsolat" variant="green">
+              {service.hero.ctaText.replace(/!$/, "")}
+            </ArrowButton>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[4px] bg-paper-deep lg:col-span-6 lg:col-start-7">
             <Image
-              alt={service.hero.title}
-              height={500}
-              width={500}
               src={service.img}
-              className="mx-auto z-10"
-            ></Image>
+              alt=""
+              fill
+              priority
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-contain p-8 md:p-14"
+            />
           </div>
         </div>
       </section>
 
-      {/* Miért */}
-      <section className="border-b border-gray-100 py-20">
-        <div className="mx-auto w-[90%] ">
-          <div className=" flex flex-col w-fit">
-            <SectionRule />
-            <h2 className="mb-10 max-w-2xl text-2xl font-bold md:text-3xl">
-              {service.importance.title}
-            </h2>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {service.importance.items.map((item, idx) => (
-              <motion.div
-                key={idx}
-                custom={idx}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.3 }}
-                className="flex items-center gap-3 rounded-2xl bg-transparent p-6 transition-colors "
-              >
-                <FiCheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green" />
-                <p className=" font-medium text-dark-color">{item}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+      {/* Miért fontos */}
+      <section
+        data-theme="dark"
+        className="bg-ink py-24 text-paper site-gutter md:py-32"
+      >
+        <RevealText
+          as="h2"
+          inView
+          text={service.importance.title}
+          className="type-h2 mb-14 max-w-[20ch]"
+        />
+        <ul className="grid gap-x-8 md:grid-cols-2">
+          {service.importance.items.map((item) => (
+            <li
+              key={item}
+              className="flex gap-4 border-t border-paper/15 py-6 text-[clamp(1.25rem,1.9vw,1.75rem)] font-medium leading-tight tracking-[-0.015em]"
+            >
+              <span
+                aria-hidden
+                className="mt-[0.4em] size-2.5 shrink-0 rounded-full bg-green"
+              />
+              {item}
+            </li>
+          ))}
+        </ul>
       </section>
 
-      {/* ELŐNYÖK  */}
-      <section className="bg-gray-50/50 py-20">
-        <div className="mx-auto w-[90%]">
-          <div className="mb-16 w-fit">
-            <SectionRule />
-            <h2 className="mb-4 text-3xl font-bold">
-              {service.benefits.title}
-            </h2>
-            <p className="text-lg text-gray-600">
-              {service.benefits.description}
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {service.benefits.stats.map((stat, idx) => (
-              <motion.div
-                key={idx}
-                custom={idx}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white p-8 shadow-sm"
-              >
-                <div
-                  className="absolute bottom-0 left-0 h-2/3 w-full translate-y-[55%] rounded-3xl bg-green/10 transition-all duration-500 group-hover:translate-y-[35%] group-hover:bg-green/20"
-                  style={{ transform: "skew(0, 8deg)" }}
-                />
-                <div className="relative">
-                  <div className="mb-4 text-4xl font-extrabold text-green lg:text-5xl">
-                    {stat.number}
-                  </div>
-                  <h3 className="mb-3 text-xl font-bold">{stat.title}</h3>
-                  <p className="text-sm leading-relaxed text-gray-600">
-                    {stat.text}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* KÖZÉPSŐ CTA */}
-      <section className="zoldhatteres bg-dark-green py-20 text-center text-white w-[90%] hero-conti mx-auto">
-        <div className="mx-auto w-[90%] px-[10px]">
-          <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-            {service.midCta.title}
-          </h2>
-          <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white">
-            {service.midCta.subtitle}
+      {/* Előnyök + köztes CTA */}
+      <section
+        data-theme="light"
+        className="grain bg-paper py-24 site-gutter md:py-32"
+      >
+        <div className="mb-16 grid gap-8 lg:grid-cols-12 lg:gap-x-8">
+          <RevealText
+            as="h2"
+            inView
+            text={service.benefits.title}
+            className="type-h2 max-w-[18ch] lg:col-span-7"
+          />
+          <p className="self-end text-stone lg:col-span-4 lg:col-start-9">
+            {service.benefits.description}
           </p>
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm w-full md:w-1/2 mx-auto">
-            <p className="mb-6 text-xl font-semibold text-white">
-              {service.midCta.question}
-            </p>
-            <CtaButton href="/kapcsolat">{service.midCta.ctaText}</CtaButton>
+        </div>
+
+        <ul className="grid gap-x-8 gap-y-12 md:grid-cols-3">
+          {service.benefits.stats.map((stat) => (
+            <li
+              key={stat.title}
+              className="flex flex-col gap-3 border-t border-ink/20 pt-6"
+            >
+              <span className="type-h1 tabular-nums">{stat.number}</span>
+              <h3 className="text-xl font-bold tracking-[-0.01em]">
+                {stat.title}
+              </h3>
+              <p className="max-w-[36ch] text-stone">{stat.text}</p>
+            </li>
+          ))}
+        </ul>
+
+        <div
+          data-theme="dark"
+          className="mt-24 grid gap-8 rounded-[6px] bg-ink p-6 text-paper md:p-12 lg:grid-cols-12 lg:gap-x-8"
+        >
+          <h2 className="type-h2 lg:col-span-6">{service.midCta.title}</h2>
+          <div className="flex flex-col gap-6 lg:col-span-5 lg:col-start-8">
+            <p className="text-stone-light">{service.midCta.subtitle}</p>
+            <p className="text-lg font-medium">{service.midCta.question}</p>
+            <ArrowButton href="/kapcsolat" variant="green">
+              {service.midCta.ctaText.replace(/!$/, "")}
+            </ArrowButton>
           </div>
         </div>
       </section>
 
-      {/*  FUNKCIÓK */}
-      <section className="py-20">
-        <div className="mx-auto w-[90%] px-[10px]">
-          <div className="mb-16 w-fit">
-            <SectionRule />
-            <h2 className="text-3xl font-bold">{service.features.title}</h2>
-          </div>
-          <div className="border-t border-dark-color/20 flex flex-col gap-[25px]">
-            {service.features.items.map((feature, idx) => {
-              const IconComponent = (FiIcons[
-                feature.icon as keyof typeof FiIcons
-              ] || FiIcons.FiCheckCircle) as IconType;
-
-              const isActive = activeIndex === idx;
-
-              return (
-                <motion.div
-                  key={idx}
-                  custom={idx}
-                  onViewportEnter={() => setActiveIndex(idx)}
-                  viewport={{ once: false, margin: "-45% 0px -45% 0px" }}
-                  className={`functions grid grid-cols-1 text-dark-color gap-x-12 gap-y-3 border-b border-dark-color/20 md:grid-cols-12 items-center ${
-                    isActive ? "active" : ""
-                  }`}
-                >
-                  <div className="flex items-center gap-4 md:col-span-5 lg:col-span-4">
-                    <div className="icon-box flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-dark-color/5 text-dark-color transition-colors duration-300">
-                      <IconComponent className="h-6 w-6 text-dark-color transition-colors duration-300" />
-                    </div>
-                    <h3 className="text-xl font-semibold lg:text-2xl">
-                      {feature.title}
-                    </h3>
-                  </div>
-
-                  <p className="text-base leading-relaxed md:col-span-7 lg:col-span-6 lg:col-start-6">
-                    {feature.text}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <Referencies></Referencies>
-
-      {/* Utolsó CTA  */}
-      <section id="kapcsolat" className="mx-auto mt-10 w-full px-6">
-        <div className="flex flex-col gap-[20px] w-full md:w-1/2 mx-auto">
-          <h2 className=" mx-auto uppercase font-black md:!text-[65px] bg-clip-text text-transparent bg-gradient-to-r from-green to-violet-600 text-shadow-md">
-            Ha szükséged van
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[15px] w-full mx-auto">
-            {contactPrios.map((prio, _) => (
-              <div
-                key={prio}
-                className="relative flex items-stretch h-full w-full  "
+      {/* Funkciók */}
+      <section
+        data-theme="dark"
+        className="bg-ink py-24 text-paper site-gutter md:py-32"
+      >
+        <RevealText
+          as="h2"
+          inView
+          text={service.features.title}
+          className="type-h2 mb-14 max-w-[20ch]"
+        />
+        <ul>
+          {service.features.items.map((feature) => {
+            const Icon = icons[feature.icon] ?? FiCheckCircle;
+            return (
+              <li
+                key={feature.title}
+                className="grid gap-4 border-t border-paper/15 py-8 lg:grid-cols-12 lg:gap-x-8"
               >
-                <motion.div
-                  initial="hidden"
-                  variants={wrapperVariants}
-                  whileInView="visible"
-                  viewport={{ margin: "-10% 0px -10% 0px", once: false }}
-                  className="relative flex items-center w-full"
-                >
-                  {/* Balról jobbra kitöltő zöld háttér */}
-                  <motion.div
-                    variants={containerVariant}
-                    className="bg-green rounded-full p-[10px] w-full md:w-full flex flex-row items-center gap-[10px]"
-                  >
-                    {/* Ikon konténer */}
-                    <motion.div
-                      variants={iconVariants}
-                      className="flex items-center justify-center p-[5px] z-20 w-fit rounded-full bg-white"
-                    >
-                      <motion.div className="relative w-[30px] h-[30px]">
-                        <motion.div
-                          variants={shortLineVariants}
-                          className="absolute h-[4px] w-[12px] bg-green rotate-[45deg] left-[4px] top-[16px] rounded-full"
-                        />
-                        <motion.div
-                          variants={longLineVariants}
-                          className="absolute h-[4px] w-[22px] bg-green rotate-[-50deg] left-[10px] top-[12px] rounded-full"
-                        />
-                      </motion.div>
-                    </motion.div>
-
-                    <p className="text-white">{prio}</p>
-                  </motion.div>
-                </motion.div>
-              </div>
-            ))}
-          </div>
-          <ContactButton
-            path={"/kapcsolat"}
-            title={"Beszéljünk!"}
-            wrapperClass={
-              "bg-dark-color rounded-full w-fit p-[15px] items-center justify-center flex flex-row nowrap mx-auto"
-            }
-            titleClass={"text-white bg-dark-color z-2 w-fit"}
-            decorClass="border-white bg-white"
-          ></ContactButton>
-        </div>
+                <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center lg:col-span-5">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-[4px] bg-paper/10">
+                    <Icon className="size-5" aria-hidden />
+                  </span>
+                  <h3 className="type-h3 min-w-0">{feature.title}</h3>
+                </div>
+                <p className="max-w-[56ch] self-center text-stone-light lg:col-span-6 lg:col-start-7">
+                  {feature.text}
+                </p>
+              </li>
+            );
+          })}
+        </ul>
       </section>
-    </section>
+
+      <References title="Néhány korábbi projektem" initial={3} />
+
+      <NavigateToContact
+        subtitle={`${service.footerCta.title} ${service.footerCta.subtitle}`}
+      />
+    </>
   );
 }

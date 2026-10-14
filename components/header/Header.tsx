@@ -1,22 +1,103 @@
 "use client";
-import Image from "next/image";
-import logo from "@/public/Prefer-logo.png";
-import HamburgerButton from "./hamburgerButton";
-import navItems from "@/lib/navItems";
 
-import { useState, useEffect, useRef, useContext } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ScrollContext } from "@/lib/ScrollContext";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "motion/react";
+import { useLenis } from "lenis/react";
+import logo from "@/public/Prefer-logo.png";
+import navItems from "@/lib/navItems";
+import { TransitionLink } from "@/lib/site/transition";
+import { useSound } from "@/lib/site/sound";
+import ArrowButton from "@/lib/ui/ArrowButton";
+
+type Theme = "light" | "dark";
+
+// Melyik szekció van a fejléc alatt? A szekciók data-theme attribútuma alapján
+// vált a fejléc színe, hogy világos és sötét háttéren is olvasható maradjon.
+function useThemeUnderHeader(pathname: string) {
+  const [theme, setTheme] = useState<Theme>("light");
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const probe = 36;
+    const check = () => {
+      let next: Theme = "light";
+      document.querySelectorAll<HTMLElement>("[data-theme]").forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top <= probe && r.bottom > probe) {
+          next = el.dataset.theme as Theme;
+        }
+      });
+      setTheme(next);
+      setScrolled(window.scrollY > 24);
+    };
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    window.addEventListener("resize", check);
+    return () => {
+      window.removeEventListener("scroll", check);
+      window.removeEventListener("resize", check);
+    };
+  }, [pathname]);
+
+  return { theme, scrolled };
+}
+
+function SoundToggle({ theme }: { theme: Theme }) {
+  const { enabled, toggle } = useSound();
+  return (
+    <button
+      type="button"
+      onClick={toggle}
+      aria-pressed={enabled}
+      aria-label={enabled ? "Hangok kikapcsolása" : "Hangok bekapcsolása"}
+      className={`grid size-[34px] place-items-center rounded-[4px] transition-colors duration-300 ${
+        theme === "dark"
+          ? "bg-paper/10 text-paper hover:bg-paper/20"
+          : "bg-ink/8 text-ink hover:bg-ink/15"
+      }`}
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="size-[18px]"
+        aria-hidden
+      >
+        <path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4z" />
+        {enabled ? (
+          <path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" />
+        ) : (
+          <path d="m16 10 4 4m0-4-4 4" />
+        )}
+      </svg>
+    </button>
+  );
+}
+
+const services = navItems.find((item) => item.items)?.items ?? [];
+const mainLinks = navItems.filter((item) => !item.items);
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const { theme, scrolled } = useThemeUnderHeader(pathname);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { triggerIsScrolling }: any = useContext(ScrollContext);
+  const lenis = useLenis();
 
-  // -Csúszó háttér állapota ---
-  const indicatorRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!lenis) return;
+    if (menuOpen) lenis.stop();
+    else lenis.start();
+  }, [menuOpen, lenis]);
 
-  const handleMouseEnter = (e: any) => {
+  // Csúszó háttér: hoverre a menüpont mögé csúszik
+  const indicatorRef = useRef<HTMLLIElement>(null);
+
+  const handleMouseEnter = (e: React.MouseEvent<HTMLLIElement>) => {
     const el = e.currentTarget;
     if (indicatorRef.current) {
       indicatorRef.current.style.left = `${el.offsetLeft - 10}px`;
@@ -30,286 +111,184 @@ export default function Header() {
       indicatorRef.current.style.opacity = "0";
     }
   };
-  // ----------------------------------------------
 
-  // Görgetés figyelés
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 75);
-    };
+  const textColor = theme === "dark" ? "text-paper" : "text-ink";
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Body görgetés tiltása nyitott menünél
-  useEffect(() => {
-    const htmlElem = document.documentElement;
-    if (menuOpen) {
-      htmlElem.style.overflow = "hidden";
-    } else {
-      htmlElem.style.overflow = "";
-    }
-    return () => {
-      htmlElem.style.overflow = "";
-    };
-  }, [menuOpen]);
-
-  const bgTransition = {
-    duration: 0.8,
-    ease: [0.77, 0, 0.175, 1],
-  } as const;
+  const background = !scrolled
+    ? "bg-transparent"
+    : theme === "dark"
+      ? "bg-ink/80 backdrop-blur-md"
+      : "bg-paper/80 backdrop-blur-md";
 
   return (
     <>
-      {/* Mobil layer + Animációk */}
-      <AnimatePresence>
-        {menuOpen && (
-          <div className="fixed inset-0 w-full h-[100dvh] z-[998] lg:hidden bg-white text-white overflow-y-auto overflow-x-hidden overscroll-none">
-            <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
-              {/* Felső sáv */}
-              <motion.div
-                initial={{ y: "-152%", z: 0 }}
-                animate={{ y: "15%", z: 0 }}
-                exit={{ y: "-152%", z: 0 }}
-                transition={bgTransition}
-                className="absolute w-[300%] h-[50%] bg-dark-color left-[-100%] top-[-10%] rotate-[-45deg] origin-center will-change-transform [backface-visibility:hidden]"
-              />
-
-              {/* Középső sáv */}
-              <motion.div
-                initial={{ scaleY: 0, z: 0 }}
-                animate={{ scaleY: 1.25, z: 0 }}
-                exit={{ scaleY: 0, z: 0 }}
-                transition={bgTransition}
-                className="absolute w-[300%] h-[60%] bg-dark-color left-[-100%] top-[20%] rotate-[-45deg] origin-center will-change-transform [backface-visibility:hidden]"
-              />
-
-              {/* Alsó sáv */}
-              <motion.div
-                initial={{ y: "150%", z: 0 }}
-                animate={{ y: "-15%", z: 0 }}
-                exit={{ y: "150%", z: 0 }}
-                transition={bgTransition}
-                className="absolute w-[300%] h-[50%] bg-dark-color left-[-100%] top-[60%] rotate-[-45deg] origin-center will-change-transform [backface-visibility:hidden]"
-              />
-            </div>
-
-            {/*  tartalom */}
-            <div className="relative z-10 w-full min-h-[100dvh] flex flex-col items-center justify-center py-16 px-4">
-              <motion.div
-                initial={{ opacity: 0, y: 30, z: 0 }}
-                animate={{ opacity: 1, y: 0, z: 0 }}
-                exit={{ opacity: 0, y: 20, z: 0 }}
-                transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
-                className="menu-container w-full max-w-[320px] mx-auto flex flex-col items-center justify-center text-center my-auto will-change-transform [backface-visibility:hidden]"
-              >
-                <nav className=" py-[5px] px-[20px] text-white mx-auto w-fit">
-                  <ul className="flex flex-col items-start gap-6 font-bold mb-6">
-                    {navItems.map((item, idx) =>
-                      item.items && item.items.length > 0 ? (
-                        <li
-                          key={idx}
-                          className="relative group z-10 flex flex-col"
-                          onMouseEnter={handleMouseEnter}
-                        >
-                          {/*  checkbox a mobilos tappeléshez */}
-                          <input
-                            type="checkbox"
-                            id={`menu-toggle-${idx}`}
-                            className="peer sr-only"
-                          />
-
-                          <label
-                            htmlFor={`menu-toggle-${idx}`}
-                            className="hover:opacity-80 cursor-pointer transition-opacity menu-link text-2xl will-change-transform [backface-visibility:hidden] flex flex-row items-center justify-between"
-                            style={{ animationDelay: `${idx * 0.1}s` }}
-                          >
-                            <a
-                              href={item.path}
-                              onClick={() => triggerIsScrolling()}
-                              className=""
-                            >
-                              {item.name}
-                            </a>
-
-                            <svg
-                              className="w-[25px] h-[25px] transition-transform group-hover:rotate-180 peer-checked:rotate-180"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M19 9l-7 7-7-7"
-                              />
-                            </svg>
-                          </label>
-
-                          {/* Dropdown  */}
-                          <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr] peer-checked:grid-rows-[1fr]">
-                            <div className="overflow-hidden">
-                              <div className="flex flex-col items-start rounded-md bg-white py-2 min-w-[160px] shadow-lg">
-                                {item.items.map((subItem, subIdx) => (
-                                  <a
-                                    key={subIdx}
-                                    href={`${subItem.path}`}
-                                    onClick={() => triggerIsScrolling()}
-                                    className="px-4 py-2 text-sm text-dark-color hover:text-dark-color transition-colors"
-                                  >
-                                    {subItem.name}
-                                  </a>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                      ) : (
-                        <motion.a
-                          key={item.path || item.name}
-                          href={item.path}
-                          initial={{ opacity: 0, y: 15, z: 0 }}
-                          animate={{ opacity: 1, y: 0, z: 0 }}
-                          transition={{ delay: 0.35 + idx * 0.08 }}
-                          className="hover:opacity-80 cursor-pointer transition-opacity menu-link text-2xl will-change-transform [backface-visibility:hidden]"
-                          onClick={() => {
-                            (setMenuOpen(false), triggerIsScrolling());
-                          }}
-                        >
-                          {item.name}
-                        </motion.a>
-                      ),
-                    )}
-                  </ul>
-                </nav>
-              </motion.div>
-            </div>
-          </div>
-        )}
-      </AnimatePresence>
-
-      <section className={`w-full flex flex-col fixed top-0 left-0 z-[999]`}>
-        <header
-          className={`header w-[90%] max-w-[2560px] mx-auto p-[10px] flex flex-row items-center justify-between ${
-            isScrolled ? "active mt-[15px]" : ""
-          } `}
+      <header
+        className={`fixed inset-x-0 top-0 z-50 grid grid-cols-[1fr_auto] items-center gap-4 pb-3 pt-4 transition-colors duration-300 site-gutter lg:grid-cols-[1fr_auto_1fr] ${textColor} ${background}`}
+      >
+        <TransitionLink
+          href="/"
+          className="flex w-fit min-w-0 items-center gap-2.5"
+          aria-label="Prefersite főoldal"
         >
-          {/* Logó konténer */}
-          <a
-            href="/"
-            className="relative w-[50px] h-[50px] bg-dark-color rounded-full flex flex-row"
-          >
+          <span className="grid size-[34px] place-items-center rounded-[4px] bg-ink">
             <Image
               src={logo}
-              alt="Prefer Logo - Egyedi weboldal és webshop fejlesztés"
-              fill
+              alt=""
+              width={18}
+              height={24}
               priority
-              className="object-contain !w-[40px] !h-[40px] mx-auto my-auto"
+              className="h-6 w-auto"
             />
-          </a>
+          </span>
+          <span className="text-lg font-bold tracking-[-0.02em]">
+            Prefersite
+          </span>
+        </TransitionLink>
 
-          {/* Desktop nézet */}
-          <nav className="desktop-nav relative bg-dark-color py-[10px] px-[20px] text-white rounded-full hidden lg:flex">
-            <ul
-              className="relative flex flex-row items-center gap-6 font-bold"
-              onMouseLeave={handleMouseLeave}
-            >
-              {/* Csúszó elem */}
-              <div
-                ref={indicatorRef}
-                className="absolute top-1/2 -translate-y-1/2 h-[calc(100%)] bg-green rounded-full transition-all duration-300 ease-out pointer-events-none opacity-0"
-              />
-
-              {navItems.map((item, idx) => {
-                if (
-                  item.path === "/kapcsolat" &&
-                  (!item.items || item.items.length === 0)
-                ) {
-                  return null;
-                }
-
-                const hasSubitems = item.items && item.items.length > 0;
-
-                return hasSubitems ? (
-                  <li
-                    key={item.path || idx}
-                    className="relative group z-10 flex p-[2px]"
-                    onMouseEnter={handleMouseEnter}
+        <nav aria-label="Főmenü" className="hidden lg:block">
+          <ul
+            className="relative flex items-center gap-6 text-[0.95rem] font-medium"
+            onMouseLeave={handleMouseLeave}
+          >
+            {/* Csúszó elem */}
+            <li
+              ref={indicatorRef}
+              aria-hidden
+              className="pointer-events-none absolute top-1/2 h-full -translate-y-1/2 rounded-full bg-green opacity-0 transition-all duration-300 ease-out"
+            />
+            <li className="group relative z-10" onMouseEnter={handleMouseEnter}>
+              <TransitionLink
+                href="/#szolgaltatasok"
+                className="flex items-center gap-1 py-2 transition-colors group-hover:text-ink"
+              >
+                Szolgáltatások
+                <svg
+                  viewBox="0 0 24 24"
+                  className="size-3.5 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  aria-hidden
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </TransitionLink>
+              <div className="invisible absolute left-1/2 top-full w-56 -translate-x-1/2 translate-y-1 pt-2 opacity-0 transition-all duration-300 ease-out-expo group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 ">
+                <ul className="flex flex-col rounded-[4px] bg-ink p-1.5 text-paper">
+                  {services.map((s) => (
+                    <li key={s.path}>
+                      <TransitionLink
+                        href={s.path}
+                        className="block rounded-[3px] px-3 py-2 transition-colors hover:bg-paper/10"
+                      >
+                        {s.name}
+                      </TransitionLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+            {mainLinks
+              .filter((item) => item.path !== "/kapcsolat")
+              .map((item) => (
+                <li
+                  key={item.path}
+                  className="relative z-10"
+                  onMouseEnter={handleMouseEnter}
+                >
+                  <TransitionLink
+                    href={item.path}
+                    className="block py-2 transition-colors hover:text-ink"
                   >
-                    <div
-                      onClick={() => triggerIsScrolling()}
-                      className="menu-link hover:text-dark-color cursor-pointer transition-colors flex items-center gap-1"
-                      style={{ animationDelay: `${idx * 0.1}s` }}
+                    {item.name}
+                  </TransitionLink>
+                </li>
+              ))}
+          </ul>
+        </nav>
+
+        <div className="flex items-center justify-end gap-2">
+          <SoundToggle theme={theme} />
+          <div className="hidden sm:block">
+            <ArrowButton href="/kapcsolat" variant="green">
+              Ajánlatkérés
+            </ArrowButton>
+          </div>
+          <button
+            type="button"
+            onClick={() => setMenuOpen(true)}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            className={`h-[34px] rounded-[4px] px-3.5 text-[0.95rem] font-medium lg:hidden ${
+              theme === "dark" ? "bg-paper text-ink" : "bg-ink text-paper"
+            }`}
+          >
+            Menü
+          </button>
+        </div>
+      </header>
+
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menü"
+            data-lenis-prevent
+            className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-ink pb-8 pt-4 text-paper site-gutter lg:hidden"
+            initial={{ clipPath: "inset(0% 0% 100% 0%)" }}
+            animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
+            exit={{ clipPath: "inset(0% 0% 100% 0%)" }}
+            transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-lg font-bold tracking-[-0.02em]">
+                Prefersite
+              </span>
+              <button
+                type="button"
+                onClick={() => setMenuOpen(false)}
+                className="h-[34px] rounded-[4px] bg-paper px-3.5 text-[0.95rem] font-medium text-ink"
+              >
+                Bezárás
+              </button>
+            </div>
+
+            <nav aria-label="Mobil menü" className="mt-12 flex flex-col gap-10">
+              <div>
+                <p className="mb-3 text-sm text-stone-light">Szolgáltatások</p>
+                <ul className="flex flex-col gap-1">
+                  {services.map((s) => (
+                    <li key={s.path}>
+                      <TransitionLink
+                        href={s.path}
+                        onClick={() => setMenuOpen(false)}
+                        className="type-h3"
+                      >
+                        {s.name}
+                      </TransitionLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <ul className="flex flex-col gap-1">
+                {mainLinks.map((item) => (
+                  <li key={item.path}>
+                    <TransitionLink
+                      href={item.path}
+                      onClick={() => setMenuOpen(false)}
+                      className="type-h2"
                     >
                       {item.name}
-                      <svg
-                        className="w-4 h-4 transition-transform group-hover:rotate-180"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </div>
-
-                    {/* Dropdown */}
-                    <div className="absolute left-1/2 -translate-x-1/2 top-full flex flex-col bg-green shadow-lg rounded-md py-2 min-w-[160px] z-50 transition-all duration-300 ease-out opacity-0 invisible translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto">
-                      {item.items.map((subItem, subIdx) => (
-                        <a
-                          key={subItem.path || subIdx}
-                          href={subItem.path}
-                          onClick={() => triggerIsScrolling()}
-                          className="px-4 py-2 text-sm text-white hover:text-dark-color transition-colors"
-                        >
-                          {subItem.name}
-                        </a>
-                      ))}
-                    </div>
+                    </TransitionLink>
                   </li>
-                ) : (
-                  <li
-                    key={item.path || idx}
-                    onClick={() => triggerIsScrolling()}
-                    onMouseEnter={handleMouseEnter}
-                    style={{ animationDelay: `${idx * 0.1}s` }}
-                    className="relative z-10 menu-link hover:text-dark-color cursor-pointer transition-colors"
-                  >
-                    <a href={item.path}>{item.name}</a>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-
-          <HamburgerButton
-            isScrolled={isScrolled}
-            isOpen={menuOpen}
-            onToggle={(isOpen) => setMenuOpen(isOpen)}
-          />
-
-          {/* Kapcsolat */}
-          <div className="hidden lg:flex flex-row gap-4 items-center justify-center">
-            <a
-              href="/kapcsolat"
-              onClick={() => {
-                triggerIsScrolling();
-              }}
-              aria-label="Weboldal és webshop fejlesztés kapcsolat"
-              className="kapcsolat-btn cursor-pointer relative font-black text-[15px] flex flex-row gap-[5px] bg-dark-color text-white rounded-md py-[5px] px-[20px]"
-            >
-              KAPCSOLAT
-            </a>
-          </div>
-        </header>
-      </section>
+                ))}
+              </ul>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

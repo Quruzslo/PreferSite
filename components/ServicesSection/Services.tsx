@@ -1,125 +1,102 @@
 "use client";
 
-import { useRef } from "react";
+import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import myServices from "./MyServices";
-import { motion, useInView, Variants } from "framer-motion";
-import Image from "next/image";
-import { ScrollContext } from "@/lib/ScrollContext";
+import ArrowButton from "@/lib/ui/ArrowButton";
+import { TransitionLink } from "@/lib/site/transition";
 
-const servicesVariants: Variants = {
-  hidden: {
-    clipPath: "inset(50% 50% 50% 50% round 50%)",
-    opacity: 1,
-  },
-  visible: {
-    clipPath: "inset(0% 0% 0% 0% round 0px)",
-    opacity: 1,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
-  },
+// A MyServices.js "path" mezője és a szolgáltatás-oldalak slugja eltér, ezért itt párosítjuk őket.
+const serviceMeta: Record<string, { slug: string; name: string }> = {
+  webapp: { slug: "webapplikacio", name: "Webapplikáció" },
+  webshop: { slug: "webshop", name: "Webshop" },
+  crm: { slug: "crm", name: "CRM rendszer" },
+  weboldal: { slug: "weboldal", name: "Weboldal" },
+  karbantartas: { slug: "karbantartas", name: "Karbantartás" },
 };
 
-function ServiceCard({ service }: { service: (typeof myServices)[0] }) {
-  // const { isScrolling } = useContext(ScrollContext)!;
+const items = myServices.map((s) => ({
+  ...s,
+  ...serviceMeta[s.path],
+  href: `/szolgaltatasok/${serviceMeta[s.path].slug}`,
+}));
 
-  // const isSnapping = useRef(false);
-
-  // const handleSnap = (entry: any) => {
-
-  //   if (isScrolling || isSnapping.current) return;
-
-  //   if (isSnapping.current) return;
-
-  //   if (entry && entry.target) {
-
-  //     isSnapping.current = true;
-
-  //     entry.target.scrollIntoView({
-
-  //       behavior: "smooth",
-
-  //       block: "start",
-
-  //     });
-
-  //     setTimeout(() => {
-
-  //       isSnapping.current = false;
-
-  //     }, 400);
-
-  //   }
-
-  // };
-
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.3, once: false });
+export default function Services() {
+  const [active, setActive] = useState(0);
+  const current = items[active];
 
   return (
     <section
-      ref={ref}
-      id={service.path}
-      // onViewportEnter={(entry) => handleSnap(entry)}
-      className="flex min-h-[max(100vh,450px)] w-full shrink-0 flex-col justify-center overflow-hidden bg-transparent"
+      id="szolgaltatasok"
+      data-theme="dark"
+      className="bg-ink py-24 text-paper site-gutter md:py-36"
     >
-      <motion.div
-        variants={servicesVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        style={{ willChange: "clip-path" }}
-        className="bg-dark-color zoldhatteres flex flex-1 w-full flex-col justify-center pt-[110px] pb-[40px] md:pt-0 md:pb-0"
-      >
-        <div className="mx-auto w-[90%] max-w-[2560px] px-[10px] flex flex-col md:flex-row gap-[20px]">
-          {/* bal oldal --- */}
-          <div className="service-left flex flex-col w-full md:w-1/2 py-[20px]">
-            <span className="text-[20px] font-semibold tracking-wider text-green">
-              <span className="text-4xl font-extrabold text-transparent [-webkit-text-stroke:1px_#ffffff]">
-                0{service.id + 1}
-              </span>{" "}
-              . szolgáltatásom
-            </span>
-            <h2 className="mt-2 text-3xl font-bold text-white md:text-5xl lg:text-6xl">
-              {service.title}
-            </h2>
-            <p className="mt-6 text-lg text-white md:text-xl">
-              {service.description}
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-[15px] mt-[25px] w-fit mr-auto">
-              {service.benefits.map((benefit, idx) => (
-                <div
-                  key={idx}
-                  className="flex flex-row nowrap gap-[5px] items-center"
-                >
-                  <span className="w-[10px] h-[10px] rounded-full bg-green shrink-0" />
-                  <p className="text-neutral-300">{benefit}</p>
-                </div>
-              ))}
+      <div className="grid gap-12 lg:grid-cols-12 lg:gap-x-8">
+        <div className="hidden lg:col-span-4 lg:block">
+          <div className="sticky top-28 flex flex-col gap-6">
+            <div className="flex items-center gap-2.5">
+              <span className="size-2.5 rounded-full bg-green" aria-hidden />
+              <h2 className="type-lead">Miben segíthetek?</h2>
             </div>
-          </div>
-
-          <div className="service-left relative w-full md:w-1/2 min-h-[300px] md:min-h-[400px]">
-            <Image
-              src={service.img}
-              alt={service.title}
-              fill
-              className="object-contain w-full"
-            />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current.path}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-col gap-6"
+              >
+                <p className="max-w-[40ch] text-stone-light">
+                  {current.description}
+                </p>
+                <ArrowButton href={current.href} variant="paper">
+                  {current.name} részletei
+                </ArrowButton>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
-      </motion.div>
-    </section>
-  );
-}
 
-export default function Services() {
-  return (
-    <div
-      id="szolgaltatas"
-      className="relative flex w-full flex-col my-[35px] gap-0"
-    >
-      {myServices.map((service) => (
-        <ServiceCard key={service.id} service={service} />
-      ))}
-    </div>
+        <div className="flex items-center gap-2.5 lg:hidden">
+          <span className="size-2.5 rounded-full bg-green" aria-hidden />
+          <h2 className="type-lead">Miben segíthetek?</h2>
+        </div>
+
+        <ul className="flex flex-col lg:col-span-8">
+          {items.map((item, i) => {
+            const isActive = i === active;
+            return (
+              <motion.li
+                key={item.path}
+                onViewportEnter={() => setActive(i)}
+                viewport={{ margin: "-45% 0px -45% 0px" }}
+                className="border-b border-paper/10 py-4 first:pt-0 lg:border-none lg:py-1"
+              >
+                <TransitionLink
+                  href={item.href}
+                  onPointerEnter={() => setActive(i)}
+                  onFocus={() => setActive(i)}
+                  className={`type-h1 flex items-center gap-4 transition-colors duration-500 ${
+                    isActive ? "text-paper" : "text-paper/25"
+                  }`}
+                >
+                  <span
+                    aria-hidden
+                    className={`size-3 shrink-0 rounded-full bg-green transition-opacity duration-500 ${
+                      isActive ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                  {item.name}
+                </TransitionLink>
+                <p className="mt-3 max-w-[40ch] text-stone-light lg:hidden">
+                  {item.description}
+                </p>
+              </motion.li>
+            );
+          })}
+        </ul>
+      </div>
+    </section>
   );
 }

@@ -1,94 +1,140 @@
 "use client";
-import AtomIcon from "@/public/icons/HeroAtomIcon";
-import { motion, Variants } from "framer-motion";
-import Link from "next/link";
-import StackedImages from "./StackedImages";
-import NextCtaButton from "@/lib/KapcsolatGomb";
+
+import Image from "next/image";
+import { useRef } from "react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "motion/react";
+import RevealText from "@/lib/ui/RevealText";
+import ArrowButton from "@/lib/ui/ArrowButton";
+import TechStack from "@/components/tech-stack/TechStack";
+
+// Valós referenciákból vett eredmények, a lib/referencies/refs.js leírásai alapján.
+const wins = [
+  {
+    img: "/references/glambypanna.jpg",
+    title: "Glam By Panna",
+    text: "Az élesítés utáni 2 hétben már új ügyfeleket hozott",
+    year: "2026",
+  },
+  {
+    img: "/references/medioenviro.jpg",
+    title: "MedioEnviro Kft.",
+    text: "Az új oldal több nagyobb megbízást is hozott",
+    year: "2024",
+  },
+];
+
+const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
-  const services = [
-    { name: "Webapplikáció", link: "/szolgaltatasok/webapplikacio" },
-    { name: "Webshop", link: "/szolgaltatasok/webshop" },
-    { name: "CRM", link: "/szolgaltatasok/crm" },
-    { name: "Weboldal", link: "/szolgaltatasok/weboldal" },
-    { name: "Karbantartás", link: "/szolgaltatasok/karbantartas" },
-  ];
-
-  const containerVariants: Variants = {
-    hidden: { opacity: 1 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: { duration: 0.5, ease: [0.215, 0.61, 0.355, 1] },
-    },
-  };
+  const imageRef = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: imageRef,
+    offset: ["start end", "end start"],
+  });
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.12, 1]);
 
   return (
-    <section className="w-full flex-col flex relative overflow-hidden bg-white">
-      <div className="w-[90%] max-w-[2560px] py-[50px] p-[20px] md:p-[40px] hero-conti zoldhatteres bg-dark-color rounded-2xl filter drop-shadow-[0_5px_20px_rgba(0,0,0,0.6)] mx-auto flex-col flex lg:flex-row mt-[75px] md:mt-[100px] mb-[35px] min-h-[calc(100vh_-_150px)] items-center justify-center gap-[30px] max-h-[1400px]">
-        {/* Bal oldal */}
-        <div className="hero-bal w-full lg:w-[50%] flex-col flex justify-center gap-[24px]">
-          <div className="hidden md:flex flex-row gap-[10px] mx-auto md:mx-[0px] rounded-md bg-dark-green text-white w-fit px-3 py-1.5 items-center text-sm font-medium mt-[20px]">
-            <AtomIcon />
-            <p>Egyedi fejlesztésű webes megoldások</p>
-          </div>
+    <section
+      data-theme="light"
+      className="grain bg-paper pb-16 pt-28 site-gutter md:pt-32"
+    >
+      <div className="grid gap-y-10 lg:grid-cols-12 lg:gap-x-8">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, ease }}
+          className="order-2 flex flex-col gap-6 lg:order-1 lg:col-span-4 lg:pt-3"
+        >
+          <p className="type-lead max-w-[26ch]">
+            Megbízható, keresőoptimalizált weboldalak, konverzióra épített
+            webshopok és cégre szabott CRM rendszerek igényes vállalkozásoknak.
+          </p>
+          <ArrowButton href="/kapcsolat" variant="green">
+            Ingyenes konzultáció
+          </ArrowButton>
+        </motion.div>
 
-          <h1 className=" font-black !text-[20px] md:!text-[30px] lg:text-[35px] text-white ">
-            Minőségi weboldal-és webes szoftverfejlesztése cégeknek és
-            vállalkozásoknak.
-          </h1>
+        <div className="order-1 lg:order-2 lg:col-span-8">
+          <RevealText
+            as="h1"
+            text="Egyedi weboldal, webshop és CRM, ami ügyfelet hoz"
+            className="type-display max-w-[11ch]"
+            delay={0.1}
+          />
+        </div>
 
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="order-3 self-end text-[0.95rem] lg:col-span-4"
+        >
+          (Webfejlesztés Kaposváron, Győrben, Budapesten és online az egész
+          országban)
+        </motion.p>
+
+        <motion.div
+          ref={imageRef}
+          initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
+          animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
+          transition={{ duration: 1.2, delay: 0.55, ease: [0.76, 0, 0.24, 1] }}
+          className="relative order-4 aspect-[4/3] overflow-hidden rounded-[4px] bg-ink sm:aspect-[16/10] lg:col-span-8"
+        >
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="font-black !text-[18px] sm:!text-[20px] md:!text-[30px] flex flex-row flex-wrap w-full"
+            style={reduceMotion ? undefined : { scale: imageScale }}
+            className="absolute inset-0"
           >
-            {services.map((item, idx) => (
-              <motion.a
-                key={idx}
-                variants={itemVariants}
-                href={item.link}
-                className="h1-elem origin-top-left relative block w-full min-[350px]:w-1/2 text-white p-[10px] truncate"
-              >
-                {item.name}
-
-                <span className="arrow-left"></span>
-                <span className="arrow-right"></span>
-              </motion.a>
-            ))}
+            <Image
+              src="/references/andocs.jpg"
+              alt="Andocs község új weboldala, a Prefersite egyik referenciája"
+              fill
+              priority
+              sizes="(min-width: 1024px) 66vw, 100vw"
+              className="object-cover object-left-top"
+            />
           </motion.div>
 
-          <p className="text-[16px] md:text-[19px] text-gray-300 leading-relaxed max-w-[600px]">
-            Megbízható, keresőoptimalizált weboldalak, konverzióra épített
-            webshopok és cégre optimalizált CRM rendszerek készítése, igényes
-            vállalkozásoknak.
-          </p>
-
-          <div className="mx-auto md:mx-0 w-fit flex flex-col sm:flex-row gap-4 mt-2">
-            <NextCtaButton></NextCtaButton>
+          <div className="absolute left-3 top-3 flex flex-col gap-2 sm:left-5 sm:top-5">
+            {wins.map((win, i) => (
+              <motion.div
+                key={win.title}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 1.4 + i * 0.15, ease }}
+                className={`flex w-[min(19rem,calc(100vw-4rem))] gap-3 rounded-[4px] p-2 backdrop-blur-md ${
+                  i === 0 ? "bg-ink/80 text-paper" : "bg-paper/90 text-ink"
+                }`}
+              >
+                <div className="relative aspect-square w-14 shrink-0 overflow-hidden rounded-[3px]">
+                  <Image
+                    src={win.img}
+                    alt=""
+                    fill
+                    sizes="56px"
+                    className="object-cover object-left-top"
+                  />
+                </div>
+                <div className="flex flex-col justify-between gap-1 py-0.5">
+                  <p className="text-[0.85rem] font-medium leading-tight">
+                    {win.text}
+                  </p>
+                  <p className="font-mono text-[0.7rem] opacity-60">
+                    {win.title}, {win.year}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </div>
-
-        {/* Jobb oldal */}
-        <div className="hero-jobb hidden md:flex flex-col relative w-full lg:w-[50%] min-h-[350px] lg:min-h-[500px]">
-          <div className="lg:absolute lg:inset-0 flex items-center justify-center">
-            <StackedImages />
-          </div>
-        </div>
+        </motion.div>
       </div>
+
+      <TechStack />
     </section>
   );
 }

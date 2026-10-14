@@ -1,17 +1,22 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Archivo, JetBrains_Mono } from "next/font/google";
+import "lenis/dist/lenis.css";
 import "./globals.css";
-import "../components/header/header.css";
-import "../components/hero/stacked.css";
+import Providers from "@/lib/site/Providers";
+import Cursor from "@/lib/site/Cursor";
 import Header from "@/components/header/Header";
-import MouseFollowerElement from "@/lib/mouseFollowerElement";
-import ScrollToTop from "@/lib/scrollToTop";
-import Footer from "../components/Footer/Footer";
-import ScrollContextProvider from "@/lib/ScrollContext";
+import Footer from "@/components/Footer/Footer";
 import CookieBanner from "@/lib/cookies/CookieBanner";
 
-const groteskSans = Space_Grotesk({
-  subsets: ["latin"],
+const archivo = Archivo({
+  subsets: ["latin", "latin-ext"],
+  axes: ["wdth"],
+  variable: "--font-archivo",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-jetbrains",
 });
 
 export const metadata: Metadata = {
@@ -91,7 +96,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="hu" className="h-full w-full">
+    <html
+      lang="hu"
+      className={`${archivo.variable} ${jetbrainsMono.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
@@ -102,19 +110,14 @@ export default function RootLayout({
           content="HZKSVZ5jEQZltaslXpmr4oadX5FFhLnMUDajo56wlhA"
         />
       </head>
-      <body
-        className={`${groteskSans.className} min-h-full flex flex-col antialiased relative`}
-      >
-        <ScrollContextProvider>
-          <MouseFollowerElement />
-          <ScrollToTop />
+      <body className="bg-paper font-sans text-ink antialiased">
+        <Providers>
+          <Cursor />
           <Header />
-
-          <main className="flex-1">{children}</main>
-
+          <main>{children}</main>
           <Footer />
           <CookieBanner />
-        </ScrollContextProvider>
+        </Providers>
       </body>
     </html>
   );

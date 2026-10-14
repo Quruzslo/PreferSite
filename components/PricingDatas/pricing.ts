@@ -97,7 +97,7 @@ const pricingData: PricingItem[] = [
   },
   {
     id: "maintenance",
-    title: "Üzemeltetés,rendszerfelügyelet és karbantartás",
+    title: "Üzemeltetés, rendszerfelügyelet és karbantartás",
     price: "20 000 Ft/hó-tól",
     description:
       "Folyamatos technikai támogatás, biztonsági frissítések és maximális rendelkezésre állás.",
