@@ -46,22 +46,25 @@ export default function CustomerStepsComp() {
           </div>
         </div>
 
-        <ol className="lg:col-span-7">
+        <ol className="col-span-12 lg:col-span-7">
           {customerSteps.map((step, i) => (
             <motion.li
               key={step.id}
               onViewportEnter={() => setActive(i)}
               viewport={{ margin: "-40% 0px -55% 0px" }}
-              className={`grid gap-4  py-10 transition-opacity duration-500 md:grid-cols-[4rem_1fr] md:py-14 ${
+              className={`flex flex-col gap-4 py-10 transition-opacity duration-500  md:py-14 ${
                 i === active ? "lg:opacity-100" : "lg:opacity-25"
               }`}
             >
-              <span
-                className={`size-3 rounded-full font-mono text-sm text-stone-light ${i === active ? "bg-green" : "bg-transparent"} `}
-              ></span>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-row gap-3 items-center">
+                <span
+                  className={`size-0 transition-all duration-500 rounded-full font-mono text-sm text-stone-light ${i === active ? "bg-green size-3" : "bg-transparent size-0"} `}
+                ></span>
                 <h3 className="type-h3">{step.title}</h3>
-                <p className="max-w-[56ch] text-stone-light">
+              </div>
+
+              <div className="flex flex-col gap-4 w-fit">
+                <p className="w-full lg:max-w-[56ch] text-stone-light">
                   {step.description}
                 </p>
               </div>

@@ -16,14 +16,14 @@ function ReferenceItem({ item }: { item: Reference }) {
         rel="noopener noreferrer"
         data-cursor="Megnézem"
         aria-label={`${item.title} weboldal megnyitása új lapon`}
-        className="group relative block aspect-[16/10] overflow-hidden rounded-[4px] bg-paper-deep md:col-span-8"
+        className="group relative block aspect-[16/10] overflow-hidden  bg-transparent md:col-span-8 "
       >
         <Image
           src={item.desktopPhotoSrc}
           alt={`${item.title} weboldal`}
           fill
           sizes="(min-width: 1024px) 50vw, (min-width: 768px) 66vw, 100vw"
-          className="object-contain object-center transition-transform duration-700 ease-out-expo group-hover:scale-[1.03]"
+          className="object-contain object-center  transition-transform duration-700 ease-out-expo group-hover:scale-[1.03] "
         />
       </a>
       <div className="flex flex-col gap-3 md:col-span-4">
