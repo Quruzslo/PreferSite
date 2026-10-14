@@ -24,9 +24,9 @@ export default function CustomerStepsComp() {
       />
 
       <div className="grid gap-x-8 lg:grid-cols-12">
-        <div className="hidden lg:col-span-5 lg:block">
+        <div className="sticky top-18 lg:relative col-span-5 lg:block">
           <div className="sticky top-28 flex items-start gap-3">
-            <div className="type-display relative h-[0.9em] overflow-hidden tabular-nums">
+            <div className="type-display relative px-[2px] h-[0.9em] overflow-hidden tabular-nums">
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.span
                   key={active}
@@ -52,13 +52,13 @@ export default function CustomerStepsComp() {
               key={step.id}
               onViewportEnter={() => setActive(i)}
               viewport={{ margin: "-40% 0px -55% 0px" }}
-              className={`grid gap-4 border-t border-paper/15 py-10 transition-opacity duration-500 md:grid-cols-[4rem_1fr] md:py-14 ${
-                i === active ? "lg:opacity-100" : "lg:opacity-35"
+              className={`grid gap-4  py-10 transition-opacity duration-500 md:grid-cols-[4rem_1fr] md:py-14 ${
+                i === active ? "lg:opacity-100" : "lg:opacity-25"
               }`}
             >
-              <span className="font-mono text-sm text-stone-light">
-                {pad(i + 1)}
-              </span>
+              <span
+                className={`size-3 rounded-full font-mono text-sm text-stone-light ${i === active ? "bg-green" : "bg-transparent"} `}
+              ></span>
               <div className="flex flex-col gap-4">
                 <h3 className="type-h3">{step.title}</h3>
                 <p className="max-w-[56ch] text-stone-light">
