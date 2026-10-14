@@ -24,7 +24,7 @@ export default function CustomerStepsComp() {
       />
 
       <div className="grid gap-x-8 lg:grid-cols-12">
-        <div className="sticky top-18 lg:relative col-span-5 lg:block">
+        <div className="sticky top-18 lg:relative lg:col-span-5">
           <div className="sticky top-28 flex items-start gap-3">
             <div className="type-display relative px-[2px] h-[0.9em] overflow-hidden tabular-nums">
               <AnimatePresence mode="popLayout" initial={false}>
@@ -46,28 +46,26 @@ export default function CustomerStepsComp() {
           </div>
         </div>
 
-        <ol className="col-span-12 lg:col-span-7">
+        <ol className="lg:col-span-7">
           {customerSteps.map((step, i) => (
             <motion.li
               key={step.id}
               onViewportEnter={() => setActive(i)}
               viewport={{ margin: "-40% 0px -55% 0px" }}
-              className={`flex flex-col gap-4 py-10 transition-opacity duration-500  md:py-14 ${
+              className={`flex flex-col gap-4 py-10 transition-opacity duration-500 md:py-14 ${
                 i === active ? "lg:opacity-100" : "lg:opacity-25"
               }`}
             >
-              <div className="flex flex-row gap-3 items-center">
+              <div className="flex flex-row items-center gap-3">
                 <span
-                  className={`size-0 transition-all duration-500 rounded-full font-mono text-sm text-stone-light ${i === active ? "bg-green size-3" : "bg-transparent size-0"} `}
+                  className={`shrink-0 rounded-full transition-all duration-500 ${i === active ? "size-3 bg-green" : "size-0 bg-transparent"}`}
                 ></span>
-                <h3 className="type-h3">{step.title}</h3>
+                <h3 className="type-h3 min-w-0">{step.title}</h3>
               </div>
 
-              <div className="flex flex-col gap-4 w-fit">
-                <p className="w-full lg:max-w-[56ch] text-stone-light">
-                  {step.description}
-                </p>
-              </div>
+              <p className="max-w-[56ch] text-stone-light">
+                {step.description}
+              </p>
             </motion.li>
           ))}
         </ol>

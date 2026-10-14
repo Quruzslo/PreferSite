@@ -51,7 +51,7 @@ function setStored(value: boolean) {
   listeners.forEach((listener) => listener());
 }
 
-// A hangokat a böngésző generálja (Web Audio), így nincs letöltendő hangfájl.
+// A hangokat a böngésző generálja (Web Audio)
 function playTone(ctx: AudioContext, kind: SoundKind) {
   const now = ctx.currentTime;
   const osc = ctx.createOscillator();
@@ -79,7 +79,7 @@ function playTone(ctx: AudioContext, kind: SoundKind) {
 
 export function SoundProvider({ children }: { children: ReactNode }) {
   // Alapból némítva: hang csak a látogató kifejezett kérésére szól.
-  const enabled = useSyncExternalStore(subscribe, getSnapshot, () => false);
+  const enabled = useSyncExternalStore(subscribe, getSnapshot, () => true);
   const ctxRef = useRef<AudioContext | null>(null);
   const lastHoverRef = useRef<Element | null>(null);
 
