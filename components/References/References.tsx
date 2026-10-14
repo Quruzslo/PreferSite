@@ -23,7 +23,7 @@ function ReferenceItem({ item }: { item: Reference }) {
           alt={`${item.title} weboldal`}
           fill
           sizes="(min-width: 1024px) 50vw, (min-width: 768px) 66vw, 100vw"
-          className="object-cover object-left-top transition-transform duration-700 ease-out-expo group-hover:scale-[1.03]"
+          className="object-contain object-center transition-transform duration-700 ease-out-expo group-hover:scale-[1.03]"
         />
       </a>
       <div className="flex flex-col gap-3 md:col-span-4">

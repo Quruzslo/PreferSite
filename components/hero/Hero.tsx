@@ -96,7 +96,7 @@ export default function Hero() {
               fill
               priority
               sizes="(min-width: 1024px) 66vw, 100vw"
-              className="object-cover object-left-top"
+              className="object-contain object-center"
             />
           </motion.div>
 
@@ -117,7 +117,7 @@ export default function Hero() {
                     alt=""
                     fill
                     sizes="56px"
-                    className="object-cover object-left-top"
+                    className="object-cover object-center"
                   />
                 </div>
                 <div className="flex flex-col justify-between gap-1 py-0.5">

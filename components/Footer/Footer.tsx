@@ -76,7 +76,7 @@ export default function Footer() {
     target: ref,
     offset: ["start end", "end end"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["-30%", "0%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-150%", "0%"]);
 
   return (
     <footer
@@ -94,7 +94,7 @@ export default function Footer() {
             <a
               href="mailto:info@prefersite.hu"
               data-cursor="Írok"
-              className="type-h2 w-fit break-all transition-colors hover:text-green"
+              className=" w-fit break-all transition-colors hover:text-green"
             >
               info@prefersite.hu
             </a>
