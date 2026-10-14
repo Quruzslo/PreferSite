@@ -94,7 +94,7 @@ export default function Header() {
     else lenis.start();
   }, [menuOpen, lenis]);
 
-  // Csúszó háttér: hoverre a menüpont mögé csúszik
+  // Csúszó háttér
   const indicatorRef = useRef<HTMLLIElement>(null);
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLLIElement>) => {

@@ -33,10 +33,7 @@ function BenefitCard({
   );
 
   return (
-    <div
-      className="sticky"
-      style={{ top: `calc(5.5rem + ${index * 1.1}rem)` }}
-    >
+    <div className="sticky" style={{ top: `calc(5.5rem + ${index * 1.1}rem)` }}>
       <motion.article
         style={reduceMotion ? undefined : { scale, transformOrigin: "top" }}
         className="grid min-h-[24rem] gap-8 rounded-[6px] border border-paper/10 bg-ink-card p-5 md:min-h-[26rem] md:grid-cols-12 md:p-10"

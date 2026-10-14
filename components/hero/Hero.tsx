@@ -49,7 +49,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease }}
-          className="order-2 flex flex-col gap-6 lg:order-1 lg:col-span-4 lg:pt-3"
+          className="order-2 flex flex-col gap-6 lg:order-1 lg:sticky lg:top-[100px] lg:col-span-4 lg:pt-3"
         >
           <p className="type-lead max-w-[26ch]">
             Megbízható, keresőoptimalizált weboldalak, konverzióra épített
@@ -64,7 +64,7 @@ export default function Hero() {
           <RevealText
             as="h1"
             text="Egyedi weboldal, webshop és CRM, ami ügyfelet hoz"
-            className="type-display max-w-[11ch]"
+            className="type-display w-full lg:max-w-[11ch]"
             delay={0.1}
           />
         </div>
