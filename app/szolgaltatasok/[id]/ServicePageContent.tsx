@@ -166,13 +166,13 @@ export default function ServicePageContent({
           {service.importance.items.map((item) => (
             <li
               key={item}
-              className="flex gap-4 border-t border-paper/15 py-6 text-[clamp(1.25rem,1.9vw,1.75rem)] font-medium leading-tight tracking-[-0.015em]"
+              className="flex gap-4 border-t border-paper/15 py-6 text-[min(7vw,clamp(1.25rem,1.9vw,1.75rem))] font-medium leading-tight tracking-[-0.015em]"
             >
               <span
                 aria-hidden
                 className="mt-[0.4em] size-2.5 shrink-0 rounded-full bg-green"
               />
-              {item}
+              <span className="min-w-0 [overflow-wrap:break-word]">{item}</span>
             </li>
           ))}
         </ul>
