@@ -64,7 +64,7 @@ export default function Hero() {
           <RevealText
             as="h1"
             text="Egyedi weboldal, webshop és CRM, ami ügyfelet hoz"
-            className="type-display w-full lg:max-w-[11ch]"
+            className="type-display w-full "
             delay={0.1}
           />
         </div>
