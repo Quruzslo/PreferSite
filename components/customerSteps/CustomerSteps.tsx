@@ -24,7 +24,6 @@ export default function CustomerStepsComp() {
       />
 
       <div className="grid gap-x-8 lg:grid-cols-12">
-        {/* Nagy lépésszám, ami görgetés közben vált */}
         <div className="hidden lg:col-span-5 lg:block">
           <div className="sticky top-28 flex items-start gap-3">
             <div className="type-display relative h-[0.9em] overflow-hidden tabular-nums">
@@ -62,7 +61,9 @@ export default function CustomerStepsComp() {
               </span>
               <div className="flex flex-col gap-4">
                 <h3 className="type-h3">{step.title}</h3>
-                <p className="max-w-[56ch] text-stone-light">{step.description}</p>
+                <p className="max-w-[56ch] text-stone-light">
+                  {step.description}
+                </p>
               </div>
             </motion.li>
           ))}
