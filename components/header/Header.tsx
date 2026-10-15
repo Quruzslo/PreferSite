@@ -286,7 +286,7 @@ export default function Header() {
                     <TransitionLink
                       href={item.path}
                       onClick={closeMenu}
-                      className="type-h2"
+                      className="type-h3"
                     >
                       {item.name}
                     </TransitionLink>
