@@ -94,6 +94,14 @@ export default function Header() {
     else lenis.start();
   }, [menuOpen, lenis]);
 
+  // A Lenist még a link görgetése előtt újra kell indítani: a start() a futó
+  // görgetési animációt is leállítja, így az effektből indítva elveszne a
+  // horgonyra (pl. /#arazas) görgetés.
+  const closeMenu = () => {
+    lenis?.start();
+    setMenuOpen(false);
+  };
+
   // Csúszó háttér
   const indicatorRef = useRef<HTMLLIElement>(null);
 
@@ -263,7 +271,7 @@ export default function Header() {
                     <li key={s.path}>
                       <TransitionLink
                         href={s.path}
-                        onClick={() => setMenuOpen(false)}
+                        onClick={closeMenu}
                         className="type-h3"
                       >
                         {s.name}
@@ -277,7 +285,7 @@ export default function Header() {
                   <li key={item.path}>
                     <TransitionLink
                       href={item.path}
-                      onClick={() => setMenuOpen(false)}
+                      onClick={closeMenu}
                       className="type-h2"
                     >
                       {item.name}
