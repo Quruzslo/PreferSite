@@ -7,7 +7,6 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
-import { useLenis } from "lenis/react";
 import navItems from "@/lib/navItems";
 import { TransitionLink } from "@/lib/site/transition";
 import { ArrowIcon } from "@/lib/ui/ArrowButton";
@@ -67,7 +66,6 @@ const linkClass = "break-words transition-opacity hover:opacity-60";
 export default function Footer() {
   const ref = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
-  const lenis = useLenis();
   const time = useBudapestTime();
   const year = new Date().getFullYear();
 
@@ -149,17 +147,6 @@ export default function Footer() {
             Helyi idő Kaposváron:{" "}
             <span className="font-mono text-paper">{time ?? "--:--"}</span>
           </p>
-          <button
-            type="button"
-            onClick={() =>
-              lenis
-                ? lenis.scrollTo(0)
-                : window.scrollTo({ top: 0, behavior: "smooth" })
-            }
-            className={`w-fit text-left text-paper ${linkClass}`}
-          >
-            Vissza a tetejére ↑
-          </button>
         </div>
       </motion.div>
     </footer>

@@ -7,6 +7,7 @@ import Cursor from "@/lib/site/Cursor";
 import Header from "@/components/header/Header";
 import Footer from "@/components/Footer/Footer";
 import CookieBanner from "@/lib/cookies/CookieBanner";
+import ScrollToTop from "@/lib/site/ScrollToTop";
 
 const archivo = Archivo({
   subsets: ["latin", "latin-ext"],
@@ -116,6 +117,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <ScrollToTop />
           <CookieBanner />
         </Providers>
       </body>
