@@ -6,8 +6,6 @@ import { useLenis } from "lenis/react";
 
 const THRESHOLD = 120;
 
-// Egyetlen scroll-figyelő, amit a React leiratkozáskor eltávolít.
-// A pillanatkép boolean, így csak a küszöb átlépésekor renderel újra.
 function subscribeToScroll(callback: () => void) {
   window.addEventListener("scroll", callback, { passive: true });
   return () => window.removeEventListener("scroll", callback);
@@ -41,7 +39,7 @@ export default function ScrollToTop() {
           onClick={scrollToTop}
           aria-label="Vissza a tetejére"
           data-cursor="Fel"
-          className="fixed bottom-4 right-4 z-40 grid size-11 place-items-center rounded-[4px] bg-ink text-paper ring-1 ring-paper/15 transition-colors hover:bg-ink-card md:bottom-6 md:right-6"
+          className="fixed bottom-4 right-4 z-40 grid size-11 place-items-center rounded-full bg-green text-paper  transition-colors hover:bg-ink-card md:bottom-6 md:right-6"
           initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 16 }}
