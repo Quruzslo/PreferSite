@@ -46,9 +46,7 @@ export function TransitionProvider({ children }: { children: ReactNode }) {
   const lenis = useLenis();
   const reduceMotion = useReducedMotion();
   const [phase, setPhase] = useState<Phase>("idle");
-  const pendingRef = useRef<{ href: string; hash: string | null } | null>(
-    null,
-  );
+  const pendingRef = useRef<{ href: string; hash: string | null } | null>(null);
   const lastPathRef = useRef(pathname);
 
   const navigate = useCallback(
@@ -114,7 +112,9 @@ export function TransitionProvider({ children }: { children: ReactNode }) {
             transition={{ duration: 0.65, ease: [0.76, 0, 0.24, 1] }}
             onAnimationComplete={handleComplete}
           >
-            <span className="type-h2 text-paper">Prefersite</span>
+            <span className="type-h2 text-paper mx-auto my-auto">
+              Prefer Site
+            </span>
           </motion.div>
         )}
       </AnimatePresence>
@@ -128,7 +128,11 @@ type TransitionLinkProps = Omit<ComponentProps<typeof Link>, "href"> & {
 
 // A belső linkek ezen keresztül navigálnak, hogy lefusson a függöny.
 // Az ugyanazon az oldalon lévő horgonyokhoz (pl. /#arazas) simán görget.
-export function TransitionLink({ href, onClick, ...rest }: TransitionLinkProps) {
+export function TransitionLink({
+  href,
+  onClick,
+  ...rest
+}: TransitionLinkProps) {
   const { navigate } = useContext(TransitionContext);
   const pathname = usePathname();
   const lenis = useLenis();
