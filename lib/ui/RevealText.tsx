@@ -13,7 +13,7 @@ interface RevealTextProps {
 }
 
 const word: Variants = {
-  hidden: { y: "110%", filter: "blur(15px)" },
+  hidden: { y: "110%", filter: "blur(25px)" },
   show: {
     y: "0%",
     filter: "blur(0px)",
