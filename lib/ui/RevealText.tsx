@@ -13,8 +13,12 @@ interface RevealTextProps {
 }
 
 const word: Variants = {
-  hidden: { y: "110%" },
-  show: { y: "0%", transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
+  hidden: { y: "110%", filter: "blur(15px)" },
+  show: {
+    y: "0%",
+    filter: "blur(0px)",
+    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
+  },
 };
 
 // Szavanként alulról beúszó szöveg. Minden szó egy saját maszkban mozog.
