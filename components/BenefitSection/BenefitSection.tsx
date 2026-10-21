@@ -69,7 +69,7 @@ export default function BenefitSection() {
         <RevealText
           as="h2"
           inView
-          text="Nem csak szép, ügyfeleket is hoz."
+          text="Megbízható és átgondolt rendszerek"
           className="type-h2 lg:col-span-7"
         />
         <p className="type-lead self-end text-stone-light lg:col-span-4 lg:col-start-9">

@@ -63,7 +63,7 @@ export default function Hero() {
         <div className="order-1 lg:order-2 lg:col-span-8">
           <RevealText
             as="h1"
-            text="Egyedi weboldal, webshop és CRM, ami ügyfelet hoz"
+            text="Ügyfélközpontú weboldal, webshop és CRM"
             className="type-display w-full "
             delay={0.1}
           />
