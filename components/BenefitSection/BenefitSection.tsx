@@ -36,7 +36,7 @@ function BenefitCard({
     <div className="sticky" style={{ top: `calc(5.5rem + ${index * 1.1}rem)` }}>
       <motion.article
         style={reduceMotion ? undefined : { scale, transformOrigin: "top" }}
-        className="grid min-h-[24rem] gap-8 rounded-[6px] border border-paper/10 bg-ink-card p-5 md:min-h-[26rem] md:grid-cols-12 md:p-10"
+        className="grid min-h-[24rem] gap-8 rounded-[6px]  bg-ink-card bg-[url(/herobg.svg)] bg-contain bg-center p-5 md:min-h-[26rem] md:grid-cols-12 md:p-10"
       >
         <div className="flex flex-col justify-between gap-6 md:col-span-7">
           <span className="w-fit rounded-[3px] bg-paper/10 px-2 py-1 font-mono text-[0.8rem]">
