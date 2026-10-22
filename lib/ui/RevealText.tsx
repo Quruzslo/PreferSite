@@ -8,7 +8,7 @@ interface RevealTextProps {
   className?: string;
   delay?: number;
   stagger?: number;
-  // true: görgetésre indul, false: betöltéskor
+
   inView?: boolean;
 }
 

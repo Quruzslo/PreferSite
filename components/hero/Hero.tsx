@@ -61,12 +61,15 @@ export default function Hero() {
         </motion.div>
 
         <div className="order-1 lg:order-2 lg:col-span-8">
-          <RevealText
+          {/* <RevealText
             as="h1"
-            text="Ügyfélközpontú weboldal, webshop és CRM"
+            text="Ügyfélközpontú weboldal, webshop és CRM készítés Kaposváron"
             className="type-display w-full "
             delay={0.1}
-          />
+          /> */}
+          <h1 className="type-display w-full">
+            Weboldal, webshop és CRM készítés Kaposváron
+          </h1>
         </div>
 
         <motion.p
@@ -75,7 +78,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="order-3 self-end text-[0.95rem] lg:col-span-4"
         >
-          (Webfejlesztés Kaposváron, Győrben, Budapesten és online az egész
+          (Weboldal készítő Kaposváron, Győrben, Budapesten és online az egész
           országban)
         </motion.p>
 
