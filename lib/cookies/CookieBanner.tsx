@@ -1,26 +1,23 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
+import { useSyncExternalStore } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { TransitionLink } from "@/lib/site/transition";
-
-const subscribe = () => () => {};
+import {
+  getConsent,
+  setConsent,
+  subscribeConsent,
+  type Consent,
+} from "./consent";
 
 export default function CookieBanner() {
-  // A szerveren elfogadottnak tekintjük, így a sáv csak a böngészőben jelenik meg.
-  const hasConsent = useSyncExternalStore(
-    subscribe,
-    () => document.cookie.includes("cookie-consent=true"),
-    () => true,
+  // A szerveren döntöttnek tekintjük, így a sáv csak a böngészőben jelenik meg.
+  const consent = useSyncExternalStore<Consent>(
+    subscribeConsent,
+    getConsent,
+    () => "rejected",
   );
-  const [dismissed, setDismissed] = useState(false);
-  const isVisible = !hasConsent && !dismissed;
-
-  const handleAccept = () => {
-    document.cookie =
-      "cookie-consent=true; max-age=31536000; path=/; SameSite=Lax";
-    setDismissed(true);
-  };
+  const isVisible = consent === null;
 
   return (
     <AnimatePresence>
@@ -35,7 +32,8 @@ export default function CookieBanner() {
           className="fixed bottom-4 left-4 right-4 z-50 flex flex-col gap-3 rounded-[4px] bg-ink p-4 text-paper sm:right-auto sm:max-w-sm"
         >
           <p className="text-[0.95rem]">
-            Az oldal csak a működéshez szükséges sütiket használ.{" "}
+            A működéshez szükséges sütiken túl, a hozzájárulásoddal, a
+            látogatottság méréséhez Google Analytics sütiket is használunk.{" "}
             <TransitionLink
               href="/adatkezeles"
               className="underline underline-offset-4 hover:text-green"
@@ -43,12 +41,20 @@ export default function CookieBanner() {
               Részletek
             </TransitionLink>
           </p>
-          <button
-            onClick={handleAccept}
-            className="w-fit rounded-[4px] bg-green px-4 py-1.5 text-[0.95rem] font-medium text-ink transition-colors hover:bg-[#66c98f]"
-          >
-            Rendben
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={() => setConsent("accepted")}
+              className="rounded-[4px] bg-green px-4 py-1.5 text-[0.95rem] font-medium text-ink transition-colors hover:bg-[#66c98f]"
+            >
+              Elfogadom
+            </button>
+            <button
+              onClick={() => setConsent("rejected")}
+              className="rounded-[4px] border border-paper/40 px-4 py-1.5 text-[0.95rem] font-medium transition-colors hover:border-paper"
+            >
+              Elutasítom
+            </button>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

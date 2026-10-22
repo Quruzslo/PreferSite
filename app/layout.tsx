@@ -7,6 +7,7 @@ import Cursor from "@/lib/site/Cursor";
 import Header from "@/components/header/Header";
 import Footer from "@/components/Footer/Footer";
 import CookieBanner from "@/lib/cookies/CookieBanner";
+import Analytics from "@/lib/cookies/Analytics";
 import ScrollToTop from "@/lib/site/ScrollToTop";
 
 const archivo = Archivo({
@@ -24,7 +25,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.prefersite.hu"),
 
   title: {
-    default: "Egyedi Weboldal, Webshop és CRM Fejlesztés | Prefersite",
+    default:
+      "Egyedi Weboldal, Webshop és CRM Fejlesztés Kaposváron | Prefersite",
     template: "%s | Prefersite",
   },
   description:
@@ -97,10 +99,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="hu"
-      className={`${archivo.variable} ${jetbrainsMono.variable}`}
-    >
+    <html lang="hu" className={`${archivo.variable} ${jetbrainsMono.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -119,6 +118,7 @@ export default function RootLayout({
           <Footer />
           <ScrollToTop />
           <CookieBanner />
+          <Analytics />
         </Providers>
       </body>
     </html>
