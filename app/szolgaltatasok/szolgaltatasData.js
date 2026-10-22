@@ -95,18 +95,20 @@ export const szolgaltatasokData = [
   },
   {
     slug: "weboldal",
-    seoTitle: "Céges weboldal készítés és vállalkozói weboldal fejlesztés",
+    seoTitle:
+      "Céges weboldal készítés és vállalkozói weboldal fejlesztés Kaposváron",
     seoDescription:
       "Profi céges weboldal készítés és egyedi weboldal fejlesztés vállalkozásoknak. Konverzióorientált, gyors és keresőoptimalizált weboldalak.",
     img: "/website.svg",
     hero: {
-      title: "Profi Céges Weboldal Készítés és Vállalkozói Weboldal Fejlesztés",
+      title:
+        "Céges weboldal készítés és vállalkozói weboldal fejlesztés Kaposváron",
       subtitle:
         "A céges weboldalad a digitális értékesítésed alapja: itt dől el, hogy a látogatókból fizető ügyfelek lesznek-e. Szeretnél egy konverzióra optimalizált vállalkozói weboldalt, ami folyamatosan termeli a megkereséseket?",
       ctaText: "Kérek egy ajánlatot!",
     },
     importance: {
-      title: "Miért stratégiai kérdés a profi céges weboldal?",
+      title: "Miért stratégiai kérdés a minőségi céges weboldal?",
       items: [
         "A vállalkozásod első számú online hitelességi forrása",
         "A szolgáltatásaid és termékeid professzionális bemutatója",
