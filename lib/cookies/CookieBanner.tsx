@@ -33,7 +33,7 @@ export default function CookieBanner() {
         >
           <p className="text-[0.95rem]">
             A működéshez szükséges sütiken túl, a hozzájárulásoddal, a
-            látogatottság méréséhez Google Analytics sütiket is használunk.{" "}
+            látogatottság méréséhez Google Analytics sütiket is használok.{" "}
             <TransitionLink
               href="/adatkezeles"
               className="underline underline-offset-4 hover:text-green"
