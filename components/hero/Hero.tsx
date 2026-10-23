@@ -61,15 +61,15 @@ export default function Hero() {
         </motion.div>
 
         <div className="order-1 lg:order-2 lg:col-span-8">
-          {/* <RevealText
+          <RevealText
             as="h1"
-            text="Ügyfélközpontú weboldal, webshop és CRM készítés Kaposváron"
+            text=" Weboldal, webshop és CRM készítés Kaposváron"
             className="type-display w-full "
             delay={0.1}
-          /> */}
-          <h1 className="type-display w-full">
+          />
+          {/* <h1 className="type-display w-full">
             Weboldal, webshop és CRM készítés Kaposváron
-          </h1>
+          </h1> */}
         </div>
 
         <motion.p
