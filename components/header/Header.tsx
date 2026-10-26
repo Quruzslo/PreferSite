@@ -13,8 +13,6 @@ import ArrowButton from "@/lib/ui/ArrowButton";
 
 type Theme = "light" | "dark";
 
-// Melyik szekció van a fejléc alatt? A szekciók data-theme attribútuma alapján
-// vált a fejléc színe, hogy világos és sötét háttéren is olvasható maradjon.
 function useThemeUnderHeader(pathname: string) {
   const [theme, setTheme] = useState<Theme>("light");
   const [scrolled, setScrolled] = useState(false);
@@ -94,9 +92,6 @@ export default function Header() {
     else lenis.start();
   }, [menuOpen, lenis]);
 
-  // A Lenist még a link görgetése előtt újra kell indítani: a start() a futó
-  // görgetési animációt is leállítja, így az effektből indítva elveszne a
-  // horgonyra (pl. /#arazas) görgetés.
   const closeMenu = () => {
     lenis?.start();
     setMenuOpen(false);

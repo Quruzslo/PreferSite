@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   motion,
   useReducedMotion,
@@ -12,32 +12,43 @@ import RevealText from "@/lib/ui/RevealText";
 import ArrowButton from "@/lib/ui/ArrowButton";
 import TechStack from "@/components/tech-stack/TechStack";
 
-// Valós referenciákból vett eredmények, a lib/referencies/refs.js leírásai alapján.
+// referenciákból vett
 const wins = [
   {
+    id: 0,
+    img: "/references/andocs.jpg",
+    title: "Andocs Község",
+    text: "Az átdolgozott weboldalon könnyen navigál a lakosság.",
+    year: "2026",
+  },
+  {
+    id: 1,
+    img: "/references/syasolutions.jpg",
+    title: "S.Y.A Solutions",
+    text: "Az átadás utáni hónapban érkeztek az ügyfelek",
+    year: "2026",
+  },
+  {
+    id: 2,
     img: "/references/glambypanna.jpg",
     title: "Glam By Panna",
     text: "Az élesítés utáni 2 hétben már új ügyfeleket hozott",
     year: "2026",
-  },
-  {
-    img: "/references/medioenviro.jpg",
-    title: "MedioEnviro Kft.",
-    text: "Az új oldal több nagyobb megbízást is hozott",
-    year: "2024",
   },
 ];
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
+  const [activeWin, setActiveWin] = useState(wins[0]);
+
   const imageRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: imageRef,
     offset: ["start end", "end start"],
   });
-  const imageScale = useTransform(scrollYProgress, [0, 1], [1.12, 1]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.5, 1]);
 
   return (
     <section
@@ -67,9 +78,6 @@ export default function Hero() {
             className="type-display w-full "
             delay={0.1}
           />
-          {/* <h1 className="type-display w-full">
-            Weboldal, webshop és CRM készítés Kaposváron
-          </h1> */}
         </div>
 
         <motion.p
@@ -94,8 +102,8 @@ export default function Hero() {
             className="absolute inset-0"
           >
             <Image
-              src="/references/andocs.jpg"
-              alt="Andocs község új weboldala, a Prefersite egyik referenciája"
+              src={activeWin.img}
+              alt={activeWin.text}
               fill
               priority
               sizes="(min-width: 1024px) 66vw, 100vw"
@@ -109,9 +117,12 @@ export default function Hero() {
                 key={win.title}
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
+                onClick={() => setActiveWin(win)}
                 transition={{ duration: 0.7, delay: 1.4 + i * 0.15, ease }}
                 className={`flex w-[min(19rem,calc(100vw-4rem))] gap-3 rounded-[4px] p-2 backdrop-blur-md ${
-                  i === 0 ? "bg-ink/80 text-paper" : "bg-paper/90 text-ink"
+                  i === activeWin.id
+                    ? "bg-ink/80 text-paper"
+                    : "bg-paper/90 text-ink"
                 }`}
               >
                 <div className="relative aspect-square w-14 shrink-0 overflow-hidden rounded-[3px]">
