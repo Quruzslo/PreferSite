@@ -94,8 +94,8 @@ export default function Header() {
       transition: {
         duration: 0.6,
         ease,
-        when: "afterChildren", // előbb a linkek mennek ki, utána zárul az overlay
-        delayChildren: stagger(0.04, { from: "last" }), // alulról visszafelé
+        when: "afterChildren",
+        delayChildren: stagger(0.04, { from: "last" }),
       },
     },
     visible: {
@@ -103,7 +103,7 @@ export default function Header() {
       transition: {
         duration: 0.6,
         ease,
-        delayChildren: stagger(0.06, { startDelay: 0.35 }), // amikor az overlay már félig lent van
+        delayChildren: stagger(0.06, { startDelay: 0.35 }),
       },
     },
   };
