@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, stagger, type Variants } from "motion/react";
 import { useLenis } from "lenis/react";
 import logo from "@/public/Prefer-logo.png";
 import navItems from "@/lib/navItems";
@@ -85,6 +85,41 @@ export default function Header() {
   const { theme, scrolled } = useThemeUnderHeader(pathname);
   const [menuOpen, setMenuOpen] = useState(false);
   const lenis = useLenis();
+
+  const ease = [0.76, 0, 0.24, 1] as const;
+
+  const overlayVariants: Variants = {
+    hidden: {
+      clipPath: "inset(0% 0% 100% 0%)",
+      transition: {
+        duration: 0.6,
+        ease,
+        when: "afterChildren", // előbb a linkek mennek ki, utána zárul az overlay
+        delayChildren: stagger(0.04, { from: "last" }), // alulról visszafelé
+      },
+    },
+    visible: {
+      clipPath: "inset(0% 0% 0% 0%)",
+      transition: {
+        duration: 0.6,
+        ease,
+        delayChildren: stagger(0.06, { startDelay: 0.35 }), // amikor az overlay már félig lent van
+      },
+    },
+  };
+
+  const linkVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      x: "100%",
+      transition: { duration: 0.3, ease: "easeIn" },
+    },
+    visible: {
+      opacity: 1,
+      x: "0%",
+      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
 
   useEffect(() => {
     if (!lenis) return;
@@ -239,11 +274,11 @@ export default function Header() {
             aria-modal="true"
             aria-label="Menü"
             data-lenis-prevent
-            className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-ink pb-8 pt-4 text-paper site-gutter lg:hidden"
-            initial={{ clipPath: "inset(0% 0% 100% 0%)" }}
-            animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
-            exit={{ clipPath: "inset(0% 0% 100% 0%)" }}
-            transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+            className="fixed inset-0 z-[60] flex flex-col overflow-y-auto overflow-x-hidden bg-ink pb-8 pt-4 text-paper site-gutter lg:hidden"
+            variants={overlayVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
           >
             <div className="flex items-center justify-between">
               <span className="text-lg font-bold tracking-[-0.02em]">
@@ -263,7 +298,7 @@ export default function Header() {
                 <p className="mb-3 text-sm text-stone-light">Szolgáltatások</p>
                 <ul className="flex flex-col gap-1">
                   {services.map((s) => (
-                    <li key={s.path}>
+                    <motion.li key={s.path} variants={linkVariants}>
                       <TransitionLink
                         href={s.path}
                         onClick={closeMenu}
@@ -271,13 +306,13 @@ export default function Header() {
                       >
                         {s.name}
                       </TransitionLink>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
               </div>
               <ul className="flex flex-col gap-1">
                 {mainLinks.map((item) => (
-                  <li key={item.path}>
+                  <motion.li key={item.path} variants={linkVariants}>
                     <TransitionLink
                       href={item.path}
                       onClick={closeMenu}
@@ -285,7 +320,7 @@ export default function Header() {
                     >
                       {item.name}
                     </TransitionLink>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </nav>

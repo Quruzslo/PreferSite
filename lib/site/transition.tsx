@@ -126,8 +126,6 @@ type TransitionLinkProps = Omit<ComponentProps<typeof Link>, "href"> & {
   href: string;
 };
 
-// A belső linkek ezen keresztül navigálnak, hogy lefusson a függöny.
-// Az ugyanazon az oldalon lévő horgonyokhoz (pl. /#arazas) simán görget.
 export function TransitionLink({
   href,
   onClick,
