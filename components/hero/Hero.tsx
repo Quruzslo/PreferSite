@@ -95,7 +95,7 @@ export default function Hero() {
           initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
           animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
           transition={{ duration: 1.2, delay: 0.55, ease: [0.76, 0, 0.24, 1] }}
-          className="relative order-4 aspect-[4/3] overflow-hidden rounded-[4px] bg-ink sm:aspect-[16/10] lg:col-span-8"
+          className="relative order-4 min-h-[450px] overflow-hidden rounded-[4px] bg-ink sm:aspect-[16/10] lg:col-span-8 "
         >
           <motion.div
             style={reduceMotion ? undefined : { scale: imageScale }}
@@ -107,7 +107,7 @@ export default function Hero() {
               fill
               priority
               sizes="(min-width: 1024px) 66vw, 100vw"
-              className="object-contain object-center"
+              className="object-contain object-center "
             />
           </motion.div>
 
