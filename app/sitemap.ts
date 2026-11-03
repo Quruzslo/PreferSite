@@ -3,6 +3,8 @@ import navItems from "@/lib/navItems";
 
 const BASE_URL = "https://www.prefersite.hu";
 
+type NavItem = { path: string; items?: NavItem[] };
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const routesMap = new Map<string, MetadataRoute.Sitemap[number]>();
   const currentDate = new Date();
@@ -14,18 +16,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 1.0,
   });
 
+  const addSubItems = (items: NavItem[]) => {
+    items.forEach((subItem) => {
+      if (subItem.path && !subItem.path.includes("#")) {
+        routesMap.set(subItem.path, {
+          url: `${BASE_URL}${subItem.path}`,
+          lastModified: currentDate,
+          changeFrequency: "weekly" as const,
+          priority: 0.9,
+        });
+      }
+      if (subItem.items) addSubItems(subItem.items);
+    });
+  };
+
   navItems.forEach((item) => {
     if (item.items && Array.isArray(item.items)) {
-      item.items.forEach((subItem) => {
-        if (subItem.path && !subItem.path.includes("#")) {
-          routesMap.set(subItem.path, {
-            url: `${BASE_URL}${subItem.path}`,
-            lastModified: currentDate,
-            changeFrequency: "weekly" as const,
-            priority: 0.9,
-          });
-        }
-      });
+      addSubItems(item.items);
     }
 
     if (item.path && !item.path.includes("#") && item.path !== "/") {
