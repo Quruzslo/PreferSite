@@ -475,4 +475,289 @@ export const szolgaltatasokData = [
         "és gondoskodjunk a weboldalad maximális biztonságáról és folyamatos üzemeltetéséről!",
     },
   },
+
+  {
+    slug: "epitoipari-weboldal",
+    seoTitle: "Építőipari weboldal készítés szakiknak és kivitelezőknek",
+    seoDescription:
+      "Weboldal tetőfedőknek, burkolóknak, villanyszerelőknek és kivitelezőknek. Referenciagaléria, ajánlatkérés fotóval, mobilon is gyors oldal. Kérj ajánlatot!",
+    img: "/website.svg",
+    hero: {
+      title:
+        "Építőipari weboldal készítés tetőfedőknek, burkolóknak és villanyszerelőknek",
+      subtitle:
+        "Az építőiparban a munkád beszél helyetted, csak meg kell mutatni. Egy jó weboldalon a leendő ügyfél látja a korábbi tetőidet, burkolásaidat, villanyszerelési munkáidat, és pár kattintással ajánlatot kér, akár fotóval a helyszínről. Szeretnéd, hogy ne csak ajánlásból jöjjenek a munkák?",
+      ctaText: "Kérek egy ajánlatot!",
+    },
+    importance: {
+      title: "Miért kell egy szakinak is saját weboldal? Mert…",
+      items: [
+        "A megrendelők ma már a Google-ben keresnek tetőfedőt, burkolót és villanyszerelőt",
+        "A referenciafotók többet mondanak bármilyen reklámszövegnél",
+        "A fotós ajánlatkéréssel kevesebb a felesleges kiszállás",
+        "Megmutatja, milyen munkákat és mely településeken vállalsz",
+        "Hitelesebb képet ad rólad, mint egy Facebook-oldal vagy egy apróhirdetés",
+        "Akkor is hozza a megkereséseket, amikor épp a tetőn dolgozol",
+      ],
+    },
+    benefits: {
+      title: "Mit ad egy jól felépített építőipari weboldal?",
+      description:
+        "A legtöbb szaki ajánlásból él, ami addig jó, amíg el nem fogy. Egy weboldal a meglévő hírnevedet teszi kereshetővé: aki szakembert keres a környéken, rád talál, és már az első telefon előtt látja, mire vagy képes.",
+      stats: [
+        {
+          number: "24/7",
+          title: "Folyamatos ajánlatkérés",
+          text: "Az érdeklődők akkor is elküldhetik a munka leírását, amikor te dolgozol, este pedig nyugodtan átnézheted őket.",
+        },
+        {
+          number: "0 Ft",
+          title: "Jutalék a megkeresésekért",
+          text: "A Google-ből érkező megkeresésekért nem fizetsz díjat egy szakember-közvetítő portálnak, az ügyfél közvetlenül téged keres.",
+        },
+        {
+          number: "1 perc",
+          title: "Ajánlatkérés mobilról",
+          text: "Rövid, egyszerű űrlap fotófeltöltéssel, amit az ügyfél a helyszínen állva, a telefonjáról is kitölt.",
+        },
+      ],
+    },
+    midCta: {
+      title: "Készen állsz, hogy rád találjanak?",
+      subtitle:
+        "Aki beázás miatt tetőfedőt vagy fürdőszoba-felújításhoz burkolót keres, azt a szakit hívja fel, akit a Google első oldalán talál. Ha nincs weboldalad, ez a hívás máshoz fut be. Egy helyi keresésekre optimalizált építőipari weboldallal te lehetsz az, akit felhívnak.",
+      question: "Szeretnéd, hogy az új megrendelők maguktól találjanak meg?",
+      ctaText: "Igen, vágjunk bele!",
+    },
+    features: {
+      title: "Mit tud egy általam készített építőipari weboldal?",
+      items: [
+        {
+          icon: "FiImage",
+          title: "Referenciagaléria",
+          text: "Munkatípusonként rendezett képek, akár előtte–utána összehasonlítással. Ez a legmeggyőzőbb érv egy tetőfedő vagy burkoló mellett.",
+        },
+        {
+          icon: "FiCamera",
+          title: "Ajánlatkérés fotóval",
+          text: "Az ügyfél képet tölthet fel a beázásról, a burkolandó felületről vagy az elosztószekrényről, így kiszállás nélkül is pontosabb árajánlatot adhatsz.",
+        },
+        {
+          icon: "FiMapPin",
+          title: "Helyi keresőoptimalizálás",
+          text: "A szolgáltatási terület és a települések kiemelése, Google Cégprofillal összehangolva, hogy a „tetőfedő + város” keresésekre is megjelenj.",
+        },
+        {
+          icon: "FiTool",
+          title: "Külön oldal minden munkatípusnak",
+          text: "Tetőfedés, ereszcsatorna, hidegburkolás, villanyhálózat-felújítás: minden fő szolgáltatásod saját, a Google-ben kereshető aloldalt kap.",
+        },
+        {
+          icon: "FiPhoneCall",
+          title: "Egy érintéses hívás",
+          text: "Mobilon a telefonszám és az ajánlatkérés mindig kéznél van, hiszen a legtöbb érdeklődő telefonról keres szakembert.",
+        },
+        {
+          icon: "FiShield",
+          title: "Bizalomépítő elemek",
+          text: "Garancia, végzettségek, ügyfélvélemények: minden, ami alapján egy megrendelő nyugodt szívvel rád bízza a házát.",
+        },
+      ],
+    },
+    footerCta: {
+      title: "Kérj ingyenes konzultációt,",
+      subtitle:
+        "és nézzük meg, hogyan hozhat több munkát a weboldalad tetőfedőként, burkolóként vagy villanyszerelőként!",
+    },
+  },
+  {
+    slug: "szepsegipari-weboldal",
+    seoTitle: "Weboldal fodrászoknak és szépségszalonoknak online foglalással",
+    seoDescription:
+      "Weboldal fodrászoknak, műkörmösöknek, kozmetikusoknak és szépségszalonoknak beépített online időpontfoglalással, árlistával és galériával. Kérj ajánlatot!",
+    img: "/website.svg",
+    hero: {
+      title:
+        "Weboldal készítés fodrászoknak, műkörmösöknek és szépségszalonoknak online időpontfoglalással",
+      subtitle:
+        "A vendégeid nem akarnak telefonálni, amikor te épp hajat vágsz vagy körmöt építesz. Foglalni szeretnének, akár este tizenegykor is. Egy saját weboldal online időpontfoglaló rendszerrel leveszi rólad az egyeztetés terhét, és közben a munkáidat is megmutatja. Szeretnéd, ha a naptárad magától telne meg?",
+      ctaText: "Kérek egy ajánlatot!",
+    },
+    importance: {
+      title: "Miért éri meg saját weboldal a szépségiparban? Mert…",
+      items: [
+        "A vendégek a nap bármely szakában foglalhatnak, telefonálás nélkül",
+        "Nem kell munka közben üzenetekre és hívásokra válaszolnod",
+        "Az automatikus emlékeztetőkkel kevesebb időpont marad üresen",
+        "Az árlista és a szolgáltatások mindig naprakészen elérhetők",
+        "A munkáidról készült képek az Instagramon kívül is megtalálhatók",
+        "A „fodrász + város” keresésekre is megjelenhetsz a Google-ben",
+      ],
+    },
+    benefits: {
+      title: "Mit nyersz egy online időpontfoglaló rendszerrel?",
+      description:
+        "Az időpont-egyeztetés észrevétlenül viszi el a napod egy részét: üzenetek, visszahívások, átfoglalások. Egy saját foglalási rendszer ezt a vendégre bízza, neked pedig reggel csak meg kell nézned, ki érkezik aznap.",
+      stats: [
+        {
+          number: "24/7",
+          title: "Foglalható időpontok",
+          text: "A vendég akkor foglal, amikor eszébe jut, nem kell nyitvatartási időben elérnie téged.",
+        },
+        {
+          number: "0 Ft",
+          title: "Foglalási jutalék",
+          text: "Saját rendszer, saját vendégkör: nem fizetsz foglalásonként díjat egy külső platformnak, és az ügyféladatok is nálad maradnak.",
+        },
+        {
+          number: "1 nap",
+          title: "Előtte emlékeztető",
+          text: "Automatikus e-mailes (igény szerint SMS-es) emlékeztető a vendégnek, hogy kevesebb időpontot felejtsenek el.",
+        },
+      ],
+    },
+    midCta: {
+      title: "Elég volt a „mikor lenne szabad?” üzenetekből?",
+      subtitle:
+        "Minden üzenetváltás, amit egy időpont egyeztetésére fordítasz, a munkádból vagy a szabadidődből megy el. Egy online foglaló rendszerrel a vendég maga választja ki a szolgáltatást, a szakembert és a szabad időpontot, te pedig a munkádra figyelhetsz.",
+      question:
+        "Szeretnéd, hogy a vendégeid pár kattintással foglaljanak nálad?",
+      ctaText: "Igen, vágjunk bele!",
+    },
+    features: {
+      title: "Mit tud egy általam készített szépségipari weboldal?",
+      items: [
+        {
+          icon: "FiCalendar",
+          title: "Online időpontfoglalás",
+          text: "A vendég kiválasztja a szolgáltatást, a szakembert és a szabad időpontot, a foglalás pedig azonnal bekerül a naptáradba.",
+        },
+        {
+          icon: "FiBell",
+          title: "Automatikus emlékeztetők",
+          text: "Visszaigazolás és emlékeztető a foglalás előtt, egyszerű lemondási és átfoglalási lehetőséggel.",
+        },
+        {
+          icon: "FiList",
+          title: "Átlátható árlista",
+          text: "Szolgáltatások időtartammal és árral, a hajvágástól a festésen és a géllakkon át a műköröm-építésig, egyszerűen frissíthetően.",
+        },
+        {
+          icon: "FiInstagram",
+          title: "Galéria és Instagram",
+          text: "A munkáidat bemutató galéria, amit akár az Instagram-fiókoddal is összeköthetünk, így a friss képek az oldaladon is megjelennek.",
+        },
+        {
+          icon: "FiUsers",
+          title: "Több szakember kezelése",
+          text: "Szalonoknál minden munkatárs saját naptárat és szolgáltatáslistát kap, a vendég pedig kiválaszthatja, kihez szeretne menni.",
+        },
+        {
+          icon: "FiMapPin",
+          title: "Helyi megtalálhatóság",
+          text: "Keresőoptimalizált oldalak a „fodrász”, „műkörmös” vagy „kozmetikus + város” keresésekre, Google Cégprofillal összehangolva.",
+        },
+      ],
+    },
+    footerCta: {
+      title: "Kérj ingyenes konzultációt,",
+      subtitle:
+        "és tervezzük meg a szalonodhoz illő weboldalt, online időpontfoglalással együtt!",
+    },
+  },
+  {
+    slug: "vendeglatoipari-weboldal",
+    seoTitle: "Éttermi weboldal készítés asztalfoglalással és online menüvel",
+    seoDescription:
+      "Weboldal éttermeknek, kifőzdéknek és cukrászdáknak: könnyen frissíthető étlap, napi menü, online asztalfoglalás és rendelés. Gyors, mobilbarát, kereshető.",
+    img: "/website.svg",
+    hero: {
+      title:
+        "Weboldal készítés éttermeknek, kifőzdéknek és cukrászdáknak asztalfoglalással",
+      subtitle:
+        "Aki éhes, az a telefonján keres, és pár másodperc alatt dönt. Ha nem találja az étlapot, a napi menüt vagy a nyitvatartást, továbblép a következő helyre. Egy gyors, mobilra tervezett vendéglátós weboldalon mindez egy pillantásra látszik, az asztalfoglalás pedig néhány érintés. Szeretnéd, ha a vendégek nálad kötnének ki?",
+      ctaText: "Kérek egy ajánlatot!",
+    },
+    importance: {
+      title: "Miért kell egy vendéglátóhelynek saját weboldal? Mert…",
+      items: [
+        "A vendégek indulás előtt a Google-ben nézik meg az étlapot",
+        "A napi menü és a nyitvatartás mindig naprakészen, egy helyen elérhető",
+        "Az online asztalfoglalás kiváltja a csúcsidős telefonhívásokat",
+        "A torták és az előrendelések is leadhatók online",
+        "A kiszállítóplatformok mellett jutalékmentes saját rendelési csatornát ad",
+        "Az „étterem + város” keresésekre is megjelenhetsz a Google-ben",
+      ],
+    },
+    benefits: {
+      title: "Mit ad egy jól működő vendéglátós weboldal?",
+      description:
+        "A vendéglátásban gyors a döntés: egy éhes vendég nem böngészik sokáig. Ha egy kattintással látja az étlapot, a menüt és a helyszínt, és azonnal asztalt foglalhat, akkor nálad fog enni, nem a szomszédban.",
+      stats: [
+        {
+          number: "24/7",
+          title: "Asztalfoglalás",
+          text: "A vendég akkor is lefoglalhatja az asztalt, amikor ti már zártatok, vagy épp a konyhán áll a bál.",
+        },
+        {
+          number: "0 Ft",
+          title: "Jutalék a saját rendelésekre",
+          text: "A saját weboldaladon leadott rendelésekért és foglalásokért nem fizetsz jutalékot egy közvetítő platformnak.",
+        },
+        {
+          number: "1 perc",
+          title: "A napi menü frissítése",
+          text: "Egyszerű admin felület: a napi menüt vagy az étlap változásait te magad írod át, fejlesztő nélkül.",
+        },
+      ],
+    },
+    midCta: {
+      title: "Készen állsz, hogy több vendég üljön le nálad?",
+      subtitle:
+        "A legtöbb vendég már indulás előtt, a telefonján eldönti, hova megy. Egy lassú, elavult vagy hiányzó weboldal miatt ezek a vendégek el sem jutnak hozzád. Egy átlátható, mobilbarát oldallal és online asztalfoglalással viszont könnyű téged választani.",
+      question:
+        "Szeretnéd, hogy a vendégek pár érintéssel asztalt foglaljanak nálad?",
+      ctaText: "Igen, vágjunk bele!",
+    },
+    features: {
+      title: "Mit tud egy általam készített vendéglátós weboldal?",
+      items: [
+        {
+          icon: "FiBookOpen",
+          title: "Könnyen frissíthető étlap",
+          text: "Kategóriákra bontott étlap árakkal és allergénekkel, amit egy egyszerű admin felületen te magad szerkesztesz.",
+        },
+        {
+          icon: "FiClock",
+          title: "Napi menü és nyitvatartás",
+          text: "A kifőzdék napi menüje és az aktuális nyitvatartás mindig jól látható helyen, az ünnepnapi eltérésekkel együtt.",
+        },
+        {
+          icon: "FiCalendar",
+          title: "Online asztalfoglalás",
+          text: "A vendég kiválasztja az időpontot és a létszámot, te pedig visszaigazolod, túlfoglalás és elveszett hívások nélkül.",
+        },
+        {
+          icon: "FiShoppingBag",
+          title: "Online rendelés és előrendelés",
+          text: "Elvitelre vagy kiszállításra, cukrászdáknál akár egyedi torták megrendelésével is.",
+        },
+        {
+          icon: "FiSmartphone",
+          title: "Mobilra tervezve",
+          text: "A vendégek többsége telefonról keres rád, ezért az oldal elsősorban mobilon gyors és kényelmes.",
+        },
+        {
+          icon: "FiMapPin",
+          title: "Helyi keresőoptimalizálás",
+          text: "Strukturált adatokkal és Google Cégprofillal összehangolva, hogy az „étterem”, „kifőzde” vagy „cukrászda + város” keresésekben is ott legyél.",
+        },
+      ],
+    },
+    footerCta: {
+      title: "Kérj ingyenes konzultációt,",
+      subtitle:
+        "és tervezzük meg az éttermed, kifőzdéd vagy cukrászdád weboldalát, asztalfoglalással együtt!",
+    },
+  },
 ];

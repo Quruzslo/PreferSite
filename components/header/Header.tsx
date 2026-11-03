@@ -77,6 +77,65 @@ function SoundToggle({ theme }: { theme: Theme }) {
   );
 }
 
+// Mobil almenü – a saját state-je miatt a menü bezárásakor magától visszacsukódik
+function MobileSubmenu({
+  name,
+  items,
+  onNavigate,
+}: {
+  name: string;
+  items: { name: string; path: string }[];
+  onNavigate: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        className="type-h3 flex items-center gap-3"
+      >
+        {name}
+        <svg
+          viewBox="0 0 24 24"
+          className={`size-5 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.2"
+          aria-hidden
+        >
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.ul
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col gap-2 overflow-hidden border-l border-paper/20 pl-4"
+          >
+            {items.map((sub) => (
+              <li key={sub.path} className="first:pt-2 last:pb-2">
+                <TransitionLink
+                  href={sub.path}
+                  onClick={onNavigate}
+                  className="text-xl font-medium"
+                >
+                  {sub.name}
+                </TransitionLink>
+              </li>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
+
 const services = navItems.find((item) => item.items)?.items ?? [];
 const mainLinks = navItems.filter((item) => !item.items);
 
@@ -213,16 +272,53 @@ export default function Header() {
               </TransitionLink>
               <div className="invisible absolute left-1/2 top-full w-56 -translate-x-1/2 translate-y-1 pt-2 opacity-0 transition-all duration-300 ease-out-expo group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 ">
                 <ul className="flex flex-col rounded-[4px] bg-ink p-1.5 text-paper">
-                  {services.map((s) => (
-                    <li key={s.path}>
-                      <TransitionLink
-                        href={s.path}
-                        className="block rounded-[3px] px-3 py-2 transition-colors hover:bg-paper/10"
-                      >
-                        {s.name}
-                      </TransitionLink>
-                    </li>
-                  ))}
+                  {services.map((s) =>
+                    s.items ? (
+                      <li key={s.name} className="group/sub relative">
+                        <button
+                          type="button"
+                          aria-haspopup="true"
+                          className="flex w-full items-center justify-between rounded-[3px] px-3 py-2 text-left transition-colors group-hover/sub:bg-paper/10"
+                        >
+                          {s.name}
+                          <svg
+                            viewBox="0 0 24 24"
+                            className="size-3.5"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.2"
+                            aria-hidden
+                          >
+                            <path d="m9 6 6 6-6 6" />
+                          </svg>
+                        </button>
+                        {/* Oldalra nyíló almenü; a pl-2 hídként tartja a hovert */}
+                        <div className="invisible absolute -top-1.5 left-full w-max -translate-x-1 pl-2 opacity-0 transition-all duration-300 ease-out-expo group-hover/sub:visible group-hover/sub:translate-x-0 group-hover/sub:opacity-100">
+                          <ul className="flex flex-col rounded-[4px] bg-ink p-1.5 text-paper">
+                            {s.items.map((sub) => (
+                              <li key={sub.path}>
+                                <TransitionLink
+                                  href={sub.path}
+                                  className="block rounded-[3px] px-3 py-2 transition-colors hover:bg-paper/10"
+                                >
+                                  {sub.name}
+                                </TransitionLink>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </li>
+                    ) : (
+                      <li key={s.path}>
+                        <TransitionLink
+                          href={s.path}
+                          className="block rounded-[3px] px-3 py-2 transition-colors hover:bg-paper/10"
+                        >
+                          {s.name}
+                        </TransitionLink>
+                      </li>
+                    ),
+                  )}
                 </ul>
               </div>
             </li>
@@ -298,14 +394,22 @@ export default function Header() {
                 <p className="mb-3 text-sm text-stone-light">Szolgáltatások</p>
                 <ul className="flex flex-col gap-1">
                   {services.map((s) => (
-                    <motion.li key={s.path} variants={linkVariants}>
-                      <TransitionLink
-                        href={s.path}
-                        onClick={closeMenu}
-                        className="type-h3"
-                      >
-                        {s.name}
-                      </TransitionLink>
+                    <motion.li key={s.path || s.name} variants={linkVariants}>
+                      {s.items ? (
+                        <MobileSubmenu
+                          name={s.name}
+                          items={s.items}
+                          onNavigate={closeMenu}
+                        />
+                      ) : (
+                        <TransitionLink
+                          href={s.path}
+                          onClick={closeMenu}
+                          className="type-h3"
+                        >
+                          {s.name}
+                        </TransitionLink>
+                      )}
                     </motion.li>
                   ))}
                 </ul>
