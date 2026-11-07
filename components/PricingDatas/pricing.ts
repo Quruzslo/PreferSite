@@ -29,7 +29,7 @@ const pricingData: PricingItem[] = [
   {
     id: "website",
     title: "Céges Weboldal",
-    price: "350 000 Ft-tól",
+    price: "260 000 Ft-tól",
     description:
       "Többoldalas, professzionális digitális névjegykártya a vállalkozásodnak.",
     useCase:
@@ -47,7 +47,7 @@ const pricingData: PricingItem[] = [
   {
     id: "webshop",
     title: "Webáruház (Webshop)",
-    price: "650 000 Ft-tól",
+    price: "450 000 Ft-tól",
     description:
       "Teljesen automatizált online shop, ahol 24/7 értékesítheted a termékeidet.",
     useCase:
@@ -64,7 +64,7 @@ const pricingData: PricingItem[] = [
   {
     id: "webapp",
     title: "Webapplikáció",
-    price: "650 000 Ft-tól",
+    price: "450 000 Ft-tól",
     description:
       "Egyedi, interaktív szoftveres megoldás, ami a böngészőben fut.",
     useCase:
@@ -81,7 +81,7 @@ const pricingData: PricingItem[] = [
   {
     id: "crm",
     title: "Egyedi CRM rendszer",
-    price: "850 000 Ft-tól",
+    price: "650 000 Ft-tól",
     description:
       "Belső folyamatokat és ügyfélkapcsolatokat digitalizáló rendszer.",
     useCase:
