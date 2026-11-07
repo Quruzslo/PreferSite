@@ -80,7 +80,7 @@ p,
   font-variation-settings: "wdth" 84;
   font-size: min(13vw, clamp(3rem, 8.4vw, 9.5rem));
   line-height: 0.9;
-  letter-spacing: -0.045em;
+  /* letter-spacing: -0.045em; */
   hyphens: manual;
 }
 

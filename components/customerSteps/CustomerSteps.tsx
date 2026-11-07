@@ -24,7 +24,7 @@ export default function CustomerStepsComp() {
       />
 
       <div className="grid gap-x-8 lg:grid-cols-12">
-        <div className="sticky top-18 lg:relative lg:col-span-5">
+        <div className="sticky top-18 lg:relative lg:col-span-4">
           <div className="sticky top-28 flex items-start gap-3">
             <div className="type-display relative px-[2px] h-[0.9em] overflow-hidden tabular-nums">
               <AnimatePresence mode="popLayout" initial={false}>
@@ -46,7 +46,7 @@ export default function CustomerStepsComp() {
           </div>
         </div>
 
-        <ol className="lg:col-span-7">
+        <ol className="lg:col-span-8">
           {customerSteps.map((step, i) => (
             <motion.li
               key={step.id}
