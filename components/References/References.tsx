@@ -89,7 +89,7 @@ export default function References({
         >
           <span className="type-h2 lg:col-span-3">{refArray.length}</span>
           <span className="type-h2 transition-opacity group-hover:opacity-60 lg:col-span-7">
-            {showAll ? "Kevesebb referencia" : "Összes referencia"}
+            {showAll ? "Kevesebb referencia" : "Több referencia"}
           </span>
           <span className="type-h2 justify-self-end lg:col-span-2">
             {showAll ? "(−)" : "(+)"}
