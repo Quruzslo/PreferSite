@@ -29,7 +29,7 @@ const pricingData: PricingItem[] = [
   {
     id: "website",
     title: "Céges Weboldal",
-    price: "260 000 Ft-tól",
+    price: "350 000 Ft-tól",
     description:
       "Többoldalas, professzionális digitális névjegykártya a vállalkozásodnak.",
     useCase:

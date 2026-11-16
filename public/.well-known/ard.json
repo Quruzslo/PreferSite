@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "name": "Prefersite – Egyedi Weboldal Készítés, Webshop és CRM Fejlesztés",
+  "description": "Freelancer webfejlesztő: egyedi weboldal készítés, honlapfelújítás, gyors és biztonságos webshop fejlesztés (Stripe, Barion), valamint cégre szabott CRM rendszerek és webapplikációk modern Next.js és React technológiával.",
+  "url": "https://www.prefersite.hu",
+  "contact": {
+    "url": "https://www.prefersite.hu/kapcsolat"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:prefersite.hu:web:home",
+      "displayName": "Főoldal – Egyedi Weboldal, Webshop és CRM Fejlesztés",
+      "description": "Freelancer webfejlesztés cégeknek és vállalkozásoknak: egyedi weboldalak, webshopok és üzleti szoftverek modern technológiával, sablonok nélkül.",
+      "url": "https://www.prefersite.hu/",
+      "type": "text/html",
+      "representativeQueries": [
+        "freelancer webfejlesztő Magyarország",
+        "egyedi weboldal és webapplikáció fejlesztés",
+        "Next.js React webfejlesztő cégeknek"
+      ]
+    },
+    {
+      "identifier": "urn:air:prefersite.hu:web:weboldal-keszites",
+      "displayName": "Weboldal készítés és Honlapfelújítás",
+      "description": "Gyors, mobilbarát és keresőoptimalizált (SEO) egyedi céges weboldal készítés, valamint elavult honlapok teljes felújítása Kaposvár, Budapest, Győr, Pécs régiókban és országosan.",
+      "url": "https://www.prefersite.hu/szolgaltatasok/weboldal",
+      "type": "text/html",
+      "representativeQueries": [
+        "egyedi weboldal készítés Kaposvár Budapest Győr Pécs",
+        "gyors SEO optimalizált céges honlapkészítés",
+        "elavult weboldal felújítása és modernizálása"
+      ]
+    },
+    {
+      "identifier": "urn:air:prefersite.hu:web:webshop-keszites",
+      "displayName": "Webshop készítés és E-kereskedelem",
+      "description": "Egyedi, konverziófókuszált és biztonságos webshop készítés Stripe és Barion online fizetéssel, valamint automatizált rendeléskezeléssel.",
+      "url": "https://www.prefersite.hu/szolgaltatasok/webshop",
+      "type": "text/html",
+      "representativeQueries": [
+        "egyedi webshop készítés Stripe Barion fizetéssel",
+        "gyors egyedi webáruház fejlesztés sablon nélkül",
+        "e-kereskedelmi rendszer fejlesztés vállalkozásoknak"
+      ]
+    },
+    {
+      "identifier": "urn:air:prefersite.hu:web:crm-fejlesztes",
+      "displayName": "CRM rendszer fejlesztés cégeknek",
+      "description": "Cégre szabott ügyfélkapcsolat-kezelő (CRM) rendszerek és belső munkafolyamat-automatizálás a céges adminisztráció egyszerűsítésére.",
+      "url": "https://www.prefersite.hu/szolgaltatasok/crm",
+      "type": "text/html",
+      "representativeQueries": [
+        "egyedi CRM rendszer fejlesztés cégeknek",
+        "cégre szabott ügyfélnyilvántartó szoftver készítés",
+        "céges munkafolyamat automatizálás szoftverrel"
+      ]
+    },
+    {
+      "identifier": "urn:air:prefersite.hu:web:webapplikacio-fejlesztes",
+      "displayName": "Webapplikáció és Egyedi Szoftver Fejlesztés",
+      "description": "Egyedi üzleti webalkalmazások és belső rendszerek fejlesztése a lassú Excel táblázatok és manuális adatkezelés kiváltására.",
+      "url": "https://www.prefersite.hu/szolgaltatasok/webapplikacio",
+      "type": "text/html",
+      "representativeQueries": [
+        "egyedi webapplikáció fejlesztés vállalkozásoknak",
+        "Excel táblázatok kiváltása egyedi üzleti szoftverrel",
+        "egyedi belső vállalatirányítási webalkalmazás"
+      ]
+    },
+    {
+      "identifier": "urn:air:prefersite.hu:web:kapcsolat",
+      "displayName": "Kapcsolat és Ingyenes Weboldal Árajánlat",
+      "description": "Közvetlen kapcsolatfelvétel és ingyenes, egyedi árajánlatkérés weboldal készítésre, webshopra vagy CRM fejlesztésre.",
+      "url": "https://www.prefersite.hu/kapcsolat",
+      "type": "text/html",
+      "representativeQueries": [
+        "weboldal készítés árajánlatkérés",
+        "Prefersite kapcsolat és fejlesztői konzultáció",
+        "egyedi szoftver és webshop fejlesztés ajánlat"
+      ]
+    }
+  ]
+}
