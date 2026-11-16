@@ -92,7 +92,7 @@ export default function Hero() {
 
         <motion.div
           ref={imageRef}
-          initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
+          initial={{ clipPath: "inset(0% 0% 0% 0%)" }}
           animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
           transition={{ duration: 1.2, delay: 0.55, ease: [0.76, 0, 0.24, 1] }}
           className="relative order-4 min-h-[450px] overflow-hidden rounded-[4px] bg-ink sm:aspect-[16/10] lg:col-span-8 "
