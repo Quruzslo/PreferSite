@@ -25,6 +25,10 @@ const nextConfig: NextConfig = {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
           },
+          {
+            key: "Content-Security-Policy",
+            value: "base-uri 'self'; form-action 'self'",
+          },
         ],
       },
     ];
